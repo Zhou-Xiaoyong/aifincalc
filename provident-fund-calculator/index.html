@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>公积金贷款计算器2026 - 在线评估公积金可贷额度 | 月冲年冲规划·商贷对比 - AI金融计算器</title>
+    <meta name="description" content="2026年最新公积金贷款计算器，支持9大城市公积金可贷额度在线评估（余额法/月缴存额法/还款能力法/城市限额），月冲年冲冲还贷规划，公积金与商业贷款对比分析，AI智能推荐最优贷款方案。">
+    <meta name="keywords" content="公积金贷款计算器2026,公积金可贷额度计算器,公积金冲还贷计算器,公积金月冲年冲,公积金利率2026,公积金贷款额度评估,公积金余额倍数,组合贷款计算器,公积金vs商贷,公积金提取条件,公积金贷款年限,北京公积金贷款,上海公积金贷款">
+    <link rel="canonical" href="https://aifincalc.com/provident-fund-calculator/">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css">
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>公积金贷款计算器 2026</h1>
+            <p>额度评估 · 贷款计算 · 冲还贷规划 · 公积金 vs 商贷对比</p>
+        </header>
+
+        <!-- 工具导航 -->
+        <nav class="tool-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../tax-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">💰</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <div class="calculator-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="quota">🏦 贷款额度评估</div>
+                <div class="tab" data-tab="loan">💰 贷款方案计算</div>
+                <div class="tab" data-tab="deduction">🔄 冲还贷规划</div>
+                <div class="tab" data-tab="compare">📊 公积金 vs 商贷</div>
+            </div>
+
+            <!-- ==================== Tab 1: 贷款额度评估 ==================== -->
+            <div class="tab-content active" id="quota">
+                <div class="form-section">
+                    <div class="info-banner">
+                        <p>💡 输入您的公积金缴存信息，帮您评估最多能贷多少钱。计算结果取四种方式的<strong>最小值</strong>。</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>所在城市 <span class="required">*</span></label>
+                        <select id="quotaCity" class="form-control">
+                            <option value="">请选择城市</option>
+                        </select>
+                        <small class="help-text">选择城市后自动带入当地公积金贷款最高额度和余额倍数</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>缴存状态 <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="quotaWorkerType" value="single" checked>
+                                <span>单职工</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="quotaWorkerType" value="family">
+                                <span>双职工（夫妻共同申请）</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>购房套数</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="quotaHouseType" value="first" checked>
+                                <span>首套房</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="quotaHouseType" value="second">
+                                <span>二套房</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>公积金月缴存额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="quotaMonthlyContribution" class="form-control" placeholder="个人月缴">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>公积金缴存基数</label>
+                            <div class="input-group">
+                                <input type="number" id="quotaSalaryBase" class="form-control" placeholder="缴存基数">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>已缴存月数 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="quotaContributionMonths" class="form-control" placeholder="如 36" min="6">
+                                <span class="unit">个月</span>
+                            </div>
+                            <small class="help-text">申请贷款一般要求连续缴存≥6个月</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>账户余额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="quotaBalance" class="form-control" placeholder="公积金余额">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>家庭月收入 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="quotaIncome" class="form-control" placeholder="税前收入">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>其他月负债</label>
+                            <div class="input-group">
+                                <input type="number" id="quotaOtherDebt" class="form-control" value="0">
+                                <span class="unit">元</span>
+                            </div>
+                            <small class="help-text">车贷、消费贷等</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>拟贷款年限</label>
+                        <div class="input-group">
+                            <input type="number" id="quotaYears" class="form-control" value="30" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateQuota()">评估可贷额度</button>
+                </div>
+
+                <div class="result-section" id="quotaResult" style="display:none;">
+                    <h3>📊 可贷额度评估结果</h3>
+                    <div class="result-grid" id="quotaResultGrid"></div>
+
+                    <div class="quota-detail-section">
+                        <h4>🔍 四种计算方式明细</h4>
+                        <div class="quota-method-grid" id="quotaMethodGrid"></div>
+                    </div>
+
+                    <div class="ai-suggestions" id="quotaSuggestions" style="display:none;">
+                        <h4>💡 额度优化建议</h4>
+                        <div id="quotaSuggestionsContent"></div>
+                    </div>
+                </div>
+
+                <!-- 广告位 -->
+                <div class="ad-placeholder" id="adSlot1">
+                    <span>广告位 - 336x280</span>
+                </div>
+            </div>
+
+            <!-- ==================== Tab 2: 贷款方案计算 ==================== -->
+            <div class="tab-content" id="loan">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>贷款金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="loanAmount" class="form-control" placeholder="请输入贷款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>贷款期限</label>
+                        <div class="input-group">
+                            <input type="number" id="loanYears" class="form-control" value="30" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>购房套数</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="loanHouseType" value="first" checked>
+                                <span>首套房</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="loanHouseType" value="second">
+                                <span>二套房</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="loanRateSection">
+                        <label>公积金贷款利率 <span class="badge" id="loanRateBadge">首套</span></label>
+                        <div class="input-group">
+                            <input type="number" id="loanRate" class="form-control" step="0.01">
+                            <span class="unit">%</span>
+                        </div>
+                        <small class="help-text" id="loanRateHint">5年以上首套房利率 2.60%</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="loanRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="loanRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateLoan()">计算贷款方案</button>
+                </div>
+
+                <div class="result-section" id="loanResult" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid" id="loanResultGrid"></div>
+
+                    <!-- 还款计划表 -->
+                    <div class="schedule-section">
+                        <h4>📅 还款计划表</h4>
+                        <div class="schedule-toggle">
+                            <button class="btn-toggle active" onclick="toggleLoanSchedule('yearly', this)">按年查看</button>
+                            <button class="btn-toggle" onclick="toggleLoanSchedule('monthly', this)">按月查看</button>
+                        </div>
+                        <div class="schedule-table" id="loanScheduleTable"></div>
+                    </div>
+
+                    <div class="ai-suggestions" id="loanSuggestions" style="display:none;">
+                        <h4>💡 贷款方案建议</h4>
+                        <div id="loanSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== Tab 3: 冲还贷规划 ==================== -->
+            <div class="tab-content" id="deduction">
+                <div class="form-section">
+                    <div class="info-banner deduction-banner">
+                        <p>🔄 <strong>月冲</strong>：每月从公积金账户提取固定金额冲抵月供，减轻每月现金支出。</p>
+                        <p>🏠 <strong>年冲</strong>：每年一次性用公积金账户余额冲抵贷款本金，减少总利息。</p>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>当前贷款余额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="dedLoanBalance" class="form-control" placeholder="剩余本金">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>贷款年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="dedRate" class="form-control" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>剩余还款期限</label>
+                            <div class="input-group">
+                                <input type="number" id="dedRemainingYears" class="form-control" value="25" min="1" max="30">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>当前月供 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="dedMonthlyPayment" class="form-control" placeholder="当前月供">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>公积金账户余额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="dedBalance" class="form-control" placeholder="账户余额">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>每月公积金缴存额</label>
+                            <div class="input-group">
+                                <input type="number" id="dedMonthlyContrib" class="form-control" placeholder="月缴存额">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateDeduction()">分析冲还贷方案</button>
+                </div>
+
+                <div class="result-section" id="deductionResult" style="display:none;">
+                    <h3>🔄 冲还贷分析结果</h3>
+                    <div class="deduction-compare" id="deductionCompare"></div>
+
+                    <div class="ai-suggestions" id="deductionSuggestions" style="display:none;">
+                        <h4>💡 冲还贷建议</h4>
+                        <div id="deductionSuggestionsContent"></div>
+                    </div>
+                </div>
+
+                <!-- 广告位 -->
+                <div class="ad-placeholder" id="adSlot2">
+                    <span>广告位 - 336x280</span>
+                </div>
+            </div>
+
+            <!-- ==================== Tab 4: 公积金 vs 商贷对比 ==================== -->
+            <div class="tab-content" id="compare">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>房屋总价 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="compTotalPrice" class="form-control" placeholder="请输入房屋总价">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>首付比例</label>
+                            <div class="input-group">
+                                <input type="number" id="compDownPaymentRatio" class="form-control" value="30" min="20" max="90">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">首套房最低20%，二套房最低30-40%（因城市而异）</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>贷款年限</label>
+                            <div class="input-group">
+                                <input type="number" id="compYears" class="form-control" value="30" min="1" max="30">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>公积金可贷额度</label>
+                        <div class="input-group">
+                            <input type="number" id="compProvAmount" class="form-control" placeholder="可通过「额度评估」Tab获取">
+                            <span class="unit">万元</span>
+                        </div>
+                        <small class="help-text">留空则自动计算需贷款金额（用于纯商贷/组合贷对比）</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>商业贷款利率（LPR参考）</label>
+                        <div class="input-group">
+                            <input type="number" id="compCommRate" class="form-control" step="0.01">
+                            <span class="unit">%</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateCompare()">对比贷款方案</button>
+                </div>
+
+                <div class="result-section" id="compareResult" style="display:none;">
+                    <h3>📊 三种贷款方案对比</h3>
+                    <div class="compare-table-wrap" id="compareTableWrap"></div>
+
+                    <div class="chart-section">
+                        <canvas id="compareChart" height="300"></canvas>
+                    </div>
+
+                    <div class="ai-suggestions" id="compareSuggestions" style="display:none;">
+                        <h4>💡 最优方案推荐</h4>
+                        <div id="compareSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ==================== 公积金利率参考表 ==================== -->
+            <div class="rate-reference">
+                <h3>📋 公积金贷款利率参考表</h3>
+                <div class="rate-table-container">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>贷款类型</th>
+                                <th>5年以下（含5年）</th>
+                                <th>5年以上</th>
+                            </tr>
+                        </thead>
+                        <tbody id="provRateTableBody">
+                            <!-- 由 constants.js 注入 -->
+                        </tbody>
+                    </table>
+                    <p class="rate-note">* 数据更新时间：<span id="provRateUpdateDate"></span>，二套房利率为全国最低标准，各城市可能上浮，以当地公积金中心为准</p>
+                </div>
+            </div>
+
+            <!-- ==================== FAQ ==================== -->
+            <div class="faq-section">
+                <h2>常见问题</h2>
+
+                <div class="faq-item">
+                    <h4>2026年公积金贷款利率是多少？</h4>
+                    <p>根据中国人民银行2025年5月8日的公告，公积金贷款利率下调0.25个百分点：<br>
+                    <strong>首套房：</strong>5年以下（含5年）2.10%，5年以上2.60%<br>
+                    <strong>二套房：</strong>5年以下（含5年）不低于2.525%，5年以上不低于3.075%<br>
+                    存量贷款（已发放的）从2026年1月1日起按新利率执行。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>公积金贷款额度如何计算？</h4>
+                    <p>公积金贷款额度通常取以下四种计算方式的<strong>最小值</strong>：<br>
+                    1. <strong>账户余额法</strong>：公积金账户余额 × 余额倍数（因城市不同，一般为10-16倍）<br>
+                    2. <strong>月缴存额法</strong>：根据月缴存额和缴存年限综合计算<br>
+                    3. <strong>还款能力法</strong>：（月收入 - 月负债）× 还贷能力系数（50%）× 贷款月数<br>
+                    4. <strong>城市最高限额</strong>：各城市规定的公积金贷款最高额度<br>
+                    最终可贷额度 = 以上四种方式中的最小值（以5000元为整数倍取整）。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>余额倍数是什么？各城市有什么不同？</h4>
+                    <p>余额倍数是指公积金账户余额可以放大多少倍来计算贷款额度。比如余额10万元，倍数10倍，则余额法额度为100万元。各城市余额倍数不同，一般在10-16倍之间，具体由当地公积金管理中心规定。部分城市还要求余额中近12个月的缴存额占一定比例。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>月冲和年冲有什么区别？哪种更划算？</h4>
+                    <p><strong>月冲（逐月提取还贷）：</strong>每月从公积金账户提取固定金额用于偿还当月月供。优点是每月现金支出减少，适合日常现金流紧张的人群。<br>
+                    <strong>年冲（一次性提取还贷）：</strong>每年用公积金账户余额一次性冲抵贷款本金。优点是一次性减少本金，后续利息大幅降低，总节省利息更多。<br>
+                    <strong>建议：</strong>如果公积金账户余额较多且月供压力不大，推荐年冲；如果月供压力较大，推荐月冲。具体还要看当地公积金中心支持的方式。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>公积金贷款需要连续缴存多久？</h4>
+                    <p>申请公积金贷款一般要求连续足额缴存住房公积金<strong>满6个月（含）以上</strong>，且申请时公积金账户处于正常缴存状态。部分城市可能有更长的要求（如12个月），具体以当地公积金管理中心规定为准。如果中间有断缴，需要重新计算连续缴存时间。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>公积金贷款可以贷多少年？</h4>
+                    <p>公积金贷款最长期限为<strong>30年</strong>，且不超过借款人法定退休年龄后5年。比如男性60岁退休，最长可贷到65岁。贷款期限同时受房龄限制，二手房贷款期限通常不超过房龄+房龄系数（各城市不同，一般为30-50年减去房龄）。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>组合贷款怎么贷最划算？</h4>
+                    <p>组合贷款的关键是<strong>最大化公积金贷款额度</strong>，因为公积金利率远低于商贷。<br>
+                    建议步骤：<br>
+                    1. 先用「额度评估」功能计算公积金最多能贷多少<br>
+                    2. 如果公积金额度不够覆盖总贷款，差额部分用商业贷款补充<br>
+                    3. 优先选择等额本息还款方式，便于管理两种贷款的月供<br>
+                    4. 经济宽裕时优先提前偿还商贷部分（利率更高，节省效果更明显）</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>2026年公积金提取新政策有哪些变化？</h4>
+                    <p>2026年4月起，多地实施公积金提取新规：<br>
+                    - <strong>取消提取次数限制</strong>：过去一年只能提1-2次的限制被取消<br>
+                    - <strong>扩大提取范围</strong>：支持用于租房、装修、老旧小区改造等<br>
+                    - <strong>家庭互助</strong>：支持提取配偶、父母、子女的公积金<br>
+                    - 具体政策因城市而异，建议咨询当地公积金管理中心了解最新规定。</p>
+                </div>
+            </div>
+
+            <!-- 广告位 -->
+            <div class="ad-placeholder" id="adSlot3">
+                <span>广告位 - 728x90</span>
+            </div>
+        </div>
+
+        <!-- 页面底部广告 -->
+        <div class="ad-placeholder bottom-ad" id="adSlot4">
+            <span>广告位 - 728x90</span>
+        </div>
+
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="../mortgage-calculator/index.html">房贷计算器</a> | <a href="index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a></p>
+        </footer>
+    </div>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="../shared/constants.js"></script>
+    <script src="script.js"></script>
+    <script src="../shared/share.js"></script>
+
+    <!-- 结构化数据 FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "2026年公积金贷款利率是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "首套房：5年以下2.10%，5年以上2.60%；二套房：5年以下不低于2.525%，5年以上不低于3.075%。数据来源：中国人民银行2025年5月8日公告。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "公积金贷款额度如何计算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "取账户余额法、月缴存额法、还款能力法、城市最高限额四种方式的最小值。账户余额法=余额×倍数（10-16倍），还款能力法=（收入-负债）×50%×贷款月数。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "月冲和年冲有什么区别？哪种更划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "月冲每月提取固定金额冲抵月供，减轻月现金支出；年冲每年一次性冲抵本金，总节省利息更多。余额多且月供压力不大推荐年冲，月供紧张推荐月冲。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "公积金贷款需要连续缴存多久？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "一般要求连续足额缴存满6个月以上，且申请时账户处于正常缴存状态。部分城市要求12个月，具体以当地公积金中心规定为准。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "组合贷款怎么贷最划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "最大化公积金贷款额度，差额用商贷补充。优先等额本息还款，经济宽裕时优先提前偿还商贷部分。"
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

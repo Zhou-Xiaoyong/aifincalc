@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://aifincalc.com/sitemap.xml
+
+# 禁止抓取内部工具文件
+Disallow: /shared/

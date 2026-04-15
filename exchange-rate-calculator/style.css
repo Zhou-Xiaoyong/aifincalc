@@ -1,0 +1,745 @@
+/* 汇率换算器样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* 头部 */
+header {
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+}
+
+/* 品牌链接 */
+.brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 12px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.brand-link:hover {
+    opacity: 1;
+}
+
+.brand-logo {
+    font-size: 1.4rem;
+}
+
+.brand-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* 工具导航 */
+.tool-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 14px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+}
+
+.nav-item:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.nav-item.active {
+    background: white;
+    color: #667eea;
+}
+
+.nav-icon {
+    font-size: 16px;
+}
+
+/* 计算器卡片 */
+.calculator-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* 广告位 */
+.ad-placeholder {
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    margin: 20px 30px;
+    border-radius: 8px;
+}
+
+#adSlot1, #adSlot3, #adSlot4 {
+    height: 90px;
+}
+
+#adSlot2 {
+    height: 280px;
+    max-width: 336px;
+    margin: 20px auto;
+}
+
+.bottom-ad {
+    height: 90px;
+    margin: 20px auto;
+    max-width: 728px;
+}
+
+/* ====== 换算主区域 ====== */
+.converter-section {
+    padding: 30px;
+}
+
+.rate-status {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 24px;
+    background: #f0f4ff;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #667eea;
+}
+
+.rate-status.error {
+    background: #fff0f0;
+    color: #dc3545;
+}
+
+.status-icon {
+    margin-right: 6px;
+}
+
+/* 换算面板 */
+.converter-panel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.currency-input-group {
+    flex: 1;
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.currency-input-group:hover {
+    border-color: #e0e0ff;
+}
+
+.currency-selector {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.flag-and-code {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flag {
+    font-size: 24px;
+}
+
+.currency-select {
+    padding: 6px 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    background: white;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+.currency-select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.currency-name {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+.amount-input {
+    position: relative;
+}
+
+.amount-field {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 600;
+    background: white;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.amount-field:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.result-field {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border-color: #667eea;
+    color: #667eea;
+}
+
+.amount-hint {
+    position: absolute;
+    top: -10px;
+    left: 14px;
+    background: #6c757d;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.result-field + .amount-hint {
+    background: #667eea;
+}
+
+/* 交换按钮 */
+.swap-section {
+    flex-shrink: 0;
+}
+
+.swap-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+    background: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #667eea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swap-btn:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+    transform: rotate(180deg);
+}
+
+/* 汇率展示 */
+.rate-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    border-radius: 14px;
+    color: white;
+}
+
+.rate-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.rate-label {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.rate-value {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.rate-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* ====== 快速换算 ====== */
+.quick-convert-section,
+.common-converts-section,
+.chart-section,
+.rates-table-section {
+    padding: 30px;
+    border-top: 1px solid #e9ecef;
+}
+
+.quick-convert-section h2,
+.rates-table-section h2,
+.chart-section h2,
+.common-converts-section h2 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.section-desc {
+    color: #6c757d;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.quick-card {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.quick-card:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+    transform: translateY(-2px);
+}
+
+.quick-card .quick-amount {
+    display: block;
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 6px;
+}
+
+.quick-card .quick-result {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* ====== 汇率表格 ====== */
+.rates-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #6c757d;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    background: #e0e0ff;
+    color: #667eea;
+}
+
+.filter-btn.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.rates-table-wrap {
+    overflow-x: auto;
+}
+
+.rates-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.rates-table th,
+.rates-table td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.rates-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+    position: sticky;
+    top: 0;
+}
+
+.rates-table tbody tr {
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.rates-table tbody tr:hover {
+    background: #f0f4ff;
+}
+
+.rates-table .currency-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.rates-table .currency-cell .flag {
+    font-size: 20px;
+}
+
+.rates-table .code-cell {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.rates-table .rate-cell {
+    font-weight: 600;
+    color: #333;
+}
+
+.rates-table .inverse-cell {
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.rates-table .category-tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.tag-major {
+    background: #e0f7f5;
+    color: #0f9b8e;
+}
+
+.tag-asia {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.tag-sea {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+.tag-other {
+    background: #e8eaf6;
+    color: #3949ab;
+}
+
+.loading-cell {
+    padding: 40px;
+    color: #6c757d;
+}
+
+/* ====== 图表 ====== */
+.chart-controls {
+    margin-bottom: 16px;
+}
+
+.chart-pair {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chart-currency-select {
+    padding: 8px 12px;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    background: white;
+    cursor: pointer;
+}
+
+.chart-vs {
+    color: #6c757d;
+    font-weight: 600;
+}
+
+.chart-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 14px;
+}
+
+.chart-note {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #6c757d;
+    text-align: center;
+}
+
+/* ====== 常用换算 ====== */
+.common-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.common-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.common-card:hover {
+    background: #f0f4ff;
+    transform: translateY(-1px);
+}
+
+.common-card .common-label {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.common-card .common-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ====== FAQ ====== */
+.faq-section {
+    padding: 30px;
+    background: white;
+    border-top: 1px solid #e9ecef;
+}
+
+.faq-section h2 {
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.faq-item h4 {
+    color: #667eea;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+.faq-item p {
+    color: #6c757d;
+    line-height: 1.7;
+}
+
+/* 分享按钮 */
+.share-float {
+    text-align: center;
+    padding: 16px 0 8px;
+}
+
+.share-float .share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.share-float .share-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.share-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: rgba(0, 0, 0, 0.78);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    z-index: 10000;
+    transition: transform 0.3s ease;
+    pointer-events: none;
+}
+
+.share-toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* 页脚 */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .tool-nav {
+        gap: 6px;
+    }
+
+    .nav-item {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    .converter-panel {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .swap-section {
+        display: flex;
+        justify-content: center;
+    }
+
+    .swap-btn {
+        transform: rotate(90deg);
+    }
+
+    .swap-btn:hover {
+        transform: rotate(270deg);
+    }
+
+    .amount-field {
+        font-size: 20px;
+    }
+
+    .rate-value {
+        font-size: 18px;
+    }
+
+    .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .common-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .converter-section {
+        padding: 20px;
+    }
+
+    .quick-convert-section,
+    .rates-table-section,
+    .chart-section,
+    .common-converts-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .currency-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}

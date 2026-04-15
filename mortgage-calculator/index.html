@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房贷计算器2026 - LPR利率在线房贷月供计算器 | 商业贷·公积金·组合贷·提前还贷 - AI金融计算器</title>
+    <meta name="description" content="2026年最新房贷计算器，支持LPR浮动利率和固定利率，覆盖商业贷款、公积金贷款、组合贷款和提前还贷四大计算模式。自动生成还款计划表，AI智能月供规划建议，帮您找到最优房贷方案。">
+    <meta name="keywords" content="房贷计算器2026,LPR房贷计算器,房贷月供计算器,商业贷款计算器,公积金贷款计算器,组合贷款计算器,提前还贷计算器,等额本息计算,等额本金计算,LPR利率2026,贷款利率计算,月供占收入比例,房贷利息计算,买房贷款计算器">
+    <link rel="canonical" href="https://aifincalc.com/mortgage-calculator/">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css">
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>房贷计算器 2026</h1>
+            <p>支持LPR利率、商业贷、公积金贷、组合贷，智能规划您的房贷方案</p>
+        </header>
+
+        <!-- 工具导航 -->
+        <nav class="tool-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../tax-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <div class="calculator-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="commercial">商业贷款</div>
+                <div class="tab" data-tab="provident">公积金贷款</div>
+                <div class="tab" data-tab="combined">组合贷款</div>
+                <div class="tab" data-tab="prepay">提前还贷</div>
+            </div>
+
+            <!-- 商业贷款 -->
+            <div class="tab-content active" id="commercial">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>贷款金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="commAmount" class="form-control" placeholder="请输入贷款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>贷款期限</label>
+                        <div class="input-group">
+                            <input type="number" id="commYears" class="form-control" value="30" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>利率方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="commRateType" value="lpr" checked onchange="toggleLPR('comm')">
+                                <span>LPR浮动利率</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="commRateType" value="fixed" onchange="toggleLPR('comm')">
+                                <span>固定利率</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- LPR利率设置 -->
+                    <div id="commLPRSection" class="lpr-section">
+                        <div class="form-row">
+                            <div class="form-group half">
+                                <label>当前LPR利率 <span class="badge">2025年2月</span></label>
+                                <div class="input-group">
+                                    <input type="number" id="commLPR" class="form-control" value="3.85" step="0.01">
+                                    <span class="unit">%</span>
+                                </div>
+                            </div>
+                            <div class="form-group half">
+                                <label>加点/减点</label>
+                                <div class="input-group">
+                                    <input type="number" id="commLPRSpread" class="form-control" value="-0.45" step="0.01">
+                                    <span class="unit">%</span>
+                                </div>
+                                <small class="help-text">负数为减点，正数为加点</small>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>重定价周期</label>
+                            <select id="commLPRPeriod" class="form-control">
+                                <option value="1">每年1月1日</option>
+                                <option value="2">每年贷款发放日</option>
+                                <option value="3">每季度调整</option>
+                            </select>
+                        </div>
+                        <div class="lpr-info">
+                            <p>当前执行利率：<strong id="commCurrentRate">3.40%</strong></p>
+                            <p class="lpr-note">LPR利率每月20日更新，以上数据仅供参考</p>
+                        </div>
+                    </div>
+
+                    <!-- 固定利率设置 -->
+                    <div id="commFixedSection" class="lpr-section" style="display:none;">
+                        <div class="form-group">
+                            <label>年利率</label>
+                            <div class="input-group">
+                                <input type="number" id="commFixedRate" class="form-control" value="4.20" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="commRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="commRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 家庭收入规划 -->
+                    <div class="income-planning">
+                        <h4>💡 月供规划建议（可选）</h4>
+                        <div class="form-group">
+                            <label>家庭月收入</label>
+                            <div class="input-group">
+                                <input type="number" id="commIncome" class="form-control" placeholder="输入家庭月收入">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>其他月负债（车贷、信用卡等）</label>
+                            <div class="input-group">
+                                <input type="number" id="commOtherDebt" class="form-control" value="0">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateCommercial()">计算房贷</button>
+                </div>
+
+                <div class="result-section" id="commResult" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid" id="commResultGrid"></div>
+                    
+                    <!-- 月供规划建议 -->
+                    <div class="ai-suggestions" id="commSuggestions" style="display:none;">
+                        <h4>📊 月供规划建议</h4>
+                        <div id="commSuggestionsContent"></div>
+                    </div>
+
+                    <!-- 还款计划表 -->
+                    <div class="schedule-section">
+                        <h4>📅 还款计划表</h4>
+                        <div class="schedule-toggle">
+                            <button class="btn-toggle active" onclick="showSchedule('comm', 'yearly')">按年查看</button>
+                            <button class="btn-toggle" onclick="showSchedule('comm', 'monthly')">按月查看</button>
+                        </div>
+                        <div class="schedule-table" id="commScheduleTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公积金贷款 -->
+            <div class="tab-content" id="provident">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>贷款金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="provAmount" class="form-control" placeholder="请输入贷款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                        <small class="help-text">公积金贷款最高额度因城市而异，一般为60-120万</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>贷款期限</label>
+                        <div class="input-group">
+                            <input type="number" id="provYears" class="form-control" value="30" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>公积金利率 <span class="badge">首套房</span></label>
+                        <div class="input-group">
+                            <input type="number" id="provRate" class="form-control" value="2.85" step="0.01">
+                            <span class="unit">%</span>
+                        </div>
+                        <small class="help-text">首套房：5年以上2.85%，二套房：3.325%</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="provRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="provRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 公积金账户余额抵扣 -->
+                    <div class="form-group">
+                        <label>公积金账户余额（可选）</label>
+                        <div class="input-group">
+                            <input type="number" id="provBalance" class="form-control" placeholder="用于月冲或年冲">
+                            <span class="unit">元</span>
+                        </div>
+                        <small class="help-text">可用于计算实际现金支出</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>家庭月收入（用于规划建议）</label>
+                        <div class="input-group">
+                            <input type="number" id="provIncome" class="form-control" placeholder="输入家庭月收入">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateProvident()">计算公积金贷款</button>
+                </div>
+
+                <div class="result-section" id="provResult" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid" id="provResultGrid"></div>
+                    <div class="ai-suggestions" id="provSuggestions" style="display:none;">
+                        <h4>📊 公积金使用建议</h4>
+                        <div id="provSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 组合贷款 -->
+            <div class="tab-content" id="combined">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>商业贷款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="combCommAmount" class="form-control" placeholder="商业贷款">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>公积金贷款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="combProvAmount" class="form-control" placeholder="公积金贷款">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>贷款期限</label>
+                        <div class="input-group">
+                            <input type="number" id="combYears" class="form-control" value="30" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>商业贷款利率</label>
+                            <div class="input-group">
+                                <input type="number" id="combCommRate" class="form-control" value="3.40" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>公积金贷款利率</label>
+                            <div class="input-group">
+                                <input type="number" id="combProvRate" class="form-control" value="2.85" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="combRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="combRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>家庭月收入</label>
+                        <div class="input-group">
+                            <input type="number" id="combIncome" class="form-control" placeholder="输入家庭月收入">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateCombined()">计算组合贷款</button>
+                </div>
+
+                <div class="result-section" id="combResult" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid" id="combResultGrid"></div>
+                    <div class="ai-suggestions" id="combSuggestions" style="display:none;">
+                        <h4>📊 组合贷优化建议</h4>
+                        <div id="combSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 提前还贷 -->
+            <div class="tab-content" id="prepay">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>剩余贷款本金 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="preRemain" class="form-control" placeholder="当前剩余本金">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>当前年利率 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="preRate" class="form-control" value="3.40" step="0.01">
+                            <span class="unit">%</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>剩余还款期限</label>
+                        <div class="input-group">
+                            <input type="number" id="preYears" class="form-control" value="20" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>当前月供</label>
+                        <div class="input-group">
+                            <input type="number" id="preCurrentPayment" class="form-control" placeholder="当前每月还款">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>计划提前还款金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="preAmount" class="form-control" placeholder="提前还款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>提前还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="preMethod" value="reduceTerm" checked>
+                                <span>缩短年限，月供不变</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="preMethod" value="reducePayment">
+                                <span>减少月供，年限不变</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>是否有违约金</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="prePenalty" value="no" checked onchange="togglePenalty()">
+                                <span>无违约金</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="prePenalty" value="yes" onchange="togglePenalty()">
+                                <span>有违约金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="penaltySection" style="display:none;">
+                        <label>违约金比例</label>
+                        <div class="input-group">
+                            <input type="number" id="prePenaltyRate" class="form-control" value="1" step="0.1">
+                            <span class="unit">%</span>
+                        </div>
+                        <small class="help-text">一般为提前还款金额的1%-3%</small>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculatePrepay()">计算提前还款</button>
+                </div>
+
+                <div class="result-section" id="preResult" style="display:none;">
+                    <h3>提前还款分析</h3>
+                    <div class="result-grid" id="preResultGrid"></div>
+                    
+                    <div class="compare-section">
+                        <h4>📊 还款对比</h4>
+                        <div class="compare-table" id="preCompareTable"></div>
+                    </div>
+
+                    <div class="ai-suggestions" id="preSuggestions" style="display:none;">
+                        <h4>💡 提前还款建议</h4>
+                        <div id="preSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 房贷利率参考表 -->
+            <div class="rate-reference">
+                <h3>📋 房贷利率参考表</h3>
+                <div class="rate-tabs">
+                    <button class="rate-tab active" onclick="showRateTable('lpr')">LPR利率</button>
+                    <button class="rate-tab" onclick="showRateTable('provident')">公积金利率</button>
+                </div>
+                <div class="rate-table-container" id="lprRateTable">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>期限</th>
+                                <th>当前LPR</th>
+                                <th>首套房执行利率</th>
+                                <th>二套房执行利率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1年期</td>
+                                <td>3.10%</td>
+                                <td>约3.10%-3.45%</td>
+                                <td>约3.45%-4.10%</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>5年期以上</td>
+                                <td>3.85%</td>
+                                <td>约3.40%-3.85%</td>
+                                <td>约4.15%-4.80%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="rate-note">* 首套房LPR-0.45%至0，二套房LPR+0.30%至+0.95%，具体以银行审批为准</p>
+                </div>
+                <div class="rate-table-container" id="providentRateTable" style="display:none;">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>贷款类型</th>
+                                <th>5年以下（含5年）</th>
+                                <th>5年以上</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight">
+                                <td>首套房</td>
+                                <td>2.35%</td>
+                                <td>2.85%</td>
+                            </tr>
+                            <tr>
+                                <td>二套房</td>
+                                <td>2.775%</td>
+                                <td>3.325%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2>常见问题</h2>
+                
+                <div class="faq-item">
+                    <h4>什么是LPR利率？</h4>
+                    <p>LPR（贷款市场报价利率）是由18家报价行根据本行对最优质客户的贷款利率，以公开市场操作利率加点形成的方式报价，由中国人民银行授权全国银行间同业拆借中心计算并公布的基础性的贷款参考利率。目前房贷主要参考5年期以上LPR。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>等额本息和等额本金有什么区别？</h4>
+                    <p><strong>等额本息：</strong>每月还款额相同，前期利息占比高，适合收入稳定的购房者。<br><strong>等额本金：</strong>每月本金相同，利息逐月递减，前期还款压力大但总利息少，适合前期资金充裕的购房者。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>提前还款哪种方式更划算？</h4>
+                    <p>如果希望尽快还清贷款、减少总利息支出，选择<strong>缩短年限</strong>；如果希望减轻月供压力、保持现金流，选择<strong>减少月供</strong>。一般来说，缩短年限节省的利息更多。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>月供占收入多少比例合适？</h4>
+                    <p>一般建议月供不超过家庭月收入的<strong>30%-40%</strong>，这样既能保证生活质量，又有一定的财务缓冲空间。如果超过50%，则属于高负债，财务风险较大。</p>
+                </div>
+            </div>
+
+            <!-- 广告位4 -->
+            <div class="ad-placeholder" id="adSlot4">
+                <span>广告位 - 336x280</span>
+            </div>
+
+        </div>
+
+        <!-- 页面底部广告 -->
+        <div class="ad-placeholder bottom-ad" id="adSlot5">
+            <span>广告位 - 728x90</span>
+        </div>
+
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="index.html">房贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a></p>
+        </footer>
+    </div>
+
+    <script src="../shared/constants.js"></script>
+    <script src="script.js"></script>
+    <script src="../shared/share.js"></script>
+
+    <!-- FAQ Schema 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "什么是LPR利率？2026年LPR利率是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "LPR（贷款市场报价利率）是由18家银行报价形成的基础贷款参考利率。2026年2月最新LPR：1年期3.10%，5年期以上3.85%。房贷通常参考5年期以上LPR加减基点。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "等额本息和等额本金有什么区别？哪个更划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "等额本息每月还款额相同，总利息较多但前期压力小；等额本金每月本金相同、利息递减，总利息较少但前期还款压力大。总利息等额本金比等额本息少，但如果考虑货币时间价值，差异没有想象中大。建议根据自身现金流情况选择。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "提前还贷划算吗？应该怎么选择？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "如果房贷利率高于你的投资收益率，提前还贷是划算的。缩短年限节省利息更多，减少月供则每月现金流更宽裕。建议优先选择缩短年限，且在有闲置资金时集中偿还。注意部分银行有违约金。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "房贷月供占收入多少比例合适？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "一般建议月供不超过家庭月收入的30%-40%，这样能保证生活质量并有财务缓冲空间。如果超过50%，财务风险较大。银行审批贷款时通常要求月供不超过月收入的50%。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "组合贷款和纯商业贷款哪个更好？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "如果能申请公积金贷款，组合贷通常比纯商贷更划算，因为公积金利率（首套5年以上2.60%）远低于商贷利率（约3.40%）。建议最大化公积金贷款额度，差额部分用商贷补充。"
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个税计算器2026 - 免费在线个人所得税计算器 | 年终奖·社保·专项扣除 - AI金融计算器</title>
+    <meta name="description" content="2026年最新个人所得税计算器，支持工资薪金、年终奖单独计税/合并计税、年度汇算清缴，自动计算社保公积金和专项附加扣除，AI智能节税建议。涵盖9大城市社保比例数据。">
+    <meta name="keywords" content="个税计算器2026,个人所得税计算器,年终奖个税计算器,2026年个税税率表,专项附加扣除,社保计算器,五险一金计算器,工资扣税计算器,个税起征点,节税技巧,年度汇算清缴,独生子女扣除,子女教育扣除,住房租金扣除,赡养老人扣除,AI金融计算器">
+    <link rel="canonical" href="https://aifincalc.com/tax-calculator/">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css">
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>个税计算器 2026</h1>
+            <p>智能计算个人所得税，支持城市社保自动带入、专项附加扣除一键计算</p>
+        </header>
+
+        <!-- 工具导航 -->
+        <nav class="tool-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <div class="calculator-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="monthly">月度工资</div>
+                <div class="tab" data-tab="year-end">年终奖</div>
+                <div class="tab" data-tab="annual">年度汇算</div>
+            </div>
+
+            <!-- 月度工资计算 -->
+            <div class="tab-content active" id="monthly">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>所在城市 <span class="badge">自动计算社保</span></label>
+                        <select id="city" class="form-control" onchange="autoFillSocial()">
+                            <option value="">请选择城市</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>税前月薪 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="salary" class="form-control" placeholder="请输入税前月薪">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>社保公积金缴纳基数</label>
+                        <div class="input-group">
+                            <input type="number" id="socialBase" class="form-control" placeholder="默认为税前月薪">
+                            <span class="unit">元</span>
+                        </div>
+                        <small class="help-text">不填写则按税前月薪计算</small>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>养老保险比例</label>
+                            <div class="input-group">
+                                <input type="number" id="pensionRate" class="form-control" value="8" step="0.1">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>医疗保险比例</label>
+                            <div class="input-group">
+                                <input type="number" id="medicalRate" class="form-control" value="2" step="0.1">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>失业保险比例</label>
+                            <div class="input-group">
+                                <input type="number" id="unemploymentRate" class="form-control" value="0.5" step="0.1">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>住房公积金比例</label>
+                            <div class="input-group">
+                                <input type="number" id="housingRate" class="form-control" value="12" step="0.1">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>专项附加扣除 <span class="badge highlight">智能计算</span></label>
+                        <div class="deduction-grid">
+                            <div class="deduction-item">
+                                <input type="checkbox" id="child" data-monthly="2000">
+                                <label for="child">子女教育</label>
+                                <span class="amount">2000元/月</span>
+                            </div>
+                            <div class="deduction-item">
+                                <input type="checkbox" id="continuing" data-monthly="400">
+                                <label for="continuing">继续教育</label>
+                                <span class="amount">400元/月</span>
+                            </div>
+                            <div class="deduction-item">
+                                <input type="checkbox" id="housingLoan" data-monthly="1000">
+                                <label for="housingLoan">住房贷款利息</label>
+                                <span class="amount">1000元/月</span>
+                            </div>
+                            <div class="deduction-item">
+                                <input type="checkbox" id="housingRent" data-monthly="1500">
+                                <label for="housingRent">住房租金</label>
+                                <span class="amount">1500元/月</span>
+                            </div>
+                            <div class="deduction-item">
+                                <input type="checkbox" id="elderly" class="has-custom">
+                                <label for="elderly">赡养老人</label>
+                                <select id="elderlyAmount" class="small-select">
+                                    <option value="3000">独生子女 3000元/月</option>
+                                    <option value="1500">非独生分摊 1500元/月</option>
+                                </select>
+                            </div>
+                            <div class="deduction-item">
+                                <input type="checkbox" id="infant" data-monthly="2000">
+                                <label for="infant">3岁以下婴幼儿照护</label>
+                                <span class="amount">2000元/月</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>其他扣除</label>
+                        <div class="input-group">
+                            <input type="number" id="otherDeduction" class="form-control" placeholder="企业年金、商业健康险等" value="0">
+                            <span class="unit">元/月</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateMonthly()">计算个税</button>
+                </div>
+
+                <!-- 广告位1：计算按钮下方 -->
+                <div class="ad-placeholder" id="adSlot1">
+                    <span>广告位</span>
+                </div>
+
+                <div class="result-section" id="monthlyResult" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="label">税前月薪</span>
+                            <span class="value" id="resSalary">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">五险一金</span>
+                            <span class="value deduct" id="resInsurance">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">专项附加扣除</span>
+                            <span class="value deduct" id="resDeduction">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">应纳税所得额</span>
+                            <span class="value" id="resTaxable">0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="label">应缴个税</span>
+                            <span class="value tax" id="resTax">0</span>
+                        </div>
+                        <div class="result-item important">
+                            <span class="label">实发工资</span>
+                            <span class="value income" id="resIncome">0</span>
+                        </div>
+                    </div>
+                    <div class="tax-detail" id="taxDetail"></div>
+                    <div class="ai-suggestions" id="aiSuggestions" style="display:none;">
+                        <h4>AI 节税建议</h4>
+                        <div id="suggestionsContent"></div>
+                    </div>
+                    
+                    <!-- 个税税率表 -->
+                    <div class="tax-rate-table">
+                        <h4>个人所得税税率表（综合所得适用）</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>级数</th>
+                                    <th>全年应纳税所得额</th>
+                                    <th>税率</th>
+                                    <th>速算扣除数</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-rate="3">
+                                    <td>1</td>
+                                    <td>不超过36,000元</td>
+                                    <td>3%</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr data-rate="10">
+                                    <td>2</td>
+                                    <td>超过36,000至144,000元</td>
+                                    <td>10%</td>
+                                    <td>2,520</td>
+                                </tr>
+                                <tr data-rate="20">
+                                    <td>3</td>
+                                    <td>超过144,000至300,000元</td>
+                                    <td>20%</td>
+                                    <td>16,920</td>
+                                </tr>
+                                <tr data-rate="25">
+                                    <td>4</td>
+                                    <td>超过300,000至420,000元</td>
+                                    <td>25%</td>
+                                    <td>31,920</td>
+                                </tr>
+                                <tr data-rate="30">
+                                    <td>5</td>
+                                    <td>超过420,000至660,000元</td>
+                                    <td>30%</td>
+                                    <td>52,920</td>
+                                </tr>
+                                <tr data-rate="35">
+                                    <td>6</td>
+                                    <td>超过660,000至960,000元</td>
+                                    <td>35%</td>
+                                    <td>85,920</td>
+                                </tr>
+                                <tr data-rate="45">
+                                    <td>7</td>
+                                    <td>超过960,000元</td>
+                                    <td>45%</td>
+                                    <td>181,920</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="tax-rate-note">注：本表所称全年应纳税所得额是指依照税法规定，居民个人取得综合所得以每一纳税年度收入额减除费用六万元以及专项扣除、专项附加扣除和依法确定的其他扣除后的余额。</p>
+                    </div>
+                    
+                    <!-- 广告位2：结果区域下方 -->
+                    <div class="ad-placeholder" id="adSlot2">
+                        <span>广告位</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 年终奖计算 -->
+            <div class="tab-content" id="year-end">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>年终奖金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="bonus" class="form-control" placeholder="请输入年终奖金额">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateBonus()">计算年终奖个税</button>
+                </div>
+                <div class="result-section" id="bonusResult" style="display:none;">
+                    <h3>年终奖计算结果</h3>
+                    <div class="result-grid" id="bonusResultGrid"></div>
+                </div>
+            </div>
+
+            <!-- 年度汇算 -->
+            <div class="tab-content" id="annual">
+                <div class="form-section">
+                    <div class="sync-notice" id="syncNotice">
+                        <span class="sync-icon">🔄</span>
+                        <span>已自动同步月度工资和年终奖数据</span>
+                        <button class="btn-sync" onclick="syncAnnualData()">重新同步</button>
+                    </div>
+                    <div class="form-group">
+                        <label>年度工资薪金收入 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="annualIncome" class="form-control" placeholder="全年工资薪金收入">
+                            <span class="unit">元</span>
+                        </div>
+                        <small class="help-text">包含全年12个月工资，不含年终奖</small>
+                    </div>
+                    <div class="form-group">
+                        <label>年终奖金额</label>
+                        <div class="input-group">
+                            <input type="number" id="annualBonus" class="form-control" placeholder="年终奖金额（如有）">
+                            <span class="unit">元</span>
+                        </div>
+                        <small class="help-text">选择并入综合所得计税时填写</small>
+                    </div>
+                    <div class="form-group">
+                        <label>计税方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="bonusMethod" value="separate" checked>
+                                <span>年终奖单独计税</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="bonusMethod" value="merge">
+                                <span>年终奖并入综合所得</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>年度五险一金</label>
+                        <div class="input-group">
+                            <input type="number" id="annualInsurance" class="form-control" placeholder="全年缴纳的五险一金">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>年度专项附加扣除</label>
+                        <div class="input-group">
+                            <input type="number" id="annualDeduction" class="form-control" placeholder="全年专项附加扣除总额">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+                    <button class="btn-calculate" onclick="calculateAnnual()">计算年度汇算</button>
+                </div>
+                <div class="result-section" id="annualResult" style="display:none;">
+                    <h3>年度汇算结果</h3>
+                    <div class="result-grid" id="annualResultGrid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 广告位3：FAQ上方 -->
+        <div class="ad-placeholder wide" id="adSlot3">
+            <span>广告位</span>
+        </div>
+
+        <div class="faq-section">
+            <h2>常见问题</h2>
+            <div class="faq-item">
+                <h4>个税起征点是多少？</h4>
+                <p>2025年个人所得税起征点为每月5000元，年度60000元。</p>
+            </div>
+            <div class="faq-item">
+                <h4>专项附加扣除有哪些？</h4>
+                <p>包括子女教育（2000元/月）、继续教育（400元/月）、住房贷款利息（1000元/月）、住房租金（1500元/月）、赡养老人（最高3000元/月）、3岁以下婴幼儿照护（2000元/月）。</p>
+            </div>
+            <div class="faq-item">
+                <h4>年终奖如何计税？</h4>
+                <p>年终奖可以选择单独计税或并入综合所得计税，本计算器默认按单独计税方式计算。</p>
+            </div>
+            
+            <!-- 广告位4：FAQ内部 -->
+            <div class="ad-placeholder inline" id="adSlot4">
+                <span>广告位</span>
+            </div>
+        </div>
+        
+        <!-- 广告位5：页面底部 -->
+        <div class="ad-placeholder wide" id="adSlot5">
+            <span>广告位</span>
+        </div>
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="index.html">个税计算器</a> | <a href="../mortgage-calculator/index.html">房贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a></p>
+        </footer>
+    </div>
+
+    <script src="../shared/constants.js"></script>
+    <script src="script.js"></script>
+    <script src="../shared/share.js"></script>
+
+    <!-- FAQ Schema 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "2026年个税起征点是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年个人所得税起征点为每月5000元（年度60000元），适用于综合所得（工资薪金、劳务报酬、稿酬、特许权使用费）。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "专项附加扣除有哪些？2026年标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年专项附加扣除包括：子女教育2000元/月、继续教育400元/月、住房贷款利息1000元/月、住房租金1500元/月（直辖市/省会城市）、赡养老人最高3000元/月（独生子女）、3岁以下婴幼儿照护2000元/月。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "年终奖单独计税和并入综合所得哪个更划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "取决于个人收入情况。如果年收入（含年终奖）不超过12万元，通常并入综合所得更划算；如果年终奖金额较大且综合所得本身税率较低，单独计税可能更优。建议用本计算器的年度汇算功能分别计算对比。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "五险一金缴纳比例是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "个人缴纳部分一般为：养老保险8%、医疗保险2%、失业保险0.5%、住房公积金5%-12%。具体比例因城市而异，本计算器支持北京、上海、广州、深圳等9大城市自动带入社保比例。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "个人所得税怎么计算？计算公式是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "个税计算公式：应纳税所得额 = 税前工资 - 五险一金 - 专项附加扣除 - 起征点5000元；应缴个税 = 应纳税所得额 × 适用税率 - 速算扣除数。税率分7级，从3%到45%。"
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
