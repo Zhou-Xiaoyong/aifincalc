@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>车贷计算器2026 - 汽车贷款月供在线计算器 | 等额本息·等额本金·提前还款 - AI金融计算器</title>
+    <meta name="description" content="2026年最新车贷计算器，支持等额本息、等额本金两种还款方式，提供提前还款分析、还款计划表和购车总成本对比。银行车贷、厂家金融、信用卡分期全覆盖，帮您选择最优车贷方案。">
+    <meta name="keywords" content="车贷计算器2026,汽车贷款计算器,车贷月供计算器,等额本息车贷,等额本金车贷,提前还车贷,购车贷款计算器,车贷利息计算,汽车金融计算器,车贷方案对比">
+    <link rel="canonical" href="https://aifincalc.com/car-loan-calculator/">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css">
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>车贷计算器 2026</h1>
+            <p>支持等额本息、等额本金，智能规划您的购车贷款方案</p>
+        </header>
+
+        <!-- 工具导航 -->
+        <nav class="tool-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../tax-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🚗</span>
+                <span>车贷计算器</span>
+            </a>
+            <a href="../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏦</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <div class="calculator-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="standard">常规车贷</div>
+                <div class="tab" data-tab="comparison">方案对比</div>
+                <div class="tab" data-tab="prepay">提前还款</div>
+            </div>
+
+            <!-- 常规车贷 -->
+            <div class="tab-content active" id="standard">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>贷款金额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="loanAmount" class="form-control" placeholder="请输入贷款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>贷款期限 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="loanYears" class="form-control" value="3" min="1" max="7">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="loanRate" class="form-control" value="4.50" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">银行车贷约3.5%-7%</small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="repayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="repayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>首付金额（可选）</label>
+                            <div class="input-group">
+                                <input type="number" id="downPayment" class="form-control" placeholder="首付金额">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>车辆总价（可选）</label>
+                            <div class="input-group">
+                                <input type="number" id="carPrice" class="form-control" placeholder="车辆总价">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculate()">计算车贷</button>
+                </div>
+
+                <div class="result-section" id="resultSection" style="display:none;">
+                    <h3>计算结果</h3>
+                    <div class="result-grid" id="resultGrid"></div>
+
+                    <!-- 购车总成本概览 -->
+                    <div class="cost-overview" id="costOverview" style="display:none;">
+                        <h4>💰 购车成本概览</h4>
+                        <div class="cost-bar-container">
+                            <div class="cost-bar" id="costBar">
+                                <div class="cost-bar-down" id="costBarDown" title="首付"></div>
+                                <div class="cost-bar-loan" id="costBarLoan" title="贷款本金"></div>
+                                <div class="cost-bar-interest" id="costBarInterest" title="贷款利息"></div>
+                            </div>
+                            <div class="cost-legend">
+                                <span class="legend-item"><span class="legend-color" style="background:#667eea;"></span>首付</span>
+                                <span class="legend-item"><span class="legend-color" style="background:#764ba2;"></span>贷款本金</span>
+                                <span class="legend-item"><span class="legend-color" style="background:#fd7e14;"></span>贷款利息</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 还款计划表 -->
+                    <div class="schedule-section">
+                        <h4>📅 还款计划表</h4>
+                        <div class="schedule-toggle">
+                            <button class="btn-toggle active" onclick="showSchedule('yearly')">按年查看</button>
+                            <button class="btn-toggle" onclick="showSchedule('monthly')">按月查看</button>
+                        </div>
+                        <div class="schedule-table" id="scheduleTable"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 方案对比 -->
+            <div class="tab-content" id="comparison">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>车辆总价 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="compCarPrice" class="form-control" placeholder="请输入车辆总价">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>方案一贷款期限</label>
+                            <div class="input-group">
+                                <input type="number" id="compYears1" class="form-control" value="3">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>方案一年利率</label>
+                            <div class="input-group">
+                                <input type="number" id="compRate1" class="form-control" value="4.50" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>方案二贷款期限</label>
+                            <div class="input-group">
+                                <input type="number" id="compYears2" class="form-control" value="5">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>方案二年利率</label>
+                            <div class="input-group">
+                                <input type="number" id="compRate2" class="form-control" value="4.80" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="compRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="compRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="compare()">对比方案</button>
+                </div>
+
+                <div class="result-section" id="compResult" style="display:none;">
+                    <h3>方案对比结果</h3>
+                    <div class="result-grid" id="compResultGrid"></div>
+                    <div class="compare-section">
+                        <h4>📊 详细对比</h4>
+                        <div class="compare-table" id="compTable"></div>
+                    </div>
+                    <div class="ai-suggestions" id="compSuggestions" style="display:none;">
+                        <h4>💡 选车建议</h4>
+                        <div id="compSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 提前还款 -->
+            <div class="tab-content" id="prepay">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label>贷款总额 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="preLoanAmount" class="form-control" placeholder="原始贷款金额">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="preRate" class="form-control" value="4.50" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>贷款期限</label>
+                            <div class="input-group">
+                                <input type="number" id="preYears" class="form-control" value="3">
+                                <span class="unit">年</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="preRepayType" value="equal" checked>
+                                <span>等额本息</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="preRepayType" value="principal">
+                                <span>等额本金</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>已还款期数</label>
+                            <div class="input-group">
+                                <input type="number" id="prePaidMonths" class="form-control" value="12" min="1">
+                                <span class="unit">期</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>计划提前还款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="preAmount" class="form-control" placeholder="提前还款金额">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>提前还款方式</label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="preMethod" value="reduceTerm" checked>
+                                <span>缩短年限，月供不变</span>
+                            </label>
+                            <label class="radio-item">
+                                <input type="radio" name="preMethod" value="reducePayment">
+                                <span>减少月供，年限不变</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculatePrepay()">计算提前还款</button>
+                </div>
+
+                <div class="result-section" id="preResult" style="display:none;">
+                    <h3>提前还款分析</h3>
+                    <div class="result-grid" id="preResultGrid"></div>
+                    <div class="compare-section">
+                        <h4>📊 还款对比</h4>
+                        <div class="compare-table" id="preCompareTable"></div>
+                    </div>
+                    <div class="ai-suggestions" id="preSuggestions" style="display:none;">
+                        <h4>💡 提前还款建议</h4>
+                        <div id="preSuggestionsContent"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 车贷利率参考 -->
+            <div class="rate-reference">
+                <h3>📋 车贷利率参考</h3>
+                <div class="rate-table-container">
+                    <table class="rate-table">
+                        <thead>
+                            <tr>
+                                <th>贷款渠道</th>
+                                <th>年利率范围</th>
+                                <th>特点</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>银行车贷</td>
+                                <td>3.5% - 7%</td>
+                                <td>利率较低，审批较严，需抵押车辆</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>厂家金融</td>
+                                <td>0% - 5%</td>
+                                <td>部分车型0利率，但车价可能无优惠</td>
+                            </tr>
+                            <tr>
+                                <td>信用卡分期</td>
+                                <td>约3.5% - 10%</td>
+                                <td>手续简便，短期（12-24期）较常见</td>
+                            </tr>
+                            <tr>
+                                <td>融资租赁</td>
+                                <td>6% - 12%</td>
+                                <td>门槛低，但总成本较高</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="rate-note">* 以上利率仅供参考，实际利率以金融机构审批为准。厂家"0利率"通常车价无折扣，需综合比较总花费。</p>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2>常见问题</h2>
+
+                <div class="faq-item">
+                    <h4>车贷首付最低多少？</h4>
+                    <p>一般银行车贷要求首付不低于车价的<strong>20%-30%</strong>。部分厂家金融或促销活动可能支持更低首付甚至零首付，但需注意总利息成本可能更高。建议首付尽量多一些，减少贷款金额以降低利息支出。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>车贷最长可以贷几年？</h4>
+                    <p>银行车贷一般最长期限为<strong>5年（60期）</strong>，部分银行和厂家金融可延长至<strong>7年（84期）</strong>。需要注意的是，贷款期限越长，虽然月供越低，但总利息支出会显著增加。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>等额本息和等额本金哪个更划算？</h4>
+                    <p><strong>等额本息：</strong>每月还款金额相同，适合收入稳定的人群，总利息略高。<br><strong>等额本金：</strong>每月本金相同、利息递减，前期月供较高但总利息更少。如果前期资金充裕，等额本金更划算。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>厂家0利率车贷真的免息吗？</h4>
+                    <p>厂家金融的"0利率"确实是免息贷款，但通常会<strong>失去购车优惠或现金优惠</strong>。例如某车正常优惠2万，选择0利率分期可能只能优惠5000元甚至无优惠。建议计算"优惠+利息"的总成本再做决定。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>车贷可以提前还清吗？有违约金吗？</h4>
+                    <p>大部分银行和金融机构允许提前还款，但可能收取<strong>违约金</strong>（一般为剩余本金的1%-3%，或已还利息的一定比例）。具体以贷款合同为准。建议在签订合同前确认提前还款条款。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 页面底部广告 -->
+        <div class="ad-placeholder bottom-ad" id="adSlot2">
+            <span>广告位 - 728x90</span>
+        </div>
+
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="../mortgage-calculator/index.html">房贷计算器</a> | <a href="index.html">车贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="../shared/share.js"></script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "车贷首付最低多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "一般银行车贷要求首付不低于车价的20%-30%。部分厂家金融或促销活动可能支持更低首付甚至零首付，但需注意总利息成本可能更高。建议首付尽量多一些，减少贷款金额以降低利息支出。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "车贷最长可以贷几年？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "银行车贷一般最长期限为5年（60期），部分银行和厂家金融可延长至7年（84期）。贷款期限越长月供越低，但总利息支出会显著增加。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "等额本息和等额本金哪个更划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "等额本息每月还款金额相同，适合收入稳定的人群，总利息略高。等额本金每月本金相同、利息递减，前期月供较高但总利息更少。如果前期资金充裕，等额本金更划算。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "厂家0利率车贷真的免息吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "厂家金融的0利率确实是免息贷款，但通常会失去购车优惠或现金优惠。例如某车正常优惠2万，选择0利率分期可能只能优惠5000元甚至无优惠。建议计算优惠加利息的总成本再做决定。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "车贷可以提前还清吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "大部分银行和金融机构允许提前还款，但可能收取违约金（一般为剩余本金的1%-3%）。具体以贷款合同为准，建议在签订合同前确认提前还款条款。"
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>
