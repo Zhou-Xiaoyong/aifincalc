@@ -13,7 +13,7 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
@@ -64,23 +64,24 @@ header p {
 .tool-nav {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
+    gap: 4px;
+    padding: 8px 14px;
     background: rgba(255,255,255,0.2);
     border-radius: 25px;
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     transition: all 0.3s;
     backdrop-filter: blur(10px);
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -725,6 +726,7 @@ footer a {
     
     .tool-nav {
         gap: 8px;
+        flex-wrap: wrap;
     }
     
     .nav-item {

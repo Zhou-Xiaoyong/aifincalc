@@ -67,14 +67,14 @@ header p {
     justify-content: center;
     gap: 8px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 9px 14px;
+    gap: 4px;
+    padding: 8px 14px;
     background: rgba(255,255,255,0.2);
     border-radius: 25px;
     color: white;
@@ -82,6 +82,7 @@ header p {
     font-size: 13px;
     transition: all 0.3s;
     backdrop-filter: blur(10px);
+    white-space: nowrap;
 }
 
 .nav-item:hover {
@@ -95,7 +96,7 @@ header p {
 }
 
 .nav-icon {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 /* 计算器卡片 */
@@ -678,12 +679,13 @@ footer a {
     }
 
     .tool-nav {
-        gap: 6px;
+        gap: 8px;
+        flex-wrap: wrap;
     }
 
     .nav-item {
-        padding: 7px 10px;
-        font-size: 11px;
+        padding: 8px 12px;
+        font-size: 12px;
     }
 
     .converter-panel {
