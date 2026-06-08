@@ -324,7 +324,7 @@ const LOAN_ABILITY_RATIO = 0.5;
  *   minContribution  最低月缴存额要求（元），低于此值可能影响额度
  *
  * 注意：各城市政策频繁调整，以下为参考值，以当地公积金中心最新公告为准
- * 更新时间：2025年
+ * 更新时间：2026年6月（已更新苏州、成都最新额度）
  */
 const PROVIDENT_FUND_LIMITS = {
     // ── 一线城市 ──
@@ -354,7 +354,7 @@ const PROVIDENT_FUND_LIMITS = {
         balanceX: 10, minContribution: 0
     },
     chengdu: {
-        name: '成都', single: 60, family: 80, second: 40,
+        name: '成都', single: 80, family: 120, second: 60,
         balanceX: 10, minContribution: 0
     },
     wuhan: {
@@ -374,7 +374,7 @@ const PROVIDENT_FUND_LIMITS = {
         balanceX: 10, minContribution: 0
     },
     suzhou: {
-        name: '苏州', single: 60, family: 90, second: 50,
+        name: '苏州', single: 150, family: 200, second: 80,
         balanceX: 10, minContribution: 0
     },
     zhengzhou: {

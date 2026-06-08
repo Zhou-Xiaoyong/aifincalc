@@ -309,6 +309,22 @@ header p {
     line-height: 1.6;
 }
 
+/* 政策更新横幅 */
+.policy-update-banner {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: 14px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #ff9800;
+    color: #e65100;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.policy-update-banner strong {
+    color: #bf360c;
+}
+
 .deduction-banner p {
     margin-bottom: 6px;
 }
