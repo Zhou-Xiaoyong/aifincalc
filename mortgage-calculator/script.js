@@ -84,7 +84,7 @@ function calculateCommercial() {
     displayCommercialResult(result, amount, years);
     
     // 生成还款计划表
-    generateSchedule('comm', result, months, repayType);
+    generateSchedule('comm', result, months, repayType, rate);
     
     // 生成AI建议
     const income = parseFloat(document.getElementById('commIncome').value) || 0;
@@ -215,15 +215,16 @@ function displayCommercialResult(result, amount, years) {
 }
 
 // 生成还款计划表
-function generateSchedule(type, result, months, repayType) {
+// annualRate: 年利率（小数形式，例如 0.036）
+function generateSchedule(type, result, months, repayType, annualRate) {
     let html = '<table><thead><tr><th>期数</th><th>月供</th><th>本金</th><th>利息</th><th>剩余本金</th></tr></thead><tbody>';
     
     if (repayType === 'equal') {
-        const monthlyRate = result.monthlyPayment / result.principal;
+        const monthlyRate = annualRate / 12;
         let remaining = result.principal;
         
         for (let i = 1; i <= Math.min(months, 12); i++) {
-            const interest = remaining * (result.monthlyPayment * 12 - result.principal) / result.principal / 12;
+            const interest = remaining * monthlyRate;
             const principal = result.monthlyPayment - interest;
             remaining -= principal;
             
@@ -549,7 +550,7 @@ function calculatePrepay() {
         result = calculateReducePayment(newPrincipal, rate, months);
     }
     
-    displayPrepayResult(result, prepayAmount, penalty, method);
+    displayPrepayResult(result, prepayAmount, penalty, method, currentPayment);
     generatePrepaySuggestions(result, penalty, method);
     
     document.getElementById('preResult').style.display = 'block';
@@ -606,7 +607,7 @@ function calculateReducePayment(newPrincipal, rate, months) {
 }
 
 // 显示提前还款结果
-function displayPrepayResult(result, prepayAmount, penalty, method) {
+function displayPrepayResult(result, prepayAmount, penalty, method, originalMonthly) {
     let html = '';
     
     if (method === 'reduceTerm') {
@@ -632,7 +633,7 @@ function displayPrepayResult(result, prepayAmount, penalty, method) {
             </div>
             <div class="result-item">
                 <span class="label">月供减少</span>
-                <span class="value success">${formatMoney(result.monthlyPayment - result.newMonthlyPayment)}</span>
+                <span class="value success">${formatMoney(originalMonthly - result.newMonthlyPayment)}</span>
             </div>
             <div class="result-item">
                 <span class="label">还款期限</span>

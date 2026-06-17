@@ -45,139 +45,9 @@ function autoFillSocial() {
     }
 }
 
-// 计算月度个税
-function calculateMonthly() {
-    const salary = parseFloat(document.getElementById('salary').value) || 0;
-    if (salary <= 0) {
-        alert('请输入有效的税前月薪');
-        return;
-    }
+// calculateMonthly 在下方定义（含月度结果存储与年度同步逻辑）
 
-    const socialBase = parseFloat(document.getElementById('socialBase').value) || salary;
-    const pensionRate = parseFloat(document.getElementById('pensionRate').value) || 0;
-    const medicalRate = parseFloat(document.getElementById('medicalRate').value) || 0;
-    const unemploymentRate = parseFloat(document.getElementById('unemploymentRate').value) || 0;
-    const housingRate = parseFloat(document.getElementById('housingRate').value) || 0;
-
-    // 计算五险一金
-    const pension = socialBase * pensionRate / 100;
-    const medical = socialBase * medicalRate / 100;
-    const unemployment = socialBase * unemploymentRate / 100;
-    const housing = socialBase * housingRate / 100;
-    const insurance = pension + medical + unemployment + housing;
-
-    // 计算专项附加扣除
-    let deduction = 0;
-    document.querySelectorAll('.deduction-item input[type="checkbox"]:checked').forEach(cb => {
-        if (cb.id === 'elderly') {
-            deduction += parseFloat(document.getElementById('elderlyAmount').value);
-        } else {
-            deduction += parseFloat(cb.dataset.monthly) || 0;
-        }
-    });
-
-    const otherDeduction = parseFloat(document.getElementById('otherDeduction').value) || 0;
-    deduction += otherDeduction;
-
-    // 计算应纳税所得额（起征点来自 constants.js）
-    const threshold = TAX_THRESHOLD_MONTHLY;
-    const taxable = Math.max(0, salary - insurance - deduction - threshold);
-
-    // 计算个税
-    let tax = 0;
-    let taxDetail = '';
-    if (taxable > 0) {
-        const annualTaxable = taxable * 12;
-        for (let bracket of taxBrackets) {
-            if (annualTaxable <= bracket.limit) {
-                const annualTax = annualTaxable * bracket.rate - bracket.deduction;
-                tax = annualTax / 12;
-                taxDetail = `适用税率 ${(bracket.rate * 100).toFixed(0)}%，速算扣除数 ${bracket.deduction}元/年`;
-                break;
-            }
-        }
-    }
-
-    const income = salary - insurance - tax;
-
-    // 显示结果
-    document.getElementById('resSalary').textContent = formatMoney(salary);
-    document.getElementById('resInsurance').textContent = '-' + formatMoney(insurance);
-    document.getElementById('resDeduction').textContent = '-' + formatMoney(deduction);
-    document.getElementById('resTaxable').textContent = formatMoney(taxable);
-    document.getElementById('resTax').textContent = formatMoney(tax);
-    document.getElementById('resIncome').textContent = formatMoney(income);
-
-    // 显示税率详情
-    document.getElementById('taxDetail').innerHTML = `
-        <h4>计算详情</h4>
-        <table>
-            <tr><th>项目</th><th>金额</th></tr>
-            <tr><td>养老保险</td><td>${formatMoney(pension)}</td></tr>
-            <tr><td>医疗保险</td><td>${formatMoney(medical)}</td></tr>
-            <tr><td>失业保险</td><td>${formatMoney(unemployment)}</td></tr>
-            <tr><td>住房公积金</td><td>${formatMoney(housing)}</td></tr>
-            <tr><td>起征点</td><td>${formatMoney(threshold)}</td></tr>
-        </table>
-        <p style="margin-top:10px;color:#667eea;">${taxDetail}</p>
-    `;
-
-    // 生成AI节税建议
-    generateSuggestions(salary, insurance, deduction, tax, taxable);
-
-    document.getElementById('monthlyResult').style.display = 'block';
-    document.getElementById('monthlyResult').scrollIntoView({ behavior: 'smooth' });
-}
-
-// 计算年终奖个税
-function calculateBonus() {
-    const bonus = parseFloat(document.getElementById('bonus').value) || 0;
-    if (bonus <= 0) {
-        alert('请输入有效的年终奖金额');
-        return;
-    }
-
-    // 年终奖单独计税：除以12找税率
-    const monthlyAvg = bonus / 12;
-    let tax = 0;
-    let rate = 0;
-    
-    for (let bracket of bonusBrackets) {
-        if (monthlyAvg <= bracket.limit) {
-            rate = bracket.rate;
-            tax = bonus * bracket.rate - bracket.deduction;
-            break;
-        }
-    }
-
-    const income = bonus - tax;
-
-    document.getElementById('bonusResultGrid').innerHTML = `
-        <div class="result-item">
-            <span class="label">年终奖总额</span>
-            <span class="value">${formatMoney(bonus)}</span>
-        </div>
-        <div class="result-item">
-            <span class="label">月均金额</span>
-            <span class="value">${formatMoney(monthlyAvg)}</span>
-        </div>
-        <div class="result-item">
-            <span class="label">适用税率</span>
-            <span class="value">${(rate * 100).toFixed(0)}%</span>
-        </div>
-        <div class="result-item highlight">
-            <span class="label">应缴个税</span>
-            <span class="value tax">${formatMoney(tax)}</span>
-        </div>
-        <div class="result-item important">
-            <span class="label">税后收入</span>
-            <span class="value income">${formatMoney(income)}</span>
-        </div>
-    `;
-
-    document.getElementById('bonusResult').style.display = 'block';
-    document.getElementById('bonusResult').scrollIntoView({ behavior: 'smooth' });
-}
+// calculateBonus 在下方定义（含月度结果存储逻辑）
 
 // 计算年度汇算
 function calculateAnnual() {
@@ -323,8 +193,7 @@ document.querySelectorAll('.deduction-item input[type="checkbox"]').forEach(cb =
 let monthlyResultData = null;
 let bonusResultData = null;
 
-// 修改月度计算函数，保存结果
-const originalCalculateMonthly = calculateMonthly;
+// 月度计算函数（含结果存储与年度同步逻辑）
 calculateMonthly = function() {
     const salary = parseFloat(document.getElementById('salary').value) || 0;
     if (salary <= 0) {
@@ -414,8 +283,7 @@ calculateMonthly = function() {
     setTimeout(() => syncAnnualData(), 500);
 };
 
-// 修改年终奖计算函数，保存结果
-const originalCalculateBonus = calculateBonus;
+// 年终奖计算函数（含结果存储逻辑）
 calculateBonus = function() {
     const bonus = parseFloat(document.getElementById('bonus').value) || 0;
     if (bonus <= 0) {
