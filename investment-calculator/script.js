@@ -196,7 +196,8 @@ function calculateCompound() {
             <tbody>
     `;
     yearlyData.forEach(d => {
-        const actualRate = ((d.total / d.invested - 1) / d.year * 100).toFixed(1);
+        // 使用复合年化增长率(CAGR)公式：(期末/期初)^(1/年限) - 1
+        const actualRate = ((Math.pow(d.total / d.invested, 1 / d.year) - 1) * 100).toFixed(1);
         tableHtml += `
             <tr>
                 <td>第${d.year}年</td>

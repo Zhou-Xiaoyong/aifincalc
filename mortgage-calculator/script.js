@@ -143,10 +143,14 @@ function calculatePrincipalPayment(principal, monthlyRate, months) {
         });
     }
     
+    // 每月递减金额 = 每月本金 × 月利率
+    const monthlyDecrease = monthlyPrincipal * monthlyRate_decimal;
+    
     return {
         firstMonthPayment: firstMonthPayment,
         lastMonthPayment: lastMonthPayment,
         monthlyPrincipal: monthlyPrincipal,
+        monthlyDecrease: monthlyDecrease,
         totalPayment: principal + totalInterest,
         totalInterest: totalInterest,
         principal: principal,
@@ -187,7 +191,7 @@ function displayCommercialResult(result, amount, years) {
             </div>
             <div class="result-item">
                 <span class="label">每月递减</span>
-                <span class="value success">${formatMoney(result.monthlyPrincipal * (result.months > 1 ? result.schedule[0].interest - result.schedule[1].interest : 0) / result.monthlyPrincipal)}</span>
+                <span class="value success">${formatMoney(result.monthlyDecrease)}</span>
             </div>
             <div class="result-item">
                 <span class="label">还款总额</span>
