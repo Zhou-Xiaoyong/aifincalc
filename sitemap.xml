@@ -2,62 +2,212 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/tax-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/social-insurance-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/mortgage-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/car-loan-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/provident-fund-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/deposit-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/exchange-rate-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/investment-calculator/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article1/</loc>
+        <lastmod>2026-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article2/</loc>
+        <lastmod>2026-07-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article3/</loc>
+        <lastmod>2026-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article4/</loc>
+        <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/about/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/contact/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/privacy/</loc>
-        <lastmod>2026-05-13</lastmod>
+        <lastmod>2026-07-12</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/beijing/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/shanghai/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/guangzhou/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/shenzhen/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/hangzhou/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/nanjing/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/chengdu/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/wuhan/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/xian/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/beijing/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/shanghai/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/guangzhou/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/shenzhen/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/hangzhou/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/nanjing/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/chengdu/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/wuhan/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/xian/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 </urlset>

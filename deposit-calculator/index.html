@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>存款利息计算器2026 - 银行定期活期存款利率计算工具 - AI金融计算器</title>
+    <meta name="description" content="2026专业存款利息计算器，支持活期存款、整存整取（3月/6月/1年/2年/3年/5年）、零存整取、通知存款等多种存款类型。输入存款金额、期限与年利率，自动计算到期利息、本息合计与每月利息。支持自定义利率，精确计算您的存款收益。">
+    <meta name="keywords" content="存款利息计算器,定期存款计算器,活期存款利息,整存整取计算器,零存整取利息,通知存款利率,银行存款计算,本息合计计算,存款利率2026">
+    <link rel="canonical" href="https://aifincalc.com/deposit-calculator/">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css">
+    <!-- 百度统计 -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <!-- Schema.org: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "存款利息计算器2026",
+        "description": "2026专业存款利息计算器，支持活期存款、整存整取、零存整取、通知存款等多种存款类型，自动计算到期利息与本息合计",
+        "provider": {
+            "@type": "Organization",
+            "name": "AI金融计算器",
+            "url": "https://aifincalc.com/"
+        },
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aifincalc.com/deposit-calculator/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "features": [
+            "活期存款计算",
+            "整存整取计算",
+            "零存整取计算",
+            "通知存款计算",
+            "自定义利率",
+            "到期利息计算",
+            "本息合计计算",
+            "每月利息计算"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>存款利息计算器 2026</h1>
+            <p>活期 · 定期 · 零存整取 · 通知存款 — 精准计算您的存款收益</p>
+        </header>
+
+        <!-- 工具导航 -->
+        <nav class="tool-nav">
+            <a href="../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../tax-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="../car-loan-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🚗</span>
+                <span>车贷计算器</span>
+            </a>
+            <a href="../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏦</span>
+                <span>存款计算</span>
+            </a>
+        </nav>
+
+        <div class="calculator-card">
+            <div class="tabs">
+                <div class="tab active" data-tab="demand">活期存款</div>
+                <div class="tab" data-tab="fixed">整存整取</div>
+                <div class="tab" data-tab="installment">零存整取</div>
+                <div class="tab" data-tab="notice">通知存款</div>
+            </div>
+
+            <!-- 活期存款 -->
+            <div class="tab-content active" id="demand">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>存款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="demandPrincipal" class="form-control" placeholder="请输入存款金额" value="100000">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>存款期限 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="demandDays" class="form-control" placeholder="存款天数" value="90">
+                                <span class="unit">天</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="demandRate" class="form-control" placeholder="年利率" value="0.3" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">参考：银行活期存款约0.25-0.35%</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>计息方式</label>
+                            <select id="demandMethod" class="form-control">
+                                <option value="daily">按日计息</option>
+                                <option value="quarterly">按季结息</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateDemand()">计算利息</button>
+                </div>
+
+                <div class="result-section" id="demandResult" style="display:none;">
+                    <h3>活期存款计算结果</h3>
+                    <div class="result-grid" id="demandResultGrid"></div>
+                </div>
+            </div>
+
+            <!-- 整存整取 -->
+            <div class="tab-content" id="fixed">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>存款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="fixedPrincipal" class="form-control" placeholder="请输入存款金额" value="100000">
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>存款期限 <span class="required">*</span></label>
+                            <select id="fixedTerm" class="form-control" onchange="setFixedRate()">
+                                <option value="0.25">3个月</option>
+                                <option value="0.5">6个月</option>
+                                <option value="1" selected>1年</option>
+                                <option value="2">2年</option>
+                                <option value="3">3年</option>
+                                <option value="5">5年</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="fixedRate" class="form-control" placeholder="年利率" value="1.55" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">选择期限后自动填充参考利率</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>到期处理</label>
+                            <select id="fixedRollover" class="form-control">
+                                <option value="none">到期支取</option>
+                                <option value="principal">本金自动转存</option>
+                                <option value="all">本息自动转存</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>转存次数（自动转存时有效）</label>
+                        <div class="input-group">
+                            <input type="number" id="fixedRolloverTimes" class="form-control" placeholder="转存次数" value="0" min="0" max="20">
+                            <span class="unit">次</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateFixed()">计算利息</button>
+                </div>
+
+                <div class="result-section" id="fixedResult" style="display:none;">
+                    <h3>整存整取计算结果</h3>
+                    <div class="result-grid" id="fixedResultGrid"></div>
+                    <div class="rollover-table" id="rolloverTable" style="display:none;"></div>
+                </div>
+            </div>
+
+            <!-- 零存整取 -->
+            <div class="tab-content" id="installment">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>每月存入金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="installmentAmount" class="form-control" placeholder="每月存入金额" value="2000">
+                                <span class="unit">元/月</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>存款期限 <span class="required">*</span></label>
+                            <select id="installmentTerm" class="form-control" onchange="setInstallmentRate()">
+                                <option value="1" selected>1年</option>
+                                <option value="3">3年</option>
+                                <option value="5">5年</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="installmentRate" class="form-control" placeholder="年利率" value="1.35" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">选择期限后自动填充参考利率</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>存入日期</label>
+                            <select id="installmentDate" class="form-control">
+                                <option value="beginning">月初存入</option>
+                                <option value="end" selected>月末存入</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateInstallment()">计算利息</button>
+                </div>
+
+                <div class="result-section" id="installmentResult" style="display:none;">
+                    <h3>零存整取计算结果</h3>
+                    <div class="result-grid" id="installmentResultGrid"></div>
+                </div>
+            </div>
+
+            <!-- 通知存款 -->
+            <div class="tab-content" id="notice">
+                <div class="form-section">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>存款金额 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="noticePrincipal" class="form-control" placeholder="请输入存款金额" value="100000">
+                                <span class="unit">元</span>
+                            </div>
+                            <small class="help-text">通知存款起存金额一般为5万元</small>
+                        </div>
+                        <div class="form-group half">
+                            <label>通知类型 <span class="required">*</span></label>
+                            <select id="noticeType" class="form-control" onchange="setNoticeRate()">
+                                <option value="1" selected>1天通知存款</option>
+                                <option value="7">7天通知存款</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>存款天数 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="noticeDays" class="form-control" placeholder="存款天数" value="30">
+                                <span class="unit">天</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>年利率 <span class="required">*</span></label>
+                            <div class="input-group">
+                                <input type="number" id="noticeRate" class="form-control" placeholder="年利率" value="1.0" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                            <small class="help-text">选择类型后自动填充参考利率</small>
+                        </div>
+                    </div>
+
+                    <button class="btn-calculate" onclick="calculateNotice()">计算利息</button>
+                </div>
+
+                <div class="result-section" id="noticeResult" style="display:none;">
+                    <h3>通知存款计算结果</h3>
+                    <div class="result-grid" id="noticeResultGrid"></div>
+                </div>
+            </div>
+
+            <!-- 存款利率参考表 -->
+            <div class="rate-reference">
+                <h3>📊 2026年银行存款利率参考</h3>
+                <div class="rate-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>存款类型</th>
+                                <th>存期</th>
+                                <th>参考年利率</th>
+                                <th>特点</th>
+                                <th>适合人群</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>活期存款</td>
+                                <td>随时存取</td>
+                                <td>0.25-0.35%</td>
+                                <td>流动性强，收益低</td>
+                                <td>日常备用金</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="6">整存整取</td>
+                                <td>3个月</td>
+                                <td>1.10-1.35%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>短期闲置资金</td>
+                            </tr>
+                            <tr>
+                                <td>6个月</td>
+                                <td>1.30-1.55%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>中短期闲置资金</td>
+                            </tr>
+                            <tr class="highlight">
+                                <td>1年</td>
+                                <td>1.45-1.75%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>一年期闲置资金</td>
+                            </tr>
+                            <tr>
+                                <td>2年</td>
+                                <td>1.65-2.00%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>中期闲置资金</td>
+                            </tr>
+                            <tr>
+                                <td>3年</td>
+                                <td>1.95-2.40%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>中长期闲置资金</td>
+                            </tr>
+                            <tr>
+                                <td>5年</td>
+                                <td>2.00-2.65%</td>
+                                <td>定期存款，收益稳定</td>
+                                <td>长期闲置资金</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">零存整取</td>
+                                <td>1年</td>
+                                <td>1.25-1.45%</td>
+                                <td>每月定存，积少成多</td>
+                                <td>月光族强制储蓄</td>
+                            </tr>
+                            <tr>
+                                <td>3年</td>
+                                <td>1.45-1.70%</td>
+                                <td>每月定存，积少成多</td>
+                                <td>中期储蓄目标</td>
+                            </tr>
+                            <tr>
+                                <td>5年</td>
+                                <td>1.55-1.85%</td>
+                                <td>每月定存，积少成多</td>
+                                <td>长期储蓄目标</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">通知存款</td>
+                                <td>1天通知</td>
+                                <td>0.80-1.05%</td>
+                                <td>提前1天通知支取</td>
+                                <td>短期大额资金</td>
+                            </tr>
+                            <tr>
+                                <td>7天通知</td>
+                                <td>1.10-1.45%</td>
+                                <td>提前7天通知支取</td>
+                                <td>短期大额资金</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2>常见问题</h2>
+                <div class="faq-item">
+                    <h4>什么是整存整取？</h4>
+                    <p>整存整取是指开户时约定存期，一次性存入，到期一次性支取本息的一种定期存款方式。存期分为3个月、6个月、1年、2年、3年、5年六个档次，存期越长利率越高。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>什么是零存整取？</h4>
+                    <p>零存整取是指每月固定存入金额，到期一次性支取本息的一种储蓄方式。存期分为1年、3年、5年三个档次，适合每月有固定结余的储户，可以积少成多。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>什么是通知存款？</h4>
+                    <p>通知存款是一种不约定存期、支取时需提前通知银行、约定支取日期和金额的存款。分为1天通知存款和7天通知存款两种，起存金额一般为5万元，利率高于活期存款。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>定期存款提前支取利息怎么算？</h4>
+                    <p>定期存款提前支取的，按支取日银行挂牌公告的活期存款利率计付利息。部分提前支取的，提前支取部分按活期利率计息，剩余部分仍按原定期利率计息。建议根据资金使用计划合理选择存期。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 工具说明区域 -->
+        <div class="tool-intro">
+            <h2>📖 存款利息计算器使用指南</h2>
+            <div class="intro-section">
+                <h3>一、输入项详细说明</h3>
+                <div class="input-guide">
+                    <div class="guide-item">
+                        <h4>💰 存款金额（本金）</h4>
+                        <p>指您计划存入银行的初始资金数额，是计算利息的基础。不同存款类型有不同的起存金额要求：活期存款一般1元起存，整存整取50元起存，零存整取一般5元起存，通知存款一般5万元起存。请根据您的资金状况和存款类型合理输入。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>📅 存款期限</h4>
+                        <p>指您计划将资金存入银行的时间长度。不同存款类型的期限选择不同：活期存款没有固定期限，随时可以存取；整存整取有3个月、6个月、1年、2年、3年、5年六个档次；零存整取有1年、3年、5年三个档次；通知存款按实际存款天数计算。一般来说，存期越长，利率越高。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>📊 年利率</h4>
+                        <p>指银行公布的一年期存款利率，通常以百分比表示。不同银行、不同存款类型、不同期限的利率各不相同。本计算器提供参考利率，您也可以根据实际存款银行的利率进行自定义设置。请注意，银行存款利率可能会随市场利率变化而调整。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>🔄 计息方式</h4>
+                        <p>指利息的计算和结算方式。活期存款一般按日计息、按季结息；定期存款一般到期一次性还本付息；零存整取到期一次性支取本息；通知存款按实际存期计息。不同的计息方式会对最终收益产生一定影响。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>📆 自动转存</h4>
+                        <p>指定期存款到期后，银行自动将到期的存款本息按相同存期一并转存，不受次数限制。选择自动转存可以避免存款到期后忘记转存而按活期计息的情况。本计算器支持本金自动转存和本息自动转存两种方式。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>💵 每月存入金额（零存整取）</h4>
+                        <p>指零存整取方式下，您每月计划存入的固定金额。零存整取要求每月存入固定金额，中途如有漏存，应在次月补齐，未补齐者视同违约。这种存款方式非常适合有固定收入、想要强制储蓄的人群。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-section">
+                <h3>二、计算公式详解</h3>
+                <div class="formula-guide">
+                    <div class="formula-item">
+                        <h4>📝 活期存款利息计算公式</h4>
+                        <p><strong>利息 = 本金 × 年利率 ÷ 360 × 存款天数</strong></p>
+                        <p>其中：</p>
+                        <ul>
+                            <li><strong>本金</strong> = 存款金额</li>
+                            <li><strong>年利率</strong> = 银行公布的活期存款年利率</li>
+                            <li><strong>存款天数</strong> = 实际存款天数</li>
+                        </ul>
+                        <p class="formula-note">注：银行计息一般按一年360天计算，也有按365天计算的，以银行规定为准。活期存款通常按季结息，每季度末月20日为结息日。</p>
+                        <p class="formula-example">例如：本金10万元，活期年利率0.3%，存款90天：</p>
+                        <p class="formula-example">利息 = 100000 × 0.3% ÷ 360 × 90 = 75元</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>🏦 整存整取利息计算公式</h4>
+                        <p><strong>利息 = 本金 × 年利率 × 存期</strong></p>
+                        <p>其中：</p>
+                        <ul>
+                            <li><strong>本金</strong> = 存款金额</li>
+                            <li><strong>年利率</strong> = 对应存期的定期存款年利率</li>
+                            <li><strong>存期</strong> = 存款年限（以年为单位）</li>
+                        </ul>
+                        <p class="formula-note">注：整存整取定期存款到期一次性还本付息。提前支取的，按支取日活期存款利率计息。</p>
+                        <p class="formula-example">例如：本金10万元，1年期定期年利率1.55%，存期1年：</p>
+                        <p class="formula-example">利息 = 100000 × 1.55% × 1 = 1550元</p>
+                        <p class="formula-example">本息合计 = 100000 + 1550 = 101550元</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>💹 零存整取利息计算公式</h4>
+                        <p><strong>利息 = 月存金额 × 累计月积数 × 月利率</strong></p>
+                        <p>其中：</p>
+                        <ul>
+                            <li><strong>月存金额</strong> = 每月存入的固定金额</li>
+                            <li><strong>累计月积数</strong> = (存入次数 + 1) ÷ 2 × 存入次数</li>
+                            <li><strong>月利率</strong> = 年利率 ÷ 12</li>
+                        </ul>
+                        <p class="formula-note">注：零存整取是每月存入固定金额，到期一次性支取本息的储蓄方式。利息计算采用累计月积数法。</p>
+                        <p class="formula-example">例如：每月存2000元，1年期零存整取年利率1.35%：</p>
+                        <p class="formula-example">累计月积数 = (12 + 1) ÷ 2 × 12 = 78</p>
+                        <p class="formula-example">月利率 = 1.35% ÷ 12 = 0.1125%</p>
+                        <p class="formula-example">利息 = 2000 × 78 × 0.1125% = 175.5元</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>📢 通知存款利息计算公式</h4>
+                        <p><strong>利息 = 本金 × 年利率 ÷ 360 × 存款天数</strong></p>
+                        <p>其中：</p>
+                        <ul>
+                            <li><strong>本金</strong> = 存款金额（一般5万元起存）</li>
+                            <li><strong>年利率</strong> = 对应通知类型的存款年利率</li>
+                            <li><strong>存款天数</strong> = 实际存款天数</li>
+                        </ul>
+                        <p class="formula-note">注：通知存款分为1天通知和7天通知两种，支取时需提前相应天数通知银行。实际存期不足通知期限的，按活期存款利率计息。</p>
+                        <p class="formula-example">例如：本金10万元，7天通知存款年利率1.35%，存款30天：</p>
+                        <p class="formula-example">利息 = 100000 × 1.35% ÷ 360 × 30 = 112.5元</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>🔄 自动转存计算公式</h4>
+                        <p><strong>到期本息 = 本金 × (1 + 年利率 × 存期)^转存次数+1</strong></p>
+                        <p>其中：</p>
+                        <ul>
+                            <li><strong>本金</strong> = 初始存款金额</li>
+                            <li><strong>年利率</strong> = 每次转存时的利率（假设利率不变）</li>
+                            <li><strong>存期</strong> = 每次转存的期限（以年为单位）</li>
+                            <li><strong>转存次数</strong> = 自动转存的次数</li>
+                        </ul>
+                        <p class="formula-note">注：自动转存时，转存利率按转存日银行挂牌的同档次定期利率执行。本计算器假设利率不变进行计算。</p>
+                        <p class="formula-example">例如：本金10万元，1年期年利率1.55%，本息自动转存2次（共存3年）：</p>
+                        <p class="formula-example">到期本息 = 100000 × (1 + 1.55% × 1)^3 ≈ 104722元</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-section">
+                <h3>三、使用案例</h3>
+                <div class="case-guide">
+                    <div class="case-item">
+                        <h4>📌 案例一：活期存款——10万元备用金的收益</h4>
+                        <p><strong>案例背景：</strong>张女士有10万元应急备用金，为了保证流动性，选择存活期存款，预计90天内不会动用。当前银行活期存款年利率为0.3%。</p>
+                        <p><strong>输入数据：</strong></p>
+                        <ul>
+                            <li>存款金额：100,000元</li>
+                            <li>存款期限：90天</li>
+                            <li>年利率：0.3%</li>
+                            <li>计息方式：按日计息</li>
+                        </ul>
+                        <p><strong>计算结果：</strong></p>
+                        <ul>
+                            <li>到期利息：75元</li>
+                            <li>本息合计：100,075元</li>
+                            <li>每月利息：约25元</li>
+                        </ul>
+                        <p><strong>关键启示：</strong>活期存款的最大优势是流动性强，可以随时存取，但收益率很低。10万元存活期一年利息约300元，仅相当于定期存款的五分之一。建议只将3-6个月的生活开支作为备用金存活期，其余资金可以考虑收益更高的理财方式。</p>
+                    </div>
+                    <div class="case-item">
+                        <h4>📌 案例二：整存整取——10万元1年期定期存款</h4>
+                        <p><strong>案例背景：</strong>李先生有10万元闲置资金，预计一年内不会使用，选择存1年期整存整取定期存款。当前银行1年期定期存款年利率为1.55%。</p>
+                        <p><strong>输入数据：</strong></p>
+                        <ul>
+                            <li>存款金额：100,000元</li>
+                            <li>存款期限：1年</li>
+                            <li>年利率：1.55%</li>
+                            <li>到期处理：到期支取</li>
+                        </ul>
+                        <p><strong>计算结果：</strong></p>
+                        <ul>
+                            <li>到期利息：1,550元</li>
+                            <li>本息合计：101,550元</li>
+                            <li>每月利息：约129元</li>
+                        </ul>
+                        <p><strong>关键启示：</strong>1年期定期存款的收益是活期存款的5倍多。如果选择3年期定期存款，利率约2.25%，每年利息可达2250元，收益更高。但需要注意的是，定期存款提前支取会按活期利率计息，因此应根据资金使用计划合理选择存期。</p>
+                    </div>
+                    <div class="case-item">
+                        <h4>📌 案例三：零存整取——每月2000元的强制储蓄</h4>
+                        <p><strong>案例背景：</strong>王小姐刚参加工作，每月工资有2000元结余，想通过零存整取的方式强制储蓄，计划存1年期。当前银行1年期零存整取年利率为1.35%。</p>
+                        <p><strong>输入数据：</strong></p>
+                        <ul>
+                            <li>每月存入金额：2,000元</li>
+                            <li>存款期限：1年</li>
+                            <li>年利率：1.35%</li>
+                            <li>存入日期：月末存入</li>
+                        </ul>
+                        <p><strong>计算结果：</strong></p>
+                        <ul>
+                            <li>累计存入本金：24,000元</li>
+                            <li>到期利息：175.5元</li>
+                            <li>本息合计：24,175.5元</li>
+                            <li>每月平均利息：约14.6元</li>
+                        </ul>
+                        <p><strong>关键启示：</strong>零存整取虽然利息不高，但最大的好处是可以帮助养成强制储蓄的习惯。每月存2000元，一年下来就能攒下2.4万元。如果坚持存5年，累计存入12万元，利息约4500元，本息合计超过12.4万元。积少成多，聚沙成塔。</p>
+                    </div>
+                    <div class="case-item">
+                        <h4>📌 案例四：通知存款——10万元短期闲置资金</h4>
+                        <p><strong>案例背景：</strong>陈先生有10万元资金，预计30天后需要使用，为了获得比活期更高的收益，选择存7天通知存款。当前银行7天通知存款年利率为1.35%。</p>
+                        <p><strong>输入数据：</strong></p>
+                        <ul>
+                            <li>存款金额：100,000元</li>
+                            <li>通知类型：7天通知存款</li>
+                            <li>存款天数：30天</li>
+                            <li>年利率：1.35%</li>
+                        </ul>
+                        <p><strong>计算结果：</strong></p>
+                        <ul>
+                            <li>到期利息：112.5元</li>
+                            <li>本息合计：100,112.5元</li>
+                            <li>每月利息：约112.5元</li>
+                        </ul>
+                        <p><strong>关键启示：</strong>通知存款的利率介于活期和定期之间，比活期存款收益高，又比定期存款灵活，非常适合短期大额闲置资金。同样10万元存30天，活期存款利息只有25元，而7天通知存款利息有112.5元，是活期的4.5倍。但通知存款起存金额较高（一般5万元），且支取需要提前通知银行。</p>
+                    </div>
+                    <div class="case-item">
+                        <h4>📌 案例五：自动转存——10万元三年期滚存</h4>
+                        <p><strong>案例背景：</strong>刘先生有10万元长期闲置资金，选择存1年期定期存款并设置本息自动转存，计划连续存3年。当前银行1年期定期存款年利率为1.55%。</p>
+                        <p><strong>输入数据：</strong></p>
+                        <ul>
+                            <li>存款金额：100,000元</li>
+                            <li>存款期限：1年</li>
+                            <li>年利率：1.55%</li>
+                            <li>到期处理：本息自动转存</li>
+                            <li>转存次数：2次</li>
+                        </ul>
+                        <p><strong>计算结果：</strong></p>
+                        <ul>
+                            <li>第1年末本息：101,550元</li>
+                            <li>第2年末本息：103,124元</li>
+                            <li>第3年末本息：104,722元</li>
+                            <li>3年总利息：4,722元</li>
+                            <li>年均利息：约1,574元</li>
+                        </ul>
+                        <p><strong>关键启示：</strong>自动转存可以利滚利，避免存款到期后忘记转存而损失利息。但需要注意的是，转存时的利率是按转存日的利率执行的，如果利率下降，转存后的收益也会相应减少。另外，如果存期较长（如3年以上），直接存3年期定期存款的利率通常更高，总收益也更多。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="../mortgage-calculator/index.html">房贷计算器</a> | <a href="../car-loan-calculator/index.html">车贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a> | <a href="index.html">存款计算</a> | <a href="../about/index.html">关于本站</a> | <a href="../contact/index.html">联系我们</a> | <a href="../privacy/index.html">隐私政策</a></p>
+        </footer>
+    </div>
+
+    <script src="../shared/constants.js"></script>
+    <script src="script.js"></script>
+    <script src="../shared/share.js"></script>
+    <script src="../shared/analytics.js"></script>
+
+    <!-- FAQ Schema 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "什么是整存整取？整存整取利息怎么算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "整存整取是指开户时约定存期，一次性存入，到期一次性支取本息的定期存款方式。存期分为3个月、6个月、1年、2年、3年、5年六个档次。利息计算公式：利息 = 本金 × 年利率 × 存期。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "什么是零存整取？零存整取利息怎么算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "零存整取是指每月固定存入金额，到期一次性支取本息的储蓄方式。存期分为1年、3年、5年三个档次。利息计算公式：利息 = 月存金额 × 累计月积数 × 月利率，其中累计月积数 = (存入次数 + 1) ÷ 2 × 存入次数。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "什么是通知存款？通知存款利率是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "通知存款是一种不约定存期、支取时需提前通知银行的存款，分为1天通知和7天通知两种，起存金额一般为5万元。1天通知存款利率约0.8-1.05%，7天通知存款利率约1.1-1.45%，均高于活期存款利率。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "定期存款提前支取利息怎么算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "定期存款提前支取的，按支取日银行挂牌公告的活期存款利率计付利息。部分提前支取的，提前支取部分按活期利率计息，剩余部分仍按原定期利率计息。建议根据资金使用计划合理选择存期，或选择分批存入。"
+                }
+            }
+        ]
+    }
+    </script>
+</body>
+</html>

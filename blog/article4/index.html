@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金定投收益计算方法和定投复利公式详解 - AI金融计算器博客</title>
+    <meta name="description" content="基金定投收益怎么算？详解定投复利公式、平均成本法、年化收益率计算，附每月定投1000元20年真实收益案例和72法则，帮你科学规划长期投资。">
+    <meta name="keywords" content="基金定投收益计算,定投复利公式,定投收益率,平均成本法,72法则,基金定投计算器,定投收益模拟,长期投资">
+    <link rel="canonical" href="https://aifincalc.com/blog/article4/">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../shared/share.css">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "基金定投收益计算方法和定投复利公式详解",
+        "datePublished": "2026-07-11",
+        "author": {
+            "@type": "Person",
+            "name": "AI金融计算器"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI金融计算器"
+        },
+        "mainEntityOfPage": "https://aifincalc.com/blog/article4/"
+    }
+    </script>
+</head>
+<body>
+    <div class="hero-bg"></div>
+
+    <div class="container">
+        <header class="sub-header">
+            <a href="../../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <h1>金融知识博客</h1>
+            <p class="tagline">政策解读 · 理财干货 · 省钱技巧</p>
+        </header>
+
+        <nav class="tool-nav">
+            <a href="../../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../index.html" class="nav-item active">
+                <span class="nav-icon">📝</span>
+                <span>博客</span>
+            </a>
+            <a href="../../tax-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="../../car-loan-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🚗</span>
+                <span>车贷计算器</span>
+            </a>
+            <a href="../../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏦</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <article class="article-detail">
+            <div class="breadcrumb">
+                <a href="../../index.html">首页</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../index.html">博客</a>
+                <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current">基金定投收益计算方法和定投复利公式详解</span>
+            </div>
+
+            <div class="article-header">
+                <h1>基金定投收益计算方法和定投复利公式详解，每月1000元能赚多少？</h1>
+                <div class="article-info">
+                    <div class="article-author">
+                        <div class="author-avatar">📈</div>
+                        <div>
+                            <div class="author-name">理财研究组</div>
+                            <div class="publish-time">2026年7月11日</div>
+                        </div>
+                    </div>
+                    <div class="article-stats">
+                        <span class="stat-item">👁 3,124 阅读</span>
+                        <span class="stat-item">⏱ 阅读约9分钟</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p>
+                    "每月定投1000元，坚持20年，能赚到100万吗？"
+                    这是很多刚开始接触基金定投的朋友最常问的问题。
+                    定投的魅力在于<strong>复利效应</strong>和<strong>平均成本法</strong>，但具体能赚多少钱，很多人心里没底。
+                </p>
+                <p>
+                    今天这篇文章，我们把基金定投的收益计算方法讲透，从最简单的定投公式到真实的市场案例，
+                    再到72法则等实用估算技巧。看完你就能自己算定投收益，科学规划长期投资。
+                </p>
+
+                <h2>一、定投的核心逻辑：平均成本法与复利效应</h2>
+                <p>
+                    在讲计算方法之前，我们先搞清楚定投为什么能赚钱，以及它的两个核心原理。
+                </p>
+
+                <h3>1. 平均成本法：摊薄成本，降低风险</h3>
+                <p>
+                    <strong>平均成本法</strong>（Dollar Cost Averaging）是定投最基本的原理。
+                    简单说就是：<strong>固定时间、固定金额买入</strong>。
+                    价格高的时候买的份额少，价格低的时候买的份额多，长期下来，平均成本会被拉低。
+                </p>
+                <p>
+                    举个例子：你每月投1000元，第一个月净值1元，买了1000份；第二个月净值跌到0.8元，买了1250份；
+                    第三个月净值涨到1.2元，买了833份。三个月总共投了3000元，持有3083份，平均成本约0.97元/份。
+                </p>
+                <p>
+                    你看，虽然三个月后净值回到了1.2元，但因为低位买得多，你赚的比一次性投入更多。
+                    这就是平均成本法的威力——不用择时，长期坚持就能摊薄成本。
+                </p>
+
+                <h3>2. 复利效应：时间是最好的朋友</h3>
+                <p>
+                    爱因斯坦说过："复利是世界第八大奇迹，知道它的人赚取它，不知道的人支付它。"
+                    定投的真正威力，来自于<strong>长期复利</strong>。
+                </p>
+                <p>
+                    什么是复利？就是利滚利——今年的收益，明年会变成本金继续产生收益。
+                    时间越长，复利的效果越惊人。这也是为什么我们常说，定投要趁早，要坚持。
+                </p>
+
+                <div class="highlight-box green">
+                    <div class="highlight-title">💡 关键区别</div>
+                    <div class="highlight-content">
+                        <p>一次性投入是"本金复利"，而定投是"分批本金+复利"的组合。</p>
+                        <p>定投的收益计算比一次性投入复杂，因为每一笔钱投入的时间不一样，产生收益的时间也不一样。</p>
+                        <p>所以，定投收益不能简单套用复利公式，需要用专门的方法计算。</p>
+                    </div>
+                </div>
+
+                <h2>二、定投收益的3种计算方法</h2>
+                <p>
+                    定投收益怎么算？这里介绍3种常用的方法，从简单到复杂，各有适用场景。
+                </p>
+
+                <h3>方法一：简单收益率法（最直观）</h3>
+                <p>
+                    最简单的算法：<br>
+                    <strong>收益率 = (期末总市值 - 总投入) ÷ 总投入 × 100%</strong>
+                </p>
+                <p>
+                    比如你定投了3年，总共投了3.6万，现在账户里有4.5万。<br>
+                    收益率 = (45,000 - 36,000) ÷ 36,000 × 100% = 25%
+                </p>
+                <p>
+                    <strong>优点：</strong>简单易懂，普通人一看就明白。<br>
+                    <strong>缺点：</strong>没有考虑资金的时间价值。定投是分批投入的，第一个月投的钱和最后一个月投的钱，
+                    产生收益的时间完全不同，简单收益率不能反映真实的年化收益水平。
+                </p>
+
+                <h3>方法二：年化收益率法（IRR内部收益率）</h3>
+                <p>
+                    这是最准确、最专业的计算方法，叫<strong>内部收益率（IRR）</strong>。
+                    它考虑了每一笔资金的投入时间，能真实反映定投的年化收益水平。
+                </p>
+                <p>
+                    IRR的计算比较复杂，简单说就是：找到一个折现率，让所有投入资金的现值等于期末总市值。
+                    手动计算很麻烦，一般用Excel的IRR函数或XIRR函数来算。
+                </p>
+
+                <div class="case-card">
+                    <div class="case-title">📊 案例：IRR计算示例</div>
+                    <div class="case-content">
+                        <p>每月定投1000元，定投6个月，各月月末市值如下：</p>
+                        <p>第1个月末：1,050元<br>第2个月末：2,150元<br>第3个月末：3,000元<br>
+                        第4个月末：4,200元<br>第5个月末：5,300元<br>第6个月末：6,600元</p>
+                        <p>用IRR计算，月化收益率约为1.6%，年化收益率约为20.98%。</p>
+                        <p>而简单收益率 = (6,600 - 6,000) ÷ 6,000 = 10%，看起来比年化收益率低，
+                        这是因为简单收益率没考虑资金时间价值。</p>
+                    </div>
+                </div>
+
+                <h3>方法三：定投复利公式估算（近似计算）</h3>
+                <p>
+                    如果不想算IRR这么复杂，可以用定投复利的近似公式快速估算：
+                </p>
+                <blockquote>
+                    <p><strong>定投终值 ≈ 每月投入金额 × 12 × [((1 + 年化收益率)^年数 - 1) ÷ 年化收益率] × (1 + 年化收益率 ÷ 2)</strong></p>
+                </blockquote>
+                <p>
+                    这个公式的原理是：把定投近似看成"年中一次性投入"，也就是假设全年的投入是在年中统一投入的，
+                    所以乘了一个(1 + 年化收益率 ÷ 2)的调整系数。
+                </p>
+                <p>
+                    这个估算方法在年化收益率不太高（15%以内）、期限不太长（10年以内）的时候，误差比较小，
+                    适合做快速估算。
+                </p>
+
+                <h2>三、真实案例：每月定投1000元，20年能赚多少？</h2>
+                <p>
+                    说了这么多公式，可能还是没感觉。我们用最经典的问题来算一算：
+                    <strong>每月定投1000元，坚持20年，最终能有多少钱？</strong>
+                </p>
+                <p>
+                    我们分别按不同的年化收益率来测算，看看复利的威力到底有多大。
+                </p>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>年化收益率</th>
+                            <th>总投入（20年）</th>
+                            <th>期末总资产</th>
+                            <th>总收益</th>
+                            <th>收益倍数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>3%（银行理财）</td>
+                            <td>240,000元</td>
+                            <td>328,302元</td>
+                            <td>88,302元</td>
+                            <td>1.37倍</td>
+                        </tr>
+                        <tr>
+                            <td>5%（债券基金）</td>
+                            <td>240,000元</td>
+                            <td>411,034元</td>
+                            <td>171,034元</td>
+                            <td>1.71倍</td>
+                        </tr>
+                        <tr>
+                            <td>8%（混合基金）</td>
+                            <td>240,000元</td>
+                            <td>589,021元</td>
+                            <td>349,021元</td>
+                            <td>2.45倍</td>
+                        </tr>
+                        <tr>
+                            <td>10%（股票基金）</td>
+                            <td>240,000元</td>
+                            <td>759,369元</td>
+                            <td>519,369元</td>
+                            <td>3.16倍</td>
+                        </tr>
+                        <tr>
+                            <td>12%（优秀基金）</td>
+                            <td>240,000元</td>
+                            <td>989,255元</td>
+                            <td>749,255元</td>
+                            <td>4.12倍</td>
+                        </tr>
+                        <tr>
+                            <td>15%（顶级基金）</td>
+                            <td>240,000元</td>
+                            <td>1,497,239元</td>
+                            <td>1,257,239元</td>
+                            <td>6.24倍</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    看到了吗？同样是每月投1000元、投20年，不同的收益率，结果天差地别。
+                    年化3%的话，20年只有32.8万；年化10%的话，能到75.9万；
+                    如果能做到年化15%，20年后就是近150万！
+                </p>
+                <p>
+                    这就是复利的魔力——<strong>收益率的一点点差异，在时间的加持下，会被放大成巨大的差距</strong>。
+                    所以，选择什么样的基金、获得什么样的长期收益率，对定投的最终结果至关重要。
+                </p>
+
+                <div class="highlight-box">
+                    <div class="highlight-title">⚠️ 重要提醒</div>
+                    <div class="highlight-content">
+                        <p>以上测算是基于"每年固定收益率"的理想假设，实际基金定投的收益是波动的，
+                        有的年份涨、有的年份跌，不会这么平滑。</p>
+                        <p>历史数据显示，A股偏股基金的长期年化收益率大约在10%-15%之间，
+                        但这个"长期"至少是10年以上，而且要经历完整的牛熊周期。</p>
+                        <p>想快速测算自己的定投收益？可以用我们的<a href="../../investment-calculator/index.html" style="color: #667eea; text-decoration: underline;">投资收益计算器</a>一键模拟。</p>
+                    </div>
+                </div>
+
+                <h2>四、72法则：快速估算翻倍时间</h2>
+                <p>
+                    估算定投收益还有一个非常实用的小技巧——<strong>72法则</strong>。
+                    它能帮你快速算出：按一定的收益率，资产翻倍需要多长时间。
+                </p>
+                <blockquote>
+                    <p><strong>翻倍年数 ≈ 72 ÷ 年化收益率（%）</strong></p>
+                </blockquote>
+                <p>
+                    比如年化收益率是8%，那么翻倍大约需要 72 ÷ 8 = 9年；<br>
+                    年化收益率是10%，翻倍大约需要 72 ÷ 10 = 7.2年；<br>
+                    年化收益率是12%，翻倍大约需要 72 ÷ 12 = 6年。
+                </p>
+                <p>
+                    72法则虽然是近似计算，但误差很小，非常实用。
+                    比如你想知道"10万变20万需要多久"，心算一下就能得出答案，不用复杂计算。
+                </p>
+
+                <h2>五、影响定投收益的5个关键因素</h2>
+                <p>
+                    了解了计算方法，我们再来看看哪些因素决定了定投收益的高低。
+                </p>
+
+                <h3>1. 定投时间：越早开始越好</h3>
+                <p>
+                    时间是复利的燃料。定投最大的敌人是"等我有钱了再开始"。
+                    我们用一组数据对比一下早开始和晚开始的差别：
+                </p>
+                <ul>
+                    <li><strong>A同学：</strong>25岁开始，每月投1000元，投到60岁，共35年，年化10%，最终约328万</li>
+                    <li><strong>B同学：</strong>35岁开始，每月投2000元，投到60岁，共25年，年化10%，最终约265万</li>
+                </ul>
+                <p>
+                    你看，B同学每月投的钱是A的两倍，但因为晚开始10年，最终收益反而更少。
+                    这就是时间的价值——<strong>早点开始，比多投钱更重要</strong>。
+                </p>
+
+                <h3>2. 年化收益率：选择决定命运</h3>
+                <p>
+                    从前面的表格已经看到，收益率对最终结果影响巨大。
+                    但高收益往往伴随高风险，所以关键是：根据自己的风险承受能力，选择合适的基金类型。
+                </p>
+                <p>
+                    一般来说：<br>
+                    • 保守型 → 货币基金、债券基金，年化3%-6%<br>
+                    • 稳健型 → 混合基金、指数基金，年化6%-12%<br>
+                    • 进取型 → 股票基金、行业基金，年化10%-15%（但波动大）
+                </p>
+
+                <h3>3. 定投金额：积少成多</h3>
+                <p>
+                    定投的金额和最终收益是成正比的。每月投1000和每月投2000，
+                    在同样收益率和时间下，最终收益也是两倍关系。
+                </p>
+                <p>
+                    建议的定投金额是：<strong>每月结余的20%-50%</strong>，
+                    既不能影响正常生活，也要有一定的约束力。
+                    关键是坚持，而不是一开始就投很多。
+                </p>
+
+                <h3>4. 定投频率：月投和周投差别不大</h3>
+                <p>
+                    很多人纠结：是每周定投好，还是每月定投好？
+                    答案是：<strong>长期来看，差别很小</strong>。
+                </p>
+                <p>
+                    有人做过测算，同样的金额、同样的时间，周投和月投的长期收益率差异在0.5%以内，
+                    几乎可以忽略不计。所以选择哪种频率，主要看你的收入节奏和方便程度，不用纠结。
+                </p>
+
+                <h3>5. 止盈策略：会买是徒弟，会卖是师傅</h3>
+                <p>
+                    定投不是"傻傻地投"，还要学会止盈。
+                    A股牛短熊长，如果不在牛市高点止盈，坐过山车是常有的事。
+                </p>
+                <p>
+                    常见的止盈方法有：
+                </p>
+                <ul>
+                    <li><strong>目标收益率止盈：</strong>比如赚到50%就卖出一部分</li>
+                    <li><strong>估值止盈：</strong>指数估值进入高估区间就止盈</li>
+                    <li><strong>市场情绪止盈：</strong>身边人人都在谈论股票时卖出</li>
+                </ul>
+
+                <h2>六、定投常见的3个误区</h2>
+                <p>
+                    最后，讲讲定投最常见的几个误区，很多人踩过坑。
+                </p>
+
+                <div class="highlight-box">
+                    <div class="highlight-title">⚠️ 误区一：定投一定赚钱</div>
+                    <div class="highlight-content">
+                        <p>不对。定投不是稳赚不赔的，它只是一种投资方式，不能消除市场风险。
+                        如果在熊市底部停止定投，或者在牛市高点才开始定投，一样会亏钱。</p>
+                        <p>定投赚钱的前提是：<strong>长期坚持 + 市场长期向上 + 选对标的</strong>。
+                        对于宽基指数基金来说，只要国家经济长期向好，长期定投大概率是赚钱的，但短期波动很正常。</p>
+                    </div>
+                </div>
+
+                <p><strong>误区二：定投就是"懒人投资"，不用管</strong></p>
+                <p>
+                    定投确实比较省心，但不是完全不管。
+                    你需要定期检视：基金基本面有没有变化？有没有达到止盈点？要不要调整仓位？
+                    完全不管、一投了之，很可能坐了过山车，甚至买到了业绩持续下滑的基金。
+                </p>
+
+                <p><strong>误区三：基金跌了就停止定投</strong></p>
+                <p>
+                    这是最常见也最可惜的错误。定投的精髓就是"越跌越买"，因为下跌时同样的钱能买到更多份额，
+                    摊薄成本，等市场反弹时赚得更多。
+                </p>
+                <p>
+                    很多人看到跌了就不敢投了，结果错过了低位捡便宜筹码的机会。
+                    记住：<strong>定投的痛苦期，往往是未来收获最大的时期</strong>。
+                    当然，前提是你买的基金本身没问题，是暂时下跌而不是持续走下坡路。
+                </p>
+
+                <div class="highlight-box green">
+                    <div class="highlight-title">✅ 最后总结</div>
+                    <div class="highlight-content">
+                        <p><strong>基金定投是普通人最容易上手、也最容易坚持的长期投资方式之一。</strong></p>
+                        <p>它的收益计算虽然比一次性投入复杂，但核心逻辑很清晰：平均成本法摊薄成本，长期复利放大收益。</p>
+                        <p>想知道自己定投能赚多少钱？用我们的<a href="../../investment-calculator/index.html" style="color: #667eea; text-decoration: underline;">投资收益计算器</a>，
+                        输入每月定投金额、年化收益率、投资年限，一秒算出最终收益，还能生成逐年收益明细。</p>
+                        <p>也可以用<a href="../../deposit-calculator/index.html" style="color: #667eea; text-decoration: underline;">存款计算器</a>对比一下，
+                        看看定投和银行定存的收益差距有多大。记住：适合自己的，才是最好的。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-tags-bottom">
+                <span class="tags-label">相关标签：</span>
+                <span class="article-tag">基金定投</span>
+                <span class="article-tag">复利公式</span>
+                <span class="article-tag">定投收益计算</span>
+                <span class="article-tag">72法则</span>
+                <span class="article-tag">长期投资</span>
+            </div>
+        </article>
+
+        <section class="related-section">
+            <h2 class="section-title">相关推荐</h2>
+            <div class="related-grid">
+                <a href="article1/index.html" class="related-card">
+                    <span class="related-cat">政策解读</span>
+                    <h3>2026年个税起征点及7项专项附加扣除详解</h3>
+                    <p class="related-desc">子女教育、住房租金、赡养老人等7项扣除标准全解读，附真实案例，看完能省好几千</p>
+                </a>
+                <a href="article2/index.html" class="related-card">
+                    <span class="related-cat">房贷攻略</span>
+                    <h3>房贷等额本息和等额本金哪个更划算？内行人都这么选</h3>
+                    <p class="related-desc">100万房贷30年真实案例对比，总利息少的不一定真划算，提前还款怎么选更省钱</p>
+                </a>
+                <a href="../index.html" class="related-card">
+                    <span class="related-cat">博客首页</span>
+                    <h3>查看更多金融知识干货文章</h3>
+                    <p class="related-desc">政策解读、理财技巧、省钱攻略，持续更新中</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="comment-section">
+            <h2 class="section-title">评论区</h2>
+            <div class="comment-placeholder">
+                <div class="comment-placeholder-icon">💬</div>
+                <h3>评论功能即将上线</h3>
+                <p>有问题或建议？欢迎通过<a href="../../contact/index.html" style="color: #667eea;">联系我们</a>反馈</p>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🧮 AI金融计算器</span>
+                    <p>个税 · 房贷 · 车贷 · 公积金 · 汇率 · 投资 — 免费在线金融工具</p>
+                </div>
+                <div class="footer-links">
+                    <h4>工具导航</h4>
+                    <a href="../../tax-calculator/index.html">个税计算器</a>
+                    <a href="../../mortgage-calculator/index.html">房贷计算器</a>
+                    <a href="../../car-loan-calculator/index.html">车贷计算器</a>
+                    <a href="../../provident-fund-calculator/index.html">公积金贷款计算器</a>
+                    <a href="../../exchange-rate-calculator/index.html">汇率换算器</a>
+                    <a href="../../investment-calculator/index.html">投资收益计算器</a>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <a href="../../about/index.html">关于本站</a>
+                    <a href="../../contact/index.html">联系我们</a>
+                    <a href="../../privacy/index.html">隐私政策</a>
+                    <a href="../index.html">博客</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。</p>
+            </div>
+        </footer>
+    </div>
+
+    <div class="share-float" id="shareFloat">
+        <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
+        <div class="share-menu" id="shareMenu">
+            <button class="share-menu-item" onclick="shareWeChat()">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                <span>微信分享</span>
+            </button>
+            <button class="share-menu-item" onclick="copyLink()">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                <span>复制链接</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../shared/share.js"></script>
+    <script src="../../shared/analytics.js"></script>
+</body>
+</html>
