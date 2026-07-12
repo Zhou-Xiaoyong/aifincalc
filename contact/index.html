@@ -129,22 +129,6 @@
                             <p class="contact-desc">我们会在24小时内回复您的邮件</p>
                         </div>
                     </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">🌐</div>
-                        <div class="contact-info">
-                            <h3>网站反馈</h3>
-                            <p>https://aifincalc.com/</p>
-                            <p class="contact-desc">欢迎在网站上使用反馈功能提交您的意见</p>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-info">
-                            <h3>联系地址</h3>
-                            <p>北京市朝阳区科技园区</p>
-                            <p class="contact-desc">AI金融计算器运营团队</p>
-                        </div>
-                    </div>
                 </div>
             </section>
 
@@ -163,45 +147,11 @@
                         <h4>网站数据安全吗？</h4>
                         <p>所有计算均在您的浏览器本地完成，我们不会收集、存储或传输您输入的任何个人数据。您的隐私完全受到保护。</p>
                     </div>
-                    <div class="faq-item">
-                        <h4>如何申请广告投放？</h4>
-                        <p>如果您有广告投放需求，可以发送邮件至 contact@aifincalc.com，我们会为您提供详细的广告方案和报价。</p>
-                    </div>
-                    <div class="faq-item">
-                        <h4>如何进行商务合作？</h4>
-                        <p>我们欢迎各种形式的商务合作，包括API接口合作、数据合作、联合推广等。请发送邮件至 contact@aifincalc.com，描述您的合作意向，我们会尽快与您联系。</p>
-                    </div>
+                    
                 </div>
             </section>
 
-            <section class="contact-section">
-                <h2>用户反馈表单</h2>
-                <form class="feedback-form" id="feedbackForm">
-                    <div class="form-group">
-                        <label>您的姓名</label>
-                        <input type="text" id="name" class="form-control" placeholder="请输入您的姓名">
-                    </div>
-                    <div class="form-group">
-                        <label>电子邮箱</label>
-                        <input type="email" id="email" class="form-control" placeholder="请输入您的邮箱">
-                    </div>
-                    <div class="form-group">
-                        <label>反馈类型</label>
-                        <select id="feedbackType" class="form-control">
-                            <option value="suggestion">功能建议</option>
-                            <option value="bug">问题反馈</option>
-                            <option value="cooperation">商务合作</option>
-                            <option value="other">其他</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>反馈内容</label>
-                        <textarea id="feedbackContent" class="form-control" rows="5" placeholder="请详细描述您的反馈内容..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-calculate">提交反馈</button>
-                </form>
-                <p class="form-note">提交后我们会通过邮件回复您，感谢您的反馈！</p>
-            </section>
+            
         </div>
 
     </div>
@@ -243,13 +193,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('感谢您的反馈！我们会尽快处理并回复您。');
-            this.reset();
-        });
-    </script>
+    
     <script src="../script.js"></script>
     <script src="../shared/share.js"></script>
     <script src="../shared/analytics.js"></script>
