@@ -52,18 +52,64 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <header class="sub-header">
+    <header class="site-header">
+        <div class="header-container">
             <a href="../index.html" class="brand-link">
                 <span class="brand-logo">🧮</span>
                 <span class="brand-name">AI金融计算器</span>
             </a>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="../tax-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">💰</span>
+                    <span>个税</span>
+                </a>
+                <a href="../social-insurance-calculator/index.html" class="nav-link active">
+                    <span class="nav-icon">🏥</span>
+                    <span>社保</span>
+                </a>
+                <a href="../mortgage-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">🏡</span>
+                    <span>房贷</span>
+                </a>
+                <a href="../car-loan-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">🚗</span>
+                    <span>车贷</span>
+                </a>
+                <a href="../provident-fund-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">🏦</span>
+                    <span>公积金</span>
+                </a>
+                <a href="../deposit-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">💵</span>
+                    <span>存款</span>
+                </a>
+                <a href="../exchange-rate-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">💱</span>
+                    <span>汇率</span>
+                </a>
+                <a href="../investment-calculator/index.html" class="nav-link ">
+                    <span class="nav-icon">📈</span>
+                    <span>投资</span>
+                </a>
+                <a href="../blog/index.html" class="nav-link ">
+                    <span class="nav-icon">📝</span>
+                    <span>博客</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container page-top-space">
+        <div class="page-header">
             <h1>社保计算器 2026</h1>
             <p>一键计算五险一金缴纳明细，支持9大城市社保标准自动带入</p>
-        </header>
+        </div>
 
-        <!-- 工具导航 -->
-        <nav class="tool-nav">
+        <div class="calculator-card">
             <a href="../index.html" class="nav-item">
                 <span class="nav-icon">🏠</span>
                 <span>首页</span>
@@ -96,9 +142,7 @@
                 <span class="nav-icon">📈</span>
                 <span>投资收益</span>
             </a>
-        </nav>
-
-        <div class="calculator-card">
+        
             <div class="tabs">
                 <div class="tab active" data-tab="personal">个人缴纳</div>
                 <div class="tab" data-tab="company">单位缴纳</div>
