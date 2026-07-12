@@ -598,3 +598,93 @@
         font-size: 0.75rem;
     }
 }
+
+/* ── 统一页脚 ── */
+.site-footer {
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: 40px;
+}
+
+.site-footer .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px 20px;
+}
+
+.site-footer .footer-top {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr;
+    gap: 32px;
+    margin-bottom: 24px;
+}
+
+.site-footer .footer-brand .footer-logo {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.site-footer .footer-brand .footer-tagline {
+    font-size: 0.82rem;
+    color: #999;
+    line-height: 1.6;
+}
+
+.site-footer .footer-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.site-footer .footer-col h5 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 12px;
+}
+
+.site-footer .footer-col a {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.2s;
+}
+
+.site-footer .footer-col a:hover {
+    color: #667eea;
+}
+
+.site-footer .footer-bottom {
+    border-top: 1px solid #f0f0f0;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .site-footer .footer-top {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .site-footer .footer-columns {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer .footer-inner {
+        padding: 24px 14px 16px;
+    }
+
+    .site-footer .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
