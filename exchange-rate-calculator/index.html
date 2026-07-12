@@ -96,144 +96,6 @@
         </nav>
 
         <div class="calculator-card">
-            <div class="tool-intro">
-                <h2>📖 汇率换算器使用指南</h2>
-                <div class="intro-section">
-                    <h3>一、输入项详细说明</h3>
-                    <div class="input-guide">
-                        <div class="guide-item">
-                            <h4>💱 源货币选择</h4>
-                            <p>选择您要兑换的货币，即您手中持有的货币。本工具支持20种主流货币，包括人民币(CNY)、美元(USD)、欧元(EUR)、日元(JPY)、英镑(GBP)、港币(HKD)、韩元(KRW)、泰铢(THB)等。每种货币都配有对应的国旗图标和中文名称，方便您快速识别。</p>
-                        </div>
-                        <div class="guide-item">
-                            <h4>🎯 目标货币选择</h4>
-                            <p>选择您想要兑换成的目标货币。同样支持20种主流货币，您可以根据需求自由选择。点击交换按钮(⇅)可以快速互换源货币和目标货币，省去重新选择的麻烦。</p>
-                        </div>
-                        <div class="guide-item">
-                            <h4>💰 金额输入</h4>
-                            <p>输入您想要换算的金额，支持整数和小数。系统会根据实时汇率自动计算出目标货币的金额。输入框下方有"输入金额"提示标签，右侧显示换算结果，结果框为只读状态，方便您查看和复制。</p>
-                        </div>
-                        <div class="guide-item">
-                            <h4>🔄 交换按钮</h4>
-                            <p>点击中间的交换按钮可以快速互换源货币和目标货币。例如，您原本设置的是人民币兑换美元，点击交换按钮后会变成美元兑换人民币，金额也会自动重新计算。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="intro-section">
-                    <h3>二、汇率知识详解</h3>
-                    <div class="formula-guide">
-                        <div class="formula-item">
-                            <h4>📝 什么是汇率？</h4>
-                            <p>汇率是指两种货币之间的兑换比率，即一种货币可以兑换多少另一种货币。例如，1美元=7.24人民币，表示1美元可以兑换7.24元人民币。汇率是国际贸易、投资和旅游的基础。</p>
-                        </div>
-                        <div class="formula-item">
-                            <h4>🏦 中间价、买入价、卖出价区别</h4>
-                            <ul>
-                                <li><strong>中间价：</strong>买入价和卖出价的平均值，是银行进行外汇交易的基准价格。本工具展示的就是中间价，仅供参考。</li>
-                                <li><strong>买入价：</strong>银行从客户手中买入外汇的价格。当您将外币卖给银行时，使用买入价。</li>
-                                <li><strong>卖出价：</strong>银行向客户卖出外汇的价格。当您从银行购买外汇时，使用卖出价。</li>
-                            </ul>
-                            <p>通常，卖出价 > 中间价 > 买入价，这个差价就是银行的利润来源，称为"点差"。</p>
-                        </div>
-                        <div class="formula-item">
-                            <h4>📊 现汇价与现钞价</h4>
-                            <ul>
-                                <li><strong>现汇价：</strong>用于银行账户间外汇转账的汇率，适用于电汇、信用证等非现金交易。</li>
-                                <li><strong>现钞价：</strong>用于外币现钞兑换的汇率。由于现钞需要保管和运输成本，现钞买入价通常低于现汇买入价，现钞卖出价则高于现汇卖出价。</li>
-                            </ul>
-                        </div>
-                        <div class="formula-item">
-                            <h4>🔢 汇率计算公式</h4>
-                            <p><strong>目标货币金额 = 源货币金额 × 汇率</strong></p>
-                            <p>其中，汇率表示为"1单位源货币 = X单位目标货币"。例如，1000人民币兑换美元，汇率为1 CNY = 0.1381 USD，则：</p>
-                            <p>美元金额 = 1000 × 0.1381 = 138.1美元</p>
-                        </div>
-                        <div class="formula-item">
-                            <h4>📈 汇率波动原因</h4>
-                            <p>汇率并非固定不变，主要受以下因素影响：</p>
-                            <ul>
-                                <li><strong>利率差异：</strong>各国央行的利率政策差异会影响货币吸引力</li>
-                                <li><strong>经济数据：</strong>GDP、通胀率、就业率等宏观经济指标</li>
-                                <li><strong>国际贸易：</strong>出口大于进口会推动本币升值</li>
-                                <li><strong>政治因素：</strong>地缘政治风险、政府政策变化</li>
-                                <li><strong>市场预期：</strong>投资者对未来经济走势的判断</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="intro-section">
-                    <h3>三、使用案例</h3>
-                    <div class="case-guide">
-                        <div class="case-item">
-                            <h4>✈️ 案例一：出境旅游换汇</h4>
-                            <p><strong>案例背景：</strong>小王计划去泰国旅游，需要兑换泰铢。他准备兑换5000元人民币，想知道能换到多少泰铢。</p>
-                            <p><strong>输入数据：</strong></p>
-                            <ul>
-                                <li>源货币：人民币(CNY)</li>
-                                <li>目标货币：泰铢(THB)</li>
-                                <li>金额：5000元</li>
-                            </ul>
-                            <p><strong>计算过程：</strong></p>
-                            <ul>
-                                <li>查询汇率：1 CNY = 5.18 THB（假设）</li>
-                                <li>泰铢金额 = 5000 × 5.18 = 25,900泰铢</li>
-                            </ul>
-                            <p><strong>小贴士：</strong>实际兑换时，银行会收取点差，实际到手金额会略少于计算结果。建议提前在网上银行或手机银行比价，选择汇率最优的银行兑换。</p>
-                        </div>
-                        <div class="case-item">
-                            <h4>🛍️ 案例二：海淘购物比价</h4>
-                            <p><strong>案例背景：</strong>小李在海外电商网站看到一款心仪的商品，标价199美元。她想知道换算成人民币是多少钱，以便和国内价格对比。</p>
-                            <p><strong>输入数据：</strong></p>
-                            <ul>
-                                <li>源货币：美元(USD)</li>
-                                <li>目标货币：人民币(CNY)</li>
-                                <li>金额：199美元</li>
-                            </ul>
-                            <p><strong>计算过程：</strong></p>
-                            <ul>
-                                <li>查询汇率：1 USD = 7.24 CNY（假设）</li>
-                                <li>人民币金额 = 199 × 7.24 = 1,440.76元</li>
-                            </ul>
-                            <p><strong>小贴士：</strong>海淘时除了商品价格，还需要考虑运费、关税等额外费用。建议使用本计算器的快速换算功能，直接查看常见金额的换算结果。</p>
-                        </div>
-                        <div class="case-item">
-                            <h4>🎓 案例三：留学学费缴费</h4>
-                            <p><strong>案例背景：</strong>小张即将去英国留学，每年学费为15,000英镑。他需要计算这笔费用相当于多少人民币，以便准备资金。</p>
-                            <p><strong>输入数据：</strong></p>
-                            <ul>
-                                <li>源货币：英镑(GBP)</li>
-                                <li>目标货币：人民币(CNY)</li>
-                                <li>金额：15,000英镑</li>
-                            </ul>
-                            <p><strong>计算过程：</strong></p>
-                            <ul>
-                                <li>查询汇率：1 GBP = 9.12 CNY（假设）</li>
-                                <li>人民币金额 = 15,000 × 9.12 = 136,800元</li>
-                            </ul>
-                            <p><strong>小贴士：</strong>留学缴费通常通过电汇方式，使用现汇价。由于汇率波动较大，建议关注汇率走势，选择汇率相对有利时进行兑换。可以分批兑换以降低风险。</p>
-                        </div>
-                        <div class="case-item">
-                            <h4>💼 案例四：跨境电商收款</h4>
-                            <p><strong>案例背景：</strong>陈先生经营跨境电商业务，本月收到美元货款25,000美元。他想知道这笔钱换算成人民币是多少。</p>
-                            <p><strong>输入数据：</strong></p>
-                            <ul>
-                                <li>源货币：美元(USD)</li>
-                                <li>目标货币：人民币(CNY)</li>
-                                <li>金额：25,000美元</li>
-                            </ul>
-                            <p><strong>计算过程：</strong></p>
-                            <ul>
-                                <li>查询汇率：1 USD = 7.24 CNY（假设）</li>
-                                <li>人民币金额 = 25,000 × 7.24 = 181,000元</li>
-                            </ul>
-                            <p><strong>小贴士：</strong>跨境收款平台（如Payoneer、PingPong等）会收取手续费和汇兑费用，实际到账金额会有所减少。建议比较不同平台的费率和汇率。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- ====== 汇率换算主区域 ====== -->
             <div class="converter-section">
                 <!-- 汇率状态条 -->
@@ -447,6 +309,147 @@
                 </button>
             </div>
         </div>
+
+        <div class="calculator-card">
+            <div class="tool-intro">
+                <h2>📖 汇率换算器使用指南</h2>
+                <div class="intro-section">
+                    <h3>一、输入项详细说明</h3>
+                    <div class="input-guide">
+                        <div class="guide-item">
+                            <h4>💱 源货币选择</h4>
+                            <p>选择您要兑换的货币，即您手中持有的货币。本工具支持20种主流货币，包括人民币(CNY)、美元(USD)、欧元(EUR)、日元(JPY)、英镑(GBP)、港币(HKD)、韩元(KRW)、泰铢(THB)等。每种货币都配有对应的国旗图标和中文名称，方便您快速识别。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>🎯 目标货币选择</h4>
+                            <p>选择您想要兑换成的目标货币。同样支持20种主流货币，您可以根据需求自由选择。点击交换按钮(⇅)可以快速互换源货币和目标货币，省去重新选择的麻烦。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>💰 金额输入</h4>
+                            <p>输入您想要换算的金额，支持整数和小数。系统会根据实时汇率自动计算出目标货币的金额。输入框下方有"输入金额"提示标签，右侧显示换算结果，结果框为只读状态，方便您查看和复制。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>🔄 交换按钮</h4>
+                            <p>点击中间的交换按钮可以快速互换源货币和目标货币。例如，您原本设置的是人民币兑换美元，点击交换按钮后会变成美元兑换人民币，金额也会自动重新计算。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-section">
+                    <h3>二、汇率知识详解</h3>
+                    <div class="formula-guide">
+                        <div class="formula-item">
+                            <h4>📝 什么是汇率？</h4>
+                            <p>汇率是指两种货币之间的兑换比率，即一种货币可以兑换多少另一种货币。例如，1美元=7.24人民币，表示1美元可以兑换7.24元人民币。汇率是国际贸易、投资和旅游的基础。</p>
+                        </div>
+                        <div class="formula-item">
+                            <h4>🏦 中间价、买入价、卖出价区别</h4>
+                            <ul>
+                                <li><strong>中间价：</strong>买入价和卖出价的平均值，是银行进行外汇交易的基准价格。本工具展示的就是中间价，仅供参考。</li>
+                                <li><strong>买入价：</strong>银行从客户手中买入外汇的价格。当您将外币卖给银行时，使用买入价。</li>
+                                <li><strong>卖出价：</strong>银行向客户卖出外汇的价格。当您从银行购买外汇时，使用卖出价。</li>
+                            </ul>
+                            <p>通常，卖出价 > 中间价 > 买入价，这个差价就是银行的利润来源，称为"点差"。</p>
+                        </div>
+                        <div class="formula-item">
+                            <h4>📊 现汇价与现钞价</h4>
+                            <ul>
+                                <li><strong>现汇价：</strong>用于银行账户间外汇转账的汇率，适用于电汇、信用证等非现金交易。</li>
+                                <li><strong>现钞价：</strong>用于外币现钞兑换的汇率。由于现钞需要保管和运输成本，现钞买入价通常低于现汇买入价，现钞卖出价则高于现汇卖出价。</li>
+                            </ul>
+                        </div>
+                        <div class="formula-item">
+                            <h4>🔢 汇率计算公式</h4>
+                            <p><strong>目标货币金额 = 源货币金额 × 汇率</strong></p>
+                            <p>其中，汇率表示为"1单位源货币 = X单位目标货币"。例如，1000人民币兑换美元，汇率为1 CNY = 0.1381 USD，则：</p>
+                            <p>美元金额 = 1000 × 0.1381 = 138.1美元</p>
+                        </div>
+                        <div class="formula-item">
+                            <h4>📈 汇率波动原因</h4>
+                            <p>汇率并非固定不变，主要受以下因素影响：</p>
+                            <ul>
+                                <li><strong>利率差异：</strong>各国央行的利率政策差异会影响货币吸引力</li>
+                                <li><strong>经济数据：</strong>GDP、通胀率、就业率等宏观经济指标</li>
+                                <li><strong>国际贸易：</strong>出口大于进口会推动本币升值</li>
+                                <li><strong>政治因素：</strong>地缘政治风险、政府政策变化</li>
+                                <li><strong>市场预期：</strong>投资者对未来经济走势的判断</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-section">
+                    <h3>三、使用案例</h3>
+                    <div class="case-guide">
+                        <div class="case-item">
+                            <h4>✈️ 案例一：出境旅游换汇</h4>
+                            <p><strong>案例背景：</strong>小王计划去泰国旅游，需要兑换泰铢。他准备兑换5000元人民币，想知道能换到多少泰铢。</p>
+                            <p><strong>输入数据：</strong></p>
+                            <ul>
+                                <li>源货币：人民币(CNY)</li>
+                                <li>目标货币：泰铢(THB)</li>
+                                <li>金额：5000元</li>
+                            </ul>
+                            <p><strong>计算过程：</strong></p>
+                            <ul>
+                                <li>查询汇率：1 CNY = 5.18 THB（假设）</li>
+                                <li>泰铢金额 = 5000 × 5.18 = 25,900泰铢</li>
+                            </ul>
+                            <p><strong>小贴士：</strong>实际兑换时，银行会收取点差，实际到手金额会略少于计算结果。建议提前在网上银行或手机银行比价，选择汇率最优的银行兑换。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>🛍️ 案例二：海淘购物比价</h4>
+                            <p><strong>案例背景：</strong>小李在海外电商网站看到一款心仪的商品，标价199美元。她想知道换算成人民币是多少钱，以便和国内价格对比。</p>
+                            <p><strong>输入数据：</strong></p>
+                            <ul>
+                                <li>源货币：美元(USD)</li>
+                                <li>目标货币：人民币(CNY)</li>
+                                <li>金额：199美元</li>
+                            </ul>
+                            <p><strong>计算过程：</strong></p>
+                            <ul>
+                                <li>查询汇率：1 USD = 7.24 CNY（假设）</li>
+                                <li>人民币金额 = 199 × 7.24 = 1,440.76元</li>
+                            </ul>
+                            <p><strong>小贴士：</strong>海淘时除了商品价格，还需要考虑运费、关税等额外费用。建议使用本计算器的快速换算功能，直接查看常见金额的换算结果。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>🎓 案例三：留学学费缴费</h4>
+                            <p><strong>案例背景：</strong>小张即将去英国留学，每年学费为15,000英镑。他需要计算这笔费用相当于多少人民币，以便准备资金。</p>
+                            <p><strong>输入数据：</strong></p>
+                            <ul>
+                                <li>源货币：英镑(GBP)</li>
+                                <li>目标货币：人民币(CNY)</li>
+                                <li>金额：15,000英镑</li>
+                            </ul>
+                            <p><strong>计算过程：</strong></p>
+                            <ul>
+                                <li>查询汇率：1 GBP = 9.12 CNY（假设）</li>
+                                <li>人民币金额 = 15,000 × 9.12 = 136,800元</li>
+                            </ul>
+                            <p><strong>小贴士：</strong>留学缴费通常通过电汇方式，使用现汇价。由于汇率波动较大，建议关注汇率走势，选择汇率相对有利时进行兑换。可以分批兑换以降低风险。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>💼 案例四：跨境电商收款</h4>
+                            <p><strong>案例背景：</strong>陈先生经营跨境电商业务，本月收到美元货款25,000美元。他想知道这笔钱换算成人民币是多少。</p>
+                            <p><strong>输入数据：</strong></p>
+                            <ul>
+                                <li>源货币：美元(USD)</li>
+                                <li>目标货币：人民币(CNY)</li>
+                                <li>金额：25,000美元</li>
+                            </ul>
+                            <p><strong>计算过程：</strong></p>
+                            <ul>
+                                <li>查询汇率：1 USD = 7.24 CNY（假设）</li>
+                                <li>人民币金额 = 25,000 × 7.24 = 181,000元</li>
+                            </ul>
+                            <p><strong>小贴士：</strong>跨境收款平台（如Payoneer、PingPong等）会收取手续费和汇兑费用，实际到账金额会有所减少。建议比较不同平台的费率和汇率。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="../mortgage-calculator/index.html">房贷计算器</a> | <a href="../car-loan-calculator/index.html">车贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a> | <a href="../about/index.html">关于本站</a> | <a href="../contact/index.html">联系我们</a> | <a href="../privacy/index.html">隐私政策</a></p>
         </footer>
