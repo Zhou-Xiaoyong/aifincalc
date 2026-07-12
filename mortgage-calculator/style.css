@@ -135,6 +135,193 @@ header p {
     max-width: 728px;
 }
 
+/* 工具说明区域 */
+.tool-intro {
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tool-intro h2 {
+    color: #333;
+    margin-bottom: 24px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.intro-section {
+    margin-bottom: 30px;
+}
+
+.intro-section:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.intro-section h3::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: #667eea;
+    border-radius: 2px;
+}
+
+.input-guide,
+.formula-guide,
+.case-guide {
+    display: grid;
+    gap: 20px;
+}
+
+.guide-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.guide-item h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.guide-item p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.guide-item p:last-child {
+    margin-bottom: 0;
+}
+
+.guide-item ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.guide-item li {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.guide-item li:last-child {
+    margin-bottom: 0;
+}
+
+.formula-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.formula-item h4 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.formula-item p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.formula-item ul {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+.formula-item li {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.formula-note {
+    background: #e3f2fd;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1976d2 !important;
+    margin-top: 15px !important;
+}
+
+.mortgage-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.mortgage-formula-table th,
+.mortgage-formula-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.mortgage-formula-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+.mortgage-formula-table td {
+    color: #6c757d;
+}
+
+.mortgage-formula-table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.case-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.case-item h4 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.case-item p {
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.case-item ul {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+.case-item li {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.case-item li:last-child {
+    margin-bottom: 0;
+}
+
 /* 标签页 */
 .tabs {
     display: flex;

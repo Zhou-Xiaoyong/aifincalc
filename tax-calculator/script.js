@@ -109,43 +109,101 @@ function calculateAnnual() {
     document.getElementById('annualResult').scrollIntoView({ behavior: 'smooth' });
 }
 
-// 生成AI节税建议
+// 生成AI智能结果解读
 function generateSuggestions(salary, insurance, deduction, tax, taxable) {
-    const suggestions = [];
+    const analysis = [];
     
-    // 根据计算结果生成个性化建议
-    if (deduction === 0 && salary > 8000) {
-        suggestions.push('您目前未享受任何专项附加扣除，建议检查是否符合子女教育、住房贷款利息等扣除条件，每年可节税数千元');
-    }
+    const taxRate = taxable > 0 ? tax / taxable * 100 : 0;
+    const effectiveRate = salary > 0 ? tax / salary * 100 : 0;
     
-    if (insurance < salary * 0.1) {
-        suggestions.push('您的社保缴纳比例较低，建议确认是否按实际工资缴纳，足额缴纳社保不仅可以增加扣除，还能提高养老待遇');
-    }
+    analysis.push(`## 💰 计算结果分析`);
+    analysis.push(`您的税前月薪为 **${formatMoney(salary)}**，税后到手收入为 **${formatMoney(salary - insurance - tax)}**。`);
+    analysis.push(`每月缴纳个税 **${formatMoney(tax)}**，税后占比 **${effectiveRate.toFixed(1)}%**。`);
     
     if (taxable > 0) {
         const currentBracket = taxBrackets.find(b => taxable * 12 <= b.limit);
-        if (currentBracket && currentBracket.rate >= 0.20) {
-            suggestions.push(`您当前适用${(currentBracket.rate * 100).toFixed(0)}%税率，属于较高税率档。建议考虑增加专项附加扣除、企业年金等方式降低税负`);
+        if (currentBracket) {
+            analysis.push(`当前适用 **${(currentBracket.rate * 100).toFixed(0)}%** 税率档，速算扣除数 **${formatMoney(currentBracket.deduction / 12)}**。`);
+            if (currentBracket.rate >= 0.25) {
+                analysis.push(`⚠️ **注意**：您处于较高税率档，建议关注节税优化方案。`);
+            }
         }
     }
     
-    if (salary > 15000 && deduction < 3000) {
-        const maxMonthlyDeduct = SPECIAL_DEDUCTIONS.elderlyMain + SPECIAL_DEDUCTIONS.child + SPECIAL_DEDUCTIONS.infant;
-        suggestions.push(`高收入情况下，建议充分利用各项专项附加扣除，特别是赡养老人、子女教育等项目，每月最高可扣除${maxMonthlyDeduct}元`);
+    analysis.push('');
+    analysis.push(`## 📊 扣除项分析`);
+    
+    const threshold = TAX_THRESHOLD_MONTHLY;
+    const totalDeductible = insurance + deduction + threshold;
+    analysis.push(`您的月度总扣除金额为 **${formatMoney(totalDeductible)}**，其中：`);
+    analysis.push(`- 基本减除费用（起征点）：**${formatMoney(threshold)}**`);
+    analysis.push(`- 五险一金：**${formatMoney(insurance)}**（占税前工资的 **${(insurance/salary*100).toFixed(1)}%**）`);
+    analysis.push(`- 专项附加扣除：**${formatMoney(deduction)}**`);
+    
+    if (deduction === 0) {
+        analysis.push('');
+        analysis.push(`⚠️ **节税建议**：您当前未享受任何专项附加扣除。根据个税政策，以下项目可申请扣除：`);
+        analysis.push(`- 👶 子女教育：每个子女每月1000元`);
+        analysis.push(`- 🏠 住房贷款利息：每月1000元`);
+        analysis.push(`- 🏠 住房租金：根据城市不同800-1500元`);
+        analysis.push(`- 🧓 赡养老人：独生子女每月2000元，非独生子女分摊`);
+        analysis.push(`- 📚 继续教育：学历教育每月400元，职业资格每年3600元`);
+        analysis.push(`- 👶 3岁以下婴幼儿照护：每个婴幼儿每月1000元`);
+        analysis.push(`建议检查是否符合上述条件，合理利用扣除政策可有效降低税负。`);
+    } else {
+        const unusedDeductions = [];
+        if (!document.getElementById('child')?.checked) unusedDeductions.push('子女教育');
+        if (!document.getElementById('housingLoan')?.checked && !document.getElementById('housingRent')?.checked) unusedDeductions.push('住房贷款利息/租金');
+        if (!document.getElementById('elderly')?.checked) unusedDeductions.push('赡养老人');
+        if (!document.getElementById('education')?.checked) unusedDeductions.push('继续教育');
+        if (!document.getElementById('infant')?.checked) unusedDeductions.push('婴幼儿照护');
+        
+        if (unusedDeductions.length > 0) {
+            analysis.push('');
+            analysis.push(`💡 **优化空间**：您还未申报以下专项附加扣除，如有符合条件的项目建议补充申报：`);
+            analysis.push(`- ${unusedDeductions.join('、')}`);
+        }
     }
     
-    if (suggestions.length === 0) {
-        suggestions.push('您的个税筹划已较为合理，继续保持！');
-        suggestions.push('建议每年年初检查专项附加扣除信息，确保享受最新政策优惠');
+    analysis.push('');
+    analysis.push(`## 💡 智能节税建议`);
+    
+    if (insurance < salary * 0.15) {
+        analysis.push(`1️⃣ **社保缴纳优化**：您的社保缴纳比例为 **${(insurance/salary*100).toFixed(1)}%**，建议确认是否按实际工资基数缴纳。足额缴纳社保不仅能增加税前扣除，还能提高未来养老医疗保障水平。`);
     }
     
-    // 通用建议
-    suggestions.push('年终奖可以选择单独计税或并入综合所得，建议两种方式都计算后选择更优方案');
-    suggestions.push('记得每年3-6月进行个税年度汇算，多退少补');
+    if (salary > 15000) {
+        analysis.push(`2️⃣ **年终奖计税方式选择**：高收入人群建议分别计算年终奖单独计税和并入综合所得两种方式，选择税负更低的方案。通常收入越高，单独计税优势越明显。`);
+    }
+    
+    if (tax > 500) {
+        const potentialSavings = Math.min(tax, (SPECIAL_DEDUCTIONS.elderlyMain + SPECIAL_DEDUCTIONS.child + SPECIAL_DEDUCTIONS.infant - deduction) * 0.2);
+        analysis.push(`3️⃣ **充分利用专项附加扣除**：如果您目前的扣除项目较少，建议尽可能申报符合条件的扣除。例如申报赡养老人和子女教育，每月可多扣除 **${SPECIAL_DEDUCTIONS.elderlyMain + SPECIAL_DEDUCTIONS.child}** 元，预计每月可节税 **${formatMoney(potentialSavings)}**。`);
+    }
+    
+    analysis.push('4️⃣ **年度汇算清缴**：每年3月1日至6月30日进行个税年度汇算，多退少补。如果您有年度一次性奖金、劳务报酬等其他收入，建议汇算时统一计算。');
+    
+    analysis.push('');
+    analysis.push(`## 📋 年度预估`);
+    analysis.push(`按当前计算标准，您的年度预估数据如下：`);
+    analysis.push(`- 年度税前收入：**${formatMoney(salary * 12)}**`);
+    analysis.push(`- 年度个税缴纳：**${formatMoney(tax * 12)}**`);
+    analysis.push(`- 年度税后收入：**${formatMoney((salary - insurance - tax) * 12)}**`);
+    
+    const htmlContent = analysis.map(line => {
+        if (line.startsWith('## ')) {
+            return `<h4>${line.replace('## ', '')}</h4>`;
+        } else if (line.startsWith('- ')) {
+            return `<li>${line.replace('- ', '')}</li>`;
+        } else if (line.startsWith('⚠️ ') || line.startsWith('💡 ') || line.startsWith('1️⃣ ') || line.startsWith('2️⃣ ') || line.startsWith('3️⃣ ') || line.startsWith('4️⃣ ')) {
+            return `<p>${line}</p>`;
+        } else if (line === '') {
+            return `<br>`;
+        }
+        return `<p>${line}</p>`;
+    }).join('');
 
-    document.getElementById('suggestionsContent').innerHTML = '<ul>' + 
-        suggestions.map(s => `<li>${s}</li>`).join('') + 
-        '</ul>';
+    document.getElementById('suggestionsContent').innerHTML = htmlContent;
     document.getElementById('aiSuggestions').style.display = 'block';
 }
 

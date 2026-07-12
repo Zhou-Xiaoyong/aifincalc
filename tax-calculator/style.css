@@ -675,6 +675,125 @@ footer a {
     text-decoration: underline;
 }
 
+/* 工具说明区域样式 */
+.tool-intro {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tool-intro h2 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.intro-section {
+    margin-bottom: 32px;
+}
+
+.intro-section:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section h3 {
+    color: #667eea;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    padding-left: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.input-guide,
+.formula-guide,
+.case-guide {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.guide-item,
+.formula-item,
+.case-item {
+    margin-bottom: 20px;
+}
+
+.guide-item:last-child,
+.formula-item:last-child,
+.case-item:last-child {
+    margin-bottom: 0;
+}
+
+.guide-item h4,
+.formula-item h4,
+.case-item h4 {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.guide-item p,
+.formula-item p,
+.case-item p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+}
+
+.guide-item ul,
+.formula-item ul,
+.case-item ul {
+    margin-left: 20px;
+    margin-bottom: 12px;
+}
+
+.guide-item li,
+.formula-item li,
+.case-item li {
+    color: #6c757d;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    margin-bottom: 6px;
+}
+
+.tax-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.85rem;
+}
+
+.tax-formula-table th,
+.tax-formula-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.tax-formula-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.tax-formula-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.formula-note {
+    font-size: 0.82rem !important;
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 12px !important;
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -705,5 +824,24 @@ footer a {
     
     .result-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tool-intro {
+        padding: 20px;
+    }
+
+    .input-guide,
+    .formula-guide,
+    .case-guide {
+        padding: 16px;
+    }
+
+    .tax-formula-table {
+        font-size: 0.75rem;
+    }
+
+    .tax-formula-table th,
+    .tax-formula-table td {
+        padding: 6px 4px;
     }
 }

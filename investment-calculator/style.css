@@ -143,6 +143,123 @@ header p {
     display: block;
 }
 
+/* 工具说明区域 */
+.tool-intro {
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 1px solid #dee2e6;
+}
+
+.tool-intro h2 {
+    color: #333;
+    margin-bottom: 28px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.intro-section {
+    margin-bottom: 32px;
+}
+
+.intro-section:last-child {
+    margin-bottom: 0;
+}
+
+.intro-section h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+    padding-left: 12px;
+    border-left: 4px solid #667eea;
+}
+
+.input-guide, .formula-guide, .case-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.guide-item, .formula-item, .case-item {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.guide-item h4, .formula-item h4, .case-item h4 {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.guide-item p, .formula-item p, .case-item p {
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.guide-item p:last-child, .formula-item p:last-child, .case-item p:last-child {
+    margin-bottom: 0;
+}
+
+.formula-item strong {
+    color: #11998e;
+    font-size: 1.1em;
+}
+
+.formula-item ul, .case-item ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+.formula-item ul li, .case-item ul li {
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 6px;
+}
+
+.formula-example {
+    background: #e8f5e9;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    color: #2e7d32 !important;
+}
+
+.formula-note {
+    font-size: 0.95rem;
+    color: #856404 !important;
+    background: #fff3cd;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+.compare-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+}
+
+.compare-formula-table th, .compare-formula-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.compare-formula-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.compare-formula-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.compare-formula-table tr:hover {
+    background: #e8f5e9;
+}
+
 .form-group {
     margin-bottom: 20px;
 }

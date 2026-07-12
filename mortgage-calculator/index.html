@@ -19,6 +19,38 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+
+    <!-- Schema.org: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "房贷计算器2026",
+        "description": "2026最新房贷计算器，支持商业贷款、公积金贷款、组合贷款、提前还贷四大计算模式，支持LPR浮动利率与固定利率灵活切换",
+        "provider": {
+            "@type": "Organization",
+            "name": "AI金融计算器",
+            "url": "https://aifincalc.com/"
+        },
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aifincalc.com/mortgage-calculator/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "features": [
+            "商业贷款计算",
+            "公积金贷款计算",
+            "组合贷款计算",
+            "提前还贷分析",
+            "LPR浮动利率支持",
+            "等额本息与等额本金对比",
+            "逐月还款明细表"
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -69,6 +101,199 @@
                 <div class="tab" data-tab="provident">公积金贷款</div>
                 <div class="tab" data-tab="combined">组合贷款</div>
                 <div class="tab" data-tab="prepay">提前还贷</div>
+            </div>
+
+            <!-- 工具说明区域 -->
+            <div class="tool-intro">
+                <h2>📖 房贷计算器使用指南</h2>
+                <div class="intro-section">
+                    <h3>一、输入项详细说明</h3>
+                    <div class="input-guide">
+                        <div class="guide-item">
+                            <h4>💰 贷款金额</h4>
+                            <p>指您申请的贷款本金总额，以"万元"为单位。贷款金额通常根据房屋总价、首付比例和个人还款能力综合确定。商业贷款首套房首付比例一般不低于30%，二套房不低于40%-60%，具体以当地政策和银行要求为准。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>📅 贷款期限</h4>
+                            <p>指贷款的还款总年限，一般为1-30年。贷款期限越长，每月还款压力越小，但总利息支出越多；期限越短，月供压力越大，但总利息越少。建议根据家庭月收入、未来收入预期和生活规划综合考虑，通常月供不超过家庭月收入的30%-40%为宜。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>📊 利率方式</h4>
+                            <p>支持两种利率方式：</p>
+                            <ul>
+                                <li><strong>LPR浮动利率：</strong>以贷款市场报价利率（LPR）为基准，通过加点或减点确定实际执行利率。LPR每月20日更新，利率会随市场变化调整，通常每年1月1日或贷款发放日重新定价。当前5年期以上LPR为3.60%。</li>
+                                <li><strong>固定利率：</strong>贷款期间利率保持不变，不受市场利率波动影响，适合希望还款金额稳定的购房者。</li>
+                            </ul>
+                        </div>
+                        <div class="guide-item">
+                            <h4>📈 加点/减点</h4>
+                            <p>LPR利率的调整幅度，负数为减点（利率低于LPR），正数为加点（利率高于LPR）。首套房通常享受减点优惠，二套房可能需要加点。实际执行利率 = 当前LPR + 加点/减点。例如：LPR 3.60% + 减点0.45% = 执行利率3.15%。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>💳 还款方式</h4>
+                            <p>支持两种还款方式：</p>
+                            <ul>
+                                <li><strong>等额本息：</strong>每月还款金额相同，前期利息占比高、本金占比低，适合收入稳定、预算固定的购房者。</li>
+                                <li><strong>等额本金：</strong>每月偿还的本金相同，利息逐月递减，前期还款压力大但总利息少，适合前期资金充裕或计划提前还款的购房者。</li>
+                            </ul>
+                        </div>
+                        <div class="guide-item">
+                            <h4>🏠 公积金贷款金额</h4>
+                            <p>公积金贷款是一种低利率贷款方式，首套房5年以上利率仅2.60%。贷款额度因城市而异，一般为60-120万元，具体取决于公积金账户余额、缴存年限、房屋总价等因素。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>🏢 组合贷款</h4>
+                            <p>同时申请商业贷款和公积金贷款，公积金贷款部分享受低利率，商业贷款部分按商业利率执行。适合房屋总价较高、公积金贷款额度不足以覆盖全部贷款需求的购房者。</p>
+                        </div>
+                        <div class="guide-item">
+                            <h4>🔄 提前还款</h4>
+                            <p>指在贷款到期前提前偿还部分或全部贷款本金。支持两种提前还款方式：缩短还款年限（月供不变，节省利息更多）和减少月供（年限不变，减轻每月压力）。部分银行可能收取违约金，通常为提前还款金额的1%-3%。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-section">
+                    <h3>二、计算公式详解</h3>
+                    <div class="formula-guide">
+                        <div class="formula-item">
+                            <h4>📝 等额本息计算公式</h4>
+                            <p><strong>月还款额 = [贷款本金 × 月利率 × (1+月利率)^还款月数] ÷ [(1+月利率)^还款月数 - 1]</strong></p>
+                            <p><strong>其中：</strong></p>
+                            <ul>
+                                <li>月利率 = 年利率 ÷ 12</li>
+                                <li>还款月数 = 贷款年限 × 12</li>
+                                <li>每月利息 = 剩余本金 × 月利率</li>
+                                <li>每月本金 = 月还款额 - 每月利息</li>
+                            </ul>
+                            <p><strong>总利息 = 月还款额 × 还款月数 - 贷款本金</strong></p>
+                            <p class="formula-note">特点：每月还款额固定，适合收入稳定的借款人。前期还款中利息占比较高，本金占比较低，随着时间推移，利息占比逐渐降低，本金占比逐渐增加。</p>
+                        </div>
+                        <div class="formula-item">
+                            <h4>📝 等额本金计算公式</h4>
+                            <p><strong>每月本金 = 贷款本金 ÷ 还款月数</strong></p>
+                            <p><strong>每月利息 = (贷款本金 - 已偿还本金) × 月利率</strong></p>
+                            <p><strong>月还款额 = 每月本金 + 每月利息</strong></p>
+                            <p><strong>总利息 = (还款月数 + 1) × 贷款本金 × 月利率 ÷ 2</strong></p>
+                            <p class="formula-note">特点：每月还款额逐月递减，前期还款压力较大，但总利息支出比等额本息少。适合前期收入较高或计划提前还款的借款人。</p>
+                        </div>
+                        <div class="formula-item">
+                            <h4>📊 两种还款方式对比表</h4>
+                            <table class="mortgage-formula-table">
+                                <thead>
+                                    <tr>
+                                        <th>对比项</th>
+                                        <th>等额本息</th>
+                                        <th>等额本金</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>每月还款额</td><td>固定不变</td><td>逐月递减</td></tr>
+                                    <tr><td>首月还款压力</td><td>较小</td><td>较大</td></tr>
+                                    <tr><td>总利息支出</td><td>较多</td><td>较少</td></tr>
+                                    <tr><td>适合人群</td><td>收入稳定者</td><td>前期资金充裕者</td></tr>
+                                    <tr><td>提前还款优势</td><td>后期更划算</td><td>前期更划算</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="formula-item">
+                            <h4>🔄 提前还款计算</h4>
+                            <p><strong>缩短年限方式：</strong></p>
+                            <ul>
+                                <li>新本金 = 原剩余本金 - 提前还款金额</li>
+                                <li>根据新本金和原利率重新计算月供不变情况下的还款月数</li>
+                                <li>节省利息 = 原剩余利息 - 新剩余利息</li>
+                            </ul>
+                            <p><strong>减少月供方式：</strong></p>
+                            <ul>
+                                <li>新本金 = 原剩余本金 - 提前还款金额</li>
+                                <li>根据新本金和原还款期限重新计算月还款额</li>
+                                <li>节省利息 = 原剩余利息 - 新剩余利息</li>
+                            </ul>
+                            <p class="formula-note">注：缩短年限方式通常比减少月供方式节省更多利息，因为缩短了资金占用时间。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="intro-section">
+                    <h3>三、使用案例</h3>
+                    <div class="case-guide">
+                        <div class="case-item">
+                            <h4>📌 案例一：普通商业贷款（等额本息vs等额本金）</h4>
+                            <p><strong>案例背景：</strong>小王购买首套住房，贷款金额100万元，贷款期限30年，执行利率3.15%（LPR 3.60% - 减点0.45%）。</p>
+                            <p><strong>方案一：等额本息还款</strong></p>
+                            <ul>
+                                <li>月还款额：4,253元</li>
+                                <li>总利息支出：531,080元</li>
+                                <li>还款总额：1,531,080元</li>
+                                <li>首月利息：2,625元，首月本金：1,628元</li>
+                            </ul>
+                            <p><strong>方案二：等额本金还款</strong></p>
+                            <ul>
+                                <li>首月月供：5,486元，逐月递减7.3元</li>
+                                <li>总利息支出：473,437.5元</li>
+                                <li>还款总额：1,473,437.5元</li>
+                                <li>节省利息：57,642.5元</li>
+                            </ul>
+                            <p><strong>结论：</strong>等额本金比等额本息节省约5.76万元利息，但首月还款压力增加约1,233元。如果小王前期能够承受较高月供，选择等额本金更划算。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>📌 案例二：组合贷款方案对比</h4>
+                            <p><strong>案例背景：</strong>小李购买总价300万元的住房，首付90万元，需贷款210万元。当地公积金最高贷款额度80万元，公积金利率2.60%，商业贷款利率3.40%。</p>
+                            <p><strong>方案一：纯商业贷款</strong></p>
+                            <ul>
+                                <li>贷款金额：210万元</li>
+                                <li>利率：3.40%</li>
+                                <li>期限：30年，等额本息</li>
+                                <li>月供：9,423元</li>
+                                <li>总利息：129.23万元</li>
+                            </ul>
+                            <p><strong>方案二：组合贷款（公积金80万+商贷130万）</strong></p>
+                            <ul>
+                                <li>公积金贷款：80万元，利率2.60%</li>
+                                <li>商业贷款：130万元，利率3.40%</li>
+                                <li>期限：30年，等额本息</li>
+                                <li>公积金月供：3,518元</li>
+                                <li>商业贷款月供：5,839元</li>
+                                <li>合计月供：9,357元</li>
+                                <li>总利息：118.85万元</li>
+                            </ul>
+                            <p><strong>结论：</strong>组合贷款月供略低（省66元），但总利息节省约10.38万元。在有公积金贷款资格的情况下，优先选择组合贷款。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>📌 案例三：提前还款方案分析</h4>
+                            <p><strong>案例背景：</strong>张先生贷款150万元，期限30年，利率3.40%，等额本息还款。已还款5年，剩余本金约131.5万元，剩余期限25年，当前月供6,842元。计划提前还款30万元。</p>
+                            <p><strong>方案一：缩短年限，月供不变</strong></p>
+                            <ul>
+                                <li>新本金：101.5万元</li>
+                                <li>新期限：约19年（缩短6年）</li>
+                                <li>月供：仍为6,842元</li>
+                                <li>剩余利息：约48.8万元</li>
+                                <li>原剩余利息：约82.9万元</li>
+                                <li>节省利息：约34.1万元</li>
+                            </ul>
+                            <p><strong>方案二：减少月供，年限不变</strong></p>
+                            <ul>
+                                <li>新本金：101.5万元</li>
+                                <li>期限：仍为25年</li>
+                                <li>新月供：4,575元（减少2,267元）</li>
+                                <li>剩余利息：约65.8万元</li>
+                                <li>节省利息：约17.1万元</li>
+                            </ul>
+                            <p><strong>结论：</strong>缩短年限方式节省利息约34.1万元，减少月供方式节省约17.1万元。如果张先生希望尽快还清贷款、节省更多利息，选择缩短年限更优；如果希望减轻每月还款压力，选择减少月供更合适。</p>
+                        </div>
+                        <div class="case-item">
+                            <h4>📌 案例四：公积金贷款与商贷利率差异</h4>
+                            <p><strong>案例背景：</strong>对比贷款50万元，期限20年，分别使用公积金贷款（首套2.60%）和商业贷款（3.40%）。</p>
+                            <ul>
+                                <li><strong>公积金贷款：</strong>月供2,775元，总利息16.6万元</li>
+                                <li><strong>商业贷款：</strong>月供3,003元，总利息22.1万元</li>
+                                <li><strong>每月差额：</strong>228元</li>
+                                <li><strong>总利息差额：</strong>5.5万元</li>
+                            </ul>
+                            <p><strong>结论：</strong>公积金贷款利率优势明显，同等条件下每月可节省228元，20年累计节省5.5万元利息。建议购房者优先使用公积金贷款。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- 商业贷款 -->
@@ -572,7 +797,7 @@
             </div>
         </div>
         <footer>
-            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="index.html">房贷计算器</a> | <a href="../car-loan-calculator/index.html">车贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a></p>
+            <p>© 2026 AI金融计算器 | <a href="../index.html">首页</a> | <a href="../tax-calculator/index.html">个税计算器</a> | <a href="index.html">房贷计算器</a> | <a href="../car-loan-calculator/index.html">车贷计算器</a> | <a href="../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../investment-calculator/index.html">投资收益</a> | <a href="../about/index.html">关于本站</a> | <a href="../contact/index.html">联系我们</a> | <a href="../privacy/index.html">隐私政策</a></p>
         </footer>
     </div>
 
