@@ -53,57 +53,111 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <header class="sub-header">
+    <header class="site-header">
+        <div class="header-container">
             <a href="../index.html" class="brand-link">
                 <span class="brand-logo">🧮</span>
                 <span class="brand-name">AI金融计算器</span>
             </a>
-            <h1>公积金贷款计算器 2026</h1>
-            <p>额度评估 · 贷款计算 · 冲还贷规划 · 公积金 vs 商贷对比</p>
-        </header>
+            <nav class="nav-links">
+                <a href="../index.html" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="../tax-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">💰</span>
+                    <span>个人所得税计算器</span>
+                </a>
+                <a href="../social-insurance-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">🏥</span>
+                    <span>社保计算器</span>
+                </a>
+                <a href="../mortgage-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">🏡</span>
+                    <span>房贷计算器</span>
+                </a>
+                <a href="../car-loan-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">🚗</span>
+                    <span>车贷计算器</span>
+                </a>
+                <a href="../provident-fund-calculator/index.html" class="nav-link active">
+                    <span class="nav-icon">🏦</span>
+                    <span>公积金贷款计算器</span>
+                </a>
+                <a href="../deposit-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">💵</span>
+                    <span>存款利息计算器</span>
+                </a>
+                <a href="../exchange-rate-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">💱</span>
+                    <span>汇率换算器</span>
+                </a>
+                <a href="../investment-calculator/index.html" class="nav-link">
+                    <span class="nav-icon">📈</span>
+                    <span>投资收益计算器</span>
+                </a>
+                <a href="../blog/index.html" class="nav-link">
+                    <span class="nav-icon">📝</span>
+                    <span>博客</span>
+                </a>
+            </nav>
+            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+                    <a href="../index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span>首页</span>
+                    </a>
+                    <a href="../tax-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">💰</span>
+                        <span>个人所得税计算器</span>
+                    </a>
+                    <a href="../social-insurance-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">🏥</span>
+                        <span>社保计算器</span>
+                    </a>
+                    <a href="../mortgage-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">🏡</span>
+                        <span>房贷计算器</span>
+                    </a>
+                    <a href="../car-loan-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">🚗</span>
+                        <span>车贷计算器</span>
+                    </a>
+                    <a href="../provident-fund-calculator/index.html" class="nav-link active">
+                        <span class="nav-icon">🏦</span>
+                        <span>公积金贷款计算器</span>
+                    </a>
+                    <a href="../deposit-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">💵</span>
+                        <span>存款利息计算器</span>
+                    </a>
+                    <a href="../exchange-rate-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">💱</span>
+                        <span>汇率换算器</span>
+                    </a>
+                    <a href="../investment-calculator/index.html" class="nav-link">
+                        <span class="nav-icon">📈</span>
+                        <span>投资收益计算器</span>
+                    </a>
+                    <a href="../blog/index.html" class="nav-link">
+                        <span class="nav-icon">📝</span>
+                        <span>博客</span>
+                    </a>
+        </div>
+    </header>
 
-        <!-- 工具导航 -->
-        <nav class="tool-nav">
-            <a href="../index.html" class="nav-item">
-                <span class="nav-icon">🏠</span>
-                <span>首页</span>
-            </a>
-            <a href="../tax-calculator/index.html" class="nav-item">
-                <span class="nav-icon">🧮</span>
-                <span>个税计算器</span>
-            </a>
-            <a href="../mortgage-calculator/index.html" class="nav-item">
-                <span class="nav-icon">🏡</span>
-                <span>房贷计算器</span>
-            </a>
-            <a href="../car-loan-calculator/index.html" class="nav-item">
-                <span class="nav-icon">🚗</span>
-                <span>车贷计算器</span>
-            </a>
-            <a href="index.html" class="nav-item active">
-                <span class="nav-icon">💰</span>
-                <span>公积金贷款</span>
-            </a>
-            <a href="../exchange-rate-calculator/index.html" class="nav-item">
-                <span class="nav-icon">💱</span>
-                <span>汇率换算</span>
-            </a>
-            <a href="../investment-calculator/index.html" class="nav-item">
-                <span class="nav-icon">📈</span>
-                <span>投资收益</span>
-            </a>
-        
-            <div class="policy-update-banner">
-                <p>📢 <strong>2026年6月政策更新：</strong>住建部发布《住房公积金管理条例（修订征求意见稿）》，提取范围扩至9种（新增装修、物业费），灵活就业人员可自愿缴存，推动全国互认互贷。苏州额度提至个人150万/家庭200万，成都提至双缴存120万。全国超60城已优化公积金政策。</p>
-            </div>
+    <div class="container page-top-space">
+        <div class="policy-update-banner">
+            <p>📢 <strong>2026年6月政策更新：</strong>住建部发布《住房公积金管理条例（修订征求意见稿）》，提取范围扩至9种（新增装修、物业费），灵活就业人员可自愿缴存，推动全国互认互贷。苏州额度提至个人150万/家庭200万，成都提至双缴存120万。全国超60城已优化公积金政策。</p>
+        </div>
+        <div class="calculator-card">
             <div class="tabs">
                 <div class="tab active" data-tab="quota">🏦 贷款额度评估</div>
                 <div class="tab" data-tab="loan">💰 贷款方案计算</div>
                 <div class="tab" data-tab="deduction">🔄 冲还贷规划</div>
                 <div class="tab" data-tab="compare">📊 公积金 vs 商贷</div>
             </div>
-
 
 
             <!-- ==================== Tab 1: 贷款额度评估 ==================== -->

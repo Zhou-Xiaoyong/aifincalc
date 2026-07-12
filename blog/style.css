@@ -60,75 +60,6 @@ body {
     padding: 0 20px;
 }
 
-/* ── 头部 ── */
-.sub-header {
-    text-align: center;
-    color: white;
-    padding: 40px 20px 30px;
-}
-
-.sub-header .brand-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-    margin-bottom: 12px;
-}
-
-.sub-header .brand-logo {
-    font-size: 2rem;
-}
-
-.sub-header .brand-name {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.sub-header h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.sub-header .tagline {
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-/* ── 工具导航 ── */
-.tool-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 30px;
-    padding: 0 10px;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 20px;
-    color: white;
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: all 0.2s;
-    backdrop-filter: blur(4px);
-}
-
-.nav-item:hover,
-.nav-item.active {
-    background: rgba(255,255,255,0.25);
-}
-
-.nav-icon {
-    font-size: 1rem;
-}
-
 /* ── 博客主体布局 ── */
 .blog-main {
     display: grid;
@@ -469,21 +400,7 @@ body {
     color: #666;
 }
 
-.article-header {
-    margin-bottom: 28px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.article-header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #1a1a2e;
-    line-height: 1.4;
-    margin-bottom: 16px;
-}
-
-.article-info {
+.article-.article-.article-info {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -903,23 +820,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .sub-header {
-        padding: 32px 16px 24px;
-    }
-
-    .sub-header h1 {
-        font-size: 1.8rem;
-    }
-
-    .tool-nav {
-        gap: 6px;
-    }
-
-    .nav-item {
-        padding: 8px 12px;
-        font-size: 0.82rem;
-    }
-
     .article-card {
         padding: 20px;
     }
@@ -932,11 +832,7 @@ footer {
         padding: 24px;
     }
 
-    .article-header h1 {
-        font-size: 1.4rem;
-    }
-
-    .article-content h2 {
+    .article-.article-content h2 {
         font-size: 1.2rem;
     }
 
@@ -975,11 +871,7 @@ footer {
         border-radius: 14px;
     }
 
-    .article-header h1 {
-        font-size: 1.25rem;
-    }
-
-    .article-content {
+    .article-.article-content {
         font-size: 0.9rem;
     }
 

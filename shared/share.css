@@ -5,67 +5,68 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 0;
+    background: rgba(255, 255, 255, 0.96);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    transition: all 0.3s ease;
-}
-
-.site-header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
 }
 
 .site-header .header-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 48px;
 }
 
 .site-header .brand-link {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     color: #1a1a2e;
     text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.site-header .brand-link:hover {
-    opacity: 0.8;
+    flex-shrink: 0;
 }
 
 .site-header .brand-logo {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .site-header .brand-name {
-    font-size: 1.1rem;
+    font-size: 0.92rem;
     font-weight: 700;
     color: #667eea;
+    white-space: nowrap;
 }
 
 .site-header .nav-links {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+}
+
+.site-header .nav-links::-webkit-scrollbar {
+    display: none;
 }
 
 .site-header .nav-link {
     display: flex;
     align-items: center;
-    gap: 5px;
-    padding: 8px 14px;
+    gap: 4px;
+    padding: 6px 10px;
     color: #555;
     text-decoration: none;
-    font-size: 0.88rem;
-    border-radius: 16px;
+    font-size: 0.78rem;
+    border-radius: 14px;
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 
 .site-header .nav-link:hover {
@@ -79,26 +80,22 @@
 }
 
 .site-header .nav-icon {
-    font-size: 0.9rem;
+    font-size: 0.82rem;
 }
 
 .site-header .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     cursor: pointer;
     color: #555;
-    padding: 4px 8px;
+    padding: 4px;
 }
 
-.site-header .mobile-menu {
-    display: none;
-}
-
-/* 页面顶部占位 */
+/* 页面顶部占位 — 仅48px header + 8px间隙 */
 .page-top-space {
-    padding-top: 80px;
+    padding-top: 56px;
 }
 
 /* 页面标题区域 */
@@ -495,6 +492,8 @@
         background: white;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         border-top: 1px solid #f0f0f0;
+        max-height: 70vh;
+        overflow-y: auto;
     }
     
     .site-header .mobile-menu.active {
@@ -505,10 +504,10 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        padding: 14px 20px;
+        padding: 12px 20px;
         color: #555;
         text-decoration: none;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         border-bottom: 1px solid #f5f5f5;
         border-radius: 0;
     }
@@ -525,14 +524,6 @@
     .site-header .mobile-menu .nav-link.active {
         background: #f0f2ff;
         color: #667eea;
-    }
-    
-    .page-header h1 {
-        font-size: 1.6rem;
-    }
-    
-    .page-header p {
-        font-size: 0.88rem;
     }
 }
 
