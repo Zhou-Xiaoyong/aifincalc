@@ -93,6 +93,10 @@
     padding: 4px;
 }
 
+.site-header .mobile-menu {
+    display: none;
+}
+
 /* 页面顶部占位 — 仅48px header + 8px间隙 */
 .page-top-space {
     padding-top: 56px;
