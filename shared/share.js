@@ -4,6 +4,61 @@
 (function() {
     'use strict';
 
+    // 导航栏优化 - 动态重构为两行布局
+    function initNavigation() {
+        const header = document.querySelector('.site-header');
+        const navLinks = document.querySelector('.nav-links');
+        const headerContainer = document.querySelector('.header-container');
+        
+        if (!header || !navLinks || !headerContainer) return;
+
+        const calcKeywords = ['个税', '社保', '房贷', '车贷', '公积金', '存款', '汇率', '投资'];
+        const mainLinks = [];
+        const calcLinks = [];
+
+        const links = navLinks.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            const text = link.textContent || '';
+            const isCalc = calcKeywords.some(keyword => text.includes(keyword));
+            if (isCalc) {
+                calcLinks.push(link.cloneNode(true));
+            } else {
+                mainLinks.push(link.cloneNode(true));
+            }
+        });
+
+        navLinks.innerHTML = '';
+        mainLinks.forEach(link => navLinks.appendChild(link));
+
+        const calcNav = document.createElement('nav');
+        calcNav.className = 'calc-nav';
+        
+        calcLinks.forEach(link => {
+            const calcLink = document.createElement('a');
+            calcLink.href = link.href;
+            calcLink.className = 'calc-nav-link' + (link.classList.contains('active') ? ' active' : '');
+            
+            const icon = link.querySelector('.nav-icon');
+            const iconHtml = icon ? `<span class="calc-nav-icon">${icon.textContent}</span>` : '';
+            
+            let text = link.textContent.replace(icon ? icon.textContent : '', '').trim();
+            text = text.replace('个人所得税计算器', '个税')
+                       .replace('计算器', '')
+                       .replace('换算器', '');
+            
+            calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
+            calcNav.appendChild(calcLink);
+        });
+
+        header.insertBefore(calcNav, header.querySelector('.mobile-menu') || null);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNavigation);
+    } else {
+        initNavigation();
+    }
+
     // 点击外部关闭菜单
     document.addEventListener('click', function(e) {
         const float = document.getElementById('shareFloat');

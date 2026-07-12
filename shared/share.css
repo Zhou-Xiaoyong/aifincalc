@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 48px;
+    height: 44px;
 }
 
 .site-header .brand-link {
@@ -32,11 +32,11 @@
 }
 
 .site-header .brand-logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .site-header .brand-name {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
     font-weight: 700;
     color: #667eea;
     white-space: nowrap;
@@ -60,11 +60,11 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 6px 10px;
+    padding: 5px 10px;
     color: #555;
     text-decoration: none;
-    font-size: 0.78rem;
-    border-radius: 14px;
+    font-size: 0.76rem;
+    border-radius: 12px;
     transition: all 0.2s;
     flex-shrink: 0;
 }
@@ -80,14 +80,63 @@
 }
 
 .site-header .nav-icon {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+}
+
+/* 第二行导航 - 计算器快捷入口 */
+.site-header .calc-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    white-space: nowrap;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    background: rgba(248, 249, 250, 0.5);
+}
+
+.site-header .calc-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.site-header .calc-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.72rem;
+    border-radius: 10px;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.site-header .calc-nav-link:hover {
+    background: #f0f2ff;
+    color: #667eea;
+}
+
+.site-header .calc-nav-link.active {
+    background: #e8efff;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.site-header .calc-nav-icon {
+    font-size: 0.75rem;
 }
 
 .site-header .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
     color: #555;
     padding: 4px;
@@ -97,9 +146,9 @@
     display: none;
 }
 
-/* 页面顶部占位 — 仅48px header + 8px间隙 */
+/* 页面顶部占位 */
 .page-top-space {
-    padding-top: 56px;
+    padding-top: 88px;
 }
 
 /* 页面标题区域 */
@@ -477,8 +526,129 @@
     background: linear-gradient(135deg, #edf0ff 0%, #f0e8ff 100%);
 }
 
+/* AI建议统一优化样式 */
+.ai-suggestions {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8efff 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-suggestions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.ai-suggestions h4 {
+    color: #4a5568;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ai-suggestion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ai-suggestion-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
+}
+
+.ai-suggestion-item:hover {
+    transform: translateX(2px);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.ai-suggestion-item.warning {
+    background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+    border-left: 3px solid #f56565;
+}
+
+.ai-suggestion-item.success {
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    border-left: 3px solid #48bb78;
+}
+
+.ai-suggestion-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.ai-suggestion-text {
+    flex: 1;
+    font-size: 0.88rem;
+    color: #4a5568;
+    line-height: 1.7;
+}
+
+.ai-suggestion-text p {
+    margin-bottom: 8px;
+}
+
+.ai-suggestion-text p:last-child {
+    margin-bottom: 0;
+}
+
+.ai-suggestion-text strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.ai-suggestion-text ul,
+.ai-suggestion-text ol {
+    margin: 8px 0 8px 20px;
+}
+
+.ai-suggestion-text li {
+    margin-bottom: 4px;
+}
+
+.ai-suggestion-text h3,
+.ai-suggestion-text h4,
+.ai-suggestion-text h5 {
+    margin: 12px 0 8px;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.ai-suggestion-text h3 { font-size: 1rem; }
+.ai-suggestion-text h4 { font-size: 0.92rem; }
+.ai-suggestion-text h5 { font-size: 0.88rem; }
+
 /* 移动端适配 */
 @media (max-width: 768px) {
+    .site-header .calc-nav {
+        display: none;
+    }
+    
+    .site-header .header-container {
+        height: 48px;
+    }
+    
+    .page-top-space {
+        padding-top: 56px;
+    }
+    
     .site-header .nav-links {
         display: none;
     }

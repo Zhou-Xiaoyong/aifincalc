@@ -510,9 +510,7 @@ function calculateRetirement() {
     const suggestEl = document.getElementById('retireSuggestions');
     suggestEl.innerHTML = `
         <h4>💡 退休规划建议</h4>
-        <ul style="list-style:none;padding:0;">
-            ${suggestions.map(s => `<li style="padding:8px 0 8px 24px;position:relative;border-bottom:1px solid rgba(33,150,243,0.2);">${s}</li>`).join('')}
-        </ul>
+        ${renderSuggestions(suggestions)}
     `;
     suggestEl.style.display = 'block';
 

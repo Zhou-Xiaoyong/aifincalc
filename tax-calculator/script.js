@@ -190,20 +190,8 @@ function generateSuggestions(salary, insurance, deduction, tax, taxable) {
     analysis.push(`- 年度个税缴纳：**${formatMoney(tax * 12)}**`);
     analysis.push(`- 年度税后收入：**${formatMoney((salary - insurance - tax) * 12)}**`);
     
-    const htmlContent = analysis.map(line => {
-        if (line.startsWith('## ')) {
-            return `<h4>${line.replace('## ', '')}</h4>`;
-        } else if (line.startsWith('- ')) {
-            return `<li>${line.replace('- ', '')}</li>`;
-        } else if (line.startsWith('⚠️ ') || line.startsWith('💡 ') || line.startsWith('1️⃣ ') || line.startsWith('2️⃣ ') || line.startsWith('3️⃣ ') || line.startsWith('4️⃣ ')) {
-            return `<p>${line}</p>`;
-        } else if (line === '') {
-            return `<br>`;
-        }
-        return `<p>${line}</p>`;
-    }).join('');
-
-    document.getElementById('suggestionsContent').innerHTML = htmlContent;
+    const markdownContent = analysis.join('\n');
+    document.getElementById('suggestionsContent').innerHTML = renderMarkdown(markdownContent);
     document.getElementById('aiSuggestions').style.display = 'block';
 }
 

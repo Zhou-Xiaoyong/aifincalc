@@ -294,7 +294,7 @@ function generateCommercialSuggestions(result, income, otherDebt, loanAmount) {
         suggestions.push('您选择了LPR浮动利率，利率会随市场调整。建议关注LPR变化趋势，适时考虑转换为固定利率或调整还款策略。');
     }
     
-    document.getElementById('commSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('commSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('commSuggestions').style.display = 'block';
 }
 
@@ -391,7 +391,7 @@ function generateProvidentSuggestions(result, income, balance) {
     
     suggestions.push('公积金可以提取用于支付房租、装修等，建议了解当地公积金提取政策，合理利用公积金。');
     
-    document.getElementById('provSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('provSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('provSuggestions').style.display = 'block';
 }
 
@@ -517,7 +517,7 @@ function generateCombinedSuggestions(commResult, provResult, income, commAmount,
     suggestions.push('组合贷款可以充分利用公积金贷款的低利率优势，同时通过商业贷款补充额度，是大多数购房者的最优选择。');
     suggestions.push('建议优先使用公积金贷款额度，不足部分再用商业贷款补充，这样可以最大程度降低利息支出。');
     
-    document.getElementById('combSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('combSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('combSuggestions').style.display = 'block';
 }
 
@@ -684,7 +684,7 @@ function generatePrepaySuggestions(result, penalty, method) {
     suggestions.push('提前还款最佳时机通常是贷款初期，此时利息占比高，提前还款节省效果明显。');
     suggestions.push('如果您有其他收益率高于贷款利率的投资渠道，可以考虑投资而非提前还款。');
     
-    document.getElementById('preSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('preSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('preSuggestions').style.display = 'block';
 }
 

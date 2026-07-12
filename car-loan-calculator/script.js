@@ -280,7 +280,7 @@ function compare() {
     }
     suggestions.push(`建议月供不超过家庭月收入的20%-30%，确保生活质量`);
 
-    document.getElementById('compSuggestionsContent').innerHTML = `<ul>${suggestions.map(s => `<li>${s}</li>`).join('')}</ul>`;
+    document.getElementById('compSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('compSuggestions').style.display = 'block';
     document.getElementById('compResult').style.display = 'block';
     document.getElementById('compResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -342,7 +342,7 @@ function calculatePrepay() {
             </div>
         `;
         document.getElementById('preCompareTable').innerHTML = '';
-        document.getElementById('preSuggestionsContent').innerHTML = `<ul><li>恭喜！提前还清所有贷款，节省利息 ¥${formatMoney(savedInterest)}</li></ul>`;
+        document.getElementById('preSuggestionsContent').innerHTML = renderSuggestions([`✅ 恭喜！提前还清所有贷款，节省利息 ¥${formatMoney(savedInterest)}`]);
         document.getElementById('preSuggestions').style.display = 'block';
         document.getElementById('preResult').style.display = 'block';
         return;
@@ -443,7 +443,7 @@ function calculatePrepay() {
         suggestions.push('节省利息可观，提前还款是合理的选择');
     }
 
-    document.getElementById('preSuggestionsContent').innerHTML = `<ul>${suggestions.map(s => `<li>${s}</li>`).join('')}</ul>`;
+    document.getElementById('preSuggestionsContent').innerHTML = renderSuggestions(suggestions);
     document.getElementById('preSuggestions').style.display = 'block';
     document.getElementById('preResult').style.display = 'block';
     document.getElementById('preResult').scrollIntoView({ behavior: 'smooth', block: 'start' });

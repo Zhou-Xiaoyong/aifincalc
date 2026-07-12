@@ -290,7 +290,7 @@ function generateQuotaSuggestions(quota, methods, city, workerType, houseType, m
 
     const container = document.getElementById('quotaSuggestions');
     container.style.display = 'block';
-    document.getElementById('quotaSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('quotaSuggestionsContent').innerHTML = renderSuggestions(suggestions);
 }
 
 // ═══════════════════════════════════════════
@@ -473,7 +473,7 @@ function generateLoanSuggestions(amount, years, rate, repayType, totalPayment, t
 
     const container = document.getElementById('loanSuggestions');
     container.style.display = 'block';
-    document.getElementById('loanSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('loanSuggestionsContent').innerHTML = renderSuggestions(suggestions);
 }
 
 // ═══════════════════════════════════════════
@@ -635,7 +635,7 @@ function generateDeductionSuggestions(monthlyDeduction, cashOut, months, savedIn
 
     const container = document.getElementById('deductionSuggestions');
     container.style.display = 'block';
-    document.getElementById('deductionSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('deductionSuggestionsContent').innerHTML = renderSuggestions(suggestions);
 }
 
 // ═══════════════════════════════════════════
@@ -866,7 +866,7 @@ function generateCompareSuggestions(plans, bestPlan, totalLoan, provAmount, down
 
     const container = document.getElementById('compareSuggestions');
     container.style.display = 'block';
-    document.getElementById('compareSuggestionsContent').innerHTML = '<ul>' + suggestions.map(s => `<li>${s}</li>`).join('') + '</ul>';
+    document.getElementById('compareSuggestionsContent').innerHTML = renderSuggestions(suggestions);
 }
 
 // 复制链接分享
