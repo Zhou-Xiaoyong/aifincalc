@@ -854,6 +854,226 @@ footer a {
     text-decoration: underline;
 }
 
+/* 相关推荐模块 */
+.related-section {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.related-block {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.related-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.related-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 2px;
+}
+
+/* 相关工具网格 */
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(240, 147, 251, 0.25);
+    border-color: rgba(245, 87, 108, 0.2);
+    background: white;
+}
+
+.tool-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tool-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-icon {
+    transform: scale(1.15);
+}
+
+.tool-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.tool-desc {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* 推荐文章 */
+.related-articles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.article-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-left: 4px solid transparent;
+}
+
+.article-card:hover {
+    transform: translateX(6px);
+    background: white;
+    box-shadow: 0 8px 24px rgba(240, 147, 251, 0.2);
+    border-left-color: #f5576c;
+}
+
+.article-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 12px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.article-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.article-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.article-desc {
+    font-size: 0.85rem;
+    color: #888;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .related-block {
+        padding: 20px;
+    }
+
+    .related-title {
+        font-size: 1.1rem;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .tool-card {
+        padding: 16px 12px;
+    }
+
+    .tool-icon {
+        font-size: 1.6rem;
+    }
+
+    .tool-name {
+        font-size: 0.9rem;
+    }
+
+    .tool-desc {
+        font-size: 0.75rem;
+    }
+
+    .article-card {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .article-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .article-title {
+        font-size: 0.9rem;
+    }
+
+    .article-desc {
+        font-size: 0.8rem;
+    }
+}
+
 /* 响应式 */
 @media (max-width: 768px) {
     header h1 {

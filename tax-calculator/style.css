@@ -795,6 +795,189 @@ footer a {
     margin-top: 12px !important;
 }
 
+/* 相关推荐模块通用样式 */
+.related-tools,
+.related-articles {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+
+/* 相关计算工具 - 卡片网格 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.tool-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+    background: white;
+}
+
+.tool-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tool-card-icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+}
+
+.tool-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.tool-card-title {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tool-card-desc {
+    color: #6c757d;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.tool-card-arrow {
+    color: #667eea;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-card-arrow {
+    transform: translateX(4px);
+}
+
+/* 推荐阅读 - 文章列表 */
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.article-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.article-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+    background: white;
+    border-left-color: #764ba2;
+}
+
+.article-card-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+}
+
+.article-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.article-card-title {
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.article-card-desc {
+    color: #6c757d;
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.article-card-arrow {
+    color: #667eea;
+    font-size: 1.1rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-card-arrow {
+    transform: translateX(4px);
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 1.8rem;
@@ -844,5 +1027,58 @@ footer a {
     .tax-formula-table th,
     .tax-formula-table td {
         padding: 6px 4px;
+    }
+
+    .related-tools,
+    .related-articles {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .tool-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .tool-card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 1.8rem;
+    }
+
+    .tool-card-title {
+        font-size: 0.95rem;
+    }
+
+    .tool-card-desc {
+        font-size: 0.78rem;
+    }
+
+    .article-card {
+        padding: 14px 16px;
+        gap: 12px;
+    }
+
+    .article-card-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .article-card-title {
+        font-size: 0.9rem;
+    }
+
+    .article-card-desc {
+        font-size: 0.78rem;
     }
 }

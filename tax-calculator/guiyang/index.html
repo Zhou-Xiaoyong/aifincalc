@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贵阳个税计算器2026 - 最新贵阳个人所得税政策|社保缴费比例 - AI金融计算器</title>
+    <meta name="description" content="2026年贵阳个税计算器，提供贵阳市最新个人所得税政策、社保缴费基数与比例、公积金缴纳标准。包含贵阳个税起征点、专项附加扣除、税率表及详细计算案例，帮助贵阳大数据从业者准确计算税后工资。">
+    <meta name="keywords" content="贵阳个税计算器,贵阳个人所得税,贵阳社保缴费比例,贵阳公积金,个税起征点,贵阳工资扣税,2026贵阳个税">
+    <link rel="canonical" href="https://aifincalc.com/tax-calculator/guiyang/">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../shared/share.css">
+    <style>
+        .city-page-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        .city-page-content h1 {
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 24px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .city-page-content h2 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-left: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .city-page-content h3 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .city-page-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+        .city-page-content ul, .city-page-content ol {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 24px;
+        }
+        .city-page-content li {
+            margin-bottom: 6px;
+        }
+        .city-intro {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .social-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .social-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .social-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+            color: #555;
+        }
+        .social-table tr:last-child td {
+            border-bottom: none;
+        }
+        .social-table tr:hover {
+            background: #f8f9fa;
+        }
+        .formula-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+        .formula-box p {
+            color: #1565c0;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        .case-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+        .case-box h4 {
+            color: #e65100;
+            margin-bottom: 12px;
+        }
+        .case-box p, .case-box li {
+            color: #5d4037;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-item h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+        }
+        .faq-item p {
+            color: #6c757d;
+        }
+        .tools-recommend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .tool-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .tool-card:hover {
+            border-color: #667eea;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+        .tool-card .tool-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .tool-card .tool-name {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .tool-card .tool-desc {
+            color: #6c757d;
+            font-size: 0.85rem;
+        }
+        .breadcrumb {
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            opacity: 0.9;
+        }
+        .breadcrumb a {
+            color: white;
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .city-page-content {
+                padding: 24px 20px;
+            }
+            .city-page-content h1 {
+                font-size: 1.5rem;
+            }
+            .social-table {
+                font-size: 0.85rem;
+            }
+            .social-table th, .social-table td {
+                padding: 8px 6px;
+            }
+            .tools-recommend {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="sub-header">
+            <a href="../../index.html" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <div class="breadcrumb">
+                <a href="../../index.html">首页</a> / <a href="../index.html">个税计算器</a> / 贵阳
+            </div>
+            <h1>贵阳个人所得税政策指南 2026</h1>
+            <p>贵阳市最新个税政策、社保缴费比例与计算案例详解</p>
+        </header>
+
+        <nav class="tool-nav">
+            <a href="../../index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="../index.html" class="nav-item active">
+                <span class="nav-icon">🧮</span>
+                <span>个税计算器</span>
+            </a>
+            <a href="../../mortgage-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🏡</span>
+                <span>房贷计算器</span>
+            </a>
+            <a href="../../car-loan-calculator/index.html" class="nav-item">
+                <span class="nav-icon">🚗</span>
+                <span>车贷计算器</span>
+            </a>
+            <a href="../../provident-fund-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💰</span>
+                <span>公积金贷款</span>
+            </a>
+            <a href="../../exchange-rate-calculator/index.html" class="nav-item">
+                <span class="nav-icon">💱</span>
+                <span>汇率换算</span>
+            </a>
+            <a href="../../investment-calculator/index.html" class="nav-item">
+                <span class="nav-icon">📈</span>
+                <span>投资收益</span>
+            </a>
+        </nav>
+
+        <div class="city-page-content">
+            <h1>🏔️ 贵阳市个人所得税政策详解</h1>
+
+            <div class="city-intro">
+                <h3>📌 贵阳城市简介</h3>
+                <p>贵阳是贵州省省会，被誉为"中国数谷"，是全国重要的大数据产业发展集聚区。近年来，贵阳依托凉爽的气候和丰富的能源资源，吸引了苹果、华为、腾讯等众多知名企业在此建设数据中心，大数据相关从业人员快速增长。作为西南地区重要的中心城市，贵阳常住人口约620万，生态环境优良，房价相对亲民，生活成本适中。本文详细解读2026年贵阳市最新个人所得税政策，帮助在贵阳工作的朋友，特别是大数据产业从业者，准确计算自己的税后收入。</p>
+            </div>
+
+            <h2>一、个税起征点说明</h2>
+            <p>2026年贵阳市个人所得税起征点与全国统一，为每月<strong>5000元</strong>（年度60000元）。这一标准自2018年个税改革以来一直保持稳定。</p>
+            <p>居民个人取得综合所得（包括工资薪金所得、劳务报酬所得、稿酬所得、特许权使用费所得），按纳税年度合并计算个人所得税。</p>
+            <p>除了基本减除费用（起征点）外，还可以扣除五险一金个人缴纳部分、专项附加扣除以及依法确定的其他扣除项目。</p>
+
+            <h2>二、社保缴费基数与比例</h2>
+            <p>贵阳市社保和住房公积金由单位和个人共同缴纳，以下是个人缴费部分的比例明细：</p>
+
+            <table class="social-table">
+                <thead>
+                    <tr>
+                        <th>险种</th>
+                        <th>个人缴费比例</th>
+                        <th>单位缴费比例</th>
+                        <th>说明</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>养老保险</td>
+                        <td>8%</td>
+                        <td>16%</td>
+                        <td>累计缴满15年可领养老金</td>
+                    </tr>
+                    <tr>
+                        <td>医疗保险</td>
+                        <td>2%</td>
+                        <td>8.5%</td>
+                        <td>含大病医疗保险</td>
+                    </tr>
+                    <tr>
+                        <td>失业保险</td>
+                        <td>0.3%</td>
+                        <td>0.7%</td>
+                        <td>失业后可领取失业金</td>
+                    </tr>
+                    <tr>
+                        <td>工伤保险</td>
+                        <td>0%</td>
+                        <td>0.2%-1.9%</td>
+                        <td>个人不缴费</td>
+                    </tr>
+                    <tr>
+                        <td>生育保险</td>
+                        <td>0%</td>
+                        <td>0.5%</td>
+                        <td>已并入医疗保险</td>
+                    </tr>
+                    <tr>
+                        <td>住房公积金</td>
+                        <td>12%</td>
+                        <td>12%</td>
+                        <td>最高比例12%，可用于买房贷款</td>
+                    </tr>
+                    <tr style="background: #f0f4ff; font-weight: 600;">
+                        <td>个人合计</td>
+                        <td>22.3%</td>
+                        <td>-</td>
+                        <td>五险一金个人总缴费比例</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>缴费基数说明：</strong>社保缴费基数通常以上一年度本人月平均工资为基础，在贵阳市公布的社保缴费基数上下限范围内核定。2026年贵阳社保缴费基数上下限会根据贵州省上年度全口径城镇单位就业人员平均工资进行调整。住房公积金缴费基数原则上与社保基数一致，缴存比例可在5%-12%之间选择，贵阳不少大数据企业按12%的最高比例缴纳。</p>
+
+            <h2>三、个税计算公式</h2>
+            <p>个人所得税采用超额累进税率计算，具体公式如下：</p>
+
+            <div class="formula-box">
+                <p>📝 应纳税所得额 = 税前工资 - 五险一金（个人部分）- 专项附加扣除 - 其他扣除 - 起征点（5000元）</p>
+            </div>
+
+            <div class="formula-box">
+                <p>💸 应缴个税 = 应纳税所得额 × 适用税率 - 速算扣除数</p>
+            </div>
+
+            <div class="formula-box">
+                <p>💰 实发工资 = 税前工资 - 五险一金（个人部分）- 应缴个税</p>
+            </div>
+
+            <h3>个人所得税税率表（综合所得适用）</h3>
+            <table class="social-table">
+                <thead>
+                    <tr>
+                        <th>级数</th>
+                        <th>全年应纳税所得额</th>
+                        <th>税率</th>
+                        <th>速算扣除数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>不超过36,000元</td><td>3%</td><td>0</td></tr>
+                    <tr><td>2</td><td>超过36,000至144,000元</td><td>10%</td><td>2,520</td></tr>
+                    <tr><td>3</td><td>超过144,000至300,000元</td><td>20%</td><td>16,920</td></tr>
+                    <tr><td>4</td><td>超过300,000至420,000元</td><td>25%</td><td>31,920</td></tr>
+                    <tr><td>5</td><td>超过420,000至660,000元</td><td>30%</td><td>52,920</td></tr>
+                    <tr><td>6</td><td>超过660,000至960,000元</td><td>35%</td><td>85,920</td></tr>
+                    <tr><td>7</td><td>超过960,000元</td><td>45%</td><td>181,920</td></tr>
+                </tbody>
+            </table>
+
+            <h3>专项附加扣除项目</h3>
+            <ul>
+                <li><strong>子女教育：</strong>每个子女每月2000元，3岁以上至全日制学历教育阶段</li>
+                <li><strong>3岁以下婴幼儿照护：</strong>每个婴幼儿每月2000元</li>
+                <li><strong>继续教育：</strong>每月400元（学历教育），最长不超过48个月</li>
+                <li><strong>住房贷款利息：</strong>每月1000元，最长不超过240个月</li>
+                <li><strong>住房租金：</strong>贵阳作为省会城市，每月扣除1500元</li>
+                <li><strong>赡养老人：</strong>独生子女每月3000元，非独生子女分摊每人不超过1500元</li>
+            </ul>
+            <p><em>注意：住房贷款利息和住房租金两项不能同时享受。</em></p>
+
+            <h2>四、计算案例</h2>
+            <p>以下是一个典型的贵阳大数据从业者个税计算案例，帮助大家更好地理解个税计算方法。</p>
+
+            <div class="case-box">
+                <h4>📌 案例：王先生（贵阳贵安新区大数据公司算法工程师）</h4>
+                <p><strong>基本情况：</strong></p>
+                <ul>
+                    <li>税前月薪：20,000元</li>
+                    <li>社保缴费基数：20,000元</li>
+                    <li>住房公积金比例：12%</li>
+                    <li>居住情况：观山湖区首套房，有住房贷款</li>
+                    <li>家庭情况：已婚，1个孩子上幼儿园，独生子女，父母均已年过60岁</li>
+                    <li>子女教育由夫妻双方各扣50%</li>
+                </ul>
+
+                <p style="margin-top: 16px;"><strong>计算过程：</strong></p>
+                <ol>
+                    <li><strong>五险一金个人缴纳：</strong>20000 × (8%+2%+0.3%+12%) = 20000 × 22.3% = 4,460元</li>
+                    <li><strong>专项附加扣除：</strong>
+                        <ul>
+                            <li>子女教育：1000元（夫妻各50%）</li>
+                            <li>住房贷款利息：1000元</li>
+                            <li>赡养老人：3000元（独生子女）</li>
+                            <li><strong>合计：5,000元</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong>应纳税所得额：</strong>20000 - 4460 - 5000 - 5000 = 5,540元/月</li>
+                    <li><strong>全年应纳税所得额：</strong>5540 × 12 = 66,480元</li>
+                    <li><strong>适用税率：</strong>10%，速算扣除数2,520元</li>
+                    <li><strong>年度应缴个税：</strong>66480 × 10% - 2520 = 4,128元</li>
+                    <li><strong>月度应缴个税：</strong>4128 ÷ 12 = 344元</li>
+                    <li><strong>税后月收入：</strong>20000 - 4460 - 344 = <strong>15,196元</strong></li>
+                </ol>
+            </div>
+
+            <p>通过这个案例可以看出，在贵阳贵安新区从事大数据工作的王先生，税前月薪20000元，扣除五险一金和个税后，实际到手约15200元左右。得益于贵阳大数据产业的快速发展，不少企业按12%的最高比例缴纳公积金，王先生的公积金账户每月会存入4800元（个人+单位各2400元）。相比一线城市，贵阳的房价和生活成本较低，这样的收入水平在贵阳可以过上比较舒适的生活。</p>
+
+            <h2>五、常见问题</h2>
+
+            <div class="faq-item">
+                <h4>1. 贵阳社保缴费基数上下限是多少？</h4>
+                <p>贵阳市每年会根据贵州省上一年度全口径城镇单位就业人员平均工资核定社保缴费基数上下限。一般每年7月份进行调整。2026年的最新标准请关注贵州省人力资源和社会保障厅官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>2. 贵阳公积金可以提取出来还房贷吗？</h4>
+                <p>可以。贵阳住房公积金支持购房提取、还贷提取、租房提取等多种提取方式。使用公积金偿还住房贷款本息，可以选择按月提取或按年提取，提取金额不超过实际还款额。建议通过"贵阳公积金"APP或贵阳住房公积金管理中心官网办理。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>3. 贵阳大数据企业有个税优惠政策吗？</h4>
+                <p>目前国家层面有针对高新技术企业和小型微利企业的企业所得税优惠，但个人所得税政策全国统一。不过贵阳大数据企业可能会提供住房补贴、子女教育补贴等福利，部分人才还可以申请贵阳市的人才补贴。建议咨询所在企业的人力资源部门了解具体福利政策。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>4. 贵阳个税专项附加扣除住房租金标准是多少？</h4>
+                <p>贵阳作为省会城市，住房租金专项附加扣除标准为每月1500元。如果您在贵阳市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。需要注意的是，住房贷款利息和住房租金不能同时享受扣除。</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>5. 贵阳个人所得税年度汇算什么时候办理？</h4>
+                <p>每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过"个人所得税"手机APP进行办理，多退少补。如果年度综合所得收入不超过12万元且需要补税，或者补税金额不超过400元，可以免于办理年度汇算。</p>
+            </div>
+
+            <h2>六、相关工具推荐</h2>
+            <p>除了个税计算，我们还提供更多实用的金融计算工具，帮助您规划个人财务：</p>
+
+            <div class="tools-recommend">
+                <a href="../index.html" class="tool-card">
+                    <div class="tool-icon">🧮</div>
+                    <div class="tool-name">个税计算器</div>
+                    <div class="tool-desc">智能计算个税与税后工资</div>
+                </a>
+                <a href="../../mortgage-calculator/index.html" class="tool-card">
+                    <div class="tool-icon">🏡</div>
+                    <div class="tool-name">房贷计算器</div>
+                    <div class="tool-desc">计算房贷月供与总利息</div>
+                </a>
+                <a href="../../provident-fund-calculator/index.html" class="tool-card">
+                    <div class="tool-icon">💰</div>
+                    <div class="tool-name">公积金贷款</div>
+                    <div class="tool-desc">公积金贷款额度计算</div>
+                </a>
+                <a href="../../car-loan-calculator/index.html" class="tool-card">
+                    <div class="tool-icon">🚗</div>
+                    <div class="tool-name">车贷计算器</div>
+                    <div class="tool-desc">汽车贷款月供计算</div>
+                </a>
+                <a href="../../investment-calculator/index.html" class="tool-card">
+                    <div class="tool-icon">📈</div>
+                    <div class="tool-name">投资收益</div>
+                    <div class="tool-desc">理财收益计算工具</div>
+                </a>
+                <a href="../../exchange-rate-calculator/index.html" class="tool-card">
+                    <div class="tool-icon">💱</div>
+                    <div class="tool-name">汇率换算</div>
+                    <div class="tool-desc">实时汇率转换工具</div>
+                </a>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e9ecef;">
+                <p style="color: #6c757d; font-size: 0.9rem;">数据更新时间：2026年1月 | 仅供参考，具体以官方公布为准</p>
+                <a href="../index.html" style="display: inline-block; margin-top: 16px; padding: 12px 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 10px; font-weight: 600;">
+                    立即使用个税计算器 →
+                </a>
+            </div>
+        </div>
+
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 AI金融计算器 | <a href="../../index.html">首页</a> | <a href="../index.html">个税计算器</a> | <a href="../../mortgage-calculator/index.html">房贷计算器</a> | <a href="../../car-loan-calculator/index.html">车贷计算器</a> | <a href="../../provident-fund-calculator/index.html">公积金贷款</a> | <a href="../../exchange-rate-calculator/index.html">汇率换算</a> | <a href="../../investment-calculator/index.html">投资收益</a> | <a href="../../about/index.html">关于本站</a> | <a href="../../contact/index.html">联系我们</a> | <a href="../../privacy/index.html">隐私政策</a></p>
+        </footer>
+    </div>
+
+    <script src="../../shared/constants.js"></script>
+    <script src="../../shared/share.js"></script>
+    <script src="../../shared/analytics.js"></script>
+</body>
+</html>
