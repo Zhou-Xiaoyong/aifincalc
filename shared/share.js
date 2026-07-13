@@ -33,6 +33,8 @@
         const calcNav = document.createElement('nav');
         calcNav.className = 'calc-nav';
         
+        const currentPath = window.location.pathname;
+        
         calcLinks.forEach(link => {
             const calcLink = document.createElement('a');
             calcLink.href = link.href;
@@ -42,11 +44,21 @@
             const iconHtml = icon ? `<span class="calc-nav-icon">${icon.textContent}</span>` : '';
             
             let text = link.textContent.replace(icon ? icon.textContent : '', '').trim();
-            text = text.replace('个人所得税计算器', '个税')
-                       .replace('计算器', '')
-                       .replace('换算器', '');
             
-            calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
+            const linkPath = new URL(link.href, window.location.origin).pathname;
+            const pathParts = linkPath.split('/').filter(p => p);
+            const linkDir = pathParts.length >= 2 ? pathParts[pathParts.length - 2] : pathParts[0];
+            const isCurrentPage = currentPath.includes('/' + linkDir + '/') || currentPath === '/' + linkDir;
+            
+            if (isCurrentPage) {
+                calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
+            } else {
+                text = text.replace('个人所得税计算器', '个税')
+                           .replace('计算器', '')
+                           .replace('换算器', '');
+                calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
+            }
+            
             calcNav.appendChild(calcLink);
         });
 
