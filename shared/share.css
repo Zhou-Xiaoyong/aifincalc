@@ -123,9 +123,12 @@
 }
 
 .site-header .calc-nav-link.active {
-    background: #e8efff;
-    color: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
     font-weight: 600;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35);
+    transform: scale(1.02);
+    padding: 5px 12px;
 }
 
 .site-header .calc-nav-icon {
