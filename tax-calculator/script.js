@@ -143,12 +143,12 @@ function generateSuggestions(salary, insurance, deduction, tax, taxable) {
     if (deduction === 0) {
         analysis.push('');
         analysis.push(`⚠️ **节税建议**：您当前未享受任何专项附加扣除。根据个税政策，以下项目可申请扣除：`);
-        analysis.push(`- 👶 子女教育：每个子女每月1000元`);
-        analysis.push(`- 🏠 住房贷款利息：每月1000元`);
-        analysis.push(`- 🏠 住房租金：根据城市不同800-1500元`);
-        analysis.push(`- 🧓 赡养老人：独生子女每月2000元，非独生子女分摊`);
-        analysis.push(`- 📚 继续教育：学历教育每月400元，职业资格每年3600元`);
-        analysis.push(`- 👶 3岁以下婴幼儿照护：每个婴幼儿每月1000元`);
+        analysis.push(`- 👶 子女教育：每个子女每月${SPECIAL_DEDUCTIONS.child}元`);
+        analysis.push(`- 🏠 住房贷款利息：每月${SPECIAL_DEDUCTIONS.housingLoan}元`);
+        analysis.push(`- 🏠 住房租金：根据城市不同800-${SPECIAL_DEDUCTIONS.housingRent}元`);
+        analysis.push(`- 🧓 赡养老人：独生子女每月${SPECIAL_DEDUCTIONS.elderlyMain}元，非独生子女分摊`);
+        analysis.push(`- 📚 继续教育：学历教育每月${SPECIAL_DEDUCTIONS.continuing}元，职业资格每年3600元`);
+        analysis.push(`- 👶 3岁以下婴幼儿照护：每个婴幼儿每月${SPECIAL_DEDUCTIONS.infant}元`);
         analysis.push(`建议检查是否符合上述条件，合理利用扣除政策可有效降低税负。`);
     } else {
         const unusedDeductions = [];

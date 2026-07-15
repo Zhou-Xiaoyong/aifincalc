@@ -238,7 +238,7 @@ const CITY_SOCIAL_RATES = {
         name: '海口',
         pension: 8, medical: 2, unemployment: 0.5, housing: 12
     },
-    haerbin: {
+    huhehaote: {
         name: '呼和浩特',
         pension: 8, medical: 2, unemployment: 0.5, housing: 12
     },
