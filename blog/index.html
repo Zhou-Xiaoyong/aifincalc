@@ -333,7 +333,8 @@
                     <form class="search-box" role="search" onsubmit="return false;">
                         <input type="text" id="blogSearchInput" placeholder="搜索个税、房贷、理财..." autocomplete="off">
                     </form>
-                    <p id="searchResultInfo" class="search-result-info" hidden></p>
+                    <ul id="searchResults" class="search-results" hidden></ul>
+                    <p id="searchResultInfo" class="search-result-info"></p>
                 </div>
 
                 <div class="sidebar-widget">
@@ -478,38 +479,59 @@
     (function () {
         var input = document.getElementById('blogSearchInput');
         var info = document.getElementById('searchResultInfo');
-        if (!input) return;
-        var cards = Array.prototype.slice.call(document.querySelectorAll('.article-list .article-card'));
-        function doSearch(raw) {
+        var results = document.getElementById('searchResults');
+        if (!input || !results) return;
+        // 从现有文章卡片构建搜索索引（标题/分类/全文），纯前端、无需后端
+        var index = Array.prototype.slice.call(
+            document.querySelectorAll('.article-list .article-card')
+        ).map(function (c) {
+            var h2 = c.querySelector('h2');
+            var cat = c.querySelector('.article-category');
+            return {
+                el: c,
+                href: c.getAttribute('href'),
+                title: h2 ? h2.textContent.trim() : c.textContent.trim(),
+                cat: cat ? cat.textContent.trim() : '',
+                text: c.textContent.toLowerCase()
+            };
+        });
+        function render(raw) {
             var q = (raw || '').trim().toLowerCase();
-            if (!q) {
-                cards.forEach(function (c) { c.style.display = ''; });
-                info.hidden = true;
-                return;
-            }
-            var hit = 0;
-            cards.forEach(function (c) {
-                var text = c.textContent.toLowerCase();
-                if (text.indexOf(q) !== -1) {
-                    c.style.display = '';
-                    hit++;
+            var hits = [];
+            index.forEach(function (it) {
+                if (!q || it.text.indexOf(q) !== -1) {
+                    it.el.style.display = '';
+                    hits.push(it);
                 } else {
-                    c.style.display = 'none';
+                    it.el.style.display = 'none';
                 }
             });
-            info.hidden = false;
-            info.textContent = '找到 ' + hit + ' 篇相关文章' + (hit === 0 ? '：换个关键词试试' : '');
+            if (!q) {
+                results.hidden = true;
+                results.innerHTML = '';
+                info.textContent = '共 ' + index.length + ' 篇精选文章';
+                return;
+            }
+            if (hits.length === 0) {
+                results.hidden = true;
+                results.innerHTML = '';
+                info.textContent = '未找到与「' + raw.trim() + '」相关的文章，换个关键词试试';
+                return;
+            }
+            // 在搜索框下方直接渲染可点击的结果列表（始终可见，不依赖视口布局）
+            results.hidden = false;
+            results.innerHTML = hits.map(function (it) {
+                return '<li><a href="' + it.href + '">' +
+                    (it.cat ? '<span class="sr-cat">' + it.cat + '</span>' : '') +
+                    '<span class="sr-title">' + it.title + '</span></a></li>';
+            }).join('');
+            info.textContent = '找到 ' + hits.length + ' 篇相关文章';
         }
-        input.addEventListener('input', function () { doSearch(input.value); });
-        // 支持 ?s= 深链（首页 SearchAction 指向此 URL，Google 站内搜索框点击后落地）
-        var params = new URLSearchParams(window.location.search);
-        var s = params.get('s');
-        if (s) {
-            input.value = s;
-            doSearch(s);
-            var list = document.querySelector('.article-list');
-            if (list) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        input.addEventListener('input', function () { render(input.value); });
+        render(''); // 初始化计数，预留空间避免布局跳动
+        // 支持 ?s= 深链（首页 SearchAction 指向此 URL）
+        var s = new URLSearchParams(window.location.search).get('s');
+        if (s) { input.value = s; render(s); }
     })();
     </script>
 </body>

@@ -73,6 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow-anchor: none;
 }
 
 .article-card {
@@ -227,6 +228,42 @@ body {
     margin: 10px 2px 0;
     font-size: 0.82rem;
     color: #888;
+    min-height: 1.1em;
+}
+
+/* 搜索结果列表：紧贴搜索框渲染，始终可见，不依赖视口布局 */
+.search-results {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.search-results li a {
+    display: block;
+    padding: 10px 12px;
+    background: #f7f8fc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1a1a2e;
+    transition: background 0.2s, transform 0.2s;
+}
+.search-results li a:hover {
+    background: #eef0fb;
+    transform: translateX(2px);
+}
+.search-results .sr-cat {
+    display: block;
+    font-size: 0.7rem;
+    color: #667eea;
+    margin-bottom: 3px;
+}
+.search-results .sr-title {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    font-weight: 500;
 }
 
 /* 分类列表 */
