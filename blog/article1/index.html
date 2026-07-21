@@ -35,6 +35,66 @@
         "mainEntityOfPage": "https://aifincalc.com/blog/article1/"
     }
     </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "个税专项附加扣除",
+                "item": "https://aifincalc.com/blog/article1/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "2026年个税起征点是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年个人所得税起征点仍为每月5000元（全年6万元），沿用综合与分类相结合的税制。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "七项专项附加扣除包括哪些？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "包括子女教育、继续教育、大病医疗、住房贷款利息、住房租金、赡养老人、3岁以下婴幼儿照护七项。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "住房贷款利息和住房租金扣除能同时享受吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "不能，两者只能二选一。一般来说大城市租房选租金扣除（1500元/月）更划算，有房贷则选利息扣除（1000元/月）。"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero-bg"></div>
@@ -460,7 +520,35 @@
         </article>
 
         <section class="related-section">
-            <h2 class="section-title">相关推荐</h2>
+                <!-- 相关计算器 -->
+    <section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../tax-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>个人所得税计算器</h3>
+                <p class="related-desc">2026最新个税计算，支持专项附加扣除与年终奖计税</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：2026年个税起征点是多少？</p>
+            <p class="faq-a">A：2026年个人所得税起征点仍为每月5000元（全年6万元），沿用综合与分类相结合的税制。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：七项专项附加扣除包括哪些？</p>
+            <p class="faq-a">A：包括子女教育、继续教育、大病医疗、住房贷款利息、住房租金、赡养老人、3岁以下婴幼儿照护七项。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：住房贷款利息和住房租金扣除能同时享受吗？</p>
+            <p class="faq-a">A：不能，两者只能二选一。一般来说大城市租房选租金扣除（1500元/月）更划算，有房贷则选利息扣除（1000元/月）。</p>
+        </div>
+    </section>
+<h2 class="section-title">相关推荐</h2>
             <div class="related-grid">
                 <a href="../article2/index.html" class="related-card">
                     <span class="related-cat">房贷攻略</span>

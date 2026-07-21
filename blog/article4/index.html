@@ -35,6 +35,66 @@
         "mainEntityOfPage": "https://aifincalc.com/blog/article4/"
     }
     </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "基金定投与复利",
+                "item": "https://aifincalc.com/blog/article4/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "基金定投适合什么样的人？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "适合有长期理财目标、不愿或不会择时、希望强制储蓄的普通投资者。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "什么是复利？72法则怎么用？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "复利是利滚利。72法则：用72除以年化收益率，约等于本金翻倍所需年数，例如年化6%约12年翻倍。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "定投和一次性投资哪个更好？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "定投分批买入、平滑成本、降低择时风险，长期更适合大多数人；一次性投资在低点入场收益更高但风险集中。"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero-bg"></div>
@@ -494,7 +554,40 @@
         </article>
 
         <section class="related-section">
-            <h2 class="section-title">相关推荐</h2>
+                <!-- 相关计算器 -->
+    <section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../investment-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>投资收益计算器</h3>
+                <p class="related-desc">复利、定投模拟与退休规划收益测算</p>
+            </a>
+            <a href="../../deposit-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>存款利息计算器</h3>
+                <p class="related-desc">活定期、零存整取与自动转存利息计算</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：基金定投适合什么样的人？</p>
+            <p class="faq-a">A：适合有长期理财目标、不愿或不会择时、希望强制储蓄的普通投资者。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：什么是复利？72法则怎么用？</p>
+            <p class="faq-a">A：复利是利滚利。72法则：用72除以年化收益率，约等于本金翻倍所需年数，例如年化6%约12年翻倍。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：定投和一次性投资哪个更好？</p>
+            <p class="faq-a">A：定投分批买入、平滑成本、降低择时风险，长期更适合大多数人；一次性投资在低点入场收益更高但风险集中。</p>
+        </div>
+    </section>
+<h2 class="section-title">相关推荐</h2>
             <div class="related-grid">
                 <a href="../article1/index.html" class="related-card">
                     <span class="related-cat">政策解读</span>

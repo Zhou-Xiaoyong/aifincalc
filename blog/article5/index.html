@@ -35,6 +35,66 @@
         "mainEntityOfPage": "https://aifincalc.com/blog/article5/"
     }
     </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "年终奖计税",
+                "item": "https://aifincalc.com/blog/article5/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "年终奖可以单独计税吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。全年一次性奖金单独计税优惠政策已延续至2027年12月31日。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "单独计税和并入综合所得哪个更省？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "取决于工资与年终奖水平：工资高、年终奖多时单独计税通常更省；低收入者并入综合所得可能更省，建议用计算器对比。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "年终奖计税有“盲区”吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "有。由于税率分档，存在多发一元反而税后更少的“无效区间”，填报时应避开临界点。"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero-bg"></div>
@@ -649,7 +709,35 @@
         </article>
 
         <section class="related-section">
-            <h2 class="section-title">相关推荐</h2>
+                <!-- 相关计算器 -->
+    <section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../tax-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>个人所得税计算器</h3>
+                <p class="related-desc">2026最新个税计算，支持专项附加扣除与年终奖计税</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：年终奖可以单独计税吗？</p>
+            <p class="faq-a">A：可以。全年一次性奖金单独计税优惠政策已延续至2027年12月31日。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：单独计税和并入综合所得哪个更省？</p>
+            <p class="faq-a">A：取决于工资与年终奖水平：工资高、年终奖多时单独计税通常更省；低收入者并入综合所得可能更省，建议用计算器对比。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：年终奖计税有“盲区”吗？</p>
+            <p class="faq-a">A：有。由于税率分档，存在多发一元反而税后更少的“无效区间”，填报时应避开临界点。</p>
+        </div>
+    </section>
+<h2 class="section-title">相关推荐</h2>
             <div class="related-grid">
                 <a href="../article1/index.html" class="related-card">
                     <span class="related-cat">政策解读</span>

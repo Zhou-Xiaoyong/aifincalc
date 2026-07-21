@@ -35,6 +35,66 @@
         "mainEntityOfPage": "https://aifincalc.com/blog/article7/"
     }
     </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "提前还贷",
+                "item": "https://aifincalc.com/blog/article7/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "提前还贷一定划算吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "不一定。当房贷利率明显高于你能稳定获得的投资收益率时提前还贷才划算；否则资金用于投资可能更优。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "缩短年限和减少月供哪种省利息？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "选择“缩短年限、月供基本不变”节省的总利息远多于“减少月供、年限不变”。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "提前还款要付违约金吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "多数银行要求正常还款满12个月后提前还款免收违约金，具体以贷款合同为准。"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero-bg"></div>
@@ -604,7 +664,40 @@
         </article>
 
         <section class="related-section">
-            <h2 class="section-title">相关推荐</h2>
+                <!-- 相关计算器 -->
+    <section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../mortgage-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>房贷计算器</h3>
+                <p class="related-desc">LPR房贷月供、等额本息/本金对比与提前还贷测算</p>
+            </a>
+            <a href="../../car-loan-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>车贷计算器</h3>
+                <p class="related-desc">车贷月供、方案对比与提前还款分析</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：提前还贷一定划算吗？</p>
+            <p class="faq-a">A：不一定。当房贷利率明显高于你能稳定获得的投资收益率时提前还贷才划算；否则资金用于投资可能更优。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：缩短年限和减少月供哪种省利息？</p>
+            <p class="faq-a">A：选择“缩短年限、月供基本不变”节省的总利息远多于“减少月供、年限不变”。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：提前还款要付违约金吗？</p>
+            <p class="faq-a">A：多数银行要求正常还款满12个月后提前还款免收违约金，具体以贷款合同为准。</p>
+        </div>
+    </section>
+<h2 class="section-title">相关推荐</h2>
             <div class="related-grid">
                 <a href="../article2/index.html" class="related-card">
                     <span class="related-cat">房贷攻略</span>

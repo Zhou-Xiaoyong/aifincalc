@@ -35,6 +35,66 @@
         "mainEntityOfPage": "https://aifincalc.com/blog/article6/"
     }
     </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "社保缴费基数",
+                "item": "https://aifincalc.com/blog/article6/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "社保缴费基数怎么确定？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "按职工上年度月平均工资确定，在当地社保上下限之间核定；低于下限按下限、高于上限按上限。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "社保包含哪“五险”？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "养老保险、医疗保险、失业保险、工伤保险、生育保险；加上住房公积金即常说的“五险一金”。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "社保断缴有什么影响？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "会影响医保实时报销、购房购车落户资格、生育保险待遇及养老金累计年限，尽量避免断缴。"
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="hero-bg"></div>
@@ -589,7 +649,35 @@
         </article>
 
         <section class="related-section">
-            <h2 class="section-title">相关推荐</h2>
+                <!-- 相关计算器 -->
+    <section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../social-insurance-calculator/index.html" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>社保计算器</h3>
+                <p class="related-desc">五险一金明细与缴费基数计算</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：社保缴费基数怎么确定？</p>
+            <p class="faq-a">A：按职工上年度月平均工资确定，在当地社保上下限之间核定；低于下限按下限、高于上限按上限。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：社保包含哪“五险”？</p>
+            <p class="faq-a">A：养老保险、医疗保险、失业保险、工伤保险、生育保险；加上住房公积金即常说的“五险一金”。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：社保断缴有什么影响？</p>
+            <p class="faq-a">A：会影响医保实时报销、购房购车落户资格、生育保险待遇及养老金累计年限，尽量避免断缴。</p>
+        </div>
+    </section>
+<h2 class="section-title">相关推荐</h2>
             <div class="related-grid">
                 <a href="../article3/index.html" class="related-card">
                     <span class="related-cat">公积金</span>

@@ -892,3 +892,27 @@ footer {
         padding: 8px 10px;
     }
 }
+
+
+/* SEO: FAQ section (added by seo_blog.py) */
+.faq-block { margin: 34px 0; }
+.faq-block .section-title { margin-bottom: 16px; }
+.faq-item {
+    background: #f7f8fc;
+    border: 1px solid #eceef5;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+}
+.faq-item .faq-q {
+    font-weight: 600;
+    color: #1f2330;
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    line-height: 1.6;
+}
+.faq-item .faq-a {
+    margin: 0;
+    color: #444;
+    line-height: 1.75;
+}
