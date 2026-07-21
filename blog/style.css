@@ -333,6 +333,13 @@ body {
     color: #667eea;
 }
 
+.popular-item a {
+    flex: 1;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .popular-views {
     font-size: 0.75rem;
     color: #bbb;
