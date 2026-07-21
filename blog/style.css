@@ -223,6 +223,12 @@ body {
     opacity: 0.5;
 }
 
+.search-result-info {
+    margin: 10px 2px 0;
+    font-size: 0.82rem;
+    color: #888;
+}
+
 /* 分类列表 */
 .category-list {
     list-style: none;

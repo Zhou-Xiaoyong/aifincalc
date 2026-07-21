@@ -330,9 +330,10 @@
             <aside class="sidebar">
                 <div class="sidebar-widget">
                     <h3 class="widget-title">🔍 搜索文章</h3>
-                    <div class="search-box">
-                        <input type="text" placeholder="搜索个税、房贷、理财...">
-                    </div>
+                    <form class="search-box" role="search" onsubmit="return false;">
+                        <input type="text" id="blogSearchInput" placeholder="搜索个税、房贷、理财..." autocomplete="off">
+                    </form>
+                    <p id="searchResultInfo" class="search-result-info" hidden></p>
                 </div>
 
                 <div class="sidebar-widget">
@@ -473,5 +474,43 @@
     <script src="../script.js"></script>
     <script src="../shared/share.js"></script>
     <script src="../shared/analytics.js"></script>
+    <script>
+    (function () {
+        var input = document.getElementById('blogSearchInput');
+        var info = document.getElementById('searchResultInfo');
+        if (!input) return;
+        var cards = Array.prototype.slice.call(document.querySelectorAll('.article-list .article-card'));
+        function doSearch(raw) {
+            var q = (raw || '').trim().toLowerCase();
+            if (!q) {
+                cards.forEach(function (c) { c.style.display = ''; });
+                info.hidden = true;
+                return;
+            }
+            var hit = 0;
+            cards.forEach(function (c) {
+                var text = c.textContent.toLowerCase();
+                if (text.indexOf(q) !== -1) {
+                    c.style.display = '';
+                    hit++;
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+            info.hidden = false;
+            info.textContent = '找到 ' + hit + ' 篇相关文章' + (hit === 0 ? '：换个关键词试试' : '');
+        }
+        input.addEventListener('input', function () { doSearch(input.value); });
+        // 支持 ?s= 深链（首页 SearchAction 指向此 URL，Google 站内搜索框点击后落地）
+        var params = new URLSearchParams(window.location.search);
+        var s = params.get('s');
+        if (s) {
+            input.value = s;
+            doSearch(s);
+            var list = document.querySelector('.article-list');
+            if (list) list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    })();
+    </script>
 </body>
 </html>
