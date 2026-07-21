@@ -201,6 +201,13 @@ body {
     position: relative;
 }
 
+/* 搜索 widget 吸顶：始终可见，杜绝焦点滚动导致输入框跳到顶部 */
+.search-widget {
+    position: sticky;
+    top: 70px;
+    z-index: 30;
+}
+
 .search-box input {
     width: 100%;
     padding: 12px 16px 12px 44px;

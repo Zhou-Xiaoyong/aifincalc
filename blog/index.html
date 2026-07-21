@@ -328,7 +328,7 @@
             </div>
 
             <aside class="sidebar">
-                <div class="sidebar-widget">
+                <div class="sidebar-widget search-widget">
                     <h3 class="widget-title">🔍 搜索文章</h3>
                     <form class="search-box" role="search" onsubmit="return false;">
                         <input type="text" id="blogSearchInput" placeholder="搜索个税、房贷、理财..." autocomplete="off">
@@ -496,16 +496,11 @@
             };
         });
         function render(raw) {
-            // 记录当前滚动位置，渲染结束后还原，彻底杜绝跳动
-            var sy = window.pageYOffset || document.documentElement.scrollTop || 0;
             var q = (raw || '').trim().toLowerCase();
             var hits = [];
             index.forEach(function (it) {
                 if (!q || it.text.indexOf(q) !== -1) {
-                    it.el.style.display = '';
                     hits.push(it);
-                } else {
-                    it.el.style.display = 'none';
                 }
             });
             if (!q) {
@@ -517,7 +512,7 @@
                 results.innerHTML = '';
                 info.textContent = '未找到与「' + raw.trim() + '」相关的文章，换个关键词试试';
             } else {
-                // 在搜索框下方直接渲染可点击的结果列表（浮层，不占文档流）
+                // 匹配结果只在浮层下拉展示；主列表始终静态，整页高度零变化 → 彻底无跳动
                 results.hidden = false;
                 results.innerHTML = hits.map(function (it) {
                     return '<li><a href="' + it.href + '">' +
@@ -526,9 +521,6 @@
                 }).join('');
                 info.textContent = '找到 ' + hits.length + ' 篇相关文章';
             }
-            // 还原滚动位置（浮层 + 此还原保证输入/结果变化零跳动）
-            var ny = window.pageYOffset || document.documentElement.scrollTop || 0;
-            if (ny !== sy) { window.scrollTo(0, sy); }
         }
         input.addEventListener('input', function () { render(input.value); });
         render(''); // 初始化计数，预留空间避免布局跳动
