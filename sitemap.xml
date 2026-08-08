@@ -588,7 +588,7 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-            <url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/guangzhou/</loc>
         <lastmod>2026-08-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -600,7 +600,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/beijing/</loc>
         <lastmod>2026-08-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -612,7 +615,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/shanghai/</loc>
         <lastmod>2026-08-08</lastmod>
         <changefreq>monthly</changefreq>
@@ -624,9 +630,15 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/shenzhen/</loc>
         <lastmod>2026-08-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
