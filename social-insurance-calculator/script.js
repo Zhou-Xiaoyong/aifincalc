@@ -11,7 +11,7 @@ const CITY_COMPANY_RATES = {
     },
     guangzhou: {
         name: '广州',
-        pension: 15, medical: 6.2, unemployment: 0.32, injury: 0.4, maternity: 0.45, housing: 12
+        pension: 15, medical: 6,   unemployment: 0.32, injury: 0.4, maternity: 0.85, housing: 12
     },
     shenzhen: {
         name: '深圳',
