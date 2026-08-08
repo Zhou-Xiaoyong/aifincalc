@@ -988,3 +988,11 @@ footer a {
         grid-template-columns: 1fr;
     }
 }
+
+/* 城市页内嵌互链块：已处于 .card 内，去除冗余白底/阴影/外边距 */
+.city-hub-inpage {
+    margin-top: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}

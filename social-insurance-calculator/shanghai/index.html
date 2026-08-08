@@ -238,10 +238,10 @@
             <div class="faq-list" id="faqList"></div>
         </section>
 
-        <!-- 同城 / 邻城互链 -->
+        <!-- 同城 / 邻城互链（构建期静态生成，爬虫可见 · 后期城市页自动带） -->
         <section class="card">
             <h2>相关工具与城市</h2>
-            <div id="cityLinks"></div>
+            <div class="city-hub city-hub-inpage"><div class="city-cluster-grid"><div class="city-cluster"><div class="city-cluster-head">🏙️ 上海 · 同城计算器</div><div class="city-cluster-links"><a class="cluster-link active" href="../../social-insurance-calculator/shanghai/">上海社保计算器</a><a class="cluster-link" href="../../provident-fund-calculator/shanghai/">上海公积金计算器</a><a class="cluster-link" href="../../tax-calculator/shanghai/">上海个税计算器</a></div></div><div class="city-cluster"><div class="city-cluster-head">📍 邻近城市社保</div><div class="city-cluster-links"><a class="cluster-link" href="../../social-insurance-calculator/beijing/">北京社保计算器</a></div></div></div></div>
         </section>
     </main>
 
@@ -375,32 +375,6 @@ window.__CITY_NAMES__ = {"beijing": "北京", "guangzhou": "广州", "shanghai":
             $("faqList").innerHTML = faq.map(function (f) {
                 return '<div class="faq-item"><div class="faq-q">' + f.q + '</div><div class="faq-a">' + f.a + '</div></div>';
             }).join("");
-        })();
-
-        // 同城 / 邻城互链
-        (function renderCityLinks() {
-            var html = "";
-            // 同城不同工具
-            html += '<div class="link-group"><h4>同城其他工具</h4><div class="link-row">';
-            var tools = [
-                { key: "tax", name: "个税", url: "../../tax-calculator/" + D.city + "/" },
-                { key: "provident", name: "公积金贷款", url: "../../provident-fund-calculator/" + D.city + "/" }
-            ];
-            tools.forEach(function (t) {
-                html += '<a class="pill" href="' + t.url + '">' + D.name + t.name + '计算器</a>';
-            });
-            html += '</div></div>';
-            // 邻城同工具
-            if (D.neighbors && D.neighbors.length) {
-                html += '<div class="link-group"><h4>邻近城市社保计算器</h4><div class="link-row">';
-                D.neighbors.forEach(function (n) {
-                    if (window.__CITY_NAMES__ && window.__CITY_NAMES__[n]) {
-                        html += '<a class="pill" href="../../social-insurance-calculator/' + n + '/">' + window.__CITY_NAMES__[n] + '社保计算器</a>';
-                    }
-                });
-                html += '</div></div>';
-            }
-            $("cityLinks").innerHTML = html;
         })();
 
         // 计算器核心
