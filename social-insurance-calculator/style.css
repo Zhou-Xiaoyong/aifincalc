@@ -869,3 +869,122 @@ footer a {
         font-size: 0.8rem;
     }
 }
+
+/* ===== 城市社保计算器入口（按区域分组 + 同城互链） ===== */
+.city-hub {
+    margin-top: 30px;
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.city-hub-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.city-hub-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 2px;
+}
+
+.city-hub-sub {
+    text-align: center;
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+}
+
+.city-region {
+    margin-bottom: 20px;
+}
+
+.city-region:last-child {
+    margin-bottom: 0;
+}
+
+.region-name {
+    font-size: 1rem;
+    color: #4facfe;
+    margin-bottom: 12px;
+    font-weight: 700;
+    border-left: 4px solid #4facfe;
+    padding-left: 10px;
+}
+
+.city-cluster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.city-cluster {
+    border: 1px solid #eef1f4;
+    border-radius: 14px;
+    padding: 14px 16px;
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    transition: all 0.3s ease;
+}
+
+.city-cluster:hover {
+    box-shadow: 0 8px 22px rgba(79, 172, 254, 0.18);
+    transform: translateY(-3px);
+}
+
+.city-cluster-head {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.city-cluster-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cluster-link {
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: white;
+    color: #555;
+    text-decoration: none;
+    border: 1px solid #e0e4e8;
+    transition: all 0.25s ease;
+}
+
+.cluster-link:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-color: transparent;
+}
+
+.cluster-link.active {
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-color: transparent;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .city-hub {
+        padding: 20px;
+    }
+    .city-cluster-grid {
+        grid-template-columns: 1fr;
+    }
+}
