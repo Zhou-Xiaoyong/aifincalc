@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-08-10</lastmod>
+        <lastmod>2026-08-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,69 +14,9 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-08-10</lastmod>
+        <lastmod>2026-08-17</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/car-loan-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/contact/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/deposit-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/exchange-rate-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/investment-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/mortgage-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/privacy/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/provident-fund-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/social-insurance-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://aifincalc.com/tax-calculator/</loc>
-        <lastmod>2026-07-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article1/</loc>
@@ -87,6 +27,12 @@
     <url>
         <loc>https://aifincalc.com/blog/article10/</loc>
         <lastmod>2026-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article11/</loc>
+        <lastmod>2026-08-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -137,6 +83,54 @@
         <lastmod>2026-08-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/car-loan-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/contact/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/deposit-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/exchange-rate-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/investment-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/mortgage-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/privacy/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/provident-fund-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/provident-fund-calculator/beijing/</loc>
@@ -367,6 +361,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://aifincalc.com/social-insurance-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://aifincalc.com/social-insurance-calculator/beijing/</loc>
         <lastmod>2026-08-10</lastmod>
         <changefreq>monthly</changefreq>
@@ -389,6 +389,12 @@
         <lastmod>2026-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/tax-calculator/</loc>
+        <lastmod>2026-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/tax-calculator/beijing/</loc>
