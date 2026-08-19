@@ -1,0 +1,25 @@
+# Cloudflare Pages Headers Configuration
+# NOTE: Cloudflare Pages Pretty URLs strips .html from request paths,
+# so /* matches all HTML pages at their clean URLs (e.g. /mortgage-calculator)
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400
+
+# CSS/JS — 7 days with SWR (filenames not versioned, overrides /* Cache-Control)
+/*.css
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/*.js
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Sitemap & robots
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600
