@@ -160,17 +160,17 @@
 <body>
     <header class="site-header">
         <div class="header-container">
-            <a href="../../" class="brand-link">
+            <a href="../../index.html" class="brand-link">
                 <span class="brand-logo">🧮</span>
                 <span class="brand-name">AI金融计算器</span>
             </a>
             <nav class="nav-links">
-                <a href="../../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
-                <a href="../../tax-calculator/" class="nav-link"><span class="nav-icon">💰</span><span>个税</span></a>
-                <a href="../../social-insurance-calculator/" class="nav-link active"><span class="nav-icon">🏥</span><span>社保</span></a>
-                <a href="../../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷</span></a>
-                <a href="../../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金</span></a>
-                <a href="../../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+                <a href="../../index.html" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
+                <a href="../../tax-calculator/index.html" class="nav-link"><span class="nav-icon">💰</span><span>个税</span></a>
+                <a href="../../social-insurance-calculator/index.html" class="nav-link active"><span class="nav-icon">🏥</span><span>社保</span></a>
+                <a href="../../mortgage-calculator/index.html" class="nav-link"><span class="nav-icon">🏡</span><span>房贷</span></a>
+                <a href="../../provident-fund-calculator/index.html" class="nav-link"><span class="nav-icon">🏦</span><span>公积金</span></a>
+                <a href="../../blog/index.html" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
             </nav>
         </div>
     </header>
@@ -247,7 +247,7 @@
         <!-- 同城 / 邻城互链（构建期静态生成，爬虫可见 · 后期城市页自动带） -->
         <section class="card">
             <h2>相关工具与城市</h2>
-            <div class="city-hub city-hub-inpage"><div class="city-cluster-grid"><div class="city-cluster"><div class="city-cluster-head">🏙️ 上海 · 同城计算器</div><div class="city-cluster-links"><a class="cluster-link active" href="../../social-insurance-calculator/shanghai/">上海社保计算器</a><a class="cluster-link" href="../../provident-fund-calculator/shanghai/">上海公积金计算器</a><a class="cluster-link" href="../../tax-calculator/shanghai/">上海个税计算器</a></div></div><div class="city-cluster"><div class="city-cluster-head">📍 邻近城市社保</div><div class="city-cluster-links"><a class="cluster-link" href="../../social-insurance-calculator/beijing/">北京社保计算器</a></div></div></div></div>
+            <div class="city-hub city-hub-inpage"><div class="city-cluster-grid"><div class="city-cluster"><div class="city-cluster-head">🏙️ 上海 · 同城计算器</div><div class="city-cluster-links"><a class="cluster-link active" href="../../social-insurance-calculator/shanghai/">上海社保计算器</a><a class="cluster-link" href="../../provident-fund-calculator/shanghai/">上海公积金计算器</a><a class="cluster-link" href="../../tax-calculator/shanghai/">上海个税计算器</a></div></div><div class="city-cluster"><div class="city-cluster-head">📍 邻近城市社保</div><div class="city-cluster-links"><a class="cluster-link" href="../../social-insurance-calculator/beijing/">北京社保计算器</a><a class="cluster-link" href="../../social-insurance-calculator/hangzhou/">杭州社保计算器</a></div></div></div></div>
         </section>
     </main>
 
@@ -256,8 +256,8 @@
     </footer>
 
     <script>
-    window.PAGE_DATA = {"city": "shanghai", "name": "上海", "province": "上海", "region": "华东", "updatedAt": "2026-08-08", "socialYearNote": "上海各项社会保险实行统一缴费基数：下限 7460 元、上限 37302 元，执行周期 2025 年 7 月 1 日–2026 年 6 月 30 日（基于 2024 年度全口径社平工资 12434 元）。", "avgWage": {"value": 12434, "year": 2024, "note": "上海市全口径城镇单位就业人员月平均工资（2025-07 基数核定口径）"}, "items": {"pension": {"label": "养老保险", "short": "养老", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 16, "personal": 8}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "medical": {"label": "医疗保险（含生育保险）", "short": "医疗", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 9, "personal": 2}, "changeLog": "单位缴费继续执行 9%（基本医保 8.5% + 地方附加医保 0.5%），自 2026-03-01 起有效期至 2027-02-28", "source": {"name": "上海市医疗保障局 / 上海市税务局", "url": "https://ybj.sh.gov.cn/", "date": "2026-03-01"}}, "unemployment": {"label": "失业保险", "short": "失业", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0.5, "personal": 0.5}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "injury": {"label": "工伤保险", "short": "工伤", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0.4, "companyRange": [0.16, 1.52], "personal": 0, "note": "按行业风险分档（0.16%–1.52%），此处按 0.4% 中档估算"}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "maternity": {"label": "生育保险", "short": "生育", "mergedInto": "medical", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0, "personal": 0}, "note": "生育保险已并入职工医疗保险，单位费率含在医疗保险 9% 内（其中地方附加 0.5% 即含生育），个人不缴费。"}, "housingFund": {"label": "住房公积金", "short": "公积金", "base": {"min": 2740, "max": 37302}, "period": {"from": "2026-07-01", "to": "2027-06-30", "note": "公积金年度（每年 7 月调整）"}, "rate": {"range": [5, 12], "common": 12}, "note": "上海实行基础公积金（单边 5%–7%）+ 补充公积金（单边 1%–5%）双轨，顶格合计双边 24%。2026 年度基数上限暂按 37302 元（新上限公布后调整），下限 2740 元。", "source": {"name": "上海市住房公积金管理中心", "url": "https://www.shgjj.com/", "date": "2026-07-01"}}}, "flexible": {"available": true, "pensionRate": 24, "medicalRate": 10, "note": "灵活就业人员：养老保险费率 24%（8% 计入个人账户），医疗保险（含生育）费率 10%；缴费基数在 7460–37302 元间自选。"}, "timeline": [{"date": "2026-03-01", "text": "上海市职工医保单位缴费费率继续按 9%（基本医保 8.5% + 地方附加 0.5%）执行，有效期至 2027-02-28。"}, {"date": "2025-07-01", "text": "社保缴费基数上下限年度调整：下限 7460 元、上限 37302 元（基于 2024 年度社平工资 12434 元）。"}], "faq": [{"q": "上海社保基数和广州有什么不同？", "a": "上海所有险种共用同一套基数上下限（7460–37302 元，2025-07 至 2026-06），而广州养老、医保分属不同周期和上下限。此外上海医保单位费率为 9%（基本 8.5% + 地方附加 0.5%）。"}, {"q": "上海公积金为什么常说“上限只有 7%”？", "a": "上海基础公积金单边仅开放 5%–7%，但可叠加自愿的补充公积金（单边 1%–5%），顶格合计双边 24%，与全国上限一致。仅在无补充公积金时单边为 7%。"}, {"q": "按最低基数 7460 元交，上海个人每月五险一金多少？", "a": "个人养老 596.8 元、医疗 149.2 元、失业 37.3 元、公积金按 12% 约 895 元（基数 7460），合计约 1678 元/月（工伤、生育个人不缴）。"}, {"q": "上海社保缴费基数什么时候调整？", "a": "每年 7 月 1 日随上一年度全市职工平均工资调整，2025-07 至 2026-06 执行 7460–37302 元区间，与 2025 年持平。"}, {"q": "上海灵活就业人员怎么交？", "a": "灵活就业人员养老保险按 24%、医疗保险（含生育）按 10% 缴纳，缴费基数在 7460–37302 元间自选；按月缴费，无需每年申报医保基数。"}, {"q": "社保基数影响上海落户积分吗？", "a": "影响。居转户无职称需连续 3 年按 2 倍基数（约 22792 元/月）缴费，有职称需 1.3 倍；人才引进需 2 倍基数。最低基数仅能拿到基础分。"}], "neighbors": ["beijing", "hangzhou"], "_quickCalc": [{"tier": "按下限", "desc": "各险种按自身基数下限", "personal": 1112.1, "company": 2260.94, "total": 3373.04}, {"tier": "按社平工资", "desc": "按社平工资 12434 元", "personal": 2797.65, "company": 4712.49, "total": 7510.14}, {"tier": "按上限", "desc": "各险种按自身基数上限", "personal": 8392.95, "company": 14137.46, "total": 22530.41}], "_compare": {"salary": 10000, "rows": [{"city": "shanghai", "name": "上海", "personal": 2250.0, "company": 3790.0, "total": 6040.0}, {"city": "beijing", "name": "北京", "personal": 2253.0, "company": 3870.0, "total": 6123.0}], "baseTotal": 6040.0}};
-window.__CITY_NAMES__ = {"beijing": "北京", "guangzhou": "广州", "shanghai": "上海", "shenzhen": "深圳"};
+    window.PAGE_DATA = {"city": "shanghai", "name": "上海", "province": "上海", "region": "华东", "updatedAt": "2026-08-08", "socialYearNote": "上海各项社会保险实行统一缴费基数：下限 7460 元、上限 37302 元，执行周期 2025 年 7 月 1 日–2026 年 6 月 30 日（基于 2024 年度全口径社平工资 12434 元）。", "avgWage": {"value": 12434, "year": 2024, "note": "上海市全口径城镇单位就业人员月平均工资（2025-07 基数核定口径）"}, "items": {"pension": {"label": "养老保险", "short": "养老", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 16, "personal": 8}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "medical": {"label": "医疗保险（含生育保险）", "short": "医疗", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 9, "personal": 2}, "changeLog": "单位缴费继续执行 9%（基本医保 8.5% + 地方附加医保 0.5%），自 2026-03-01 起有效期至 2027-02-28", "source": {"name": "上海市医疗保障局 / 上海市税务局", "url": "https://ybj.sh.gov.cn/", "date": "2026-03-01"}}, "unemployment": {"label": "失业保险", "short": "失业", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0.5, "personal": 0.5}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "injury": {"label": "工伤保险", "short": "工伤", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0.4, "companyRange": [0.16, 1.52], "personal": 0, "note": "按行业风险分档（0.16%–1.52%），此处按 0.4% 中档估算"}, "source": {"name": "上海市人力资源和社会保障局", "url": "https://rsj.sh.gov.cn/", "date": "2025-07-01"}}, "maternity": {"label": "生育保险", "short": "生育", "mergedInto": "medical", "base": {"min": 7460, "max": 37302}, "period": {"from": "2025-07-01", "to": "2026-06-30"}, "rate": {"company": 0, "personal": 0}, "note": "生育保险已并入职工医疗保险，单位费率含在医疗保险 9% 内（其中地方附加 0.5% 即含生育），个人不缴费。"}, "housingFund": {"label": "住房公积金", "short": "公积金", "base": {"min": 2740, "max": 37302}, "period": {"from": "2026-07-01", "to": "2027-06-30", "note": "公积金年度（每年 7 月调整）"}, "rate": {"range": [5, 12], "common": 12}, "note": "上海实行基础公积金（单边 5%–7%）+ 补充公积金（单边 1%–5%）双轨，顶格合计双边 24%。2026 年度基数上限暂按 37302 元（新上限公布后调整），下限 2740 元。", "source": {"name": "上海市住房公积金管理中心", "url": "https://www.shgjj.com/", "date": "2026-07-01"}}}, "flexible": {"available": true, "pensionRate": 24, "medicalRate": 10, "note": "灵活就业人员：养老保险费率 24%（8% 计入个人账户），医疗保险（含生育）费率 10%；缴费基数在 7460–37302 元间自选。"}, "timeline": [{"date": "2026-03-01", "text": "上海市职工医保单位缴费费率继续按 9%（基本医保 8.5% + 地方附加 0.5%）执行，有效期至 2027-02-28。"}, {"date": "2025-07-01", "text": "社保缴费基数上下限年度调整：下限 7460 元、上限 37302 元（基于 2024 年度社平工资 12434 元）。"}], "faq": [{"q": "上海社保基数和广州有什么不同？", "a": "上海所有险种共用同一套基数上下限（7460–37302 元，2025-07 至 2026-06），而广州养老、医保分属不同周期和上下限。此外上海医保单位费率为 9%（基本 8.5% + 地方附加 0.5%）。"}, {"q": "上海公积金为什么常说“上限只有 7%”？", "a": "上海基础公积金单边仅开放 5%–7%，但可叠加自愿的补充公积金（单边 1%–5%），顶格合计双边 24%，与全国上限一致。仅在无补充公积金时单边为 7%。"}, {"q": "按最低基数 7460 元交，上海个人每月五险一金多少？", "a": "个人养老 596.8 元、医疗 149.2 元、失业 37.3 元、公积金按 12% 约 895 元（基数 7460），合计约 1678 元/月（工伤、生育个人不缴）。"}, {"q": "上海社保缴费基数什么时候调整？", "a": "每年 7 月 1 日随上一年度全市职工平均工资调整，2025-07 至 2026-06 执行 7460–37302 元区间，与 2025 年持平。"}, {"q": "上海灵活就业人员怎么交？", "a": "灵活就业人员养老保险按 24%、医疗保险（含生育）按 10% 缴纳，缴费基数在 7460–37302 元间自选；按月缴费，无需每年申报医保基数。"}, {"q": "社保基数影响上海落户积分吗？", "a": "影响。居转户无职称需连续 3 年按 2 倍基数（约 22792 元/月）缴费，有职称需 1.3 倍；人才引进需 2 倍基数。最低基数仅能拿到基础分。"}], "neighbors": ["beijing", "hangzhou"], "_quickCalc": [{"tier": "按下限", "desc": "各险种按自身基数下限", "personal": 1112.1, "company": 2260.94, "total": 3373.04}, {"tier": "按社平工资", "desc": "按社平工资 12434 元", "personal": 2797.65, "company": 4712.49, "total": 7510.14}, {"tier": "按上限", "desc": "各险种按自身基数上限", "personal": 8392.95, "company": 14137.46, "total": 22530.41}], "_compare": {"salary": 10000, "rows": [{"city": "shanghai", "name": "上海", "personal": 2250.0, "company": 3790.0, "total": 6040.0}, {"city": "beijing", "name": "北京", "personal": 2253.0, "company": 3870.0, "total": 6123.0}, {"city": "hangzhou", "name": "杭州", "personal": 2250.0, "company": 3840.0, "total": 6090.0}], "baseTotal": 6040.0}};
+window.__CITY_NAMES__ = {"beijing": "北京", "chengdu": "成都", "guangzhou": "广州", "hangzhou": "杭州", "shanghai": "上海", "shenzhen": "深圳", "wuhan": "武汉", "xian": "西安"};
     </script>
     <script>
     (function () {
@@ -283,8 +283,8 @@ window.__CITY_NAMES__ = {"beijing": "北京", "guangzhou": "广州", "shanghai":
 
         // 可见面包屑
         $("breadcrumb").innerHTML =
-            '<a href="../../">首页</a> &rsaquo; ' +
-            '<a href="../../social-insurance-calculator/">社保计算器</a> &rsaquo; ' +
+            '<a href="../../index.html">首页</a> &rsaquo; ' +
+            '<a href="../../social-insurance-calculator/index.html">社保计算器</a> &rsaquo; ' +
             '<span>' + D.name + '社保计算器</span>';
 
         $("hero-sub").textContent = "在线计算" + D.name + "五险一金个人与单位月缴明细，含 2026 年最新缴费基数上下限与执行周期。";
@@ -440,18 +440,5 @@ window.__CITY_NAMES__ = {"beijing": "北京", "guangzhou": "广州", "shanghai":
     })();
     </script>
     <script src="../../shared/analytics.js"></script>
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    } else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
 </body>
 </html>
