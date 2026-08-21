@@ -427,20 +427,3 @@ document.querySelectorAll('.tab').forEach(tab => {
         }
     });
 });
-
-// 复制链接分享
-function copyLink() {
-    navigator.clipboard.writeText(window.location.href).then(function() {
-        var toast = document.createElement('div');
-        toast.className = 'share-toast';
-        toast.textContent = '链接已复制，快去分享吧';
-        document.body.appendChild(toast);
-        requestAnimationFrame(function() {
-            toast.classList.add('show');
-        });
-        setTimeout(function() {
-            toast.classList.remove('show');
-            setTimeout(function() { toast.remove(); }, 300);
-        }, 2000);
-    });
-}
