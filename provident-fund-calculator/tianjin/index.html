@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>天津公积金贷款政策2026 - 贷款额度·利率·申请条件全攻略 | AI金融计算器</title>
-    <meta name="description" content="2026年天津住房公积金贷款最新政策详解，涵盖贷款额度计算（单职工60万、双职工80万、二套40万、余额10倍）、贷款利率（首套2.6%、二套3.075%）、申请条件、所需材料、办理流程及常见问题解答。">
+    <meta name="description" content="2026年天津住房公积金贷款最新政策详解，涵盖贷款额度计算（首套最高120万、二套100万、多子女上浮20%、余额20倍）、贷款利率（首套2.6%、二套3.075%）、申请条件、所需材料、办理流程及常见问题解答。">
     <meta name="keywords" content="天津公积金贷款,天津公积金贷款额度,天津公积金贷款利率,天津公积金贷款条件,天津住房公积金政策2026">
     <link rel="canonical" href="https://aifincalc.com/provident-fund-calculator/tianjin/">
     <link rel="stylesheet" href="../style.css">
@@ -236,6 +236,28 @@
         .city-breadcrumb span {
             margin: 0 6px;
         }
+    
+    .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
+    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+    .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
+    .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
+    .cc-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;align-items:end;}
+    .cc-field{display:flex;flex-direction:column;gap:6px;}
+    .cc-field label{font-size:13px;color:#5a6b8c;}
+    .cc-field input,.cc-field select{padding:10px 12px;border:1px solid #dbe2ec;border-radius:10px;font-size:15px;background:#fff;}
+    .cc-btn{justify-self:start;margin-top:4px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border:0;padding:11px 22px;border-radius:10px;font-size:15px;cursor:pointer;transition:.2s;}
+    .cc-btn:hover{opacity:.92;transform:translateY(-1px);}
+    .cc-note{margin-top:12px;font-size:12.5px;color:#7a89a8;background:#f5f7fb;border-left:3px solid #667eea;padding:8px 12px;border-radius:0 8px 8px 0;line-height:1.6;}
+    .cc-result{margin-top:14px;}
+    .cc-grid{border:1px solid #eef1f4;border-radius:12px;overflow:hidden;}
+    .cc-row{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #f0f3f8;font-size:14px;}
+    .cc-row:last-child{border-bottom:0;}
+    .cc-row span{color:#5a6b8c;}
+    .cc-row b{color:#1f2d4d;font-weight:600;}
+    .cc-warn{margin-top:10px;font-size:13px;color:#b45309;background:#fff7ed;border:1px solid #fed7aa;padding:8px 12px;border-radius:8px;line-height:1.6;}
+    @media(max-width:600px){.cc-form{grid-template-columns:1fr;}}
+
     </style>
     <script>
     var _hmt = _hmt || [];
@@ -370,6 +392,37 @@
     </header>
 
     <div class="container page-top-space">
+
+<section class="cc-section">
+  <h2 class="cc-title">🧮 天津公积金计算器</h2>
+  <div class="cc-tabs">
+    <button class="cc-tab active" data-tab="cc-jj">缴存计算器</button>
+    <button class="cc-tab" data-tab="cc-dk">贷款计算器</button>
+  </div>
+  <div class="cc-panel" id="cc-jj">
+    <div class="cc-form">
+      <div class="cc-field"><label>月工资（元）</label><input type="number" id="ccSalary" value="8634" min="0"></div>
+      <div class="cc-field"><label>个人缴存比例（%）</label><input type="number" id="ccPer" value="12" min="5" max="12" step="1"></div>
+      <div class="cc-field"><label>单位缴存比例（%）</label><input type="number" id="ccCom" value="12" min="5" max="12" step="1"></div>
+      <button class="cc-btn" id="ccJjBtn">计算月缴存额</button>
+    </div>
+    <div class="cc-note">本城缴存基数上下限：2320 – 25902 元；缴存比例范围 5%–12%。</div>
+    <div class="cc-result" id="ccJjResult" style="display:none;"></div>
+  </div>
+  <div class="cc-panel" id="cc-dk" style="display:none;">
+    <div class="cc-form">
+      <div class="cc-field"><label>贷款金额（万元）</label><input type="number" id="ccLoan" value="100" min="1"></div>
+      <div class="cc-field"><label>贷款年限（年）</label><input type="number" id="ccYears" value="30" min="1" max="30"></div>
+      <div class="cc-field"><label>贷款类型（利率）</label>
+        <select id="ccRateType"><option value="2.60">首套（5年以上 2.60%）</option><option value="3.075">二套（5年以上 3.075%）</option></select>
+      </div>
+      <button class="cc-btn" id="ccDkBtn">计算月供</button>
+    </div>
+    <div class="cc-note">本城最高贷款额度：单缴存人 120 万 / 双缴存人 120 万（余额倍数约 20 倍）；利率按央行 2025.5.8 基准利率。</div>
+    <div class="cc-result" id="ccDkResult" style="display:none;"></div>
+  </div>
+</section>
+
         <div class="calculator-card">
             <div class="city-hero">
                 <div class="city-breadcrumb">
@@ -385,7 +438,7 @@
                 <div class="city-section">
                     <h2>📋 天津公积金简介</h2>
                     <p>天津住房公积金管理中心是天津市人民政府直属事业单位，负责全市住房公积金的管理运作。作为北方最大的港口城市和京津冀协同发展的重要支点，天津的公积金制度为滨海新区开发开放和城市建设提供了有力支撑。</p>
-                    <p>2026年，天津持续优化公积金政策，支持刚性和改善性住房需求。贷款额度方面，单职工家庭最高可贷60万元，双职工家庭最高可贷80万元，二套房最高可贷40万元，余额倍数为10倍。天津积极推进京津冀住房公积金协同发展，便利三地职工跨区域购房置业。</p>
+                    <p>2026年，天津持续优化公积金政策，支持刚性和改善性住房需求。贷款额度方面，购买首套住房最高可贷120万元，第二套最高100万元，多子女上浮20%（首套144万/二套120万），余额倍数20倍。天津积极推进京津冀住房公积金协同发展，便利三地职工跨区域购房置业。</p>
                     <div class="feature-box">
                         <h4>🌟 天津公积金特色</h4>
                         <ul>
@@ -672,5 +725,77 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
+
+<script>
+window.CC_DATA = {"type": "provident", "city": "天津", "name": "天津", "housingMin": 2320, "housingMax": 25902, "socialMin": 5180, "socialMax": 25902, "unempPersonal": 0.5, "singleQuota": 120, "doubleQuota": 120, "balanceMult": 20};
+(function(){
+  var D = window.CC_DATA;
+  function fmt(n){ return (Math.round(n*100)/100).toLocaleString('zh-CN'); }
+  function $(id){ return document.getElementById(id); }
+  function grid(rows){ return '<div class="cc-grid">'+rows.map(function(x){return '<div class="cc-row"><span>'+x[0]+'</span><b>'+x[1]+'</b></div>';}).join('')+'</div>'; }
+  if(D.type==='provident'){
+    document.querySelectorAll('.cc-tab').forEach(function(t){
+      t.addEventListener('click', function(){
+        document.querySelectorAll('.cc-tab').forEach(function(x){x.classList.remove('active');});
+        t.classList.add('active');
+        document.getElementById('cc-jj').style.display = (t.dataset.tab==='cc-jj')?'block':'none';
+        document.getElementById('cc-dk').style.display = (t.dataset.tab==='cc-dk')?'block':'none';
+      });
+    });
+    $('ccJjBtn').addEventListener('click', function(){
+      var salary=parseFloat($('ccSalary').value)||0, per=parseFloat($('ccPer').value)||0, com=parseFloat($('ccCom').value)||0;
+      var base=Math.min(Math.max(salary,D.housingMin),D.housingMax);
+      var pa=base*per/100, ca=base*com/100, total=pa+ca;
+      var warn = base<salary ? ('<div class="cc-warn">月工资超过本城上限 '+fmt(D.housingMax)+' 元，已按上限计缴。</div>')
+                : (base>salary ? ('<div class="cc-warn">月工资低于本城下限 '+fmt(D.housingMin)+' 元，按下限计缴。</div>') : '');
+      var r=$('ccJjResult'); r.style.display='block';
+      r.innerHTML = grid([
+        ['缴存基数', fmt(base)+' 元'],
+        ['个人月缴 ('+per+'%)', fmt(pa)+' 元'],
+        ['单位月缴 ('+com+'%)', fmt(ca)+' 元'],
+        ['合计月缴', fmt(total)+' 元'],
+        ['合计年缴', fmt(total*12)+' 元']
+      ]) + warn;
+    });
+    $('ccDkBtn').addEventListener('click', function(){
+      var P=parseFloat($('ccLoan').value)*10000, n=parseInt($('ccYears').value)||30, rm=parseFloat($('ccRateType').value)/100/12, m=n*12;
+      var pay = rm>0 ? P*rm*Math.pow(1+rm,m)/(Math.pow(1+rm,m)-1) : P/m;
+      var total=pay*m, interest=total-P;
+      var r=$('ccDkResult'); r.style.display='block';
+      r.innerHTML = grid([
+        ['贷款总额', fmt(P)+' 元'],
+        ['月供（等额本息）', fmt(pay)+' 元'],
+        ['还款总额', fmt(total)+' 元'],
+        ['总利息', fmt(interest)+' 元']
+      ]) + '<div class="cc-warn">本城最高额度：单缴存 '+D.singleQuota+' 万 / 双缴存 '+D.doubleQuota+' 万。贷款金额超出将无法获批。</div>';
+    });
+  } else {
+    $('ccTaxBtn').addEventListener('click', function(){
+      var salary=parseFloat($('ccSalary').value)||0, hf=parseFloat($('ccHf').value)||0, extra=parseFloat($('ccExtra').value)||0;
+      var sb=Math.min(Math.max(salary,D.socialMin),D.socialMax);
+      var pension=sb*0.08, medical=sb*0.02, unemp=sb*D.unempPersonal/100, housing=sb*hf/100;
+      var ins=pension+medical+unemp+housing;
+      var taxable=salary-5000-ins-extra, tax=0;
+      if(taxable>0){
+        var b=[[80000,0.45,15160],[55000,0.35,7160],[35000,0.30,4410],[25000,0.25,2660],[12000,0.20,1410],[3000,0.10,210],[0,0.03,0]];
+        for(var i=0;i<b.length;i++){ if(taxable>b[i][0]){ tax=taxable*b[i][1]-b[i][2]; break; } }
+      }
+      var after=salary-ins-tax;
+      var r=$('ccTaxResult'); r.style.display='block';
+      r.innerHTML = grid([
+        ['五险一金个人合计', fmt(ins)+' 元'],
+        ['　养老 (8%)', fmt(pension)+' 元'],
+        ['　医疗 (2%)', fmt(medical)+' 元'],
+        ['　失业 ('+D.unempPersonal+'%)', fmt(unemp)+' 元'],
+        ['　公积金 ('+hf+'%)', fmt(housing)+' 元'],
+        ['应纳税所得额', fmt(taxable)+' 元'],
+        ['应缴个税', fmt(tax)+' 元'],
+        ['税后月收入', fmt(after)+' 元']
+      ]);
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
