@@ -20,6 +20,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 20px;
+    --radius-full: 9999px;
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
     --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
@@ -86,29 +87,38 @@ body {
 
 .tabs {
     display: flex;
-    background: #f8f9fa;
-    border-bottom: 1px solid #e9ecef;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 6px;
+    gap: 4px;
+    overflow-x: auto;
 }
 
 .tab {
     flex: 1;
-    padding: 16px;
+    min-width: 100px;
+    padding: 10px 14px;
     text-align: center;
     cursor: pointer;
     font-weight: 500;
-    color: #6c757d;
-    transition: all 0.3s;
-    border-bottom: 3px solid transparent;
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    white-space: nowrap;
 }
 
 .tab.active {
-    color: #667eea;
-    border-bottom-color: #667eea;
-    background: white;
+    color: var(--color-primary);
+    background: var(--color-surface);
+    border-color: var(--color-border-subtle);
+    box-shadow: var(--shadow-sm);
 }
 
 .tab:hover {
-    color: #667eea;
+    color: var(--color-primary);
+    background: var(--color-surface);
 }
 
 .tab-content {
@@ -128,39 +138,43 @@ body {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color: #333;
+    color: var(--color-text);
 }
 
 .form-group label .badge {
-    background: #28a745;
+    background: var(--color-success);
     color: white;
     padding: 2px 8px;
-    border-radius: 12px;
+    border-radius: var(--radius-full);
     font-size: 12px;
     margin-left: 8px;
 }
 
 .form-group label .badge.highlight {
-    background: #667eea;
+    background: var(--color-primary);
 }
 
 .form-group label .required {
-    color: #dc3545;
+    color: var(--color-danger);
 }
 
 .form-control {
     width: 100%;
     padding: 12px 16px;
-    border: 2px solid #e9ecef;
-    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     font-size: 16px;
-    transition: all 0.3s;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    line-height: 1.5;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+    background: var(--color-surface);
 }
 
 .input-group {
@@ -169,24 +183,25 @@ body {
 }
 
 .input-group .form-control {
-    border-radius: 10px 0 0 10px;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    border-right: none;
     flex: 1;
 }
 
 .input-group .unit {
     padding: 12px 16px;
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
     border-left: none;
-    border-radius: 0 10px 10px 0;
-    color: #6c757d;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    color: var(--color-text-secondary);
     font-weight: 500;
 }
 
 .help-text {
     display: block;
     margin-top: 6px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 14px;
 }
 
@@ -209,15 +224,16 @@ body {
     display: flex;
     align-items: center;
     padding: 12px 16px;
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 .deduction-item:hover {
-    border-color: #667eea;
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
 }
 
 .deduction-item input[type="checkbox"] {
@@ -235,49 +251,54 @@ body {
 }
 
 .deduction-item .amount {
-    color: #667eea;
+    color: var(--color-primary);
     font-weight: 500;
     font-size: 14px;
 }
 
 .deduction-item .small-select {
     padding: 6px 10px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     font-size: 14px;
-    background: white;
+    background: var(--color-surface);
+    color: var(--color-text);
 }
 
 .btn-calculate {
     width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 14px 16px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent, var(--color-primary-dark)) 100%);
     color: white;
     border: none;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: var(--radius-md);
+    font-size: 17px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
     margin-top: 10px;
+    min-height: 48px;
+    box-shadow: var(--shadow-md);
 }
 
 .btn-calculate:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    box-shadow: var(--shadow-lg);
+    filter: brightness(1.02);
 }
 
 .result-section {
     margin-top: 30px;
     padding: 24px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 16px;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-lg);
 }
 
 .result-section h3 {
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 20px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .result-grid {
@@ -287,41 +308,43 @@ body {
 }
 
 .result-item {
-    background: white;
+    background: var(--color-surface);
     padding: 16px;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: var(--shadow-sm);
 }
 
 .result-item .label {
     display: block;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 14px;
     margin-bottom: 8px;
 }
 
 .result-item .value {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    color: #333;
+    color: var(--color-text);
 }
 
 .result-item .value.deduct {
-    color: #dc3545;
+    color: var(--color-danger);
 }
 
 .result-item .value.tax {
-    color: #fd7e14;
+    color: var(--color-warning);
 }
 
 .result-item .value.income {
-    color: #28a745;
+    color: var(--color-success);
 }
 
 .result-item.highlight {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
 }
 
 .result-item.highlight .label,
@@ -330,12 +353,13 @@ body {
 }
 
 .result-item.important {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
 }
 
 .result-item.important .label,
 .result-item.important .value {
-    color: white;
+    color: var(--color-primary);
 }
 
 .tax-detail {
@@ -485,15 +509,17 @@ body {
     display: flex;
     align-items: center;
     padding: 12px 16px;
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    flex: 1;
+    min-width: 140px;
 }
 
 .radio-item:hover {
-    border-color: #667eea;
+    border-color: var(--color-primary);
 }
 
 .radio-item input[type="radio"] {
@@ -513,8 +539,8 @@ body {
 }
 
 .radio-item:has(input:checked) {
-    border-color: #667eea;
-    background: #e3f2fd;
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
 }
 
 /* 广告位样式 */
@@ -1005,3 +1031,19 @@ footer a {
         font-size: 0.78rem;
     }
 }
+
+
+/* ---------- phase2 追加：组件交互态统一 ---------- */
+.btn-calculate:disabled {
+    background: var(--color-surface-muted) !important;
+    color: var(--color-text-muted) !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+    filter: none !important;
+    border: 1px solid var(--color-border) !important;
+}
+.btn-calculate:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-md), 0 0 0 3px var(--color-primary-light);
+}
+.form-control::placeholder { color: var(--color-text-muted); opacity: 1; }

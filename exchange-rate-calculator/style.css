@@ -21,6 +21,7 @@
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 20px;
+    --radius-full: 9999px;
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
     --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
     --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
@@ -213,15 +214,17 @@ body {
     text-align: center;
     padding: 10px;
     margin-bottom: 24px;
-    background: #f0f4ff;
-    border-radius: 10px;
+    background: var(--color-primary-light);
+    border-radius: var(--radius-md);
     font-size: 14px;
-    color: #667eea;
+    color: var(--color-primary);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 16%, transparent);
 }
 
 .rate-status.error {
-    background: #fff0f0;
-    color: #dc3545;
+    background: #FEF2F2;
+    color: var(--color-danger);
+    border-color: color-mix(in srgb, var(--color-danger) 18%, transparent);
 }
 
 .status-icon {
@@ -232,21 +235,22 @@ body {
 .converter-panel {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: var(--spacer-16, 12px);
     margin-bottom: 24px;
 }
 
 .currency-input-group {
     flex: 1;
-    background: #f8f9fa;
-    border-radius: 16px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-lg);
     padding: 20px;
-    border: 2px solid transparent;
-    transition: all 0.3s;
+    border: 1px solid var(--color-border-subtle);
+    transition: all 0.2s ease;
 }
 
 .currency-input-group:hover {
-    border-color: #e0e0ff;
+    border-color: var(--color-primary);
+    background: color-mix(in srgb, var(--color-primary-light) 46%, var(--color-surface-muted));
 }
 
 .currency-selector {
@@ -268,24 +272,26 @@ body {
 
 .currency-select {
     padding: 6px 10px;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     font-size: 15px;
     font-weight: 600;
-    color: #333;
-    background: white;
+    color: var(--color-text);
+    background: var(--color-surface);
     cursor: pointer;
     min-width: 90px;
+    transition: all 0.2s ease;
 }
 
 .currency-select:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 
 .currency-name {
     font-size: 13px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 .amount-input {
@@ -295,40 +301,47 @@ body {
 .amount-field {
     width: 100%;
     padding: 14px 16px;
-    border: 2px solid #dee2e6;
-    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
     font-size: 24px;
     font-weight: 600;
-    background: white;
-    color: #333;
-    transition: all 0.3s;
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    font-variant-numeric: tabular-nums;
 }
 
 .amount-field:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
+    background: var(--color-surface);
+}
+
+.amount-field::placeholder {
+    color: var(--color-text-muted);
+    opacity: 1;
 }
 
 .result-field {
-    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
-    border-color: #667eea;
-    color: #667eea;
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 .amount-hint {
     position: absolute;
     top: -10px;
     left: 14px;
-    background: #6c757d;
+    background: var(--color-text-secondary);
     color: white;
     padding: 2px 8px;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-size: 11px;
 }
 
 .result-field + .amount-hint {
-    background: #667eea;
+    background: var(--color-primary);
 }
 
 /* 交换按钮 */
@@ -340,30 +353,38 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    border: 2px solid #dee2e6;
-    background: white;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
     font-size: 24px;
     cursor: pointer;
-    transition: all 0.3s;
-    color: #667eea;
+    transition: all 0.2s ease;
+    color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--shadow-sm);
 }
 
 .swap-btn:hover {
-    background: #667eea;
+    background: var(--color-primary);
     color: white;
-    border-color: #667eea;
+    border-color: var(--color-primary);
     transform: rotate(180deg);
+    box-shadow: var(--shadow-md);
+}
+
+.swap-btn:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-md), 0 0 0 3px var(--color-primary-light);
 }
 
 /* 汇率展示 */
 .rate-display {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent, var(--color-primary-dark)) 100%);
     padding: 20px;
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
     color: white;
+    box-shadow: var(--shadow-md);
 }
 
 .rate-info {
@@ -377,41 +398,42 @@ body {
 
 .rate-label {
     font-size: 14px;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .rate-value {
     font-size: 22px;
     font-weight: 700;
+    font-variant-numeric: tabular-nums;
 }
 
 .rate-meta {
     display: flex;
     justify-content: space-between;
     font-size: 12px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
-/* ====== 快速换算 ====== */
+/* ====== 快速换算 / 汇率表 / 图表 / FAQ / 常用换算 ====== */
 .quick-convert-section,
 .common-converts-section,
 .chart-section,
 .rates-table-section {
     padding: 30px;
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--color-border-subtle);
 }
 
 .quick-convert-section h2,
 .rates-table-section h2,
 .chart-section h2,
 .common-converts-section h2 {
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 8px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
 .section-desc {
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 14px;
     margin-bottom: 16px;
 }
@@ -423,25 +445,27 @@ body {
 }
 
 .quick-card {
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     padding: 14px;
     text-align: center;
     cursor: pointer;
-    transition: all 0.3s;
-    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    color: var(--color-text);
 }
 
 .quick-card:hover {
-    border-color: #667eea;
-    background: #f0f4ff;
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
 }
 
 .quick-card .quick-amount {
     display: block;
     font-size: 12px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     margin-bottom: 6px;
 }
 
@@ -449,7 +473,8 @@ body {
     display: block;
     font-size: 16px;
     font-weight: 700;
-    color: #333;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
 }
 
 /* ====== 汇率表格 ====== */
@@ -462,24 +487,26 @@ body {
 
 .filter-btn {
     padding: 8px 16px;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 20px;
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
     cursor: pointer;
     font-size: 14px;
-    color: #6c757d;
-    transition: all 0.3s;
+    color: var(--color-text-secondary);
+    transition: all 0.2s ease;
 }
 
 .filter-btn:hover {
-    background: #e0e0ff;
-    color: #667eea;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    border-color: var(--color-primary-light);
 }
 
 .filter-btn.active {
-    background: #667eea;
+    background: var(--color-primary);
     color: white;
-    border-color: #667eea;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-sm);
 }
 
 .rates-table-wrap {
@@ -490,19 +517,20 @@ body {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
+    color: var(--color-text);
 }
 
 .rates-table th,
 .rates-table td {
     padding: 12px 16px;
     text-align: center;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .rates-table th {
-    background: #f8f9fa;
+    background: var(--color-surface-muted);
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
     position: sticky;
     top: 0;
 }
@@ -513,7 +541,7 @@ body {
 }
 
 .rates-table tbody tr:hover {
-    background: #f0f4ff;
+    background: var(--color-primary-light);
 }
 
 .rates-table .currency-cell {
@@ -529,50 +557,52 @@ body {
 
 .rates-table .code-cell {
     font-weight: 600;
-    color: #667eea;
+    color: var(--color-primary);
 }
 
 .rates-table .rate-cell {
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
 }
 
 .rates-table .inverse-cell {
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 13px;
+    font-variant-numeric: tabular-nums;
 }
 
 .rates-table .category-tag {
     display: inline-block;
     padding: 3px 10px;
-    border-radius: 12px;
+    border-radius: var(--radius-full);
     font-size: 12px;
     font-weight: 500;
 }
 
 .tag-major {
-    background: #e0f7f5;
-    color: #0f9b8e;
+    background: var(--accent-soft, var(--color-primary-light));
+    color: var(--accent-text, var(--color-primary));
 }
 
 .tag-asia {
-    background: #fff3e0;
-    color: #e65100;
+    background: #FFF3E0;
+    color: var(--color-warning);
 }
 
 .tag-sea {
-    background: #f3e5f5;
+    background: #F3E5F5;
     color: #7b1fa2;
 }
 
 .tag-other {
-    background: #e8eaf6;
-    color: #3949ab;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
 }
 
 .loading-cell {
     padding: 40px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 /* ====== 图表 ====== */
@@ -588,29 +618,37 @@ body {
 
 .chart-currency-select {
     padding: 8px 12px;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     font-size: 14px;
-    color: #333;
-    background: white;
+    color: var(--color-text);
+    background: var(--color-surface);
     cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chart-currency-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--color-primary-light);
 }
 
 .chart-vs {
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-weight: 600;
 }
 
 .chart-container {
-    background: #f8f9fa;
+    background: var(--color-surface-muted);
     padding: 20px;
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border-subtle);
 }
 
 .chart-note {
     margin-top: 12px;
     font-size: 12px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     text-align: center;
 }
 
@@ -625,46 +663,52 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8f9fa;
-    border-radius: 10px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     padding: 14px 16px;
-    transition: all 0.3s;
+    transition: all 0.2s ease;
     cursor: pointer;
+    border: 1px solid transparent;
+    color: var(--color-text);
 }
 
 .common-card:hover {
-    background: #f0f4ff;
+    background: var(--color-primary-light);
+    border-color: var(--color-primary);
     transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .common-card .common-label {
     font-size: 14px;
-    color: #6c757d;
+    color: var(--color-text-secondary);
 }
 
 .common-card .common-value {
     font-size: 16px;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
 }
 
 /* ====== FAQ ====== */
 .faq-section {
     padding: 30px;
-    background: white;
-    border-top: 1px solid #e9ecef;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border-subtle);
 }
 
 .faq-section h2 {
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 24px;
     text-align: center;
+    font-size: 1.2rem;
 }
 
 .faq-item {
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .faq-item:last-child {
@@ -674,13 +718,13 @@ body {
 }
 
 .faq-item h4 {
-    color: #667eea;
+    color: var(--color-primary);
     margin-bottom: 8px;
     font-size: 1.05rem;
 }
 
 .faq-item p {
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
 
