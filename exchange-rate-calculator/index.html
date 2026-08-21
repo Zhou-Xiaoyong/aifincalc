@@ -122,7 +122,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -316,45 +316,52 @@
             <div class="faq-section">
                 <h2>常见问题</h2>
 
-                <div class="faq-item">
-                    <h4>汇率多久更新一次？</h4>
-                    <p>本工具的汇率数据每<strong>24小时更新一次</strong>。每次打开或刷新页面时，会自动获取最新汇率。数据来源于欧洲央行（ECB）和 ExchangeRate-API，以两者中最新数据为准。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>汇率的准确性如何？</h4>
-                    <p>本工具展示的是<strong>中间参考汇率</strong>（即买入价和卖出价的中间值），与银行柜台的实际兑换汇率会有所差异。实际兑换时，银行会在此基础上加减点差。建议在进行实际兑换前，以银行或外汇交易平台的实时报价为准。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>为什么实际兑换金额和计算结果不一样？</h4>
-                    <p>主要原因包括：1）银行会收取一定的<strong>买卖点差</strong>（通常0.1%-1%）；2）不同银行、不同渠道（柜台/网银/ATM）的点差不同；3）大额兑换可能有更优惠的汇率；4）现钞和现汇的汇率也有差异。本工具仅提供参考，不构成兑换建议。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>支持哪些货币？</h4>
-                    <p>本工具支持 <strong>20种</strong>与中国联系密切的主要货币，包括：<br>
+                <details class="faq-item" open>
+                    <summary>汇率多久更新一次？</summary>
+                    <div class="faq-body">
+                        <p>本工具的汇率数据每<strong>24小时更新一次</strong>。每次打开或刷新页面时，会自动获取最新汇率。数据来源于欧洲央行（ECB）和 ExchangeRate-API，以两者中最新数据为准。</p>
+                    </div>
+                </details>
+<details class="faq-item">
+    <summary>汇率的准确性如何？</summary>
+    <div class="faq-body">
+        <p>本工具展示的是<strong>中间参考汇率</strong>（即买入价和卖出价的中间值），与银行柜台的实际兑换汇率会有所差异。实际兑换时，银行会在此基础上加减点差。建议在进行实际兑换前，以银行或外汇交易平台的实时报价为准。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>为什么实际兑换金额和计算结果不一样？</summary>
+    <div class="faq-body">
+        <p>主要原因包括：1）银行会收取一定的<strong>买卖点差</strong>（通常0.1%-1%）；2）不同银行、不同渠道（柜台/网银/ATM）的点差不同；3）大额兑换可能有更优惠的汇率；4）现钞和现汇的汇率也有差异。本工具仅提供参考，不构成兑换建议。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>支持哪些货币？</summary>
+    <div class="faq-body">
+        <p>本工具支持 <strong>20种</strong>与中国联系密切的主要货币，包括：<br>
                     <strong>主要货币</strong>：美元(USD)、欧元(EUR)、英镑(GBP)、日元(JPY)、瑞士法郎(CHF)、加元(CAD)、澳元(AUD)<br>
                     <strong>亚太货币</strong>：韩元(KRW)、港元(HKD)、新台币(TWD)、新加坡元(SGD)、澳门元(MOP)<br>
                     <strong>东南亚货币</strong>：泰铢(THB)、马来西亚林吉特(MYR)、印尼盾(IDR)、菲律宾比索(PHP)、越南盾(VND)<br>
                     <strong>其他</strong>：俄罗斯卢布(RUB)、巴西雷亚尔(BRL)</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>出境旅游换汇有什么建议？</h4>
-                    <p>1）<strong>提前比价</strong>：不同银行汇率不同，可先在网银查看；2）<strong>现汇比现钞优惠</strong>：如果目的地支持银行卡支付，尽量用现汇；3）<strong>避免在机场换汇</strong>：机场兑换点汇率通常不划算；4）<strong>分批兑换</strong>：不要一次性换太多，汇率可能波动；5）东南亚部分国家（如泰国）支持人民币直接兑换或银联取现。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>人民币汇率受什么影响？</h4>
-                    <p>人民币汇率主要受以下因素影响：<br>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>出境旅游换汇有什么建议？</summary>
+    <div class="faq-body">
+        <p>1）<strong>提前比价</strong>：不同银行汇率不同，可先在网银查看；2）<strong>现汇比现钞优惠</strong>：如果目的地支持银行卡支付，尽量用现汇；3）<strong>避免在机场换汇</strong>：机场兑换点汇率通常不划算；4）<strong>分批兑换</strong>：不要一次性换太多，汇率可能波动；5）东南亚部分国家（如泰国）支持人民币直接兑换或银联取现。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>人民币汇率受什么影响？</summary>
+    <div class="faq-body">
+        <p>人民币汇率主要受以下因素影响：<br>
                     1）<strong>中美利差</strong>：中美两国货币政策（利率调整）的差异<br>
                     2）<strong>国际贸易收支</strong>：出口大于进口时，人民币有升值压力<br>
                     3）<strong>经济数据</strong>：GDP、CPI等宏观经济数据的表现<br>
                     4）<strong>央行政策</strong>：中国人民银行的汇率管理政策<br>
                     5）<strong>地缘政治</strong>：国际关系变化也会影响市场预期</p>
-                </div>
-            </div>
+    </div>
+</details>
+</div>
 
             <!-- 广告位 -->
             <div class="ad-placeholder" id="adSlot3">

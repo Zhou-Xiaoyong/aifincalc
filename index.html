@@ -148,8 +148,6 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="shared/share.css">
     <!-- 百度统计 -->
     <script>
     var _hmt = _hmt || [];
@@ -212,7 +210,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="./" class="nav-link active">
@@ -260,9 +258,9 @@
 
     <div class="container page-top-space">
         <!-- 头部 -->
-        <header style="padding: 20px 20px 16px;">
-            <h1 style="font-size: 1.8rem;">AI金融计算器</h1>
-            <p class="tagline" style="font-size: 0.9rem;">个税计算 · 社保计算 · 房贷月供 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
+        <header class="page-title-wrap">
+            <h1 class="page-title">AI金融计算器</h1>
+            <p class="page-tagline">个税计算 · 社保计算 · 房贷月供 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
         </header>
 
         <!-- 工具卡片网格 -->
@@ -270,7 +268,7 @@
 
             <!-- 个税计算器 -->
             <a href="tax-calculator/" class="tool-card" data-color="purple">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                <div class="card-icon">
                     <span>💰</span>
                 </div>
                 <div class="card-body">
@@ -287,7 +285,7 @@
 
             <!-- 社保计算器 -->
             <a href="social-insurance-calculator/" class="tool-card" data-color="indigo">
-                <div class="card-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                <div class="card-icon">
                     <span>🏥</span>
                 </div>
                 <div class="card-body">
@@ -304,7 +302,7 @@
 
             <!-- 房贷计算器 -->
             <a href="mortgage-calculator/" class="tool-card" data-color="blue">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                <div class="card-icon">
                     <span>🏡</span>
                 </div>
                 <div class="card-body">
@@ -321,7 +319,7 @@
 
             <!-- 车贷计算器 -->
             <a href="car-loan-calculator/" class="tool-card" data-color="orange">
-                <div class="card-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                <div class="card-icon">
                     <span>🚗</span>
                 </div>
                 <div class="card-body">
@@ -338,7 +336,7 @@
 
             <!-- 公积金贷款计算器 -->
             <a href="provident-fund-calculator/" class="tool-card" data-color="teal">
-                <div class="card-icon" style="background: linear-gradient(135deg, #0f9b8e, #2d8cf0);">
+                <div class="card-icon">
                     <span>🏦</span>
                 </div>
                 <div class="card-body">
@@ -355,7 +353,7 @@
 
             <!-- 汇率换算器 -->
             <a href="exchange-rate-calculator/" class="tool-card" data-color="violet">
-                <div class="card-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                <div class="card-icon">
                     <span>💱</span>
                 </div>
                 <div class="card-body">
@@ -372,7 +370,7 @@
 
             <!-- 存款利息计算器 -->
             <a href="deposit-calculator/" class="tool-card" data-color="teal">
-                <div class="card-icon" style="background: linear-gradient(135deg, #0f9b8e, #2d8cf0);">
+                <div class="card-icon">
                     <span>🏦</span>
                 </div>
                 <div class="card-body">
@@ -389,7 +387,7 @@
 
             <!-- 投资收益计算器 -->
             <a href="investment-calculator/" class="tool-card" data-color="green">
-                <div class="card-icon" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                <div class="card-icon">
                     <span>📈</span>
                 </div>
                 <div class="card-body">
@@ -437,30 +435,30 @@
             <span class="ad-label">广告</span>
         </div>
 
-        <!-- FAQ -->
+        <!-- FAQ（与上方 JSON-LD FAQPage 5 条 Question/Answer 一一对应） -->
         <section class="faq-section">
             <h2>常见问题</h2>
             <div class="faq-list">
-                <div class="faq-item">
-                    <h4 class="faq-question">这些工具收费吗？</h4>
-                    <p>完全免费，所有计算工具均可直接使用，无需注册、无需付费。我们通过页面广告维持运营。</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">计算结果准确吗？可以用于实际决策吗？</h4>
-                    <p>我们的计算逻辑严格按照国家最新政策标准实现，包括2026年个税税率表、2025年5月公积金利率等。但由于各城市政策可能有地方性差异，建议以当地相关部门的最终结果为准。</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">我的数据会被收集吗？</h4>
-                    <p>不会。所有计算都在您的浏览器本地完成，我们不会收集、存储或传输您输入的任何数据。您的隐私完全受到保护。</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">汇率数据多久更新一次？</h4>
-                    <p>汇率换算器每次打开或刷新页面时自动获取最新汇率数据，并缓存在本地24小时。支持20种货币实时换算和30天走势查看。</p>
-                </div>
-                <div class="faq-item">
-                    <h4 class="faq-question">支持哪些城市的公积金贷款计算？</h4>
-                    <p>目前支持北京、上海、广州、深圳、杭州、南京、成都、武汉、西安9个城市的公积金贷款额度评估，涵盖单职工、双职工和二套房政策。</p>
-                </div>
+                <details class="faq-item" open>
+                    <summary>AI金融计算器的计算器收费吗？</summary>
+                    <div class="faq-body"><p>完全免费。所有计算工具均可直接使用，无需注册、无需付费、无需下载APP。所有计算在浏览器本地完成，不收集任何个人数据。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>AI金融计算器的计算结果准确吗？</summary>
+                    <div class="faq-body"><p>计算逻辑严格按照国家最新政策标准实现，包括2026年个税税率表、2025年5月公积金利率、最新LPR利率等。政策数据集中管理，每次更新只需修改一处。但由于各城市政策可能有地方性差异，建议以当地相关部门的最终结果为准。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>汇率数据多久更新一次？支持哪些货币？</summary>
+                    <div class="faq-body"><p>汇率数据每次打开或刷新页面时自动获取最新汇率，缓存在本地24小时。支持20种货币，包括美元、欧元、日元、韩元、港币、新加坡元、泰铢、马来西亚林吉特、印尼盾、菲律宾比索、越南盾等与中国联系密切的主要货币。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>公积金贷款计算器支持哪些城市？</summary>
+                    <div class="faq-body"><p>目前支持北京、上海、广州、深圳、杭州、南京、成都、武汉、西安9个城市的公积金贷款额度评估，涵盖单职工、双职工和二套房政策。各城市最高贷款额度和余额倍数均已内置。</p></div>
+                </details>
+                <details class="faq-item">
+                    <summary>我的个人数据会被收集吗？</summary>
+                    <div class="faq-body"><p>不会。所有计算都在浏览器本地完成，不会向服务器发送任何数据。您输入的工资、贷款、投资金额等信息完全保留在您的设备上，我们无法获取也无法存储。</p></div>
+                </details>
             </div>
         </section>
 

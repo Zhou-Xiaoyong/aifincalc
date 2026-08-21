@@ -121,7 +121,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -681,20 +681,25 @@
 
         <div class="faq-section">
             <h2>常见问题</h2>
-            <div class="faq-item">
-                <h4>社保缴费基数是什么？</h4>
-                <p>社保缴费基数是计算社会保险费的基础，通常为职工本人上年度月平均工资。各城市都有缴费基数的上下限，一般在当地社平工资的60%-300%之间。</p>
-            </div>
-            <div class="faq-item">
-                <h4>五险一金包括哪些？</h4>
-                <p>五险一金包括：养老保险、医疗保险、失业保险、工伤保险、生育保险（五险）和住房公积金（一金）。其中工伤保险和生育保险由单位全额缴纳，个人不缴费。</p>
-            </div>
-            <div class="faq-item">
-                <h4>住房公积金缴纳比例是多少？</h4>
-                <p>住房公积金缴纳比例一般在5%-12%之间，具体比例由单位和个人协商确定。单位和个人缴纳比例相同，全部计入个人账户。</p>
-            </div>
-            
-            <!-- 广告位4：FAQ内部 -->
+            <details class="faq-item" open>
+                <summary>社保缴费基数是什么？</summary>
+                <div class="faq-body">
+                    <p>社保缴费基数是计算社会保险费的基础，通常为职工本人上年度月平均工资。各城市都有缴费基数的上下限，一般在当地社平工资的60%-300%之间。</p>
+                </div>
+            </details>
+<details class="faq-item">
+    <summary>五险一金包括哪些？</summary>
+    <div class="faq-body">
+        <p>五险一金包括：养老保险、医疗保险、失业保险、工伤保险、生育保险（五险）和住房公积金（一金）。其中工伤保险和生育保险由单位全额缴纳，个人不缴费。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>住房公积金缴纳比例是多少？</summary>
+    <div class="faq-body">
+        <p>住房公积金缴纳比例一般在5%-12%之间，具体比例由单位和个人协商确定。单位和个人缴纳比例相同，全部计入个人账户。</p>
+    </div>
+</details>
+<!-- 广告位4：FAQ内部 -->
             <div class="ad-placeholder inline" id="adSlot4">
                 <span>广告位</span>
             </div>
@@ -998,6 +1003,78 @@
             </div>
         </div>
     </div>
+
+        <!-- 城市入口网格 -->
+        <section class="city-grid" aria-label="社保公积金计算器城市入口">
+            <div class="city-grid-inner">
+                <h2 class="city-grid-title">🗺️ 社保缴纳城市切换</h2>
+
+                <div class="city-group">
+                    <div class="city-group-title">🔥 热门城市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    <a class="city-chip" href="./xian/">西安</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+
+                <details class="city-all">
+                    <summary>显示全部 12 个城市</summary>
+                    <div class="city-all-body">
+                <div class="city-group">
+                    <div class="city-group-title">直辖市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华东</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./hefei/">合肥</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华中</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./xian/">西安</a>
+                    </div>
+                </div>
+                    </div>
+                </details>
+            </div>
+        </section>
 
     <footer class="site-footer">
         <div class="footer-inner">

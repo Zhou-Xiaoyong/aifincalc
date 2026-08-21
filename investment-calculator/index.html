@@ -122,7 +122,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -460,19 +460,25 @@
             <!-- FAQ -->
             <div class="faq-section">
                 <h2>常见问题</h2>
-                <div class="faq-item">
-                    <h4>什么是复利？</h4>
-                    <p>复利是指利息也计入本金产生新的利息，俗称"利滚利"。时间越长，复利效应越明显，是财富增长的重要工具。</p>
-                </div>
-                <div class="faq-item">
-                    <h4>定投有什么优势？</h4>
-                    <p>定投可以平摊成本、降低择时风险，适合长期投资。通过定期定额投资，可以在市场低点买入更多份额，高点买入较少份额，实现成本平均化。</p>
-                </div>
-                <div class="faq-item">
-                    <h4>退休规划应该什么时候开始？</h4>
-                    <p>越早开始越好！复利的威力需要时间积累。假设年化收益6%，30岁开始每月存2000元，到60岁可积累约200万；如果从40岁开始，只能积累约90万。</p>
-                </div>
-            </div>
+                <details class="faq-item" open>
+                    <summary>什么是复利？</summary>
+                    <div class="faq-body">
+                        <p>复利是指利息也计入本金产生新的利息，俗称"利滚利"。时间越长，复利效应越明显，是财富增长的重要工具。</p>
+                    </div>
+                </details>
+<details class="faq-item">
+    <summary>定投有什么优势？</summary>
+    <div class="faq-body">
+        <p>定投可以平摊成本、降低择时风险，适合长期投资。通过定期定额投资，可以在市场低点买入更多份额，高点买入较少份额，实现成本平均化。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>退休规划应该什么时候开始？</summary>
+    <div class="faq-body">
+        <p>越早开始越好！复利的威力需要时间积累。假设年化收益6%，30岁开始每月存2000元，到60岁可积累约200万；如果从40岁开始，只能积累约90万。</p>
+    </div>
+</details>
+</div>
         </div>
 
         <!-- 预留广告位 -->

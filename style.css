@@ -46,6 +46,13 @@
                  'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
     --font-mono: 'SF Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular,
                  Menlo, Consolas, monospace;
+
+    /* 间距 */
+    --spacer-xs: 4px;
+    --spacer-sm: 8px;
+    --spacer-md: 16px;
+    --spacer-lg: 24px;
+    --spacer-xl: 32px;
 }
 
 * {
@@ -142,6 +149,25 @@ header h1 {
     line-height: 1.6;
 }
 
+/* ── 首页 hero 标题区（取代原 index.html 内联 style）── */
+.page-title-wrap {
+    padding: 20px 20px 16px;
+}
+.page-title {
+    font-size: 1.8rem;
+    color: var(--color-text);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+}
+.page-tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 1.6;
+}
+
 .update-badge {
     display: inline-block;
     margin-top: 18px;
@@ -221,7 +247,7 @@ header h1 {
     filter: none;
 }
 
-/* 左侧图标 - 统一浅色块+深色，去个人渐变 */
+/* 左侧图标 - 统一浅色块+深色（按 data-color= 保持区分度，去个人化渐变内联） */
 .card-icon {
     flex-shrink: 0;
     width: 56px;
@@ -238,6 +264,15 @@ header h1 {
 .card-icon span {
     font-size: 1.6rem;
 }
+
+/* 按 data-color 给 8 张卡片图标专属浅色变体（color-mix，而非个人渐变） */
+.tool-card[data-color="purple"]   .card-icon { background: color-mix(in srgb, #667eea 18%, var(--color-primary-light)); }
+.tool-card[data-color="indigo"]   .card-icon { background: color-mix(in srgb, #4facfe 18%, var(--color-primary-light)); }
+.tool-card[data-color="blue"]     .card-icon { background: color-mix(in srgb, #3b82f6 18%, var(--color-primary-light)); }
+.tool-card[data-color="orange"]   .card-icon { background: color-mix(in srgb, #f59e0b 18%, var(--color-primary-light)); }
+.tool-card[data-color="teal"]     .card-icon { background: color-mix(in srgb, #0f766e 18%, var(--color-primary-light)); }
+.tool-card[data-color="violet"]   .card-icon { background: color-mix(in srgb, #7c3aed 18%, var(--color-primary-light)); }
+.tool-card[data-color="green"]    .card-icon { background: color-mix(in srgb, #10b981 18%, var(--color-primary-light)); }
 
 /* 中间内容 */
 .card-body {
@@ -349,7 +384,7 @@ header h1 {
     font-size: 0.8rem;
 }
 
-/* ── FAQ ── */
+/* ── FAQ：折叠交互样式（<details>/<summary>），与 Schema FAQPage 5 条一一对应 ── */
 .faq-section {
     background: var(--color-surface);
     border-radius: var(--radius-xl);
@@ -367,26 +402,56 @@ header h1 {
     margin-bottom: 28px;
 }
 
-.faq-item {
-    padding: 14px 0;
-    border-bottom: 1px solid var(--color-border-subtle);
+.faq-section details.faq-item {
+    background: var(--color-surface-muted);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 0;
+    margin-bottom: var(--spacer-sm);
+    overflow: hidden;
 }
 
-.faq-item:last-child {
-    border-bottom: none;
+.faq-section details.faq-item:last-child {
+    margin-bottom: 0;
 }
 
-.faq-question {
+.faq-section details.faq-item > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 20px;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-text);
-    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    user-select: none;
+    line-height: 1.6;
 }
-
-.faq-item p {
+.faq-section details.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-section details.faq-item > summary::after {
+    content: '+';
+    flex-shrink: 0;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    transition: transform 0.2s ease;
+}
+.faq-section details.faq-item[open] > summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+.faq-section details.faq-item > summary:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 3px color-mix(in srgb, var(--color-primary) 18%, transparent);
+}
+.faq-section details.faq-item[open] { background: var(--color-surface); }
+.faq-section .faq-body {
+    padding: 0 20px 16px;
     font-size: 0.88rem;
     color: var(--color-text-secondary);
-    line-height: 1.7;
+    line-height: 1.75;
 }
 
 /* ── 页脚 ── */

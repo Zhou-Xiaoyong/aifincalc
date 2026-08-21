@@ -123,7 +123,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -481,23 +481,31 @@
             <!-- FAQ -->
             <div class="faq-section">
                 <h2>常见问题</h2>
-                <div class="faq-item">
-                    <h4>什么是整存整取？</h4>
-                    <p>整存整取是指开户时约定存期，一次性存入，到期一次性支取本息的一种定期存款方式。存期分为3个月、6个月、1年、2年、3年、5年六个档次，存期越长利率越高。</p>
-                </div>
-                <div class="faq-item">
-                    <h4>什么是零存整取？</h4>
-                    <p>零存整取是指每月固定存入金额，到期一次性支取本息的一种储蓄方式。存期分为1年、3年、5年三个档次，适合每月有固定结余的储户，可以积少成多。</p>
-                </div>
-                <div class="faq-item">
-                    <h4>什么是通知存款？</h4>
-                    <p>通知存款是一种不约定存期、支取时需提前通知银行、约定支取日期和金额的存款。分为1天通知存款和7天通知存款两种，起存金额一般为5万元，利率高于活期存款。</p>
-                </div>
-                <div class="faq-item">
-                    <h4>定期存款提前支取利息怎么算？</h4>
-                    <p>定期存款提前支取的，按支取日银行挂牌公告的活期存款利率计付利息。部分提前支取的，提前支取部分按活期利率计息，剩余部分仍按原定期利率计息。建议根据资金使用计划合理选择存期。</p>
-                </div>
-            </div>
+                <details class="faq-item" open>
+                    <summary>什么是整存整取？</summary>
+                    <div class="faq-body">
+                        <p>整存整取是指开户时约定存期，一次性存入，到期一次性支取本息的一种定期存款方式。存期分为3个月、6个月、1年、2年、3年、5年六个档次，存期越长利率越高。</p>
+                    </div>
+                </details>
+<details class="faq-item">
+    <summary>什么是零存整取？</summary>
+    <div class="faq-body">
+        <p>零存整取是指每月固定存入金额，到期一次性支取本息的一种储蓄方式。存期分为1年、3年、5年三个档次，适合每月有固定结余的储户，可以积少成多。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>什么是通知存款？</summary>
+    <div class="faq-body">
+        <p>通知存款是一种不约定存期、支取时需提前通知银行、约定支取日期和金额的存款。分为1天通知存款和7天通知存款两种，起存金额一般为5万元，利率高于活期存款。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>定期存款提前支取利息怎么算？</summary>
+    <div class="faq-body">
+        <p>定期存款提前支取的，按支取日银行挂牌公告的活期存款利率计付利息。部分提前支取的，提前支取部分按活期利率计息，剩余部分仍按原定期利率计息。建议根据资金使用计划合理选择存期。</p>
+    </div>
+</details>
+</div>
         </div>
 
         <!-- 分享悬浮按钮 -->

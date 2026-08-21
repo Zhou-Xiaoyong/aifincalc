@@ -122,7 +122,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -555,59 +555,67 @@
             <div class="faq-section">
                 <h2>常见问题</h2>
 
-                <div class="faq-item">
-                    <h4>2026年公积金贷款利率是多少？</h4>
-                    <p>根据中国人民银行2025年5月8日的公告，公积金贷款利率下调0.25个百分点：<br>
+                <details class="faq-item" open>
+                    <summary>2026年公积金贷款利率是多少？</summary>
+                    <div class="faq-body">
+                        <p>根据中国人民银行2025年5月8日的公告，公积金贷款利率下调0.25个百分点：<br>
                     <strong>首套房：</strong>5年以下（含5年）2.10%，5年以上2.60%<br>
                     <strong>二套房：</strong>5年以下（含5年）不低于2.525%，5年以上不低于3.075%<br>
                     存量贷款（已发放的）从2026年1月1日起按新利率执行。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>公积金贷款额度如何计算？</h4>
-                    <p>公积金贷款额度通常取以下四种计算方式的<strong>最小值</strong>：<br>
+                    </div>
+                </details>
+<details class="faq-item">
+    <summary>公积金贷款额度如何计算？</summary>
+    <div class="faq-body">
+        <p>公积金贷款额度通常取以下四种计算方式的<strong>最小值</strong>：<br>
                     1. <strong>账户余额法</strong>：公积金账户余额 × 余额倍数（因城市不同，一般为10-16倍）<br>
                     2. <strong>月缴存额法</strong>：根据月缴存额和缴存年限综合计算<br>
                     3. <strong>还款能力法</strong>：（月收入 - 月负债）× 还贷能力系数（50%）× 贷款月数<br>
                     4. <strong>城市最高限额</strong>：各城市规定的公积金贷款最高额度<br>
                     最终可贷额度 = 以上四种方式中的最小值（以5000元为整数倍取整）。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>余额倍数是什么？各城市有什么不同？</h4>
-                    <p>余额倍数是指公积金账户余额可以放大多少倍来计算贷款额度。比如余额10万元，倍数10倍，则余额法额度为100万元。各城市余额倍数不同，一般在10-16倍之间，具体由当地公积金管理中心规定。部分城市还要求余额中近12个月的缴存额占一定比例。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>月冲和年冲有什么区别？哪种更划算？</h4>
-                    <p><strong>月冲（逐月提取还贷）：</strong>每月从公积金账户提取固定金额用于偿还当月月供。优点是每月现金支出减少，适合日常现金流紧张的人群。<br>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>余额倍数是什么？各城市有什么不同？</summary>
+    <div class="faq-body">
+        <p>余额倍数是指公积金账户余额可以放大多少倍来计算贷款额度。比如余额10万元，倍数10倍，则余额法额度为100万元。各城市余额倍数不同，一般在10-16倍之间，具体由当地公积金管理中心规定。部分城市还要求余额中近12个月的缴存额占一定比例。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>月冲和年冲有什么区别？哪种更划算？</summary>
+    <div class="faq-body">
+        <p><strong>月冲（逐月提取还贷）：</strong>每月从公积金账户提取固定金额用于偿还当月月供。优点是每月现金支出减少，适合日常现金流紧张的人群。<br>
                     <strong>年冲（一次性提取还贷）：</strong>每年用公积金账户余额一次性冲抵贷款本金。优点是一次性减少本金，后续利息大幅降低，总节省利息更多。<br>
                     <strong>建议：</strong>如果公积金账户余额较多且月供压力不大，推荐年冲；如果月供压力较大，推荐月冲。具体还要看当地公积金中心支持的方式。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>公积金贷款需要连续缴存多久？</h4>
-                    <p>申请公积金贷款一般要求连续足额缴存住房公积金<strong>满6个月（含）以上</strong>，且申请时公积金账户处于正常缴存状态。部分城市可能有更长的要求（如12个月），具体以当地公积金管理中心规定为准。如果中间有断缴，需要重新计算连续缴存时间。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>公积金贷款可以贷多少年？</h4>
-                    <p>公积金贷款最长期限为<strong>30年</strong>，且不超过借款人法定退休年龄后5年。比如男性60岁退休，最长可贷到65岁。贷款期限同时受房龄限制，二手房贷款期限通常不超过房龄+房龄系数（各城市不同，一般为30-50年减去房龄）。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>组合贷款怎么贷最划算？</h4>
-                    <p>组合贷款的关键是<strong>最大化公积金贷款额度</strong>，因为公积金利率远低于商贷。<br>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>公积金贷款需要连续缴存多久？</summary>
+    <div class="faq-body">
+        <p>申请公积金贷款一般要求连续足额缴存住房公积金<strong>满6个月（含）以上</strong>，且申请时公积金账户处于正常缴存状态。部分城市可能有更长的要求（如12个月），具体以当地公积金管理中心规定为准。如果中间有断缴，需要重新计算连续缴存时间。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>公积金贷款可以贷多少年？</summary>
+    <div class="faq-body">
+        <p>公积金贷款最长期限为<strong>30年</strong>，且不超过借款人法定退休年龄后5年。比如男性60岁退休，最长可贷到65岁。贷款期限同时受房龄限制，二手房贷款期限通常不超过房龄+房龄系数（各城市不同，一般为30-50年减去房龄）。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>组合贷款怎么贷最划算？</summary>
+    <div class="faq-body">
+        <p>组合贷款的关键是<strong>最大化公积金贷款额度</strong>，因为公积金利率远低于商贷。<br>
                     建议步骤：<br>
                     1. 先用「额度评估」功能计算公积金最多能贷多少<br>
                     2. 如果公积金额度不够覆盖总贷款，差额部分用商业贷款补充<br>
                     3. 优先选择等额本息还款方式，便于管理两种贷款的月供<br>
                     4. 经济宽裕时优先提前偿还商贷部分（利率更高，节省效果更明显）</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>2026年住房公积金政策有哪些重大调整？</h4>
-                    <p>2026年公积金政策迎来多重重大调整：<br>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>2026年住房公积金政策有哪些重大调整？</summary>
+    <div class="faq-body">
+        <p>2026年公积金政策迎来多重重大调整：<br>
                     <strong>一、利率下调：</strong>自2025年5月8日起，央行下调公积金贷款利率0.25个百分点。首套5年以上利率降至2.6%，二套降至3.075%。存量贷款于2026年1月1日起自动执行新利率。<br>
                     <strong>二、条例修订（2026年6月5日征求意见）：</strong>住建部发布《住房公积金管理条例（修订征求意见稿）》，提出四大突破：<br>
                     ① <strong>提取范围扩大</strong>：新增装修自住住房、支付物业费、其他住房消费等3种情形，从6种扩展至9种；<br>
@@ -615,8 +623,9 @@
                     ③ <strong>跨区域互认互贷</strong>：推动全国住房公积金"互认互贷"，打破城市壁垒；<br>
                     ④ <strong>资金管理优化</strong>：完善公积金管委会职责，加强监管。<br>
                     <strong>三、60+城市密集调整：</strong>全国超60个城市优化公积金政策，包括提高贷款额度（苏州个人150万、家庭200万；成都双缴存120万）、降低首付比例（最低20%）、支持支付首付/物业费/装修款、放开灵活就业人员缴存等。具体以当地公积金中心最新公告为准。</p>
-                </div>
-            </div>
+    </div>
+</details>
+</div>
 
             <!-- 广告位 -->
             <div class="ad-placeholder" id="adSlot3">
@@ -901,6 +910,115 @@
         </div>
 
     </div>
+
+        <!-- 城市入口网格 -->
+        <section class="city-grid" aria-label="公积金贷款计算器城市入口">
+            <div class="city-grid-inner">
+                <h2 class="city-grid-title">🗺️ 公积金贷款城市切换 / 直达计算</h2>
+
+                <div class="city-group">
+                    <div class="city-group-title">🔥 热门城市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./nanjing/">南京</a>
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    <a class="city-chip" href="./xian/">西安</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+
+                <details class="city-all">
+                    <summary>显示全部 38 个城市</summary>
+                    <div class="city-all-body">
+                <div class="city-group">
+                    <div class="city-group-title">直辖市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./shijiazhuang/">石家庄</a>
+                    <a class="city-chip" href="./taiyuan/">太原</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">东北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./shenyang/">沈阳</a>
+                    <a class="city-chip" href="./changchun/">长春</a>
+                    <a class="city-chip" href="./harbin/">哈尔滨</a>
+                    <a class="city-chip" href="./dalian/">大连</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华东</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./nanjing/">南京</a>
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./wuxi/">无锡</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./ningbo/">宁波</a>
+                    <a class="city-chip" href="./wenzhou/">温州</a>
+                    <a class="city-chip" href="./hefei/">合肥</a>
+                    <a class="city-chip" href="./fuzhou/">福州</a>
+                    <a class="city-chip" href="./xiamen/">厦门</a>
+                    <a class="city-chip" href="./jinan/">济南</a>
+                    <a class="city-chip" href="./qingdao/">青岛</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华中</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./zhengzhou/">郑州</a>
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    <a class="city-chip" href="./changsha/">长沙</a>
+                    <a class="city-chip" href="./nanchang/">南昌</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    <a class="city-chip" href="./foshan/">佛山</a>
+                    <a class="city-chip" href="./dongguan/">东莞</a>
+                    <a class="city-chip" href="./nanning/">南宁</a>
+                    <a class="city-chip" href="./haikou/">海口</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    <a class="city-chip" href="./kunming/">昆明</a>
+                    <a class="city-chip" href="./guiyang/">贵阳</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./xian/">西安</a>
+                    <a class="city-chip" href="./lanzhou/">兰州</a>
+                    <a class="city-chip" href="./xining/">西宁</a>
+                    <a class="city-chip" href="./wulumuqi/">乌鲁木齐</a>
+                    </div>
+                </div>
+                    </div>
+                </details>
+            </div>
+        </section>
 
     <footer class="site-footer">
         <div class="footer-inner">

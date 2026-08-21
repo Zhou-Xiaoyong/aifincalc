@@ -474,7 +474,7 @@ const PROVIDENT_FUND_LIMITS = {
         name: '海口', single: 50, family: 70, second: 35,
         balanceX: 10, minContribution: 0
     },
-    haerbin: {
+    huhehaote: {
         name: '呼和浩特', single: 50, family: 70, second: 35,
         balanceX: 10, minContribution: 0
     },

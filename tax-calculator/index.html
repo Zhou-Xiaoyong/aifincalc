@@ -121,7 +121,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -477,20 +477,25 @@
 
         <div class="faq-section">
             <h2>常见问题</h2>
-            <div class="faq-item">
-                <h4>个税起征点是多少？</h4>
-                <p>2025年个人所得税起征点为每月5000元，年度60000元。</p>
-            </div>
-            <div class="faq-item">
-                <h4>专项附加扣除有哪些？</h4>
-                <p>包括子女教育（2000元/月）、继续教育（400元/月）、住房贷款利息（1000元/月）、住房租金（1500元/月）、赡养老人（最高3000元/月）、3岁以下婴幼儿照护（2000元/月）。</p>
-            </div>
-            <div class="faq-item">
-                <h4>年终奖如何计税？</h4>
-                <p>年终奖可以选择单独计税或并入综合所得计税，本计算器默认按单独计税方式计算。</p>
-            </div>
-            
-            <!-- 广告位4：FAQ内部 -->
+            <details class="faq-item" open>
+                <summary>个税起征点是多少？</summary>
+                <div class="faq-body">
+                    <p>2025年个人所得税起征点为每月5000元，年度60000元。</p>
+                </div>
+            </details>
+<details class="faq-item">
+    <summary>专项附加扣除有哪些？</summary>
+    <div class="faq-body">
+        <p>包括子女教育（2000元/月）、继续教育（400元/月）、住房贷款利息（1000元/月）、住房租金（1500元/月）、赡养老人（最高3000元/月）、3岁以下婴幼儿照护（2000元/月）。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>年终奖如何计税？</summary>
+    <div class="faq-body">
+        <p>年终奖可以选择单独计税或并入综合所得计税，本计算器默认按单独计税方式计算。</p>
+    </div>
+</details>
+<!-- 广告位4：FAQ内部 -->
             <div class="ad-placeholder inline" id="adSlot4">
                 <span>广告位</span>
             </div>
@@ -741,6 +746,115 @@
             </div>
         </div>
     </div>
+
+        <!-- 城市入口网格 -->
+        <section class="city-grid" aria-label="个人所得税计算器城市入口">
+            <div class="city-grid-inner">
+                <h2 class="city-grid-title">🗺️ 个税计算 / 直接切换城市</h2>
+
+                <div class="city-group">
+                    <div class="city-group-title">🔥 热门城市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./nanjing/">南京</a>
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    <a class="city-chip" href="./xian/">西安</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+
+                <details class="city-all">
+                    <summary>显示全部 38 个城市</summary>
+                    <div class="city-all-body">
+                <div class="city-group">
+                    <div class="city-group-title">直辖市</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./beijing/">北京</a>
+                    <a class="city-chip" href="./shanghai/">上海</a>
+                    <a class="city-chip" href="./tianjin/">天津</a>
+                    <a class="city-chip" href="./chongqing/">重庆</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./shijiazhuang/">石家庄</a>
+                    <a class="city-chip" href="./taiyuan/">太原</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">东北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./shenyang/">沈阳</a>
+                    <a class="city-chip" href="./changchun/">长春</a>
+                    <a class="city-chip" href="./harbin/">哈尔滨</a>
+                    <a class="city-chip" href="./dalian/">大连</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华东</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./nanjing/">南京</a>
+                    <a class="city-chip" href="./suzhou/">苏州</a>
+                    <a class="city-chip" href="./wuxi/">无锡</a>
+                    <a class="city-chip" href="./hangzhou/">杭州</a>
+                    <a class="city-chip" href="./ningbo/">宁波</a>
+                    <a class="city-chip" href="./wenzhou/">温州</a>
+                    <a class="city-chip" href="./hefei/">合肥</a>
+                    <a class="city-chip" href="./fuzhou/">福州</a>
+                    <a class="city-chip" href="./xiamen/">厦门</a>
+                    <a class="city-chip" href="./jinan/">济南</a>
+                    <a class="city-chip" href="./qingdao/">青岛</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华中</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./zhengzhou/">郑州</a>
+                    <a class="city-chip" href="./wuhan/">武汉</a>
+                    <a class="city-chip" href="./changsha/">长沙</a>
+                    <a class="city-chip" href="./nanchang/">南昌</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">华南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./guangzhou/">广州</a>
+                    <a class="city-chip" href="./shenzhen/">深圳</a>
+                    <a class="city-chip" href="./foshan/">佛山</a>
+                    <a class="city-chip" href="./dongguan/">东莞</a>
+                    <a class="city-chip" href="./nanning/">南宁</a>
+                    <a class="city-chip" href="./haikou/">海口</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西南</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./chengdu/">成都</a>
+                    <a class="city-chip" href="./kunming/">昆明</a>
+                    <a class="city-chip" href="./guiyang/">贵阳</a>
+                    </div>
+                </div>
+                <div class="city-group">
+                    <div class="city-group-title">西北</div>
+                    <div class="city-chips-row">
+                    <a class="city-chip" href="./xian/">西安</a>
+                    <a class="city-chip" href="./lanzhou/">兰州</a>
+                    <a class="city-chip" href="./xining/">西宁</a>
+                    <a class="city-chip" href="./wulumuqi/">乌鲁木齐</a>
+                    </div>
+                </div>
+                    </div>
+                </details>
+            </div>
+        </section>
 
     <footer class="site-footer">
         <div class="footer-inner">

@@ -196,3 +196,57 @@
         }, 2000);
     }
 })();
+
+
+/* B3 mobile-nav upgrade */
+(function initMobileNavUpgrade() {
+    'use strict';
+
+    function getMenu() {
+        return document.getElementById('mobileMenu');
+    }
+    function getToggle() {
+        return document.querySelector('button.menu-toggle[aria-controls="mobileMenu"]')
+            || document.querySelector('button.menu-toggle');
+    }
+
+    function setOpen(open) {
+        const menu = getMenu();
+        const btn = getToggle();
+        if (!menu) return;
+        menu.classList.toggle('active', open);
+        if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    // Global toggle function (invoked from inline onclick)
+    window.toggleMobileNav = function(btnOrEvent) {
+        const menu = getMenu();
+        if (!menu) return;
+        const isOpen = !menu.classList.contains('active');
+        setOpen(isOpen);
+    };
+
+    // Click outside to close (ignore clicks inside header and ignore a.nav-link clicks so navigation works)
+    document.addEventListener('click', function(e) {
+        const menu = getMenu();
+        if (!menu || !menu.classList.contains('active')) return;
+        const header = document.querySelector('.site-header');
+        // If click target is <a class="nav-link"> inside mobile-menu, let it fire and close naturally after page nav
+        if (header && header.contains(e.target)) {
+            // But if clicking the toggle button, the global handler already toggled; skip here
+            const btn = getToggle();
+            if (btn && (btn === e.target || btn.contains(e.target))) return;
+            return;
+        }
+        setOpen(false);
+    }, true);
+
+    // ESC to close
+    document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Escape') return;
+        const menu = getMenu();
+        if (!menu) return;
+        if (menu.classList.contains('active')) setOpen(false);
+    });
+})();
+

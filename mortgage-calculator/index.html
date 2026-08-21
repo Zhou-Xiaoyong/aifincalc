@@ -122,7 +122,7 @@
                     <span>博客</span>
                 </a>
             </nav>
-            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+            <button class="menu-toggle" onclick="toggleMobileNav(this)" aria-expanded="false" aria-controls="mobileMenu">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
                     <a href="../" class="nav-link">
@@ -628,26 +628,31 @@
             <div class="faq-section">
                 <h2>常见问题</h2>
                 
-                <div class="faq-item">
-                    <h4>什么是LPR利率？</h4>
-                    <p>LPR（贷款市场报价利率）是由18家报价行根据本行对最优质客户的贷款利率，以公开市场操作利率加点形成的方式报价，由中国人民银行授权全国银行间同业拆借中心计算并公布的基础性的贷款参考利率。目前房贷主要参考5年期以上LPR。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>等额本息和等额本金有什么区别？</h4>
-                    <p><strong>等额本息：</strong>每月还款额相同，前期利息占比高，适合收入稳定的购房者。<br><strong>等额本金：</strong>每月本金相同，利息逐月递减，前期还款压力大但总利息少，适合前期资金充裕的购房者。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>提前还款哪种方式更划算？</h4>
-                    <p>如果希望尽快还清贷款、减少总利息支出，选择<strong>缩短年限</strong>；如果希望减轻月供压力、保持现金流，选择<strong>减少月供</strong>。一般来说，缩短年限节省的利息更多。</p>
-                </div>
-
-                <div class="faq-item">
-                    <h4>月供占收入多少比例合适？</h4>
-                    <p>一般建议月供不超过家庭月收入的<strong>30%-40%</strong>，这样既能保证生活质量，又有一定的财务缓冲空间。如果超过50%，则属于高负债，财务风险较大。</p>
-                </div>
-            </div>
+                <details class="faq-item" open>
+                    <summary>什么是LPR利率？</summary>
+                    <div class="faq-body">
+                        <p>LPR（贷款市场报价利率）是由18家报价行根据本行对最优质客户的贷款利率，以公开市场操作利率加点形成的方式报价，由中国人民银行授权全国银行间同业拆借中心计算并公布的基础性的贷款参考利率。目前房贷主要参考5年期以上LPR。</p>
+                    </div>
+                </details>
+<details class="faq-item">
+    <summary>等额本息和等额本金有什么区别？</summary>
+    <div class="faq-body">
+        <p><strong>等额本息：</strong>每月还款额相同，前期利息占比高，适合收入稳定的购房者。<br><strong>等额本金：</strong>每月本金相同，利息逐月递减，前期还款压力大但总利息少，适合前期资金充裕的购房者。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>提前还款哪种方式更划算？</summary>
+    <div class="faq-body">
+        <p>如果希望尽快还清贷款、减少总利息支出，选择<strong>缩短年限</strong>；如果希望减轻月供压力、保持现金流，选择<strong>减少月供</strong>。一般来说，缩短年限节省的利息更多。</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary>月供占收入多少比例合适？</summary>
+    <div class="faq-body">
+        <p>一般建议月供不超过家庭月收入的<strong>30%-40%</strong>，这样既能保证生活质量，又有一定的财务缓冲空间。如果超过50%，则属于高负债，财务风险较大。</p>
+    </div>
+</details>
+</div>
 
             <!-- 广告位4 -->
             <div class="ad-placeholder" id="adSlot4">
