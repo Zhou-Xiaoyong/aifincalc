@@ -1,3 +1,35 @@
+/* ---- 设计令牌（社保计算器保留 #667eea 品牌色、城市页原有蓝绿色不破坏） ---- */
+:root {
+    --color-primary: #5b6bd6;
+    --color-primary-dark: #4c5bbf;
+    --color-primary-light: #eef1fb;
+    --color-accent: #667eea;
+    --color-accent-cyan: #4facfe;
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-danger: #dc2626;
+    --color-info: #2563eb;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f1f5f9;
+    --color-border: #e2e8f0;
+    --color-border-subtle: #f1f5f9;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94a3b8;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+                 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono: 'SF Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular,
+                 Menlo, Consolas, monospace;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +37,13 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
     min-height: 100vh;
     padding: 0 20px 20px;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -17,12 +52,14 @@ body {
 }
 
 .calculator-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
     overflow: hidden;
 }
 
+/* 分享按钮 - 浅色底 */
 .share-float {
     text-align: center;
     padding: 16px 0 8px;
@@ -36,14 +73,15 @@ body {
     height: 36px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    color: white;
+    background: var(--color-primary-light);
+    color: var(--color-accent);
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .share-float .share-btn:hover {
-    background: rgba(255,255,255,0.3);
+    background: var(--color-accent);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -481,11 +519,11 @@ body {
 footer {
     text-align: center;
     padding: 30px;
-    color: white;
+    color: var(--color-text-secondary);
 }
 
 footer a {
-    color: white;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
@@ -1006,39 +1044,38 @@ footer a {
    以下 class 为该模板专用，主计算器页不使用，可安全追加
    ========================================================= */
 .breadcrumb {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-secondary);
     font-size: 0.9rem;
     margin-bottom: 18px;
 }
 .breadcrumb a {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-secondary);
     text-decoration: none;
 }
 .breadcrumb a:hover {
-    color: #fff;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
 .hero {
     text-align: center;
-    color: #fff;
+    color: var(--color-text);
     padding: 6px 10px 26px;
 }
 .hero h1 {
     font-size: 1.9rem;
     font-weight: 700;
     margin-bottom: 10px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 .hero .subtitle {
     font-size: 1rem;
-    opacity: 0.92;
+    color: var(--color-text-secondary);
     margin-bottom: 8px;
     line-height: 1.6;
 }
 .hero .updated {
     font-size: 0.82rem;
-    opacity: 0.8;
+    color: var(--color-text-muted);
 }
 
 .card {

@@ -1,3 +1,34 @@
+/* ---- 设计令牌（与全站 :root 对齐，房贷计算器保留紫蓝主色 #667eea 为品牌色） ---- */
+:root {
+    --color-primary: #5b6bd6;           /* 与原 #667eea 对齐并收敛 */
+    --color-primary-dark: #4c5bbf;
+    --color-primary-light: #eef1fb;
+    --color-accent: #667eea;
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-danger: #dc2626;
+    --color-info: #2563eb;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f1f5f9;
+    --color-border: #e2e8f0;
+    --color-border-subtle: #f1f5f9;
+    --color-text: #0f172a;
+    --color-text-secondary: #475569;
+    --color-text-muted: #94a3b8;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+                 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono: 'SF Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular,
+                 Menlo, Consolas, monospace;
+}
+
 /* 基础样式与个税计算器保持一致 */
 * {
     margin: 0;
@@ -6,10 +37,13 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
     min-height: 100vh;
     padding: 0 20px 20px;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -19,11 +53,12 @@ body {
 
 /* 品牌链接 */
 /* 工具导航 */
-/* 计算器卡片 */
+/* 计算器卡片 - 去厚重阴影，改用细边+轻阴影 */
 .calculator-card {
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
     overflow: hidden;
 }
 
@@ -770,7 +805,7 @@ body {
     line-height: 1.6;
 }
 
-/* 分享按钮 */
+/* 分享按钮 - 浅色背景 + 主色图标（当前页面为浅色底） */
 .share-float {
     text-align: center;
     padding: 16px 0 8px;
@@ -784,14 +819,15 @@ body {
     height: 36px;
     border: none;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    color: white;
+    background: var(--color-primary-light);
+    color: var(--color-accent);
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .share-float .share-btn:hover {
-    background: rgba(255,255,255,0.3);
+    background: var(--color-accent);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -984,15 +1020,15 @@ body {
     transform: translateX(4px);
 }
 
-/* 页脚 */
+/* 页脚 - 浅色底，切换为次级文字色 */
 footer {
     text-align: center;
     padding: 30px;
-    color: white;
+    color: var(--color-text-secondary);
 }
 
 footer a {
-    color: white;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 

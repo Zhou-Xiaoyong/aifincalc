@@ -1,6 +1,51 @@
 /* ============================================================
    AI金融计算器 - 首页样式
+   Design System Tokens (方案 B)
    ============================================================ */
+
+/* ---- 设计令牌 ---- */
+:root {
+    /* 颜色 - 主色系 */
+    --color-primary: #1e3a5f;        /* 墨蓝主色（稳重、信任感） */
+    --color-primary-dark: #162c4a;   /* 主色深色态（active/pressed） */
+    --color-primary-light: #e8eff7;  /* 主色浅色态（背景/tag） */
+    --color-accent: #0f766e;         /* 强调色（青绿，用于数字高亮） */
+
+    /* 颜色 - 语义色 */
+    --color-success: #16a34a;
+    --color-warning: #d97706;
+    --color-danger: #dc2626;
+    --color-info: #2563eb;
+
+    /* 颜色 - 中性色 */
+    --color-bg: #f8fafc;             /* 页面浅灰背景 */
+    --color-surface: #ffffff;        /* 卡片表面 */
+    --color-surface-muted: #f1f5f9;  /* 次级表面（表单项、分组） */
+    --color-border: #e2e8f0;         /* 默认边框 */
+    --color-border-subtle: #f1f5f9;  /* 细分隔线 */
+
+    /* 颜色 - 文字 */
+    --color-text: #0f172a;           /* 主文字（slate-900） */
+    --color-text-secondary: #475569; /* 次文字（slate-600，AA 以上） */
+    --color-text-muted: #94a3b8;     /* 辅助文字（slate-400） */
+
+    /* 圆角 token (4 档) */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    /* 阴影 token (3 档) */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+    --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
+
+    /* 字体 */
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+                 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    --font-mono: 'SF Mono', 'JetBrains Mono', ui-monospace, SFMono-Regular,
+                 Menlo, Consolas, monospace;
+}
 
 * {
     margin: 0;
@@ -9,39 +54,35 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
-    background: #f0f2f5;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
     min-height: 100vh;
     overflow-x: hidden;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
 }
 
 body.no-hero-bg {
-    background: #f5f7fa;
+    background: var(--color-bg);
 }
 
 body.no-hero-bg .hero-bg {
     display: none;
 }
 
-/* 背景装饰 */
+/* 背景装饰 - 收敛为浅色柔和渐变，深色文字叠加 */
 .hero-bg {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 280px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
+    height: 360px;
+    background: linear-gradient(180deg, #eaf1f8 0%, #f8fafc 80%);
     z-index: -1;
 }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
-/* 装饰圆 */
+/* 装饰圆 - 去紫色，改淡蓝 */
 .hero-bg::before {
     content: '';
     position: absolute;
@@ -50,7 +91,7 @@ body.no-hero-bg .hero-bg {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
+    background: radial-gradient(circle at 30% 30%, rgba(30, 58, 95, 0.06), transparent 70%);
 }
 
 .hero-bg::after {
@@ -61,7 +102,7 @@ body.no-hero-bg .hero-bg {
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
+    background: radial-gradient(circle at 70% 70%, rgba(15, 118, 110, 0.05), transparent 70%);
 }
 
 .container {
@@ -72,41 +113,43 @@ body.no-hero-bg .hero-bg {
 
 /* ── 头部 ── */
 .logo {
-    font-size: 4rem;
-    margin-bottom: 16px;
-    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15));
-    animation: float 3s ease-in-out infinite;
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    line-height: 1;
+    animation: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+    50% { transform: translateY(-6px); }
 }
 
-/* 首页头部标题区域 */
+/* 首页头部标题区域 - 改为浅色背景+深色文字 */
 header h1 {
-    font-size: 1.8rem;
-    color: white;
+    font-size: 1.9rem;
+    color: var(--color-text);
     margin-bottom: 8px;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .tagline {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.9);
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.2px;
     line-height: 1.6;
 }
 
 .update-badge {
     display: inline-block;
-    margin-top: 20px;
-    padding: 6px 18px;
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 20px;
-    font-size: 0.85rem;
+    margin-top: 18px;
+    padding: 6px 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
     backdrop-filter: blur(4px);
 }
 
@@ -115,7 +158,7 @@ header h1 {
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
     margin-top: 10px;
     margin-bottom: 50px;
 }
@@ -130,25 +173,26 @@ header h1 {
 .tool-card {
     display: flex;
     align-items: stretch;
-    background: white;
-    border-radius: 18px;
-    padding: 24px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 22px;
     text-decoration: none;
     color: inherit;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
     position: relative;
     overflow: hidden;
     opacity: 0;
-    transform: translateY(30px);
-    animation: cardIn 0.6s ease forwards;
+    transform: translateY(10px);
+    animation: cardIn 0.5s ease forwards;
 }
 
-.tool-card:nth-child(1) { animation-delay: 0.1s; }
-.tool-card:nth-child(2) { animation-delay: 0.2s; }
-.tool-card:nth-child(3) { animation-delay: 0.3s; }
-.tool-card:nth-child(4) { animation-delay: 0.4s; }
-.tool-card:nth-child(5) { animation-delay: 0.5s; }
+.tool-card:nth-child(1) { animation-delay: 0.05s; }
+.tool-card:nth-child(2) { animation-delay: 0.1s; }
+.tool-card:nth-child(3) { animation-delay: 0.15s; }
+.tool-card:nth-child(4) { animation-delay: 0.2s; }
+.tool-card:nth-child(5) { animation-delay: 0.25s; }
 
 @keyframes cardIn {
     to {
@@ -158,8 +202,9 @@ header h1 {
 }
 
 .tool-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border);
 }
 
 .tool-card:hover .card-arrow {
@@ -168,25 +213,29 @@ header h1 {
 }
 
 .tool-card:hover .card-icon {
-    transform: scale(1.08);
+    background: var(--color-primary);
 }
 
-/* 左侧图标 */
+.tool-card:hover .card-icon span {
+    filter: none;
+}
+
+/* 左侧图标 - 统一浅色块+深色，去个人渐变 */
 .card-icon {
     flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 20px;
-    transition: transform 0.35s ease;
+    margin-right: 18px;
+    background: var(--color-primary-light);
+    transition: background 0.25s ease;
 }
 
 .card-icon span {
-    font-size: 1.8rem;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    font-size: 1.6rem;
 }
 
 /* 中间内容 */
@@ -196,17 +245,17 @@ header h1 {
 }
 
 .card-body h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 6px;
 }
 
 .card-desc {
     font-size: 0.88rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.6;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .card-features {
@@ -218,10 +267,10 @@ header h1 {
 .feature-tag {
     display: inline-block;
     padding: 3px 10px;
-    background: #f0f2ff;
-    color: #667eea;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 500;
 }
 
@@ -229,21 +278,22 @@ header h1 {
 .card-arrow {
     display: flex;
     align-items: center;
-    font-size: 1.4rem;
-    color: #ccc;
+    font-size: 1.3rem;
+    color: var(--color-primary);
     margin-left: 12px;
-    transition: all 0.3s ease;
-    opacity: 0.5;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0.6;
     flex-shrink: 0;
 }
 
 /* ── 特色说明 ── */
 .features-section {
-    background: white;
-    border-radius: 16px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
     padding: 28px 32px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
 }
 
 .features-list {
@@ -265,13 +315,13 @@ header h1 {
 .feature-item h3 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 4px;
 }
 
 .feature-item p {
-    font-size: 0.8rem;
-    color: #6c757d;
+    font-size: 0.82rem;
+    color: var(--color-text-secondary);
     line-height: 1.5;
 }
 
@@ -281,9 +331,9 @@ header h1 {
     max-width: 728px;
     height: 90px;
     margin: 30px auto;
-    background: #f5f5f5;
-    border: 1px dashed #ddd;
-    border-radius: 8px;
+    background: var(--color-surface-muted);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -294,30 +344,31 @@ header h1 {
 }
 
 .ad-label {
-    color: #bbb;
+    color: var(--color-text-muted);
     font-size: 0.8rem;
 }
 
 /* ── FAQ ── */
 .faq-section {
-    background: white;
-    border-radius: 20px;
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
     padding: 40px 36px;
     margin-bottom: 40px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
 }
 
 .faq-section h2 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 700;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 28px;
 }
 
 .faq-item {
     padding: 14px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .faq-item:last-child {
@@ -327,19 +378,19 @@ header h1 {
 .faq-question {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 6px;
 }
 
 .faq-item p {
     font-size: 0.88rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
 
 /* ── 页脚 ── */
 footer {
-    background: linear-gradient(135deg, #4a3f8a 0%, #5a3d7a 100%);
+    background: var(--color-primary);
     margin-top: 20px;
     padding: 0 20px;
 }
@@ -351,7 +402,7 @@ footer {
     justify-content: space-between;
     align-items: flex-start;
     padding: 36px 0 28px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-brand {
@@ -360,13 +411,13 @@ footer {
 }
 
 .footer-logo {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 .footer-brand p {
     color: rgba(255,255,255,0.55);
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     margin-top: 6px;
     white-space: nowrap;
 }
@@ -380,15 +431,15 @@ footer {
 
 .footer-links h4 {
     color: rgba(255,255,255,0.85);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     width: 100%;
     margin-bottom: 4px;
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.72);
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     transition: color 0.2s;
 }
 
@@ -404,8 +455,8 @@ footer {
 }
 
 .footer-bottom p {
-    color: rgba(255,255,255,0.4);
-    font-size: 0.8rem;
+    color: rgba(255,255,255,0.45);
+    font-size: 0.78rem;
 }
 
 /* 博客区域 */
@@ -415,70 +466,71 @@ footer {
     padding: 0 20px;
 }
 
-.section-.section-header h2 {
-    font-size: 1.5rem;
-    color: #333;
-}
+/* （修复损坏的选择器 .section-.section-header → 删除残留） */
 
 .view-all {
-    color: #667eea;
+    color: var(--color-primary);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     font-weight: 500;
     transition: color 0.2s;
 }
 
 .view-all:hover {
-    color: #764ba2;
+    color: var(--color-primary-dark);
 }
 
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 16px;
 }
 
 .blog-card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 22px;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
     display: flex;
     flex-direction: column;
 }
 
 .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border);
 }
 
 .blog-tag {
     display: inline-block;
     padding: 4px 12px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: var(--color-primary);
     color: white;
-    font-size: 0.75rem;
-    border-radius: 20px;
+    font-size: 0.72rem;
+    border-radius: 999px;
     margin-bottom: 12px;
     width: fit-content;
+    font-weight: 500;
 }
 
 .blog-card h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 8px;
     line-height: 1.5;
+    font-weight: 700;
 }
 
 .blog-card p {
-    color: #6c757d;
-    font-size: 0.9rem;
-    line-height: 1.6;
+    color: var(--color-text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.65;
     flex: 1;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -487,9 +539,9 @@ footer {
 
 .blog-meta {
     display: flex;
-    gap: 8px;
-    color: #adb5bd;
-    font-size: 0.8rem;
+    gap: 10px;
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
 }
 
 /* ── 响应式 ── */
@@ -574,10 +626,11 @@ footer {
 .about-card,
 .contact-card,
 .privacy-card {
-    background: white;
-    border-radius: 20px;
+    background: var(--color-surface);
+    border-radius: var(--radius-xl);
     padding: 36px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--color-border-subtle);
     margin-bottom: 30px;
 }
 
@@ -596,19 +649,19 @@ footer {
 .about-section h2,
 .contact-section h2,
 .privacy-section h2 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #1a1a2e;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #f0f2ff;
+    color: var(--color-text);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-primary-light);
 }
 
 .about-content p {
     font-size: 0.95rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.8;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .about-content p:last-child {
@@ -618,12 +671,12 @@ footer {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .service-item {
-    background: #f8f9fa;
-    border-radius: 12px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     padding: 20px;
     text-align: center;
 }
@@ -636,20 +689,20 @@ footer {
 .service-item h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 8px;
 }
 
 .service-item p {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.6;
 }
 
 .advantages-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .advantage-item {
@@ -660,7 +713,7 @@ footer {
 .advantage-number {
     font-size: 2rem;
     font-weight: 800;
-    color: #667eea;
+    color: var(--color-primary);
     flex-shrink: 0;
     line-height: 1;
 }
@@ -668,19 +721,19 @@ footer {
 .advantage-content h3 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 6px;
 }
 
 .advantage-content p {
     font-size: 0.85rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.6;
 }
 
 .contact-info p {
     font-size: 0.95rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     margin-bottom: 8px;
 }
 
@@ -692,38 +745,38 @@ footer {
 .contact-methods {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 16px;
 }
 
 .contact-method {
-    background: #f8f9fa;
-    border-radius: 12px;
-    padding: 24px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
+    padding: 22px;
     text-align: center;
 }
 
 .contact-icon {
-    font-size: 2.5rem;
-    margin-bottom: 12px;
+    font-size: 2.3rem;
+    margin-bottom: 10px;
 }
 
 .contact-info h3 {
     font-size: 1rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin-bottom: 8px;
 }
 
 .contact-info p {
     font-size: 0.9rem;
-    color: #667eea;
+    color: var(--color-primary);
     font-weight: 500;
     margin-bottom: 4px;
 }
 
 .contact-desc {
     font-size: 0.82rem !important;
-    color: #6c757d !important;
+    color: var(--color-text-secondary) !important;
     font-weight: 400 !important;
 }
 
@@ -733,7 +786,7 @@ footer {
 
 .contact-section .faq-item {
     padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .contact-section .faq-item:last-child {
@@ -743,19 +796,19 @@ footer {
 .contact-section .faq-item h4 {
     font-size: 0.95rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 8px;
 }
 
 .contact-section .faq-item p {
     font-size: 0.88rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.7;
 }
 
 .feedback-form {
-    background: #f8f9fa;
-    border-radius: 12px;
+    background: var(--color-surface-muted);
+    border-radius: var(--radius-md);
     padding: 24px;
 }
 
@@ -767,23 +820,25 @@ footer {
     display: block;
     font-size: 0.88rem;
     font-weight: 600;
-    color: #333;
+    color: var(--color-text);
     margin-bottom: 6px;
 }
 
 .feedback-form .form-control {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
     font-size: 0.9rem;
     font-family: inherit;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--color-surface);
 }
 
 .feedback-form .form-control:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.08);
 }
 
 .feedback-form textarea {
@@ -794,15 +849,15 @@ footer {
 .form-note {
     text-align: center;
     font-size: 0.82rem;
-    color: #999;
+    color: var(--color-text-muted);
     margin-top: 12px;
 }
 
 /* ── 隐私政策页面样式 ── */
 .privacy-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
-    color: #1a1a2e;
+    color: var(--color-text);
     margin: 20px 0 12px;
 }
 
@@ -812,7 +867,7 @@ footer {
 
 .privacy-content p {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 12px;
 }
@@ -824,14 +879,13 @@ footer {
 
 .privacy-content li {
     font-size: 0.9rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     line-height: 1.8;
     margin-bottom: 8px;
 }
 
-/* ── 子页面头部样式 ── */
-.sub-.sub-header.sub-header.sub-header.sub-/* ── 工具导航样式 ── */
-.nav-item:hover,
+/* （修复损坏的选择器：删除 ".sub-.sub-header..." 和重复损坏注释块） */
+
 /* ── 响应式调整 ── */
 @media (max-width: 768px) {
     .about-card,
@@ -860,8 +914,7 @@ footer {
         font-size: 2rem;
         margin-bottom: 0;
     }
-
-    .sub-}
+}
 
 @media (max-width: 480px) {
     .about-content p,
