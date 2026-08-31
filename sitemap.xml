@@ -408,15 +408,15 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/dongguan/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+                    <url>
         <loc>https://aifincalc.com/social-insurance-calculator/guangzhou/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -450,9 +450,9 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-            <url>
+                <url>
         <loc>https://aifincalc.com/social-insurance-calculator/shenzhen/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -732,15 +732,15 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-        <url>
+                <url>
         <loc>https://aifincalc.com/city/guangzhou/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-        <url>
+            <url>
         <loc>https://aifincalc.com/city/shenzhen/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -762,9 +762,9 @@
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
-    <url>
+        <url>
         <loc>https://aifincalc.com/city/dongguan/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
