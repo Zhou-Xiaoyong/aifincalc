@@ -3,39 +3,39 @@
 const CITY_COMPANY_RATES = {
     beijing: {
         name: '北京',
-        pension: 16, medical: 10, unemployment: 0.5, injury: 0.5, maternity: 0.8, housing: 12
+        pension: 16, medical: 9, unemployment: 0.5, injury: 0.4, maternity: 0.8, housing: 12
     },
     shanghai: {
         name: '上海',
-        pension: 16, medical: 10, unemployment: 0.5, injury: 0.5, maternity: 1, housing: 7
+        pension: 16, medical: 9, unemployment: 0.5, injury: 0.4, maternity: 0, housing: 7
     },
     guangzhou: {
         name: '广州',
-        pension: 15, medical: 6,   unemployment: 0.32, injury: 0.4, maternity: 0.85, housing: 12
+        pension: 16, medical: 6, unemployment: 0.8, injury: 0.4, maternity: 0.85, housing: 12
     },
     shenzhen: {
         name: '深圳',
-        pension: 15, medical: 6.2, unemployment: 0.5, injury: 0.4, maternity: 0.45, housing: 12
+        pension: 16, medical: 6, unemployment: 0.8, injury: 0.4, maternity: 0.5, housing: 12
     },
     hangzhou: {
         name: '杭州',
-        pension: 15, medical: 10.5, unemployment: 0.5, injury: 0.5, maternity: 1.2, housing: 12
+        pension: 16, medical: 8.9, unemployment: 0.5, injury: 0.4, maternity: 0.6, housing: 12
     },
     nanjing: {
         name: '南京',
-        pension: 16, medical: 9, unemployment: 0.5, injury: 0.5, maternity: 0.8, housing: 12
+        pension: 16, medical: 7, unemployment: 0.5, injury: 0.4, maternity: 0.8, housing: 12
     },
     chengdu: {
         name: '成都',
-        pension: 16, medical: 7.7, unemployment: 0.6, injury: 0.6, maternity: 0.8, housing: 12
+        pension: 16, medical: 6.75, unemployment: 0.6, injury: 0.4, maternity: 0.8, housing: 12
     },
     wuhan: {
         name: '武汉',
-        pension: 16, medical: 8, unemployment: 0.7, injury: 0.5, maternity: 0.7, housing: 12
+        pension: 16, medical: 8, unemployment: 0.7, injury: 0.4, maternity: 0.7, housing: 12
     },
     xian: {
         name: '西安',
-        pension: 16, medical: 8, unemployment: 0.7, injury: 0.5, maternity: 0.5, housing: 12
+        pension: 16, medical: 6, unemployment: 0.7, injury: 0.4, maternity: 0, housing: 12
     }
 };
 

@@ -1,0 +1,136 @@
+/* ============================================================
+   AI金融计算器 - 城市综合枢纽页 (Batch 3 /city/ 试点)
+   仅含枢纽页专属组件，基础组件(.card/.data-table/.timeline 等)
+   复用 social-insurance-calculator/style.css
+   ============================================================ */
+
+/* ── 四工具入口卡 ── */
+.tool-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 4px;
+}
+@media (max-width: 768px) {
+    .tool-card-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.tool-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(102, 126, 234, 0.15);
+    transition: all 0.25s ease;
+}
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(102, 126, 234, 0.3);
+    border-color: #667eea;
+}
+.tool-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.tool-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 6px;
+}
+.tool-desc {
+    font-size: 0.82rem;
+    color: #6c757d;
+    line-height: 1.6;
+    flex: 1;
+}
+.tool-go {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* ── 结论卡 ── */
+.conclusion-card {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8efff 100%);
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    border-radius: 18px;
+    padding: 22px 26px;
+    margin-bottom: 22px;
+}
+.concl-title {
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+}
+.concl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+@media (max-width: 768px) {
+    .concl-grid { grid-template-columns: 1fr; }
+}
+.concl-item {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+.concl-num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+.concl-label {
+    font-size: 0.82rem;
+    color: #6c757d;
+}
+
+/* ── 键值网格 (公积金/个税速览) ── */
+.kv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+@media (max-width: 768px) {
+    .kv-grid { grid-template-columns: 1fr; }
+}
+.kv {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.kv-k {
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+.kv-v {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* ── 数据来源列表 ── */
+.src-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+}
+.src-date {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
