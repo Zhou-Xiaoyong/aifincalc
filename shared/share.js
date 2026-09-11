@@ -4,65 +4,107 @@
 (function() {
     'use strict';
 
-    // 导航栏优化 - 动态重构为两行布局
+    // ── 导航栏优化：动态重构为两行布局 ──
+    // 第一行：站点级导航（首页 / 博客 …）
+    // 第二行：全部计算器快捷入口（固定顺序、统一全称，锚文本对 SEO 与用户都更友好）
+    //
+    // 判定依据以 href 的目录 slug 为主、文案关键词为辅。
+    // 历史 bug：旧版只按文案 includes('个税') 匹配，而导航文案是「个人所得税计算器」，
+    // 其中「个」与「税」并不相邻，includes('个税') 恒为 false，
+    // 于是个税被误判成"非计算器"留在第一行，其余 7 个计算器被挤到第二行，
+    // 首行出现 首页 / 个人所得税计算器 / 博客 的错乱组合。
+    //
+    // 2026-09-11：第二行由"短名"改为"全称"。短名（个税/社保…）虽然紧凑，
+    //   但锚文本信息量不足，不利于搜索引擎理解每个链接指向的工具，
+    //   用户也容易误解。全称在 ≥901px 视口下可单行放下，更窄时由 share.css
+    //   的媒体查询缩小字号，≤768px 则整体让位给汉堡菜单。
+    var CALC_TOOLS = [
+        { slug: 'tax-calculator',              short: '个税',   full: '个人所得税计算器' },
+        { slug: 'social-insurance-calculator', short: '社保',   full: '社保计算器' },
+        { slug: 'mortgage-calculator',         short: '房贷',   full: '房贷计算器' },
+        { slug: 'car-loan-calculator',         short: '车贷',   full: '车贷计算器' },
+        { slug: 'provident-fund-calculator',   short: '公积金', full: '公积金贷款计算器' },
+        { slug: 'deposit-calculator',          short: '存款',   full: '存款利息计算器' },
+        { slug: 'exchange-rate-calculator',    short: '汇率',   full: '汇率换算器' },
+        { slug: 'investment-calculator',       short: '投资',   full: '投资收益计算器' }
+    ];
+
+    // 文案兜底关键词，与 CALC_TOOLS 顺序一一对应
+    var CALC_TEXT_KEYS = ['个人所得税', '社保', '房贷', '车贷', '公积金', '存款', '汇率', '投资'];
+
+    function matchToolIndex(href, text) {
+        var h = (href || '').toLowerCase();
+        for (var i = 0; i < CALC_TOOLS.length; i++) {
+            if (h.indexOf(CALC_TOOLS[i].slug) !== -1) return i;
+        }
+        for (var j = 0; j < CALC_TEXT_KEYS.length; j++) {
+            if (text.indexOf(CALC_TEXT_KEYS[j]) !== -1) return j;
+        }
+        return -1;
+    }
+
     function initNavigation() {
-        const header = document.querySelector('.site-header');
-        const navLinks = document.querySelector('.nav-links');
-        const headerContainer = document.querySelector('.header-container');
-        
+        var header = document.querySelector('.site-header');
+        var navLinks = document.querySelector('.nav-links');
+        var headerContainer = document.querySelector('.header-container');
+
         if (!header || !navLinks || !headerContainer) return;
+        if (navLinks.getAttribute('data-nav-split') === '1') return;  // 幂等：重复执行不会叠加
 
-        const calcKeywords = ['个税', '社保', '房贷', '车贷', '公积金', '存款', '汇率', '投资'];
-        const mainLinks = [];
-        const calcLinks = [];
+        var links = Array.prototype.slice.call(navLinks.querySelectorAll('.nav-link'));
+        var tools = {};        // 计算器序号 -> { href, icon, active }
+        var mainLinks = [];    // 站点级导航（首页 / 博客 …）
 
-        const links = navLinks.querySelectorAll('.nav-link');
-        links.forEach(link => {
-            const text = link.textContent || '';
-            const isCalc = calcKeywords.some(keyword => text.includes(keyword));
-            if (isCalc) {
-                calcLinks.push(link.cloneNode(true));
-            } else {
-                mainLinks.push(link.cloneNode(true));
+        links.forEach(function(link) {
+            var href = link.getAttribute('href') || '';
+            var text = (link.textContent || '').replace(/\s+/g, '');
+            var idx = matchToolIndex(href, text);
+
+            if (idx < 0) {
+                mainLinks.push(link);
+                return;
             }
+            if (tools[idx]) return;   // 同一计算器只保留第一个
+            var icon = link.querySelector('.nav-icon');
+            tools[idx] = {
+                href: href,
+                icon: icon ? icon.textContent.trim() : '',
+                active: link.classList.contains('active')
+            };
         });
 
-        navLinks.innerHTML = '';
-        mainLinks.forEach(link => navLinks.appendChild(link));
+        // 第一行：清空后只放站点级导航
+        if (mainLinks.length) {
+            navLinks.innerHTML = '';
+            mainLinks.forEach(function(link) { navLinks.appendChild(link); });
+        }
 
-        const calcNav = document.createElement('nav');
+        // 第二行：按 CALC_TOOLS 的固定顺序渲染全部计算器，保证各页顺序一致
+        var calcNav = document.createElement('nav');
         calcNav.className = 'calc-nav';
-        
-        const currentPath = window.location.pathname;
-        
-        calcLinks.forEach(link => {
-            const calcLink = document.createElement('a');
-            calcLink.href = link.href;
-            calcLink.className = 'calc-nav-link' + (link.classList.contains('active') ? ' active' : '');
-            
-            const icon = link.querySelector('.nav-icon');
-            const iconHtml = icon ? `<span class="calc-nav-icon">${icon.textContent}</span>` : '';
-            
-            let text = link.textContent.replace(icon ? icon.textContent : '', '').trim();
-            
-            const linkPath = new URL(link.href, window.location.origin).pathname;
-            const pathParts = linkPath.split('/').filter(p => p);
-            const linkDir = pathParts.length >= 2 ? pathParts[pathParts.length - 2] : pathParts[0];
-            const isCurrentPage = currentPath.includes('/' + linkDir + '/') || currentPath === '/' + linkDir;
-            
-            if (isCurrentPage) {
-                calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
-            } else {
-                text = text.replace('个人所得税计算器', '个税')
-                           .replace('计算器', '')
-                           .replace('换算器', '');
-                calcLink.innerHTML = iconHtml + '<span>' + text + '</span>';
-            }
-            
-            calcNav.appendChild(calcLink);
+        calcNav.setAttribute('aria-label', '计算器快捷入口');
+
+        CALC_TOOLS.forEach(function(tool, i) {
+            var info = tools[i];
+            if (!info) return;
+
+            var a = document.createElement('a');
+            a.href = info.href;
+            a.className = 'calc-nav-link' + (info.active ? ' active' : '');
+            a.title = tool.full;
+            a.innerHTML = (info.icon ? '<span class="calc-nav-icon">' + info.icon + '</span>' : '') +
+                          '<span>' + tool.full + '</span>';
+            calcNav.appendChild(a);
         });
 
-        header.insertBefore(calcNav, header.querySelector('.mobile-menu') || null);
+        var mobileMenu = header.querySelector('.mobile-menu');
+        if (mobileMenu) {
+            header.insertBefore(calcNav, mobileMenu);
+        } else {
+            header.appendChild(calcNav);
+        }
+
+        navLinks.setAttribute('data-nav-split', '1');
     }
 
     if (document.readyState === 'loading') {

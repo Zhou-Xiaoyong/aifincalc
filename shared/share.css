@@ -135,6 +135,30 @@
     font-size: 0.75rem;
 }
 
+/* 第二行改用计算器【全称】后：
+   - 带图标时 8 项约需 960px，≥1001px 视口可从容纳（保留图标，视觉更饱满）；
+   - 769–1000px 改为隐藏图标（保留全称与字号，缩小内边距），约需 735px，仍可单行完整显示；
+   - ≤768px 整行隐藏，让位给汉堡菜单（见下方移动端媒体查询）。
+   注意：active 态在此区间内不能额外加宽，否则不同页面 active 项不同会导致宽度跳变。 */
+@media (max-width: 1000px) and (min-width: 769px) {
+    .site-header .calc-nav {
+        gap: 3px;
+    }
+
+    .site-header .calc-nav-link {
+        padding: 4px 7px;
+    }
+
+    .site-header .calc-nav-icon {
+        display: none;
+    }
+
+    .site-header .calc-nav-link.active {
+        padding: 4px 8px;
+        transform: none;
+    }
+}
+
 .site-header .menu-toggle {
     display: none;
     background: none;

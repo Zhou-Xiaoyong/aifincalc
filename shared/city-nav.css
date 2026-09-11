@@ -1,0 +1,172 @@
+/* 统一城市导航组件（City Nav）
+   由 city_nav.py 在构建期注入到所有城市专属页：
+     /social-insurance-calculator/{city}/  /provident-fund-calculator/{city}/
+     /tax-calculator/{city}/               /city/{city}/
+   只负责「同城工具条」与「{城市}相关计算器」卡片，不碰站点骨架（骨架在 share.css）。
+   改本文件后必须同步 city_nav.py 的 CN_CSS_VER。 */
+
+/* ---------- 顶部同城工具条 ---------- */
+.city-switch {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 10px;
+    margin: 0 0 20px;
+    padding: 10px 14px;
+    border: 1px solid #e3e8ef;
+    border-radius: 10px;
+    background: #f8fafc;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.city-switch-label {
+    color: #3c4043;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.city-switch-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.city-switch-link {
+    padding: 3px 11px;
+    border: 1px solid #dadce0;
+    border-radius: 999px;
+    background: #fff;
+    color: #1a73e8;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color .15s, background .15s;
+}
+
+.city-switch-link:hover {
+    border-color: #1a73e8;
+    background: #f1f6fe;
+    text-decoration: none;
+}
+
+.city-switch-link.is-current {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    color: #fff;
+    font-weight: 600;
+}
+
+.city-switch-hub {
+    margin-left: auto;
+    color: #1a73e8;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.city-switch-hub:hover { text-decoration: underline; }
+
+/* ---------- 底部「{城市}相关计算器」卡片 ---------- */
+.city-nav-card {
+    margin: 26px 0 0;
+    padding: 20px 22px;
+    border: 1px solid #e3e8ef;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.city-nav-title {
+    margin: 0 0 6px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #202124;
+    line-height: 1.4;
+}
+
+.city-nav-hint {
+    margin: 0 0 16px;
+    color: #5f6368;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+.city-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 14px;
+}
+
+.city-nav-group {
+    padding: 12px 14px;
+    border: 1px solid #eef1f5;
+    border-radius: 10px;
+    background: #fafbfc;
+}
+
+.city-nav-head {
+    margin: 0 0 10px;
+    color: #3c4043;
+    font-size: 0.88rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.city-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.city-nav-link {
+    padding: 5px 11px;
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    background: #fff;
+    color: #1a73e8;
+    font-size: 0.88rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color .15s, background .15s;
+}
+
+.city-nav-link:hover {
+    border-color: #1a73e8;
+    background: #f1f6fe;
+    text-decoration: none;
+}
+
+.city-nav-link.is-current {
+    background: #e8f0fe;
+    border-color: #c6dafc;
+    color: #1967d2;
+    font-weight: 600;
+}
+
+.city-nav-more {
+    margin: 16px 0 0;
+    color: #5f6368;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.city-nav-more a { color: #1a73e8; text-decoration: none; }
+.city-nav-more a:hover { text-decoration: underline; }
+.city-nav-more .sep { margin: 0 6px; color: #dadce0; }
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 768px) {
+    .city-switch {
+        padding: 10px 12px;
+        gap: 6px 8px;
+    }
+
+    .city-switch-hub {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .city-nav-card { padding: 16px 14px; }
+    .city-nav-grid { gap: 12px; }
+    .city-nav-link { font-size: 0.85rem; padding: 5px 10px; }
+}

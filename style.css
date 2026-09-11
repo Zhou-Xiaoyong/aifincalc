@@ -70,6 +70,13 @@ body.no-hero-bg .hero-bg {
     padding: 0 20px;
 }
 
+/* 首页 hero 头部。
+   这些样式原先以行内 style 写在 index.html 的 <header> 上，行内样式优先级最高，
+   导致下方 @media (max-width:768px) 里的字号/间距调整全部失效，手机端无法适配。 */
+.home-hero {
+    padding: 20px 20px 16px;
+}
+
 /* ── 头部 ── */
 .logo {
     font-size: 4rem;
@@ -344,19 +351,10 @@ footer {
     padding: 0 20px;
 }
 
-.footer-content {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 36px 0 28px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-
 .footer-brand {
     color: white;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    min-width: 0;
 }
 
 .footer-logo {
@@ -368,32 +366,8 @@ footer {
     color: rgba(255,255,255,0.55);
     font-size: 0.88rem;
     margin-top: 6px;
-    white-space: nowrap;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 24px;
-    margin-left: 40px;
-}
-
-.footer-links h4 {
-    color: rgba(255,255,255,0.85);
-    font-size: 0.85rem;
-    width: 100%;
-    margin-bottom: 4px;
-}
-
-.footer-links a {
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    font-size: 0.88rem;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: #fff;
+    /* 原为 white-space: nowrap，会把页脚撑到 628px，导致手机端整页横向溢出 */
+    overflow-wrap: anywhere;
 }
 
 .footer-bottom {
@@ -559,10 +533,20 @@ footer {
 
 .tagline {
         font-size: 1rem;
+        letter-spacing: 0;
+        line-height: 1.75;
+    }
+
+    .home-hero {
+        padding: 16px 16px 12px;
+    }
+
+    .home-hero h1 {
+        font-size: 1.5rem;
     }
 
     .tools-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
     }
 
@@ -616,6 +600,10 @@ footer {
 @media (max-width: 480px) {
     .container {
         padding: 0 12px;
+    }
+
+    .home-hero h1 {
+        font-size: 1.35rem;
     }
 
 .tool-card {
@@ -901,10 +889,11 @@ footer {
     margin-bottom: 8px;
 }
 
-/* ── 子页面头部样式 ── */
-.sub-.sub-header.sub-header.sub-header.sub-/* ── 工具导航样式 ── */
-.nav-item:hover,
-/* ── 响应式调整 ── */
+/* ── 响应式调整 ──
+   注：本行原为 .sub-header / .nav-item 规则，被历史批量替换破坏成非法选择器
+   （.sub-.sub-header.sub-header.sub-header.sub-），导致紧随其后的 @media 整段
+   被浏览器丢弃 —— about / contact / privacy 三页在手机上卡片内边距、网格列数均未生效。
+   这两个类全站无元素使用，故直接移除。2026-09-11 修复。 */
 @media (max-width: 768px) {
     .about-card,
     .contact-card,
@@ -933,7 +922,7 @@ footer {
         margin-bottom: 0;
     }
 
-    .sub-}
+}
 
 @media (max-width: 480px) {
     .about-content p,
