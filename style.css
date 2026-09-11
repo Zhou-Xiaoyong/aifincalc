@@ -415,9 +415,18 @@ footer {
     padding: 0 20px;
 }
 
-.section-.section-header h2 {
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.section-header h2 {
     font-size: 1.5rem;
     color: #333;
+    margin: 0;
 }
 
 .view-all {
@@ -434,8 +443,9 @@ footer {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
+    align-items: stretch;
 }
 
 .blog-card {
@@ -466,23 +476,72 @@ footer {
     width: fit-content;
 }
 
+/* 卡片头部：分类标签 + 更新日期 */
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.blog-card-category {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #eef1fd;
+    color: #5b6ee1;
+    font-size: 0.74rem;
+    font-weight: 600;
+    line-height: 1.6;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.blog-card-date {
+    color: #adb5bd;
+    font-size: 0.76rem;
+    white-space: nowrap;
+}
+
+/* 标题固定 2 行，保证 6 张卡片标题区等高 */
 .blog-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #333;
     margin-bottom: 10px;
     line-height: 1.5;
-}
-
-.blog-card p {
-    color: #6c757d;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    flex: 1;
-    margin-bottom: 16px;
+    min-height: 3.15em;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* 摘要固定 4 行，把「阅读全文」压到卡片底部 */
+.blog-card p {
+    color: #6c757d;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.blog-card-more {
+    display: inline-block;
+    color: #667eea;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #f1f3f5;
+    width: 100%;
+}
+
+.blog-card:hover .blog-card-more {
+    color: #764ba2;
 }
 
 .blog-meta {
@@ -539,6 +598,11 @@ footer {
         padding: 28px 24px;
     }
 
+    .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
     .footer-content {
         flex-direction: column;
         gap: 24px;
@@ -567,6 +631,14 @@ footer {
 
     .card-arrow {
         display: none;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header h2 {
+        font-size: 1.25rem;
     }
 }
 
