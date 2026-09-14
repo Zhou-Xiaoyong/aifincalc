@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基金A类和C类怎么选？2026新规后持有多久A类才划算</title>
+    <meta name="description" content="基金A类和C类怎么选？2026年销售费用新规把C类销售服务费上限降到0.4%/年、持有满一年停收，A类申购费上限0.8%。用10万元实测：第三方平台打1折时持有超73天A类更划算，不打折渠道C类反而一直更省。附临界持有期公式和基金收益计算器。">
+    <meta name="keywords" content="基金A类和C类怎么选,基金a类和c类收费区别,基金持有超过一年还收销售服务费吗,基金申购费打折后a类还划算吗,基金c类销售服务费多少,基金临界持有期">
+    <link rel="canonical" href="https://aifincalc.com/blog/article21/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="基金A类和C类怎么选？2026新规后持有多久A类才划算">
+    <meta property="og:description" content="2026年基金销售费用新规落地：C类销售服务费上限降至0.4%/年且持有满一年停收，A类申购费上限0.8%。用10万元算清临界持有天数，老口诀「短期买C、长期买A」需要重算。">
+    <meta property="og:url" content="https://aifincalc.com/blog/article21/">
+    <link rel="stylesheet" href="../style.css?v=20260911.5">
+    <link rel="stylesheet" href="../../shared/share.css?v=20260911.4">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "基金A类和C类怎么选？2026新规后持有多久A类才划算",
+        "datePublished": "2026-09-14",
+        "author": {
+            "@type": "Person",
+            "name": "AI金融计算器"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "AI金融计算器"
+        },
+        "mainEntityOfPage": "https://aifincalc.com/blog/article21/"
+    }
+    </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "博客",
+                "item": "https://aifincalc.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "基金A类和C类怎么选",
+                "item": "https://aifincalc.com/blog/article21/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "基金A类和C类怎么选？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "看两点：打算持有多久、在哪个渠道买。A类买入时一次性收申购费，之后不再收持续性费用；C类免申购费，但按日从基金资产中计提销售服务费。2026年1月1日起施行的《公开募集证券投资基金销售费用管理规定》（证监会公告〔2025〕22号）把C类销售服务费上限定为0.4%/年（股票型、混合型）和0.2%/年（指数型、债券型），并明确持有超过一年（365天）的份额不再收取。按10万元测算：第三方平台申购费打1折时，主动偏股基金持有超过约73天选A类更省；若渠道不打折、按上限0.8%收，C类反而无论持有多久都更便宜。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "基金持有超过一年还收销售服务费吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "不再收。新规第十一条明确，除货币市场基金以及证监会认可的其他基金外，投资者持续持有期限超过一年的基金份额，不得继续收取销售服务费。两点要注意：一是「一年」按每笔份额分别计算，定投的每一笔起算时间不同，会出现部分份额已停收、部分还在计费的混合状态；二是存量产品有12个月整改期，须在2026年12月31日前完成调整、2027年1月1日全面落地，因此个别产品可能尚未改到位，以产品公告和费率页为准。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "基金申购费打折后A类还划算吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "打折渠道通常仍划算，不打折渠道会翻转。以主动偏股基金为例，新规把申购费上限压到0.8%，第三方互联网平台打1折后是0.08%，10万元一次性只交约79.94元；而C类销售服务费封顶0.4%、10万元最高400元，因此持有超过约73天就是A类更省。但如果渠道按原价0.8%收，10万元要交约793.65元，比C类的400元封顶还高，这种情况下C类无论持有多久都更划算——这正是新规给C类加上「一年封顶」后出现的新变化。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "基金C类的销售服务费一年要交多少钱？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "最高不超过基金资产的一定比例，且最多只收一年。新规上限为：股票型和混合型0.4%/年、指数型和债券型0.2%/年、货币市场基金0.15%/年；持有超过一年的份额停止计提。以10万元、0.4%/年计算，持满一年累计约400元，这就是C类份额相对A类的持有成本天花板，不会再随持有年限无限累积。实际费率以产品资料概要为准，不少产品的C类费率明显低于上限，例如有基金公司的中证500ETF联接C类销售服务费优惠至0.04%。"
+                }
+            }
+        ]
+    }
+    </script>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3625422078884598"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero-bg"></div>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../../" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
+                <a href="../../tax-calculator/" class="nav-link"><span class="nav-icon">💰</span><span>个人所得税计算器</span></a>
+                <a href="../../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
+                <a href="../../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
+                <a href="../../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
+                <a href="../../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款计算器</span></a>
+                <a href="../../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息计算器</span></a>
+                <a href="../../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算器</span></a>
+                <a href="../../investment-calculator/" class="nav-link active"><span class="nav-icon">📈</span><span>投资收益计算器</span></a>
+                <a href="../../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+            </nav>
+            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+                    <a href="../../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
+                    <a href="../../tax-calculator/" class="nav-link"><span class="nav-icon">💰</span><span>个人所得税计算器</span></a>
+                    <a href="../../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
+                    <a href="../../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
+                    <a href="../../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
+                    <a href="../../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款计算器</span></a>
+                    <a href="../../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息计算器</span></a>
+                    <a href="../../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算器</span></a>
+                    <a href="../../investment-calculator/" class="nav-link active"><span class="nav-icon">📈</span><span>投资收益计算器</span></a>
+                    <a href="../../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+        </div>
+    </header>
+
+    <div class="container page-top-space">
+        <div class="article-detail">
+            <div class="breadcrumb">
+                <a href="../../">首页</a>
+                <span class="breadcrumb-sep">/</span>
+                <a href="../">博客</a>
+                <span class="breadcrumb-sep">/</span>
+                <span class="breadcrumb-current">基金A类和C类怎么选？2026新规后持有多久A类才划算</span>
+            </div>
+
+            <div class="article-header">
+                <h1>基金A类和C类怎么选？2026新规后持有多久A类才划算</h1>
+                <div class="article-info">
+                    <div class="article-author">
+                        <div class="author-avatar">📈</div>
+                        <div>
+                            <div class="author-name">理财研究组</div>
+                            <div class="publish-time">2026年9月14日</div>
+                        </div>
+                    </div>
+                    <div class="article-stats">
+                        <span class="stat-item">👁 0 阅读</span>
+                        <span class="stat-item">⏱ 阅读约8分钟</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <p>
+                    搜一只基金，跳出来两个长得几乎一样的代码，一个后缀 A、一个后缀 C——<strong>基金A类和C类怎么选</strong>，是很多人买基金时第一个卡住的地方。两者买的是同一批持仓、同一个基金经理、同一条净值曲线，差别只在收费方式：A 类买入时收一笔申购费，之后持有期不再收费；C 类免申购费，但按日从基金资产里计提销售服务费。2026 年 1 月 1 日起施行的《公开募集证券投资基金销售费用管理规定》（证监会公告〔2025〕22 号）把两边的费率上限同时压低，还给 C 类的销售服务费装上了一个「一年封顶」的开关。老口诀「短期买 C、长期买 A」因此需要重算——本文用 10 万元本金把临界持有天数算出来，看完直接对号入座。
+                </p>
+                <p>
+                    文中费率口径出自证监会与中国政府网公布的规定原文（csrc.gov.cn、gov.cn 公报 2026 年第 6 期），测算过程可在配套的 <a href="../../investment-calculator/" style="color: #667eea; text-decoration: underline;">投资收益计算器</a> 里用复利与定投模块复核。
+                </p>
+
+                <h2>一、新规到底改了什么：三组费率上限</h2>
+                <p>
+                    这份规定共 6 章 29 条，2025 年 12 月 31 日发布、2026 年 1 月 1 日施行，同时废止了 2013 年的旧版销售费用管理规定。与 A、C 类选择直接相关的费率上限如下：
+                </p>
+                <p>
+                    <strong>认（申）购费上限</strong>（第八条）<br>
+                    · 主动偏股型基金：不高于申购金额的 <strong>0.8%</strong><br>
+                    · 其他混合型基金：不高于 <strong>0.5%</strong><br>
+                    · 指数型基金、债券型基金：不高于 <strong>0.3%</strong>
+                </p>
+                <p>
+                    <strong>销售服务费上限</strong>（第十一条）<br>
+                    · 股票型、混合型基金：不高于基金财产的 <strong>0.4%/年</strong><br>
+                    · 指数型、债券型基金：不高于 <strong>0.2%/年</strong><br>
+                    · 货币市场基金：不高于 <strong>0.15%/年</strong>
+                </p>
+                <p>
+                    <strong>赎回费</strong>（第十条，由原来的四档简化为三档）<br>
+                    · 持有不满 7 日 / 满 7 日不满 30 日 / 满 30 日不满 180 日：分别不低于 <strong>1.5% / 1% / 0.5%</strong><br>
+                    · 赎回费<strong>全额计入基金财产</strong>（过去是部分归基金、部分归销售机构）
+                </p>
+                <p>
+                    三条被很多人忽略、但直接影响选择的条款：<strong>一是</strong>除货币市场基金及证监会认可的其他基金外，持有超过一年的基金份额不得继续收取销售服务费；<strong>二是</strong>基金公司销售自己管理的基金（即直销渠道），不得收取认（申）购费和销售服务费；<strong>三是</strong>已发售的存量产品要在规定施行之日起 12 个月内完成调整，也就是说整改截止日在 <strong>2026 年 12 月 31 日</strong>，2027 年 1 月 1 日全面落地。
+                </p>
+                <p>
+                    行业口径的整体降幅约 34%，全行业每年向投资者让利约 300 亿元。
+                </p>
+
+                <h2>二、算账：A 类和 C 类的临界持有期</h2>
+                <p>
+                    先把公式摆出来，任何一只基金都能套。设申购费率为 f（外扣法）、销售服务费年率为 s：
+                </p>
+                <p>
+                    · A 类成本率 = f ÷ (1 + f)<br>
+                    · C 类成本率 = s × 持有年数（新规后最多累计 1 年，之后停收）<br>
+                    · <strong>临界持有天数 = 365 × [ f ÷ (1 + f) ] ÷ s</strong>
+                </p>
+                <p>
+                    持有时间短于临界天数，C 类便宜；超过临界天数，A 类便宜。按新规上限费率、10 万元本金实测四组场景：
+                </p>
+                <p>
+                    <strong>场景一：主动偏股基金，第三方平台申购费打 1 折</strong><br>
+                    A 类费率 0.8% × 1 折 = 0.08%，一次性成本 100000 − 100000 ÷ 1.0008 = <strong>79.94 元</strong>；C 类销售服务费 0.4%/年，持满一年封顶 <strong>400 元</strong>。<br>
+                    临界天数 = 365 × 0.07994% ÷ 0.4% ≈ <strong>73 天</strong>。持有两个半月以上，A 类就赢了。
+                </p>
+                <p>
+                    <strong>场景二：主动偏股基金，渠道不打折</strong><br>
+                    A 类按上限 0.8% 收，一次性成本 <strong>793.65 元</strong>；C 类封顶仍是 <strong>400 元</strong>。<br>
+                    793.65 &gt; 400，临界天数不存在——<strong>C 类无论持有多久都更便宜</strong>。
+                </p>
+                <p>
+                    <strong>场景三：指数基金，打 1 折 / 不打折</strong><br>
+                    打 1 折时 A 类费率 0.03%、一次性成本 <strong>29.99 元</strong>，C 类 0.2%/年封顶 <strong>200 元</strong>，临界天数 ≈ <strong>55 天</strong>；不打折时 A 类 0.3% 要 <strong>299.10 元</strong>，超过 C 类封顶的 200 元，同样是 <strong>C 类长期更省</strong>。指数基金的费率绝对值都小，临界点也更靠前。
+                </p>
+                <p>
+                    把四组数字连起来看，结论比口诀复杂一点：<strong>打折渠道里，短线选 C、超过两三个月选 A；不打折渠道里，C 类因为成本有天花板，反而是长期最优。</strong>这正是新规带来的最大改变。
+                </p>
+
+                <h2>三、为什么「短期买 C、长期买 A」要改口</h2>
+                <p>
+                    老口诀之所以成立，是因为过去的 C 类销售服务费<strong>没有封顶、也没有停收时点</strong>，持有年限越长累计越多，长期必然跑输 A 类一次性费用。旧规则的销售服务费上限是 0.6%/年（股票型、混合型），三年累计 1.8%，摊进净值相当可观。
+                </p>
+                <p>
+                    新规做了两件事：把上限从 0.6%/年降到 0.4%/年，再让持有满一年后停止计提。这两条叠加，等于给 C 类的持有成本画了一条<strong>不会继续抬升的水平线</strong>——10 万元最多 400 元（股票型、混合型）或 200 元（指数型、债券型），到此为止。
+                </p>
+                <p>
+                    成本一旦封顶，A、C 的比较就从「时间越长 A 越赢」变成了「看 A 类的一次性费用有没有超过这个封顶值」。A 类申购费打 1 折时只有几十元，远低于封顶值，A 类长期更省；不打折时 A 类要七八百元，超过封顶值，C 类反而通吃。所以真正决定答案的不是持有时长，而是<strong>你下单的渠道收不收折扣</strong>。
+                </p>
+
+                <h2>四、比 A/C 之争更贵的坑：7 天内赎回</h2>
+                <p>
+                    说句实在话，纠结 A 还是 C，一年也就差几百元；而赎回费的持有时长阶梯，一次就能吃掉几千元。
+                </p>
+                <p>
+                    按新规，持有不满 7 日赎回要收不低于 1.5% 的赎回费。10 万元买进第 6 天全部赎回，这笔费用是 <strong>1500 元</strong>——相当于把 C 类一整年的销售服务费翻了三倍多，也远超 A、C 两类之间任何一年的费率差。满 7 日不满 30 日是 1%，满 30 日不满 180 日是 0.5%，一路递减到零。
+                </p>
+                <p>
+                    还有个变化值得记住：赎回费过去有一部分留给销售机构，现在<strong>全额计入基金财产</strong>——这笔钱留在了还在持有的投资者口袋里，渠道再没有动力劝你「赎旧买新」。
+                </p>
+                <p>
+                    所以下单前真正该问自己的第一个问题不是「选 A 还是选 C」，而是「<strong>我这笔钱最短能放多久</strong>」。放不到 7 天，A、C 都不该碰。
+                </p>
+
+                <h2>五、现在是过渡期：怎么查自己那只基金改没改</h2>
+                <p>
+                    规定 2026 年 1 月 1 日施行，但存量产品有 12 个月整改期，截止到 2026 年 12 月 31 日。今天距截止只剩三个多月，市场上是「一部分已改完、一部分还在走流程」的混合状态——同类产品，你看到的费率可能还是旧标准。
+                </p>
+                <p>
+                    已经落地的例子不少：有基金公司自 2026 年 1 月 8 日起修改旗下 ETF 联接基金合同，直销渠道申购 A 类免申购费、C 类免销售服务费；有公司把中证 500ETF 联接 C 类的销售服务费优惠到 0.04%；也有基金 2026 年 9 月 2 日公告增设 C 类份额，明确持有超 365 天不再收取销售服务费。业内预计存量产品改造在 2026 年四季度完成。
+                </p>
+                <p>
+                    查证只看三处，别听别人转述：<strong>产品资料概要</strong>里的费率页、<strong>基金合同或招募说明书</strong>的「基金费用」章节、以及<strong>销售平台下单页</strong>的费率明细。三者对不上时，以基金管理人最新公告为准。
+                </p>
+                <p>
+                    基金定投的人还要多记一条：<strong>每一笔定投份额的持有期是分别计算的</strong>，赎回时按先进先出匹配费率。也就是说定投 C 类满一年后，不会整笔同时免收销售服务费，而是最早那几笔先停、后面的陆续跟上，中间会有一段时间是「部分份额免费、部分还在计费」的状态。计划定投三年以上的，A 类反而更干净。
+                </p>
+
+                <h2>六、对号入座：三种渠道，三个答案</h2>
+                <p>
+                    <strong>第①类 · 在基金公司直销渠道买</strong><br>
+                    优先选 A 类。新规明确基金公司销售自家产品不得收取认（申）购费和销售服务费，等于申购零成本；缺点是只能买这一家的产品，做资产配置要开好几个账户。
+                </p>
+                <p>
+                    <strong>第②类 · 在互联网第三方平台买（申购费常打 1 折）</strong><br>
+                    打算持有超过 2—3 个月的，选 A 类；只做短期波段、随时可能调仓的，选 C 类。主动偏股基金的临界点在 73 天左右，指数基金在 55 天左右。拿不准就先打开 <a href="../../investment-calculator/" style="color: #667eea; text-decoration: underline;">投资收益计算器</a> 算一下这笔钱计划放多久、预期收益有多少，再回头看那几百元费率差到底占多大比重。
+                </p>
+                <p>
+                    <strong>第③类 · 在银行柜台、券商或不打折渠道买</strong><br>
+                    选 C 类。这类渠道按上限收申购费，A 类的一次性成本会高于 C 类封顶的销售服务费，长期持有也是 C 类更省——这跟不少人的直觉相反，但把上面场景二的数字摆出来就没有争议了。
+                </p>
+                <p>
+                    最后提醒一句：A 类和 C 类净值分别计算，通常不能直接互转，想换只能赎回再申购，而这一步又会撞上持有时长阶梯的赎回费——份额类型在下单那一刻就该定下来。至于这笔闲钱要不要买基金、和定期存款比哪个更合适，可以先看 <a href="../../deposit-calculator/" style="color: #667eea; text-decoration: underline;">存款利息计算器</a> 把无风险收益的底数算清楚，再决定拿多少比例去承担波动。
+                </p>
+            </div>
+
+            <div class="article-tags-bottom">
+                <span class="tags-label">相关标签：</span>
+                <span class="article-tag">基金A类和C类怎么选</span>
+                <span class="article-tag">基金a类和c类收费区别</span>
+                <span class="article-tag">基金持有超过一年还收销售服务费吗</span>
+                <span class="article-tag">基金申购费打折后a类还划算吗</span>
+                <span class="article-tag">基金c类销售服务费多少</span>
+            </div>
+        </article>
+
+        <!-- 相关计算器 -->
+<section class="related-section">
+        <h2 class="section-title">🔧 相关计算器</h2>
+        <div class="related-grid">
+            <a href="../../investment-calculator/" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>投资收益计算器</h3>
+                <p class="related-desc">复利终值、基金定投收益模拟、退休养老金缺口测算，内置72法则快速估算翻倍年限</p>
+            </a>
+            <a href="../../deposit-calculator/" class="related-card">
+                <span class="related-cat">计算器</span>
+                <h3>存款利息计算器</h3>
+                <p class="related-desc">定期、活期、大额存单利息对比，看清无风险收益的底数再决定投资比例</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-block">
+        <h2 class="section-title">❓ 常见问题（FAQ）</h2>
+        <div class="faq-item">
+            <p class="faq-q">Q：基金A类和C类怎么选？</p>
+            <p class="faq-a">A：看两点：打算持有多久、在哪个渠道买。A类买入时一次性收申购费，之后不再收持续性费用；C类免申购费，但按日从基金资产中计提销售服务费。2026年1月1日起施行的《公开募集证券投资基金销售费用管理规定》（证监会公告〔2025〕22号）把C类销售服务费上限定为0.4%/年（股票型、混合型）和0.2%/年（指数型、债券型），并明确持有超过一年（365天）的份额不再收取。按10万元测算：第三方平台申购费打1折时，主动偏股基金持有超过约73天选A类更省；若渠道不打折、按上限0.8%收，C类反而无论持有多久都更便宜。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：基金持有超过一年还收销售服务费吗？</p>
+            <p class="faq-a">A：不再收。新规第十一条明确，除货币市场基金以及证监会认可的其他基金外，投资者持续持有期限超过一年的基金份额，不得继续收取销售服务费。两点要注意：一是「一年」按每笔份额分别计算，定投的每一笔起算时间不同，会出现部分份额已停收、部分还在计费的混合状态；二是存量产品有12个月整改期，须在2026年12月31日前完成调整、2027年1月1日全面落地，因此个别产品可能尚未改到位，以产品公告和费率页为准。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：基金申购费打折后A类还划算吗？</p>
+            <p class="faq-a">A：打折渠道通常仍划算，不打折渠道会翻转。以主动偏股基金为例，新规把申购费上限压到0.8%，第三方互联网平台打1折后是0.08%，10万元一次性只交约79.94元；而C类销售服务费封顶0.4%、10万元最高400元，因此持有超过约73天就是A类更省。但如果渠道按原价0.8%收，10万元要交约793.65元，比C类的400元封顶还高，这种情况下C类无论持有多久都更划算——这正是新规给C类加上「一年封顶」后出现的新变化。</p>
+        </div>
+        <div class="faq-item">
+            <p class="faq-q">Q：基金C类的销售服务费一年要交多少钱？</p>
+            <p class="faq-a">A：最高不超过基金资产的一定比例，且最多只收一年。新规上限为：股票型和混合型0.4%/年、指数型和债券型0.2%/年、货币市场基金0.15%/年；持有超过一年的份额停止计提。以10万元、0.4%/年计算，持满一年累计约400元，这就是C类份额相对A类的持有成本天花板，不会再随持有年限无限累积。实际费率以产品资料概要为准，不少产品的C类费率明显低于上限，例如有基金公司的中证500ETF联接C类销售服务费优惠至0.04%。</p>
+        </div>
+</section>
+<section class="related-section">
+<h2 class="section-title">相关推荐</h2>
+            <div class="related-grid">
+                <a href="../article13/" class="related-card">
+                    <span class="related-cat">理财知识</span>
+                    <h3>基金赎回费怎么算？2026新规下7天和30天差多少</h3>
+                    <p class="related-desc">四档简化为三档、赎回费全额归基金财产，持有时长阶梯怎么算</p>
+                </a>
+                <a href="../article4/" class="related-card">
+                    <span class="related-cat">理财知识</span>
+                    <h3>基金定投收益计算方法和定投复利公式详解，小白也能看懂</h3>
+                    <p class="related-desc">定投复利公式、年化收益率换算与定投场次怎么设计</p>
+                </a>
+                <a href="../article16/" class="related-card">
+                    <span class="related-cat">理财知识</span>
+                    <h3>定期存款提前取出来利息怎么算？2026年按活期、不靠档</h3>
+                    <p class="related-desc">提前支取按活期计息不靠档，10万存3年提前取利息缩水多少</p>
+                </a>
+                <a href="../" class="related-card">
+                    <span class="related-cat">博客首页</span>
+                    <h3>查看更多金融知识干货文章</h3>
+                    <p class="related-desc">政策解读、理财技巧、省钱攻略，持续更新中</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">🧮 AI金融计算器</span>
+                    <p class="footer-tagline">个税计算 · 社保计算 · 房贷月供 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h5>计算工具</h5>
+                        <a href="../../tax-calculator/">💰 个人所得税计算器</a>
+                        <a href="../../social-insurance-calculator/">🏥 社保计算器</a>
+                        <a href="../../mortgage-calculator/">🏡 房贷计算器</a>
+                        <a href="../../car-loan-calculator/">🚗 车贷计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>更多工具</h5>
+                        <a href="../../provident-fund-calculator/">🏦 公积金贷款计算器</a>
+                        <a href="../../deposit-calculator/">💵 存款利息计算器</a>
+                        <a href="../../exchange-rate-calculator/">💱 汇率换算器</a>
+                        <a href="../../investment-calculator/">📈 投资收益计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>关于我们</h5>
+                        <a href="../../about/">关于本站</a>
+                        <a href="../../contact/">联系我们</a>
+                        <a href="../../privacy/">隐私政策</a>
+                        <a href="../../blog/">博客首页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="share-float" id="shareFloat">
+        <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+            <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-3 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
+        <div class="share-menu" id="shareMenu">
+            <button class="share-menu-item" onclick="shareWeChat()">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.179c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.179c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                <span>微信分享</span>
+            </button>
+            <button class="share-menu-item" onclick="copyLink()">
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                <span>复制链接</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script src="../../shared/share.js?v=20260911.4"></script>
+    <script src="../../shared/analytics.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>
