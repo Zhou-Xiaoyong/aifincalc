@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -116,7 +116,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article15/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -140,7 +140,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article2/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -170,7 +170,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article7/</loc>
-        <lastmod>2026-08-31</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -878,13 +878,13 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article20/</loc>
-        <lastmod>2026-09-11</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/mortgage/</loc>
-        <lastmod>2026-09-14</lastmod>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -932,7 +932,13 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article22/</loc>
-        <lastmod>2026-09-16</lastmod>
+        <lastmod>2026-09-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article23/</loc>
+        <lastmod>2026-09-18</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
