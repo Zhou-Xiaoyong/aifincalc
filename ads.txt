@@ -1,0 +1,3 @@
+# ads.txt — Amazon/AdSense monetization for aifincalc.com
+# Owner: calchive network | Publisher ID: pub-3625422078884598
+google.com, pub-3625422078884598, DIRECT, f08c47fec0942fa0
