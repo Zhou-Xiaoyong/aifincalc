@@ -18,10 +18,18 @@
     //   但锚文本信息量不足，不利于搜索引擎理解每个链接指向的工具，
     //   用户也容易误解。全称在 ≥901px 视口下可单行放下，更窄时由 share.css
     //   的媒体查询缩小字号，≤768px 则整体让位给汉堡菜单。
+    // 2026-10-07：新增「房贷贴息」「房屋租售比」两个工具（共 10 项）。
+    //   新增工具必须同时满足两处，缺一不可：
+    //     (1) 本数组登记 slug/short/full；
+    //     (2) 各页 HTML 的 .nav-links 里存在 href 含该 slug 的项（作为数据源）。
+    //   只改 HTML 不改此处 → matchToolIndex 返回 -1 或误判到同组旧工具，
+    //   该项会被丢弃或错留第一行（曾复现：首页/租售比/博客 三项错乱）。
     var CALC_TOOLS = [
         { slug: 'tax-calculator',              short: '个税',   full: '个人所得税计算器' },
         { slug: 'social-insurance-calculator', short: '社保',   full: '社保计算器' },
         { slug: 'mortgage-calculator',         short: '房贷',   full: '房贷计算器' },
+        { slug: 'mortgage-subsidy-calculator', short: '贴息',   full: '房贷贴息计算器' },
+        { slug: 'rent-yield-calculator',       short: '租售比', full: '房屋租售比计算器' },
         { slug: 'car-loan-calculator',         short: '车贷',   full: '车贷计算器' },
         { slug: 'provident-fund-calculator',   short: '公积金', full: '公积金贷款计算器' },
         { slug: 'deposit-calculator',          short: '存款',   full: '存款利息计算器' },
@@ -29,8 +37,10 @@
         { slug: 'investment-calculator',       short: '投资',   full: '投资收益计算器' }
     ];
 
-    // 文案兜底关键词，与 CALC_TOOLS 顺序一一对应
-    var CALC_TEXT_KEYS = ['个人所得税', '社保', '房贷', '车贷', '公积金', '存款', '汇率', '投资'];
+    // 文案兜底关键词，与 CALC_TOOLS 顺序一一对应。
+    // 注意：仅当 href 不含任何 slug 时才走到这里（本站各页 href 均含 slug，
+    // 因此正常流程不会使用本兜底，不存在「房贷贴息」被「房贷」抢先命中的问题）。
+    var CALC_TEXT_KEYS = ['个人所得税', '社保', '房贷', '房贷贴息', '租售比', '车贷', '公积金', '存款', '汇率', '投资'];
 
     function matchToolIndex(href, text) {
         var h = (href || '').toLowerCase();

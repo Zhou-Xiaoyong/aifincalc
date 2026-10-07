@@ -12,7 +12,7 @@
     <meta property="og:description" content="主播要交多少个税？2026年10月1日起抖音、B站、微博把自然人主播的纳税时点从提现提前到「收益到账可提现」，不提现也要扣。平台按累计预扣法算，月入6250元以下不预扣，月入1万5全年预扣5880元，比按次预扣少2.29万元。附存量余额跳档测算与个税计算器。">
     <meta property="og:url" content="https://aifincalc.com/blog/article30/">
     <link rel="stylesheet" href="../style.css?v=20260911.5">
-    <link rel="stylesheet" href="../../shared/share.css?v=20260911.4">
+    <link rel="stylesheet" href="../../shared/share.css?v=20261007.1">
     <script>
     var _hmt = _hmt || [];
     (function() {
@@ -120,30 +120,106 @@
                 <span class="brand-name">AI金融计算器</span>
             </a>
             <nav class="nav-links">
-                <a href="../../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
-                <a href="../../tax-calculator/" class="nav-link active"><span class="nav-icon">💰</span><span>个人所得税计算器</span></a>
-                <a href="../../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
-                <a href="../../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
-                <a href="../../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
-                <a href="../../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款计算器</span></a>
-                <a href="../../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息计算器</span></a>
-                <a href="../../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算器</span></a>
-                <a href="../../investment-calculator/" class="nav-link"><span class="nav-icon">📈</span><span>投资收益计算器</span></a>
-                <a href="../../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+                <a href="../../" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="../../tax-calculator/" class="nav-link">
+                    <span class="nav-icon">💰</span>
+                    <span>个税计算器</span>
+                </a>
+                <a href="../../social-insurance-calculator/" class="nav-link">
+                    <span class="nav-icon">🏥</span>
+                    <span>社保计算器</span>
+                </a>
+                <a href="../../mortgage-calculator/" class="nav-link">
+                    <span class="nav-icon">🏡</span>
+                    <span>房贷计算器</span>
+                </a>
+                <a href="../../mortgage-subsidy-calculator/" class="nav-link">
+                    <span class="nav-icon">🎁</span>
+                    <span>房贷贴息</span>
+                </a>
+                <a href="../../car-loan-calculator/" class="nav-link">
+                    <span class="nav-icon">🚗</span>
+                    <span>车贷计算器</span>
+                </a>
+                <a href="../../provident-fund-calculator/" class="nav-link">
+                    <span class="nav-icon">🏦</span>
+                    <span>公积金贷款</span>
+                </a>
+                <a href="../../rent-yield-calculator/" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>租售比</span>
+                </a>
+                <a href="../../deposit-calculator/" class="nav-link">
+                    <span class="nav-icon">💵</span>
+                    <span>存款利息</span>
+                </a>
+                <a href="../../exchange-rate-calculator/" class="nav-link">
+                    <span class="nav-icon">💱</span>
+                    <span>汇率换算</span>
+                </a>
+                <a href="../../investment-calculator/" class="nav-link">
+                    <span class="nav-icon">📈</span>
+                    <span>投资收益</span>
+                </a>
+                <a href="../../blog/" class="nav-link active">
+                    <span class="nav-icon">📝</span>
+                    <span>博客</span>
+                </a>
             </nav>
             <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
         </div>
         <div class="mobile-menu" id="mobileMenu">
-                    <a href="../../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
-                    <a href="../../tax-calculator/" class="nav-link active"><span class="nav-icon">💰</span><span>个人所得税计算器</span></a>
-                    <a href="../../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
-                    <a href="../../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
-                    <a href="../../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
-                    <a href="../../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款计算器</span></a>
-                    <a href="../../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息计算器</span></a>
-                    <a href="../../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算器</span></a>
-                    <a href="../../investment-calculator/" class="nav-link"><span class="nav-icon">📈</span><span>投资收益计算器</span></a>
-                    <a href="../../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+                    <a href="../../" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span>首页</span>
+                    </a>
+                    <a href="../../tax-calculator/" class="nav-link">
+                        <span class="nav-icon">💰</span>
+                        <span>个税计算器</span>
+                    </a>
+                    <a href="../../social-insurance-calculator/" class="nav-link">
+                        <span class="nav-icon">🏥</span>
+                        <span>社保计算器</span>
+                    </a>
+                    <a href="../../mortgage-calculator/" class="nav-link">
+                        <span class="nav-icon">🏡</span>
+                        <span>房贷计算器</span>
+                    </a>
+                    <a href="../../mortgage-subsidy-calculator/" class="nav-link">
+                        <span class="nav-icon">🎁</span>
+                        <span>房贷贴息</span>
+                    </a>
+                    <a href="../../car-loan-calculator/" class="nav-link">
+                        <span class="nav-icon">🚗</span>
+                        <span>车贷计算器</span>
+                    </a>
+                    <a href="../../provident-fund-calculator/" class="nav-link">
+                        <span class="nav-icon">🏦</span>
+                        <span>公积金贷款</span>
+                    </a>
+                    <a href="../../rent-yield-calculator/" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span>租售比</span>
+                    </a>
+                    <a href="../../deposit-calculator/" class="nav-link">
+                        <span class="nav-icon">💵</span>
+                        <span>存款利息</span>
+                    </a>
+                    <a href="../../exchange-rate-calculator/" class="nav-link">
+                        <span class="nav-icon">💱</span>
+                        <span>汇率换算</span>
+                    </a>
+                    <a href="../../investment-calculator/" class="nav-link">
+                        <span class="nav-icon">📈</span>
+                        <span>投资收益</span>
+                    </a>
+                    <a href="../../blog/" class="nav-link active">
+                        <span class="nav-icon">📝</span>
+                        <span>博客</span>
+                    </a>
         </div>
     </header>
 
@@ -458,7 +534,7 @@
     </div>
 
     <script src="../../script.js"></script>
-    <script src="../../shared/share.js?v=20260911.4"></script>
+    <script src="../../shared/share.js?v=20261007.1"></script>
     <script src="../../shared/analytics.js"></script>
 <script>
 (function(){
