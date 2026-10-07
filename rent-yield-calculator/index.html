@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房屋租售比计算器2026 - 租金回报率与租售比健康度测算 | 买房出租vs存银行 - AI金融计算器</title>
+    <meta name="description" content="房屋租售比计算器，一键测算租售比、年化毛/净租金回报率，对比国际合理区间（1:200~1:300、4%~6%）。支持空置率、物业费、贷款持有成本扣除，输出净回报率与买房出租vs存银行理财的收益对比，判断房源投资价值与自住/投资取舍。">
+    <meta name="keywords" content="房屋租售比计算器,租售比计算,租金回报率计算器,年化租金回报率,租售比多少合理,买房出租划算吗,租金收益率,房屋投资回报率,租售比1比200,租售比正常范围,毛租金回报率,净租金回报率">
+    <link rel="canonical" href="https://aifincalc.com/rent-yield-calculator/">
+    <meta property="og:url" content="https://aifincalc.com/rent-yield-calculator/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="房屋租售比计算器2026 - 租金回报率与租售比健康度测算">
+    <meta property="og:description" content="测算租售比、年化毛/净租金回报率，对比国际合理区间与银行理财收益，判断买房出租是否划算。">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../shared/share.css?v=20260911.4">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+    <!-- Schema.org: SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "房屋租售比计算器2026",
+        "description": "测算房屋租售比与年化租金回报率，对比国际合理区间与银行理财收益，判断买房出租是否划算。",
+        "provider": {
+            "@type": "Organization",
+            "name": "AI金融计算器",
+            "url": "https://aifincalc.com/"
+        },
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aifincalc.com/rent-yield-calculator/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "features": [
+            "租售比1:N计算",
+            "年化毛/净租金回报率",
+            "国际合理区间对比",
+            "买房出租vs存银行收益对比",
+            "贷款持有成本扣除"
+        ]
+    }
+    </script>
+    <!-- BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "房屋租售比计算器",
+                "item": "https://aifincalc.com/rent-yield-calculator/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "租售比多少合理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "国际公认合理区间为1:200到1:300，即房屋总价相当于200到300个月租金。低于1:200（租金回报率高于6%）说明房价偏低或租金偏高，买房出租划算；高于1:300（回报率低于4%）说明房价偏高或租金偏低，租售比失衡，投资价值下降。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "租金回报率多少算正常？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "一般认为年化租金回报率4%-6%处于合理区间。低于4%说明房屋估值偏高、出租回报不足，不如存银行理财；高于6%则回报优异，但需警惕租金可持续性。一线城市租售比普遍1:500以上、回报率2%-3%，二三线城市回报率较高。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "买房出租和存银行哪个划算？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "需要比较净租金回报率与无风险理财收益率。若净回报率（扣除空置、物业费、维修后）高于银行3年期定存或国债收益率约2.5%-3%，则买房出租划算；反之不如存银行。还要考虑房价涨跌预期——房价不涨甚至下跌时，租金回报率必须跑赢理财才有持有价值。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "租售比和租金回报率什么关系？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "两者互为倒数。租售比=房屋总价÷月租金（如1:250表示250个月租金=房价）；年化租金回报率=（月租金×12）÷房屋总价×100%。租售比1:200对应回报率6%，1:300对应4%，1:250对应4.8%。"
+                }
+            }
+        ]
+    }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3625422078884598"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero-bg"></div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
+                <a href="../tax-calculator/" class="nav-link"><span class="nav-icon">💰</span><span>个税计算器</span></a>
+                <a href="../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
+                <a href="../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
+                <a href="../mortgage-subsidy-calculator/" class="nav-link"><span class="nav-icon">🎁</span><span>房贷贴息</span></a>
+                <a href="../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
+                <a href="../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款</span></a>
+                <a href="../rent-yield-calculator/" class="nav-link active"><span class="nav-icon">📊</span><span>租售比</span></a>
+                <a href="../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息</span></a>
+                <a href="../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算</span></a>
+                <a href="../investment-calculator/" class="nav-link"><span class="nav-icon">📈</span><span>投资收益</span></a>
+                <a href="../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+            </nav>
+            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+                <a href="../" class="nav-link"><span class="nav-icon">🏠</span><span>首页</span></a>
+                <a href="../tax-calculator/" class="nav-link"><span class="nav-icon">💰</span><span>个税计算器</span></a>
+                <a href="../social-insurance-calculator/" class="nav-link"><span class="nav-icon">🏥</span><span>社保计算器</span></a>
+                <a href="../mortgage-calculator/" class="nav-link"><span class="nav-icon">🏡</span><span>房贷计算器</span></a>
+                <a href="../mortgage-subsidy-calculator/" class="nav-link"><span class="nav-icon">🎁</span><span>房贷贴息</span></a>
+                <a href="../car-loan-calculator/" class="nav-link"><span class="nav-icon">🚗</span><span>车贷计算器</span></a>
+                <a href="../provident-fund-calculator/" class="nav-link"><span class="nav-icon">🏦</span><span>公积金贷款</span></a>
+                <a href="../rent-yield-calculator/" class="nav-link active"><span class="nav-icon">📊</span><span>租售比</span></a>
+                <a href="../deposit-calculator/" class="nav-link"><span class="nav-icon">💵</span><span>存款利息</span></a>
+                <a href="../exchange-rate-calculator/" class="nav-link"><span class="nav-icon">💱</span><span>汇率换算</span></a>
+                <a href="../investment-calculator/" class="nav-link"><span class="nav-icon">📈</span><span>投资收益</span></a>
+                <a href="../blog/" class="nav-link"><span class="nav-icon">📝</span><span>博客</span></a>
+        </div>
+    </header>
+
+    <div class="container page-top-space">
+        <div class="calculator-card">
+            <div class="breadcrumb-bar">
+                <a href="../">首页</a> <span class="sep">›</span>
+                <span class="current">房屋租售比计算器</span>
+            </div>
+
+            <div class="policy-banner">
+                <div class="policy-banner-head">
+                    <span class="policy-tag">投资测算</span>
+                    <span class="policy-doc">租售比健康度</span>
+                </div>
+                <h1>房屋租售比计算器</h1>
+                <p class="policy-summary">
+                    一键测算房屋<strong>租售比 1:N</strong>与<strong>年化租金回报率</strong>，对比国际合理区间（1:200~1:300、4%~6%）。扣除空置、物业费、贷款利息后输出<strong>净回报率</strong>，并同步测算买房出租与存银行理财的收益差，判断房源投资价值。
+                </p>
+            </div>
+
+            <!-- 表单 -->
+            <div class="form-section">
+                <h2 class="section-title">填写房屋与租金信息</h2>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>房屋总价 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="housePrice" class="form-control" value="200" min="0" step="1">
+                            <span class="unit">万元</span>
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label>月租金 <span class="required">*</span></label>
+                        <div class="input-group">
+                            <input type="number" id="monthlyRent" class="form-control" value="5000" min="0" step="50">
+                            <span class="unit">元</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>空置率</label>
+                        <div class="input-group">
+                            <input type="number" id="vacancyRate" class="form-control" value="5" min="0" max="100" step="0.5">
+                            <span class="unit">%</span>
+                        </div>
+                        <small class="help-text">一年中空置月数占比，常见3%-8%</small>
+                    </div>
+                    <div class="form-group half">
+                        <label>年物业费</label>
+                        <div class="input-group">
+                            <input type="number" id="annualFee" class="form-control" value="3600" min="0" step="100">
+                            <span class="unit">元</span>
+                        </div>
+                        <small class="help-text">物业+维修+保险等持有成本</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>持有年限</label>
+                        <div class="input-group">
+                            <input type="number" id="holdYears" class="form-control" value="10" min="1" max="40">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+                    <div class="form-group half">
+                        <label>银行理财年收益率</label>
+                        <div class="input-group">
+                            <input type="number" id="bankRate" class="form-control" value="3.0" min="0" step="0.05">
+                            <span class="unit">%</span>
+                        </div>
+                        <small class="help-text">用于买房vs存银行对比</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>是否有房贷（用于计算净回报）</label>
+                    <div class="radio-group">
+                        <label class="radio-item">
+                            <input type="radio" name="hasLoan" value="no" checked onchange="toggleLoanSection()">
+                            <span>无贷款（全款）</span>
+                        </label>
+                        <label class="radio-item">
+                            <input type="radio" name="hasLoan" value="yes" onchange="toggleLoanSection()">
+                            <span>有贷款</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="loanSection" style="display:none;">
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label>贷款余额</label>
+                            <div class="input-group">
+                                <input type="number" id="loanBalance" class="form-control" value="100" min="0" step="1">
+                                <span class="unit">万元</span>
+                            </div>
+                        </div>
+                        <div class="form-group half">
+                            <label>贷款利率</label>
+                            <div class="input-group">
+                                <input type="number" id="loanRate" class="form-control" value="3.05" min="0" step="0.01">
+                                <span class="unit">%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>剩余贷款年限</label>
+                        <div class="input-group">
+                            <input type="number" id="loanYears" class="form-control" value="20" min="1" max="30">
+                            <span class="unit">年</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-calculate" onclick="calculateRentYield()">计算租售比</button>
+            </div>
+
+            <!-- 计算结果 -->
+            <div class="result-section" id="yieldResult" style="display:none;">
+                <h3>📊 租售比与回报率</h3>
+                <div class="result-grid" id="yieldResultGrid"></div>
+
+                <!-- 健康度仪表 -->
+                <div class="yield-gauge-section">
+                    <h4>🎯 租售比健康度</h4>
+                    <div id="yieldGauge"></div>
+                </div>
+
+                <!-- 买房vs存银行对比 -->
+                <div class="compare-section">
+                    <h4>💰 买房出租 vs 存银行理财</h4>
+                    <div class="compare-table" id="bankCompareTable"></div>
+                </div>
+
+                <!-- AI建议 -->
+                <div class="ai-suggestions" id="yieldSuggestions" style="display:none;">
+                    <h4>💡 投资建议</h4>
+                    <div id="yieldSuggestionsContent"></div>
+                </div>
+            </div>
+
+            <!-- 参考标准 -->
+            <div class="policy-rules">
+                <h3>📌 租售比与回报率参考标准</h3>
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="rule-icon">🟢</div>
+                        <h4>健康（1:200~1:300）</h4>
+                        <p>回报率4%-6%，买房出租具备投资价值</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon">🟡</div>
+                        <h4>偏低（1:300~1:500）</h4>
+                        <p>回报率2.4%-3.3%，租售比失衡，需依赖房价上涨</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon">🔴</div>
+                        <h4>泡沫（＞1:500）</h4>
+                        <p>回报率低于2.4%，纯出租不划算</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="rule-icon">💎</div>
+                        <h4>优质（＜1:200）</h4>
+                        <p>回报率高于6%，回报优异但需警惕租金可持续性</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ -->
+            <div class="faq-section">
+                <h2>常见问题</h2>
+                <div class="faq-item">
+                    <h4>租售比多少算合理？</h4>
+                    <p>国际公认合理区间为<strong>1:200 到 1:300</strong>，即房屋总价相当于200到300个月租金。低于1:200（回报率高于6%）买房出租划算；高于1:300（回报率低于4%）租售比失衡，投资价值下降。一线城市租售比普遍1:500以上。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>租金回报率多少算正常？</h4>
+                    <p>一般认为<strong>4%-6%</strong>处于合理区间。低于4%不如存银行理财；高于6%回报优异但需警惕租金可持续性。一线城市回报率普遍2%-3%，二三线城市较高。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>买房出租和存银行哪个划算？</h4>
+                    <p>比较<strong>净租金回报率</strong>与无风险理财收益率。若净回报率（扣除空置、物业费、贷款利息后）高于银行定存或国债收益率（约2.5%-3%），买房出租划算；反之不如存银行。还要考虑房价涨跌预期。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>租售比和租金回报率什么关系？</h4>
+                    <p>两者互为倒数。租售比=房屋总价÷月租金；年化租金回报率=（月租金×12）÷房屋总价×100%。1:200对应6%，1:300对应4%，1:250对应4.8%。</p>
+                </div>
+            </div>
+
+            <div class="ad-placeholder" id="adSlot4"><span>广告位 - 336x280</span></div>
+        </div>
+
+        <div class="ad-placeholder bottom-ad" id="adSlot5"><span>广告位 - 728x90</span></div>
+
+        <!-- 分享悬浮按钮 -->
+        <div class="share-float" id="shareFloat">
+            <button class="share-float-btn" onclick="toggleShareMenu()" title="分享">
+                <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/></svg>
+            </button>
+            <div class="share-menu" id="shareMenu">
+                <button class="share-menu-item" onclick="shareWeChat()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#07c160" d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.68 4.025c-3.694 0-6.69 2.462-6.69 5.497 0 3.034 2.996 5.497 6.69 5.497a8.03 8.03 0 002.254-.323.69.69 0 01.572.078l1.518.889a.262.262 0 00.134.043.234.234 0 00.232-.236c0-.058-.023-.114-.038-.17l-.312-1.182a.473.473 0 01.17-.532C21.695 18.825 22.77 17.093 22.77 15.26c0-3.035-2.996-5.244-6.69-5.244h.398zm-2.98 2.843c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946zm4.9 0c.514 0 .93.424.93.946a.938.938 0 01-.93.945.938.938 0 01-.93-.945c0-.522.416-.946.93-.946z"/></svg>
+                    <span>微信分享</span>
+                </button>
+                <button class="share-menu-item" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#666" d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+                    <span>复制链接</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- 工具说明 -->
+        <div class="tool-intro">
+            <h2>📖 租售比计算器使用指南</h2>
+            <div class="intro-section">
+                <h3>一、核心概念</h3>
+                <div class="input-guide">
+                    <div class="guide-item">
+                        <h4>📊 租售比</h4>
+                        <p>租售比 = 房屋总价 ÷ 月租金，表示"多少个月租金等于房价"。如房价200万、月租5000元，租售比为1:400，即400个月（约33年）的租金才能收回房价。国际公认合理区间为<strong>1:200 到 1:300</strong>。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>📈 租金回报率</h4>
+                        <p>年化租金回报率 = （月租金 × 12）÷ 房屋总价 × 100%，与租售比互为倒数。1:200对应6%，1:300对应4%。回报率越高，出租收益越好；一般认为4%-6%处于合理区间。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h4>💸 毛回报率 vs 净回报率</h4>
+                        <p><strong>毛回报率</strong>不考虑持有成本；<strong>净回报率</strong>扣除空置损失、物业费、维修、贷款利息等。两者差距可能很大——以200万房、月租5000元为例，毛回报率3%，扣除空置5%、物业费3600元后净回报率仅约2.5%。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-section">
+                <h3>二、计算公式</h3>
+                <div class="formula-guide">
+                    <div class="formula-item">
+                        <h4>🧮 租售比与回报率</h4>
+                        <p><strong>租售比 = 房屋总价 ÷ 月租金</strong>（取整数 N，记为 1:N）</p>
+                        <p><strong>年化毛租金回报率 = 月租金 × 12 ÷ 房屋总价 × 100%</strong></p>
+                        <p><strong>年化净租金回报率 =（年实收租金 − 年持有成本）÷ 房屋总价 × 100%</strong></p>
+                        <p>其中：年实收租金 = 月租金 × 12 ×（1 − 空置率）；年持有成本 = 物业费 + 贷款年利息（若有）。</p>
+                        <p class="formula-note">注：本计算器未计房屋折旧、交易税费、未来房价涨跌，仅作静态测算参考。</p>
+                    </div>
+                    <div class="formula-item">
+                        <h4>🏦 买房出租 vs 存银行</h4>
+                        <p>将同等资金（房屋总价或首付金额）存入银行，按理财年收益率复利测算N年后的终值；与买房出租N年累计净租金收益 + 房屋终值（假设房价不变）对比，判断哪种方式更划算。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-section">
+                <h3>三、使用案例</h3>
+                <div class="case-guide">
+                    <div class="case-item">
+                        <h4>📌 案例一：200万房，月租5000</h4>
+                        <p>某城市一套200万住宅，月租5000元，空置率5%，年物业费3600元，全款持有10年。</p>
+                        <ul>
+                            <li>租售比：1:400</li>
+                            <li>年化毛回报率：3.00%</li>
+                            <li>年实收租金：57000元（扣空置）</li>
+                            <li>年净收益：53400元</li>
+                            <li>年化净回报率：2.67%</li>
+                            <li>10年累计净租金：53.4万</li>
+                            <li>对比存银行3%：200万×(1.03^10-1)=68.78万</li>
+                        </ul>
+                        <p><strong>结论：</strong>租售比1:400处于偏低区间，净回报率2.67%低于银行3%，纯出租不如存银行。除非预期房价上涨，否则该房源投资价值不足。</p>
+                    </div>
+                    <div class="case-item">
+                        <h4>📌 案例二：100万房，月租4000</h4>
+                        <p>二三线城市一套100万住宅，月租4000元，空置率5%，年物业费2400元，全款持有10年。</p>
+                        <ul>
+                            <li>租售比：1:250</li>
+                            <li>年化毛回报率：4.80%</li>
+                            <li>年实收租金：45600元</li>
+                            <li>年净收益：43200元</li>
+                            <li>年化净回报率：4.32%</li>
+                            <li>10年累计净租金：43.2万</li>
+                            <li>对比存银行3%：100万×(1.03^10-1)=34.39万</li>
+                        </ul>
+                        <p><strong>结论：</strong>租售比1:250处于健康区间，净回报率4.32%高于银行3%，买房出租划算。二三线城市租售比通常优于一线城市。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 相关推荐 -->
+        <div class="related-section">
+            <div class="related-tools">
+                <h2>🔗 相关计算工具</h2>
+                <div class="tools-grid">
+                    <a href="../mortgage-calculator/" class="tool-card">
+                        <div class="tool-card-icon">🏡</div>
+                        <div class="tool-card-content">
+                            <h3>房贷计算器</h3>
+                            <p>LPR房贷月供与还款计划，买房贷款成本测算</p>
+                        </div>
+                        <div class="tool-card-arrow">→</div>
+                    </a>
+                    <a href="../mortgage-subsidy-calculator/" class="tool-card">
+                        <div class="tool-card-icon">🎁</div>
+                        <div class="tool-card-content">
+                            <h3>房贷贴息计算器</h3>
+                            <p>2026首套房财政贴息1%政策测算，贷100万最多省5万</p>
+                        </div>
+                        <div class="tool-card-arrow">→</div>
+                    </a>
+                    <a href="../investment-calculator/" class="tool-card">
+                        <div class="tool-card-icon">📈</div>
+                        <div class="tool-card-content">
+                            <h3>投资收益计算器</h3>
+                            <p>复利计算与定投模拟，买房vs理财多方案对比</p>
+                        </div>
+                        <div class="tool-card-arrow">→</div>
+                    </a>
+                    <a href="../deposit-calculator/" class="tool-card">
+                        <div class="tool-card-icon">💵</div>
+                        <div class="tool-card-content">
+                            <h3>存款利息计算器</h3>
+                            <p>定期活期存款利息计算，买房出租vs存银行对比基准</p>
+                        </div>
+                        <div class="tool-card-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="related-articles">
+                <h2>📝 推荐阅读</h2>
+                <div class="related-article-list">
+                    <a href="../blog/article31/" class="related-article-item">
+                        <span class="related-article-cat">政策解读</span>
+                        <span>2026首套房贷贴息政策详解：贷100万最多省5万怎么算</span>
+                    </a>
+                    <a href="../blog/article23/" class="related-article-item">
+                        <span class="related-article-cat">房贷攻略</span>
+                        <span>存量房贷利率怎么协商下调？30个基点门槛这样算</span>
+                    </a>
+                    <a href="../blog/article2/" class="related-article-item">
+                        <span class="related-article-cat">房贷攻略</span>
+                        <span>房贷等额本息和等额本金哪个更划算？内行人都这么选</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">🧮 AI金融计算器</span>
+                    <p class="footer-tagline">个税计算 · 社保计算 · 房贷月供 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h5>计算工具</h5>
+                        <a href="../tax-calculator/">💰 个人所得税计算器</a>
+                        <a href="../social-insurance-calculator/">🏥 社保计算器</a>
+                        <a href="../mortgage-calculator/">🏡 房贷计算器</a>
+                        <a href="../mortgage-subsidy-calculator/">🎁 房贷贴息计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>更多工具</h5>
+                        <a href="../car-loan-calculator/">🚗 车贷计算器</a>
+                        <a href="../provident-fund-calculator/">🏦 公积金贷款计算器</a>
+                        <a href="../rent-yield-calculator/">📊 房屋租售比计算器</a>
+                        <a href="../deposit-calculator/">💵 存款利息计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>关于我们</h5>
+                        <a href="../about/">关于本站</a>
+                        <a href="../contact/">联系我们</a>
+                        <a href="../privacy/">隐私政策</a>
+                        <a href="../blog/">博客首页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="../shared/share.js?v=20260911.4"></script>
+    <script src="../shared/analytics.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>
