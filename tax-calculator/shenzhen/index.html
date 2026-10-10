@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "深圳",
                 "item": "https://aifincalc.com/tax-calculator/shenzhen/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 深圳社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "深圳市社保缴费基数上下限每年7月调整。养老保险缴费基数上下限按广东省标准执行，医疗保险、失业保险等按深圳市标准执行。2026年最新标准请关注深圳市人力资源和社会保障局官网或\"深圳社保\"公众号。深圳的社保缴费基数上限在全国处于较高水平。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 深圳的个税人才补贴政策是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "深圳对在深圳市工作的境外高端人才和紧缺人才，其在深圳市缴纳的个人所得税已缴税额超过其按应纳税所得额的15%计算的税额部分，给予财政补贴。该补贴免征个人所得税。符合条件的人才可以通过深圳市人力资源和社会保障局申请，具体条件和申请流程以官方公布为准。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 深圳个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "深圳作为计划单列市，住房租金专项附加扣除标准为每月1500元。如果您在深圳市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。深圳房租水平较高，这项扣除能为广大来深建设者减轻不少税负。需要注意住房贷款利息和住房租金不能同时享受。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 深圳公积金提取政策有哪些？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "深圳住房公积金提取方式多样，包括购房提取、租房提取、还贷提取、离职提取、退休提取等。特别是租房提取，无需提供租房发票，每月可提取额不超过申请当月应缴存额的65%。深圳还支持公积金异地贷款，方便在深圳缴存公积金的市民回老家买房。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 深圳个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。深圳的外来务工人员众多，年度汇算时尤其要注意检查专项附加扣除是否完整申报，避免多缴税。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 深圳个税计算器</h2>
+  <div class="cc-title">🧮 深圳个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="9183" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

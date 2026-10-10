@@ -10,6 +10,7 @@
     <meta property="og:url" content="https://aifincalc.com/tax-calculator/">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../shared/share.css?v=20261007.1">
+    <link rel="stylesheet" href="../shared/page-hero.css?v=20261010.1">
     <!-- 百度统计 -->
     <script>
     var _hmt = _hmt || [];
@@ -188,6 +189,11 @@
     </header>
 
     <div class="container page-top-space">
+        <section class="page-hero">
+            <h1>个税计算器 2026</h1>
+            <p class="page-hero-sub">按 <strong>2026 年最新七级超额累进税率</strong>测算工资薪金个税，支持年终奖单独计税与合并计税智能对比、年度汇算清缴，自动核算五险一金与子女教育、住房租金、赡养老人等 7 项专项附加扣除，一键生成税后收入明细。</p>
+        </section>
+
         <div class="calculator-card">
             <div class="tabs">
                 <div class="tab active" data-tab="monthly">月度工资</div>
@@ -815,42 +821,26 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "2026年个税起征点是多少？",
+                "name": "个税起征点是多少？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "2026年个人所得税起征点为每月5000元（年度60000元），适用于综合所得（工资薪金、劳务报酬、稿酬、特许权使用费）。"
+                    "text": "2025年个人所得税起征点为每月5000元，年度60000元。"
                 }
             },
             {
                 "@type": "Question",
-                "name": "专项附加扣除有哪些？2026年标准是多少？",
+                "name": "专项附加扣除有哪些？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "2026年专项附加扣除包括：子女教育2000元/月、继续教育400元/月、住房贷款利息1000元/月、住房租金1500元/月（直辖市/省会城市）、赡养老人最高3000元/月（独生子女）、3岁以下婴幼儿照护2000元/月。"
+                    "text": "包括子女教育（2000元/月）、继续教育（400元/月）、住房贷款利息（1000元/月）、住房租金（1500元/月）、赡养老人（最高3000元/月）、3岁以下婴幼儿照护（2000元/月）。"
                 }
             },
             {
                 "@type": "Question",
-                "name": "年终奖单独计税和并入综合所得哪个更划算？",
+                "name": "年终奖如何计税？",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "取决于个人收入情况。如果年收入（含年终奖）不超过12万元，通常并入综合所得更划算；如果年终奖金额较大且综合所得本身税率较低，单独计税可能更优。建议用本计算器的年度汇算功能分别计算对比。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "五险一金缴纳比例是多少？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "个人缴纳部分一般为：养老保险8%、医疗保险2%、失业保险0.2%–0.7%（因城市而异）、住房公积金5%-12%。具体比例因城市而异，本计算器支持全国41个主要城市自动带入社保比例。"
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "个人所得税怎么计算？计算公式是什么？",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "个税计算公式：应纳税所得额 = 税前工资 - 五险一金 - 专项附加扣除 - 起征点5000元；应缴个税 = 应纳税所得额 × 适用税率 - 速算扣除数。税率分7级，从3%到45%。"
+                    "text": "年终奖可以选择单独计税或并入综合所得计税，本计算器默认按单独计税方式计算。"
                 }
             }
         ]

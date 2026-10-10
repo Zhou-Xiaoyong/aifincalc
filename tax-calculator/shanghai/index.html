@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "上海",
                 "item": "https://aifincalc.com/tax-calculator/shanghai/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 上海社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "上海市每年会根据上一年度全口径城镇单位就业人员平均工资核定社保缴费基数上下限，一般每年7月1日起调整。2026年最新标准请关注上海市人力资源和社会保障局官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。上海的社保基数上限在全国属于较高水平。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 上海的补充公积金是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "上海住房公积金分为基本公积金和补充公积金两部分。基本公积金缴存比例为各7%，补充公积金缴存比例可在各1%-5%之间由单位自主选择。补充公积金不是强制缴纳的，通常效益较好的企业会为员工缴纳。补充公积金可以用于购房贷款和提取，贷款额度也会相应提高。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 上海个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "上海作为直辖市，住房租金专项附加扣除标准为每月1500元。如果您在上海市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。上海房租水平较高，这项扣除能为租房上班族减轻不少税负。需要注意住房贷款利息和住房租金不能同时享受。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 上海居住证积分和个税有关系吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "有关系。上海居住证积分申请中，个税缴纳情况是重要的加分项。最近连续3年在上海市缴纳城镇社会保险基数高于上海市上年度职工平均工资2倍以上的，可以获得较高积分。同时，个税缴纳水平也能间接反映收入水平，是评估人才的重要参考指标。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 上海个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。上海的纳税人数量众多，建议尽早办理，避免后期扎堆。如果年度综合所得收入不超过12万元且需要补税，或者补税金额不超过400元，可以免于办理年度汇算。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 上海个税计算器</h2>
+  <div class="cc-title">🧮 上海个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="12577" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

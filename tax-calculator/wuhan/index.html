@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "武汉",
                 "item": "https://aifincalc.com/tax-calculator/wuhan/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 武汉社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年武汉社保缴费基数上下限为4498–22488元，每年根据上年度全口径城镇单位就业人员平均工资核定。公积金基数下限2400元、上限36072.25元。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 武汉医疗保险含什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "武汉医保单位比例8.7%、个人2%，并参加大额医疗互助，个人另缴约7元/月。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 武汉住房租金扣除标准？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "武汉作为省会城市，住房租金专项附加扣除标准为每月1500元。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 年终奖计税方式？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年终奖可单独计税或并入综合所得，视收入情况择低，可用个税计算器对比。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 武汉个税年度汇算时间？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理，通过\"个人所得税\"APP操作。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 武汉个税计算器</h2>
+  <div class="cc-title">🧮 武汉个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="7496" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

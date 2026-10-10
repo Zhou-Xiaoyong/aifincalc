@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "南京",
                 "item": "https://aifincalc.com/tax-calculator/nanjing/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 南京社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "南京市社保缴费基数上下限每年7月调整。养老保险缴费基数上下限按江苏省标准执行，医疗保险、失业保险等按南京市标准执行。2026年最新标准请关注南京市人力资源和社会保障局官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 南京的人才租房补贴政策是什么？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "南京对符合条件的高校毕业生发放租房补贴，博士、硕士、学士分别按不同标准发放，补贴期限最长不超过36个月。此外还有高层次人才购房补贴、大学生就业补贴等多项人才政策。具体申请条件和补贴标准可通过\"我的南京\"APP或南京市人社局官网查询。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 南京个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "南京作为省会城市，住房租金专项附加扣除标准为每月1500元。如果您在南京市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。南京房租水平在长三角地区处于中等水平，这项扣除能为租房的上班族减轻不少税负。需要注意住房贷款利息和住房租金不能同时享受。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 南京公积金可以提取用于支付房租吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。南京住房公积金支持租房提取，职工连续足额缴存住房公积金满3个月，本人及配偶在缴存城市无自有住房且租赁住房的，可提取夫妻双方住房公积金支付房租。无需提供租房发票，每月提取额不超过规定上限。可通过\"南京公积金\"APP在线办理。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 南京个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。南京市民可以通过\"我的南京\"APP跳转至个税办理页面，非常便捷。建议大家在汇算时仔细核对专项附加扣除信息，确保应享尽享。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 南京个税计算器</h2>
+  <div class="cc-title">🧮 南京个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="8254" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

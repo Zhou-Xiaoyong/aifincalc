@@ -6,6 +6,14 @@ import re
 
 SITE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# 不注入推送 JS 的文件：
+#   - 404.html：错误页无需参与收录
+#   - 百度站点验证文件：内容必须与百度给出的一字不差，改动会导致验证失效
+SKIP_FILES = {
+    "404.html",
+    "baidu_verify_codeva-WTMipmucLG.html",
+}
+
 # Baidu auto-push JS code
 BAIDU_PUSH = """<script>
 (function(){
@@ -30,8 +38,13 @@ skipped = 0
 errors = 0
 
 for root, dirs, files in os.walk(SITE_DIR):
+    dirs[:] = [d for d in dirs if d not in ('.git', '__pycache__')]
     for fname in files:
         if not fname.endswith('.html'):
+            continue
+        if fname in SKIP_FILES:
+            print(f"  SKIP: {fname} (在跳过名单中)")
+            skipped += 1
             continue
         fpath = os.path.join(root, fname)
         try:

@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "成都",
                 "item": "https://aifincalc.com/tax-calculator/chengdu/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 成都社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年成都社保缴费基数上下限为4588–22938元，每年根据上年度全口径城镇单位就业人员平均工资核定。公积金基数下限为成都市最低工资标准2330元（2026公积金年度上限32969元，成公积金委〔2026〕5号）。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 成都公积金缴存比例？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "单位与个人缴存比例均在5%–12%之间，由单位确定。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 成都住房租金扣除标准？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "成都作为省会城市，住房租金专项附加扣除标准为每月1500元。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 年终奖计税怎么选？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年终奖可单独计税或并入综合所得，收入结构不同最优方案不同，建议用个税计算器对比。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 成都个税年度汇算时间？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理，通过\"个人所得税\"APP操作。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 成都个税计算器</h2>
+  <div class="cc-title">🧮 成都个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="7646" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

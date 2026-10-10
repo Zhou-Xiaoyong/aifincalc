@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "广州",
                 "item": "https://aifincalc.com/tax-calculator/guangzhou/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 广州社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "广州市社保缴费基数上下限每年调整，通常在7月份公布。2026年的最新标准请关注广州市人力资源和社会保障局官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。广州社保缴费基数执行广东省和广州市双重标准，养老保险按省标准，其他险种按市标准。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 广州公积金可以在佛山买房吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。广州公积金支持在广佛肇清云韶六市异地购房提取和贷款。随着粤港澳大湾区建设推进，广州与周边城市的公积金互通越来越便利。具体政策和办理流程建议咨询广州住房公积金管理中心或通过\"广州公积金\"APP查询。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 广州个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "广州作为省会城市，住房租金专项附加扣除标准为每月1500元。如果您在广州市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。广州房租水平相对北上深较为友好，加上这项扣除，租房上班族的负担相对更轻。需要注意住房贷款利息和住房租金不能同时享受。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 广州灵活就业人员如何缴纳社保？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "广州灵活就业人员可以以个人身份参加企业职工基本养老保险和医疗保险。养老保险缴费比例为20%，医疗保险缴费比例为10%。缴费基数可在社平工资的60%-300%之间自主选择。灵活就业人员可以通过\"粤省事\"小程序或广州税务微信公众号办理参保缴费手续。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 广州个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。广州作为千万级人口的大都市，办理年度汇算的人数众多，建议在3月16日后预约办理，或在4月后错峰办理，避免系统拥堵。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 广州个税计算器</h2>
+  <div class="cc-title">🧮 广州个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="9183" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

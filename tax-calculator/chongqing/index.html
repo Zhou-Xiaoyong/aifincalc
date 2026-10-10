@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "重庆",
                 "item": "https://aifincalc.com/tax-calculator/chongqing/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 重庆社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "重庆市每年会根据上一年度全口径城镇单位就业人员平均工资核定社保缴费基数上下限。一般每年7月份进行调整。2026年的最新标准请关注重庆市人力资源和社会保障局官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。重庆作为直辖市，社平工资在西南地区处于领先水平。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 重庆公积金可以提取出来还房贷吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。重庆住房公积金支持购房提取、还贷提取、租房提取等多种提取方式。使用公积金偿还住房贷款本息，可以选择按月提取或按年提取，提取金额不超过实际还款额。建议通过\"重庆公积金\"APP或重庆住房公积金管理中心官网办理。重庆公积金贷款额度较高，首套房贷款最高可贷额度在全国处于中上水平。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 年终奖在重庆怎么计算个税？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年终奖有两种计税方式可选：单独计税和并入综合所得计税。单独计税方式下，将年终奖除以12个月得到的数额，按照按月换算后的综合所得税率表确定适用税率和速算扣除数，单独计算纳税。哪种方式更划算取决于您的具体收入情况，可以使用我们的个税计算器进行对比测算。重庆很多企业，尤其是汽车制造和电子信息行业，年终奖都比较丰厚。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 重庆个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "重庆作为直辖市，住房租金专项附加扣除标准为每月1500元。如果您在重庆市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。需要注意的是，住房贷款利息和住房租金不能同时享受扣除。重庆的房租水平相对一线城市低很多，1500元的扣除标准基本可以覆盖大部分普通上班族的租金支出。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 重庆个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。如果年度综合所得收入不超过12万元且需要补税，或者补税金额不超过400元，可以免于办理年度汇算。重庆作为人口大市，每年办理个税汇算的人数众多，建议错峰办理。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 重庆个税计算器</h2>
+  <div class="cc-title">🧮 重庆个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="7339" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

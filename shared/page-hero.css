@@ -1,0 +1,62 @@
+/* ============================================================
+   页面标题区（H1）— 工具页 / 内容页通用
+   ------------------------------------------------------------
+   背景说明：本站工具页与内容页为浅色底（#f0f2f5 / #f5f7fa），
+   站内既有的 .hero（见 social-insurance-calculator/style.css）为白字，
+   依赖 .hero-bg 深色背景，不适用于这些页面。
+   因此这里采用站内主流的「白卡片 + 深色字」语言，与 .calculator-card /
+   .card / .article-card 保持一致，保证任何底色下都清晰可读。
+
+   引入方式（各页 <head> 内）：
+     <link rel="stylesheet" href="../shared/page-hero.css?v=20261010.1">
+   ============================================================ */
+
+.page-hero {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 28px 22px;
+    margin: 0 0 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+.page-hero h1 {
+    margin: 0 0 10px;
+    font-size: 1.75rem;
+    line-height: 1.35;
+    font-weight: 700;
+    color: #1b1f2a;
+    letter-spacing: -0.01em;
+}
+
+.page-hero .page-hero-sub {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: #5a6270;
+}
+
+.page-hero .page-hero-sub strong {
+    color: #1b1f2a;
+    font-weight: 600;
+}
+
+.page-hero .page-hero-meta {
+    margin: 12px 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: #8a919e;
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 18px 18px 16px;
+        border-radius: 14px;
+        margin-bottom: 16px;
+    }
+    .page-hero h1 {
+        font-size: 1.3rem;
+    }
+    .page-hero .page-hero-sub {
+        font-size: 0.875rem;
+    }
+}

@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "杭州",
                 "item": "https://aifincalc.com/tax-calculator/hangzhou/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 杭州社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "2026年杭州养老、医疗、失业、工伤保险缴费基数上下限为4986–25299元，每年7月根据上年度全口径城镇单位就业人员平均工资核定。住房公积金基数下限为杭州市区最低工资标准2660元（2026公积金年度上限42151元）。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 杭州公积金缴存比例怎么定？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "单位与个人缴存比例均在5%–12%之间，由单位确定，杭州多数单位按12%最高比例缴纳。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 杭州住房租金专项附加扣除多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "杭州作为省会城市，住房租金专项附加扣除标准为每月1500元。住房贷款利息与住房租金不能同时享受。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 年终奖在杭州怎么计算个税？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年终奖可选择单独计税或并入综合所得计税，哪种更划算取决于具体收入情况，可用个税计算器对比测算。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 杭州个税年度汇算什么时候办？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度综合所得汇算清缴，可通过\"个人所得税\"APP操作，多退少补。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 杭州个税计算器</h2>
+  <div class="cc-title">🧮 杭州个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="8433" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>

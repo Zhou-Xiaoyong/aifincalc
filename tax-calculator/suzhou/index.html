@@ -196,7 +196,7 @@
         }
     
     .cc-section{margin:24px 0;background:#fff;border:1px solid #eef1f4;border-radius:16px;padding:20px 22px;box-shadow:0 4px 18px rgba(102,126,234,.08);}
-    .cc-title{font-size:20px;margin:0 0 14px;color:#1f2d4d;}
+    .cc-title{font-size:20px;font-weight:700;margin:0 0 14px;color:#1f2d4d;}
     .cc-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
     .cc-tab{border:1px solid #e3e8f0;background:#f7f9fc;color:#3a4a6b;padding:8px 16px;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s;}
     .cc-tab.active{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;border-color:transparent;}
@@ -249,6 +249,55 @@
                 "position": 3,
                 "name": "苏州",
                 "item": "https://aifincalc.com/tax-calculator/suzhou/"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "1. 苏州社保缴费基数上下限是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "苏州市每年会根据江苏省上一年度全口径城镇单位就业人员平均工资核定社保缴费基数上下限。一般每年7月份进行调整。2026年的最新标准请关注苏州市人力资源和社会保障局官方发布。缴费基数上限通常为社平工资的300%，下限为社平工资的60%。苏州作为江苏省经济最发达的城市，社平工资在全省处于领先水平。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "2. 苏州公积金可以提取出来还房贷吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。苏州住房公积金支持购房提取、还贷提取、租房提取等多种提取方式。使用公积金偿还住房贷款本息，可以选择按月提取或按年提取，提取金额不超过实际还款额。建议通过\"苏州公积金\"APP或苏州住房公积金管理中心官网办理。苏州公积金贷款额度较高，首套房贷款最高可贷额度在长三角地区处于中上水平，苏州工业园区还有额外的公积金优惠政策。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "3. 年终奖在苏州怎么计算个税？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "年终奖有两种计税方式可选：单独计税和并入综合所得计税。单独计税方式下，将年终奖除以12个月得到的数额，按照按月换算后的综合所得税率表确定适用税率和速算扣除数，单独计算纳税。哪种方式更划算取决于您的具体收入情况，可以使用我们的个税计算器进行对比测算。苏州很多外资企业和制造业企业年终奖都比较丰厚，通常有2-4个月工资，部分高科技企业甚至更高。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "4. 苏州个税专项附加扣除住房租金标准是多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "苏州作为省会城市，住房租金专项附加扣除标准为每月1500元。如果您在苏州市没有自有住房而发生的住房租金支出，可以按照这个标准扣除。需要注意的是，住房贷款利息和住房租金不能同时享受扣除。苏州的房租水平相对上海低很多，1500元的扣除标准基本可以覆盖园区以外区域一居室的租金。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "5. 苏州个人所得税年度汇算什么时候办理？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "每年3月1日至6月30日办理上一年度的个人所得税综合所得汇算清缴。纳税人可以通过\"个人所得税\"手机APP进行办理，多退少补。如果年度综合所得收入不超过12万元且需要补税，或者补税金额不超过400元，可以免于办理年度汇算。苏州作为经济发达城市，高收入人群较多，每年办理个税汇算的人数也很多，建议在3月中下旬错峰办理。"
+                }
             }
         ]
     }
@@ -376,7 +425,7 @@
 <!-- /CN:TOP -->
 
 <section class="cc-section">
-  <h2 class="cc-title">🧮 苏州个税计算器</h2>
+  <div class="cc-title">🧮 苏州个税计算器</div>
   <div class="cc-form">
     <div class="cc-field"><label>月税前工资（元）</label><input type="number" id="ccSalary" value="8254" min="0"></div>
     <div class="cc-field"><label>公积金个人比例（%）</label><input type="number" id="ccHf" value="12" min="5" max="12" step="1"></div>
