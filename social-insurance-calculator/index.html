@@ -8,8 +8,8 @@
     <meta name="keywords" content="社保计算器,五险一金计算器,社保缴费比例,养老保险,医疗保险,失业保险,工伤保险,生育保险,住房公积金,个人社保,单位社保,社保缴费基数,北京社保,上海社保,广州社保,深圳社保,杭州社保,成都社保,武汉社保,西安社保,AI金融计算器">
     <link rel="canonical" href="https://aifincalc.com/social-insurance-calculator/">
     <meta property="og:url" content="https://aifincalc.com/social-insurance-calculator/">
-    <link rel="stylesheet" href="style.css?v=20260808.2">
-    <link rel="stylesheet" href="../shared/share.css?v=20261007.1">
+    <link rel="stylesheet" href="style.css?v=20261015.2">
+    <link rel="stylesheet" href="../shared/share.css?v=20261014.2">
     <link rel="stylesheet" href="../shared/page-hero.css?v=20261010.1">
     <!-- 百度统计 -->
     <script>
@@ -97,6 +97,10 @@
                     <span class="nav-icon">🏥</span>
                     <span>社保计算器</span>
                 </a>
+                <a href="../pension-calculator/" class="nav-link">
+                    <span class="nav-icon">💼</span>
+                    <span>退休金</span>
+                </a>
                 <a href="../mortgage-calculator/" class="nav-link">
                     <span class="nav-icon">🏡</span>
                     <span>房贷计算器</span>
@@ -105,6 +109,10 @@
                     <span class="nav-icon">🎁</span>
                     <span>房贷贴息</span>
                 </a>
+                <a href="../rent-yield-calculator/" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>租售比</span>
+                </a>
                 <a href="../car-loan-calculator/" class="nav-link">
                     <span class="nav-icon">🚗</span>
                     <span>车贷计算器</span>
@@ -112,10 +120,6 @@
                 <a href="../provident-fund-calculator/" class="nav-link">
                     <span class="nav-icon">🏦</span>
                     <span>公积金贷款</span>
-                </a>
-                <a href="../rent-yield-calculator/" class="nav-link">
-                    <span class="nav-icon">📊</span>
-                    <span>租售比</span>
                 </a>
                 <a href="../deposit-calculator/" class="nav-link">
                     <span class="nav-icon">💵</span>
@@ -149,6 +153,10 @@
                         <span class="nav-icon">🏥</span>
                         <span>社保计算器</span>
                     </a>
+                    <a href="../pension-calculator/" class="nav-link">
+                        <span class="nav-icon">💼</span>
+                        <span>退休金</span>
+                    </a>
                     <a href="../mortgage-calculator/" class="nav-link">
                         <span class="nav-icon">🏡</span>
                         <span>房贷计算器</span>
@@ -157,6 +165,10 @@
                         <span class="nav-icon">🎁</span>
                         <span>房贷贴息</span>
                     </a>
+                    <a href="../rent-yield-calculator/" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span>租售比</span>
+                    </a>
                     <a href="../car-loan-calculator/" class="nav-link">
                         <span class="nav-icon">🚗</span>
                         <span>车贷计算器</span>
@@ -164,10 +176,6 @@
                     <a href="../provident-fund-calculator/" class="nav-link">
                         <span class="nav-icon">🏦</span>
                         <span>公积金贷款</span>
-                    </a>
-                    <a href="../rent-yield-calculator/" class="nav-link">
-                        <span class="nav-icon">📊</span>
-                        <span>租售比</span>
                     </a>
                     <a href="../deposit-calculator/" class="nav-link">
                         <span class="nav-icon">💵</span>
@@ -598,13 +606,14 @@
         <!-- 城市社保计算器入口（按区域分组 + 同城互链） -->
         <section class="city-hub">
             <h2 class="city-hub-title">🏙️ 按城市查询 2026 社保缴费</h2>
-            <p class="city-hub-sub">已上线 北京、上海、广州、深圳、杭州、成都、武汉、西安、苏州、合肥、重庆、天津、南京、无锡、宁波、东莞 16 城，支持五险一金基数与比例的本地化计算；更多城市持续上线中。</p>
+            <p class="city-hub-sub">已上线 北京、上海、广州、深圳、杭州、成都、武汉、西安、苏州、合肥、重庆、天津、南京、无锡、宁波、东莞、长沙、济南、郑州 19 城，每城可直达社保、公积金、个税、退休金四个计算器，支持五险一金基数与比例的本地化计算；更多城市持续上线中。</p>
 
             <div class="city-cluster-grid">
                 <div class="city-cluster">
                     <div class="city-cluster-head">北京</div>
                     <div class="city-cluster-links">
                         <a href="beijing/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=beijing" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/beijing/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/beijing/" class="cluster-link">个税</a>
                     </div>
@@ -613,6 +622,7 @@
                     <div class="city-cluster-head">上海</div>
                     <div class="city-cluster-links">
                         <a href="shanghai/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=shanghai" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/shanghai/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/shanghai/" class="cluster-link">个税</a>
                     </div>
@@ -621,6 +631,7 @@
                     <div class="city-cluster-head">广州</div>
                     <div class="city-cluster-links">
                         <a href="guangzhou/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=guangzhou" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/guangzhou/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/guangzhou/" class="cluster-link">个税</a>
                     </div>
@@ -629,6 +640,7 @@
                     <div class="city-cluster-head">深圳</div>
                     <div class="city-cluster-links">
                         <a href="shenzhen/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=shenzhen" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/shenzhen/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/shenzhen/" class="cluster-link">个税</a>
                     </div>
@@ -637,6 +649,7 @@
                     <div class="city-cluster-head">杭州</div>
                     <div class="city-cluster-links">
                         <a href="hangzhou/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=hangzhou" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/hangzhou/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/hangzhou/" class="cluster-link">个税</a>
                     </div>
@@ -645,6 +658,7 @@
                     <div class="city-cluster-head">成都</div>
                     <div class="city-cluster-links">
                         <a href="chengdu/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=chengdu" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/chengdu/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/chengdu/" class="cluster-link">个税</a>
                     </div>
@@ -653,6 +667,7 @@
                     <div class="city-cluster-head">武汉</div>
                     <div class="city-cluster-links">
                         <a href="wuhan/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=wuhan" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/wuhan/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/wuhan/" class="cluster-link">个税</a>
                     </div>
@@ -661,6 +676,7 @@
                     <div class="city-cluster-head">西安</div>
                     <div class="city-cluster-links">
                         <a href="xian/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=xian" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/xian/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/xian/" class="cluster-link">个税</a>
                     </div>
@@ -669,6 +685,7 @@
                     <div class="city-cluster-head">苏州</div>
                     <div class="city-cluster-links">
                         <a href="suzhou/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=suzhou" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/suzhou/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/suzhou/" class="cluster-link">个税</a>
                     </div>
@@ -677,6 +694,7 @@
                     <div class="city-cluster-head">合肥</div>
                     <div class="city-cluster-links">
                         <a href="hefei/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=hefei" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/hefei/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/hefei/" class="cluster-link">个税</a>
                     </div>
@@ -685,6 +703,7 @@
                     <div class="city-cluster-head">重庆</div>
                     <div class="city-cluster-links">
                         <a href="chongqing/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=chongqing" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/chongqing/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/chongqing/" class="cluster-link">个税</a>
                     </div>
@@ -693,6 +712,7 @@
                     <div class="city-cluster-head">天津</div>
                     <div class="city-cluster-links">
                         <a href="tianjin/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=tianjin" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/tianjin/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/tianjin/" class="cluster-link">个税</a>
                     </div>
@@ -701,6 +721,7 @@
                     <div class="city-cluster-head">南京</div>
                     <div class="city-cluster-links">
                         <a href="nanjing/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=nanjing" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/nanjing/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/nanjing/" class="cluster-link">个税</a>
                     </div>
@@ -709,6 +730,7 @@
                     <div class="city-cluster-head">无锡</div>
                     <div class="city-cluster-links">
                         <a href="wuxi/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=wuxi" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/wuxi/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/wuxi/" class="cluster-link">个税</a>
                     </div>
@@ -717,6 +739,7 @@
                     <div class="city-cluster-head">宁波</div>
                     <div class="city-cluster-links">
                         <a href="ningbo/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=ningbo" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/ningbo/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/ningbo/" class="cluster-link">个税</a>
                     </div>
@@ -725,11 +748,47 @@
                     <div class="city-cluster-head">东莞</div>
                     <div class="city-cluster-links">
                         <a href="dongguan/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=dongguan" class="cluster-link">退休金</a>
                         <a href="../provident-fund-calculator/dongguan/" class="cluster-link">公积金</a>
                         <a href="../tax-calculator/dongguan/" class="cluster-link">个税</a>
                     </div>
                 </div>
+                <div class="city-cluster">
+                    <div class="city-cluster-head">长沙</div>
+                    <div class="city-cluster-links">
+                        <a href="changsha/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=changsha" class="cluster-link">退休金</a>
+                        <a href="../provident-fund-calculator/changsha/" class="cluster-link">公积金</a>
+                        <a href="../tax-calculator/changsha/" class="cluster-link">个税</a>
+                    </div>
+                </div>
+                <div class="city-cluster">
+                    <div class="city-cluster-head">济南</div>
+                    <div class="city-cluster-links">
+                        <a href="jinan/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=jinan" class="cluster-link">退休金</a>
+                        <a href="../provident-fund-calculator/jinan/" class="cluster-link">公积金</a>
+                        <a href="../tax-calculator/jinan/" class="cluster-link">个税</a>
+                    </div>
+                </div>
+                <div class="city-cluster">
+                    <div class="city-cluster-head">郑州</div>
+                    <div class="city-cluster-links">
+                        <a href="zhengzhou/" class="cluster-link active">社保计算器</a>
+                        <a href="../pension-calculator/?city=zhengzhou" class="cluster-link">退休金</a>
+                        <a href="../provident-fund-calculator/zhengzhou/" class="cluster-link">公积金</a>
+                        <a href="../tax-calculator/zhengzhou/" class="cluster-link">个税</a>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- 退休金计算器引导（2026-10-15 新增） -->
+        <section class="pension-promo">
+            <h2>退休金计算器：延迟退休后，每月能领多少养老金？</h2>
+            <p>2025 年 1 月 1 日起，渐进式延迟法定退休年龄正式施行：男职工原 60 周岁逐步延至 63 周岁，女职工按原 55 / 50 周岁分别延至 58 / 55 周岁；养老保险最低缴费年限也从 2030 年起由 15 年逐步提高到 20 年。想知道自己哪一年退休、每月大约能领多少养老金，可以用退休金计算器试算。</p>
+            <p>退休金计算器按「基础养老金 + 个人账户养老金（+ 过渡性养老金）」三段公式计算，内置各地基本养老金计发基数、延迟退休年龄对照表与计发月数表；既可只填出生年月快速看区间，也可录入电子社保卡里的真实缴费数据做精算，并提供保守 / 中性 / 乐观三档情景对比。</p>
+            <p class="pension-promo-cta"><a class="pension-promo-btn" href="../pension-calculator/">打开退休金计算器 →</a><span>支持按城市预选计发基数 · 19 城已上线</span></p>
         </section>
 
         <!-- 广告位3：FAQ上方 -->
@@ -983,6 +1042,11 @@
             <div class="related-block">
                 <h3 class="related-title">🔗 相关计算工具</h3>
                 <div class="related-tools-grid">
+                    <a href="../pension-calculator/" class="tool-card">
+                        <span class="tool-icon">💼</span>
+                        <span class="tool-name">退休金计算器</span>
+                        <span class="tool-desc">延迟退休·养老金试算</span>
+                    </a>
                     <a href="../tax-calculator/" class="tool-card">
                         <span class="tool-icon">🧮</span>
                         <span class="tool-name">个税计算器</span>
@@ -1062,13 +1126,14 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <span class="footer-logo">🧮 AI金融计算器</span>
-                    <p class="footer-tagline">个税计算 · 社保计算 · 房贷月供 · 房贷贴息 · 租售比 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
+                    <p class="footer-tagline">个税计算 · 社保计算 · 退休金试算 · 房贷月供 · 房贷贴息 · 租售比 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
                 </div>
                 <div class="footer-columns">
                     <div class="footer-col">
                         <h5>计算工具</h5>
                         <a href="../tax-calculator/">💰 个人所得税计算器</a>
                         <a href="../social-insurance-calculator/">🏥 社保计算器</a>
+                        <a href="../pension-calculator/">💼 退休金计算器</a>
                         <a href="../mortgage-calculator/">🏡 房贷计算器</a>
                         <a href="../car-loan-calculator/">🚗 车贷计算器</a>
                     </div>
@@ -1091,14 +1156,14 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。</p>
+                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。养老金政策以人社部门最新公告为准。</p>
             </div>
         </div>
     </footer>
 
     <script src="../shared/constants.js"></script>
     <script src="script.js"></script>
-    <script src="../shared/share.js?v=20261007.1"></script>
+    <script src="../shared/share.js?v=20261014.2"></script>
     <script src="../shared/analytics.js"></script>
 
     <!-- FAQ Schema 结构化数据 -->

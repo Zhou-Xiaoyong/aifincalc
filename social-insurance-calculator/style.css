@@ -940,7 +940,8 @@ footer a {
 }
 
 .city-cluster:hover {
-    box-shadow: 0 8px 22px rgba(79, 172, 254, 0.18);
+    box-shadow: 0 8px 22px rgba(26, 115, 232, 0.10);
+    border-color: #e3ebf6;
     transform: translateY(-3px);
 }
 
@@ -968,16 +969,19 @@ footer a {
     transition: all 0.25s ease;
 }
 
+/* 2026-10-15：hover/active 原用亮青渐变(#4facfe→#00f2fe)，在白卡上偏艳偏亮。
+   改为站内既有蓝色系：hover = 浅蓝底 + 蓝字，active = 实色蓝底，均不用渐变，
+   与 shared/city-nav.css 及退休金 CTA 的 #1a73e8 保持同一套色彩语言。 */
 .cluster-link:hover {
-    color: #fff;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    border-color: transparent;
+    color: #1a73e8;
+    background: #f1f6fe;
+    border-color: #d2e3fc;
 }
 
 .cluster-link.active {
     color: #fff;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    border-color: transparent;
+    background: #1a73e8;
+    border-color: #1a73e8;
     font-weight: 600;
 }
 
@@ -1304,5 +1308,83 @@ footer a {
     .result-table td {
         padding: 9px 10px;
         font-size: 0.82rem;
+    }
+}
+
+/* ===== 退休金试算入口（2026-10-15 新增） =====
+   本文件同时被「社保总页 /social-insurance-calculator/」与
+   「19 城社保页 /social-insurance-calculator/{city}/」引用，
+   下面两组样式一处改动即两处生效。 */
+.pension-cta-inline {
+    margin: 14px 0 0;
+    padding: 12px 16px;
+    background: #f1f6fe;
+    border: 1px solid #d2e3fc;
+    border-radius: 8px;
+    color: #3c4043;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.pension-cta-inline a {
+    color: #1a73e8;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.pension-cta-inline a:hover {
+    text-decoration: underline;
+}
+
+/* 社保总页的退休金介绍区 */
+.pension-promo {
+    margin: 28px 0;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+}
+.pension-promo h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #202124;
+}
+.pension-promo p {
+    margin: 0 0 12px;
+    color: #3c4043;
+    font-size: 15px;
+    line-height: 1.8;
+}
+.pension-promo-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0 0;
+}
+.pension-promo-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #1a73e8;
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.pension-promo-btn:hover {
+    background: #1765cc;
+}
+.pension-promo-cta span {
+    color: #5f6368;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    .pension-promo {
+        padding: 18px 16px;
+    }
+    .pension-cta-inline a {
+        white-space: normal;
     }
 }

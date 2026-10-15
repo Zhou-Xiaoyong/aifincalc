@@ -83,25 +83,30 @@
     font-size: 0.78rem;
 }
 
-/* 第二行导航 - 计算器快捷入口 */
+/* 第二行导航 - 计算器快捷入口
+   2026-10-14 改造：由「nowrap + 横向滚动 + 1240px 缩排补丁」改为「自动折行」。
+   原因：计算器增至 11 项（含退休金计算器）时，全称模式内容宽 1291px > 容器 1168px，
+   旧方案靠隐藏图标/缩字号硬撑并让 769-894px 区间横向滚动，已到极限。
+   现在：≥769px 一律折成 2 行居中（13 项内容约 1391px > 1168px，宽屏也必然 2 行），
+   行数恒定、不存在横向滚动、不随视口跳变，可平稳扩展到 16+ 项。
+   头部总高：44(header-container) + 60(两行 calc-nav) = 104px，见 .page-top-space。 */
 .site-header .calc-nav {
-    max-width: 1200px;
+    /* max-width 从 1200 收到 760：flex-wrap 是「贪心填充」，容器 1168px 时
+       11 项会折成 10+1（第二行只剩「投资收益计算器」一项，视觉失衡）。
+       收到 760px（内容区 728px）后，折行点稳定落在第 6 项之后 → 6+5；
+       将来加到 12 项是 6+6，仍是均衡的。不要改回 1200。 */
+    max-width: 760px;
     margin: 0 auto;
-    padding: 0 16px;
-    height: 36px;
+    padding: 6px 16px;
+    min-height: 36px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 4px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
     white-space: nowrap;
     border-top: 1px solid rgba(0, 0, 0, 0.04);
     background: rgba(248, 249, 250, 0.5);
-}
-
-.site-header .calc-nav::-webkit-scrollbar {
-    display: none;
 }
 
 .site-header .calc-nav-link {
@@ -128,35 +133,33 @@
     font-weight: 600;
     box-shadow: 0 2px 8px rgba(102, 126, 234, 0.35);
     transform: scale(1.02);
-    padding: 5px 8px;
+    /* padding 必须与普通项一致：折行布局下多 1px 会让该行比其他行高 2px，
+       而不同页面的 active 项不同，会造成头部高度跳变。强调交给 scale + 阴影。 */
+    padding: 4px 8px;
 }
 
 .site-header .calc-nav-icon {
     font-size: 0.75rem;
 }
 
-/* 第二行改用计算器【全称】后：
-   - 带图标时 8 项约需 960px，≥1001px 视口可从容纳（保留图标，视觉更饱满）；
-   - 769–1000px 改为隐藏图标（保留全称与字号，缩小内边距），约需 735px，仍可单行完整显示；
-   - ≤768px 整行隐藏，让位给汉堡菜单（见下方移动端媒体查询）。
-   注意：active 态在此区间内不能额外加宽，否则不同页面 active 项不同会导致宽度跳变。 */
-@media (max-width: 1240px) and (min-width: 769px) {
+/* 2026-10-14 已删除旧的「769–1240px 隐藏图标 + 缩字号 + 压内边距」单行补丁。
+   折行方案下无需再用缩排换取单行；保留全称与图标，锚文本与视觉一致性更好。
+   若未来需要单行模式，请勿恢复此补丁——其宽度预算按 8 项设计，10 项已吃满。 */
+
+/* 窄桌面（769–900px）：13 项在 737px 内容区里会折成 3 行（实测 6+6+1，头部涨到 138px）。
+   此处隐藏图标并把间距压到 2px，实测可回到稳定的 2 行、头部 110px 不变。
+   只影响这一档视口，≥901px 与 ≤768px 均不受影响。 */
+@media (max-width: 900px) and (min-width: 769px) {
     .site-header .calc-nav {
         gap: 2px;
-    }
-
-    .site-header .calc-nav-link {
-        padding: 4px 5px;
-        font-size: 0.70rem;
     }
 
     .site-header .calc-nav-icon {
         display: none;
     }
 
-    .site-header .calc-nav-link.active {
+    .site-header .calc-nav-link {
         padding: 4px 6px;
-        transform: none;
     }
 }
 
@@ -174,9 +177,12 @@
     display: none;
 }
 
-/* 页面顶部占位 */
+/* 页面顶部占位
+   2026-10-14：第二行改为折行后，13 项计算器稳定占 2 行，头部总高 44+65=109px
+   （实测 getBoundingClientRect 为 110px，含 1px 分隔线）。此处由 88px 提到 118px，
+   余量 8px。≤768px 由下方媒体查询覆盖为 56px（calc-nav 已隐藏）。 */
 .page-top-space {
-    padding-top: 88px;
+    padding-top: 118px;
 }
 
 /* 页面标题区域 */

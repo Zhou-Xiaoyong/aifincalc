@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>退休金计算器2026 - 延迟退休年龄对照·养老金试算（全国各省计发基数） | AI金融计算器</title>
+    <meta name="description" content="退休金计算器：按 2025 年 1 月 1 日起施行的渐进式延迟法定退休年龄，试算职工基本养老保险退休后每月养老金。含延迟退休年龄对照表、最低缴费年限对照表（2030 年起逐年提高至 20 年）、全国 19 城养老金计发基数对照，以及基础养老金 + 个人账户养老金三段公式分步拆解。支持快速模式看三档区间、精算模式按电子社保卡真实数据测算。">
+    <meta name="keywords" content="退休金计算器,养老金计算器,退休工资计算器,退休金怎么算,延迟退休年龄对照表,2026退休金计算,养老金计算公式,基础养老金计算,个人账户养老金计算,计发月数,个人账户记账利率,最低缴费年限,灵活就业退休金,企业职工退休金试算,全国各省计发基数">
+    <link rel="canonical" href="https://aifincalc.com/pension-calculator/">
+    <meta property="og:url" content="https://aifincalc.com/pension-calculator/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="退休金计算器2026 - 延迟退休年龄对照与养老金试算">
+    <meta property="og:description" content="按延迟退休政策精确到月测算法定退休年龄，含全国 19 城计发基数对照与养老金三段公式。">
+    <link rel="stylesheet" href="style.css?v=20261014.1">
+    <link rel="stylesheet" href="../shared/share.css?v=20261014.2">
+    <link rel="stylesheet" href="../shared/pension.css?v=20261014.1">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f168a76737be88bd7d3d7024b71f5d40";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "退休金计算器2026",
+        "description": "按 2025 年 1 月 1 日起施行的渐进式延迟法定退休年龄政策，测算职工基本养老保险退休后每月养老金，含全国各省市养老金计发基数对照、最低缴费年限对照与三段计算公式。",
+        "provider": {
+            "@type": "Organization",
+            "name": "AI金融计算器",
+            "url": "https://aifincalc.com/"
+        },
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://aifincalc.com/pension-calculator/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "CNY"
+        },
+        "features": [
+            "延迟退休法定退休年龄精确到月",
+            "养老金计发基数按城市取值",
+            "基础养老金 + 个人账户养老金两段试算",
+            "快速模式给三档区间、精算模式用社保卡真实数据",
+            "全国 19 城计发基数对照"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "首页",
+                "item": "https://aifincalc.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "退休金计算器",
+                "item": "https://aifincalc.com/pension-calculator/"
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "退休金（养老金）到底是怎么算出来的？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "职工基本养老金由三部分构成：基础养老金 = 退休时当地计发基数 ×（1 + 本人平均缴费指数）÷ 2 × 累计缴费年限 × 1%；个人账户养老金 = 个人账户储存额 ÷ 计发月数；有视同缴费年限的「中人」再加一段过渡性养老金。前两段是所有参保人都有的，第三段只对建立个人账户之前就参加工作的人生效。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "延迟退休后我到底多少岁能退休？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "按 2025 年 1 月 1 日起施行的渐进式延迟法定退休年龄政策：男职工从 60 周岁逐步延到 63 周岁、原 55 周岁女职工从 55 周岁延到 58 周岁，每 4 个月延迟 1 个月；原 50 周岁女职工从 50 周岁延到 55 周岁，每 2 个月延迟 1 个月。以男职工为例，1964 年 12 月及以前出生的不受影响，1965 年 1 月出生的延迟 1 个月，1976 年 9 月及以后出生的封顶 63 周岁。用本页计算器输入出生年月即可精确到月。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "最低缴费年限从 15 年提高到 20 年，我到底要缴几年？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "按退休年份算，不看参保年份。2025 至 2029 年退休仍按 15 年执行；自 2030 年起每年提高 6 个月，2030 年是 15 年 6 个月、2031 年是 16 年，依此类推，2039 年及以后统一为 20 年。所以 2035 年退休需要缴满 18 年，2040 年退休需要 20 年。缴不满最低年限无法按月领取职工基本养老金。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "灵活就业人员交的养老保险，退休金和单位职工一样吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "计算逻辑完全一样。灵活就业人员参加的就是职工基本养老保险，缴费比例 20%，其中 8% 计入个人账户（其余进入统筹基金），个人账户的积累速度与单位职工本人缴费的 8% 一致。区别只在于单位职工由单位承担 16% 的统筹部分、个人只出 8%，而灵活就业人员的 20% 全部自己承担。因此同样按 60% 档缴 20 年，两者的养老金基本相同。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "为什么不同城市的退休金差这么多？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "核心差在「养老金计发基数」这一个参数上。基础养老金直接与计发基数成正比，2025 年度上海为 12434 元/月、北京 12049 元、而长沙 7694 元、郑州 6738 元，最高与最低相差近一倍，同样缴费 30 年、指数 1.0 的情况下，基础养老金每月能相差 1500 元以上。这也是本页要求先选参保城市的原因。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "计发基数和社保缴费基数是一回事吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "不是。计发基数只用于计算退休时的基础养老金，由各省（部分城市单独公布）每年确定一次；社保缴费基数上下限是用于计算在职期间每月缴多少钱，通常是当地全口径城镇单位就业人员平均工资的 60% 至 300%。两者数值、用途、公布主体都不同，不能互相套用。例如杭州 2025 年计发基数 8433 元，而养老保险缴费基数下限为 4986 元、上限 25299 元。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "我可以提前退休吗？提前退休退休金会少多少？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以，但有条件。政策允许弹性提前退休，最长提前 3 年，且不得低于改革前的原法定退休年龄（男 60 周岁、原 55 周岁女 55 周岁、原 50 周岁女 50 周岁），需本人自愿并提前 3 个月书面告知单位。提前退休会同时减少两处：一是缴费年限变短，基础养老金按年限线性减少；二是计发月数变大（60 岁 139、55 岁 170），个人账户养老金被摊薄。以本计算器试算，提前 3 年退休通常会使月养老金下降 10% 至 20%。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3625422078884598"
+    crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="hero-bg"></div>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../" class="brand-link">
+                <span class="brand-logo">🧮</span>
+                <span class="brand-name">AI金融计算器</span>
+            </a>
+            <nav class="nav-links">
+                <a href="../" class="nav-link">
+                    <span class="nav-icon">🏠</span>
+                    <span>首页</span>
+                </a>
+                <a href="../tax-calculator/" class="nav-link">
+                    <span class="nav-icon">💰</span>
+                    <span>个税计算器</span>
+                </a>
+                <a href="../social-insurance-calculator/" class="nav-link">
+                    <span class="nav-icon">🏥</span>
+                    <span>社保计算器</span>
+                </a>
+                <a href="../pension-calculator/" class="nav-link active">
+                    <span class="nav-icon">💼</span>
+                    <span>退休金</span>
+                </a>
+                <a href="../mortgage-calculator/" class="nav-link">
+                    <span class="nav-icon">🏡</span>
+                    <span>房贷计算器</span>
+                </a>
+                <a href="../mortgage-subsidy-calculator/" class="nav-link">
+                    <span class="nav-icon">🎁</span>
+                    <span>房贷贴息</span>
+                </a>
+                <a href="../rent-yield-calculator/" class="nav-link">
+                    <span class="nav-icon">📊</span>
+                    <span>租售比</span>
+                </a>
+                <a href="../car-loan-calculator/" class="nav-link">
+                    <span class="nav-icon">🚗</span>
+                    <span>车贷计算器</span>
+                </a>
+                <a href="../provident-fund-calculator/" class="nav-link">
+                    <span class="nav-icon">🏦</span>
+                    <span>公积金贷款</span>
+                </a>
+                <a href="../deposit-calculator/" class="nav-link">
+                    <span class="nav-icon">💵</span>
+                    <span>存款利息</span>
+                </a>
+                <a href="../exchange-rate-calculator/" class="nav-link">
+                    <span class="nav-icon">💱</span>
+                    <span>汇率换算</span>
+                </a>
+                <a href="../investment-calculator/" class="nav-link">
+                    <span class="nav-icon">📈</span>
+                    <span>投资收益</span>
+                </a>
+                <a href="../blog/" class="nav-link">
+                    <span class="nav-icon">📝</span>
+                    <span>博客</span>
+                </a>
+            </nav>
+            <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')">☰</button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+                    <a href="../" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span>首页</span>
+                    </a>
+                    <a href="../tax-calculator/" class="nav-link">
+                        <span class="nav-icon">💰</span>
+                        <span>个税计算器</span>
+                    </a>
+                    <a href="../social-insurance-calculator/" class="nav-link">
+                        <span class="nav-icon">🏥</span>
+                        <span>社保计算器</span>
+                    </a>
+                    <a href="../pension-calculator/" class="nav-link active">
+                        <span class="nav-icon">💼</span>
+                        <span>退休金</span>
+                    </a>
+                    <a href="../mortgage-calculator/" class="nav-link">
+                        <span class="nav-icon">🏡</span>
+                        <span>房贷计算器</span>
+                    </a>
+                    <a href="../mortgage-subsidy-calculator/" class="nav-link">
+                        <span class="nav-icon">🎁</span>
+                        <span>房贷贴息</span>
+                    </a>
+                    <a href="../rent-yield-calculator/" class="nav-link">
+                        <span class="nav-icon">📊</span>
+                        <span>租售比</span>
+                    </a>
+                    <a href="../car-loan-calculator/" class="nav-link">
+                        <span class="nav-icon">🚗</span>
+                        <span>车贷计算器</span>
+                    </a>
+                    <a href="../provident-fund-calculator/" class="nav-link">
+                        <span class="nav-icon">🏦</span>
+                        <span>公积金贷款</span>
+                    </a>
+                    <a href="../deposit-calculator/" class="nav-link">
+                        <span class="nav-icon">💵</span>
+                        <span>存款利息</span>
+                    </a>
+                    <a href="../exchange-rate-calculator/" class="nav-link">
+                        <span class="nav-icon">💱</span>
+                        <span>汇率换算</span>
+                    </a>
+                    <a href="../investment-calculator/" class="nav-link">
+                        <span class="nav-icon">📈</span>
+                        <span>投资收益</span>
+                    </a>
+                    <a href="../blog/" class="nav-link">
+                        <span class="nav-icon">📝</span>
+                        <span>博客</span>
+                    </a>
+        </div>
+    </header>
+
+    <main class="container page-top-space">
+        <nav class="breadcrumb" id="breadcrumb" aria-label="面包屑导航">
+            <a href="../">首页</a> <span class="sep">›</span> <span class="cur">退休金计算器</span>
+        </nav>
+
+        <section class="hero">
+            <h1>退休金计算器（2026 年最新政策）</h1>
+            <p class="subtitle">按 2025 年 1 月 1 日起施行的渐进式延迟法定退休年龄，试算职工基本养老保险退休后每月能领多少退休金</p>
+            <p class="updated">数据更新：2026-10-14 · 计发基数与政策口径以各地人社部门最新公告为准</p>
+        </section>
+
+        <!-- 数据状态说明（本页数据可信度的前置说明） -->
+        <section class="card data-note" id="dataNote"><div class="pp-status pp-status-warn">
+    <span class="pp-status-icon">⚠️</span>
+    <div><strong>数据状态说明：</strong>本页覆盖的 19 个城市中，<strong>8 个已核到人社部门正式文号</strong>（北京、东莞、广州、杭州、宁波、合肥、济南、长沙），<strong>11 个目前只查到社保经办系统的执行口径、暂无正式文号</strong>（上海、深圳、天津、武汉、南京、苏州、无锡、成都、重庆、西安、郑州）。未核到文号的数值均已多源交叉核对，并与当地社保经办系统执行标准一致；人社部门正式文件公布后如有差异，以正式文件为准，本站将同步回填。<br>计发基数为 <strong>2025 年度</strong>口径。部分省份当年基数公布较晚，公布前新退休人员先按上年度基数预发、公布后补差，因此年中查询可能看到两个数。数据来源与文号详见下表及根目录 DATA_SOURCES.md。</div>
+</div></section>
+
+        <!-- 退休金试算 -->
+        <section class="card pension-section" id="pensionCard">
+            <h2>退休金在线试算（含延迟退休）</h2>
+            <p class="hint">选择参保城市后，系统按该市 2025 年度基本养老金计发基数试算。可只填出生年月快速看区间，也可按电子社保卡里的真实数据做精算；计发基数也支持手动覆盖。</p>
+            <div class="pp-form">
+                <div class="pp-field">
+                    <label for="ppCity">参保城市</label>
+                    <select id="ppCity">                    <option value="shanghai" data-base="12434" data-min="7546" data-max="37731" data-wage="12577" data-verified="0">上海（上海） — 12434 元/月</option>
+                    <option value="beijing" data-base="12049" data-min="7270" data-max="36348" data-wage="11937" data-verified="1">北京（北京） — 12049 元/月</option>
+                    <option value="shenzhen" data-base="11293" data-min="4775" data-max="27549" data-wage="9183" data-verified="0">深圳（广东） — 11293 元/月</option>
+                    <option value="dongguan" data-base="9493" data-min="4775" data-max="27549" data-wage="9167" data-verified="1">东莞（广东） — 9493 元/月</option>
+                    <option value="guangzhou" data-base="9493" data-min="5510" data-max="27549" data-wage="9183" data-verified="1">广州（广东） — 9493 元/月</option>
+                    <option value="tianjin" data-base="9417" data-min="5180" data-max="25902" data-wage="8634" data-verified="0">天津（天津） — 9417 元/月</option>
+                    <option value="wuhan" data-base="9112" data-min="4498" data-max="22488" data-wage="7496" data-verified="0">武汉（湖北） — 9112 元/月</option>
+                    <option value="nanjing" data-base="8917" data-min="4952" data-max="24762" data-wage="8254" data-verified="0">南京（江苏） — 8917 元/月</option>
+                    <option value="suzhou" data-base="8917" data-min="4952" data-max="24762" data-wage="8254" data-verified="0">苏州（江苏） — 8917 元/月</option>
+                    <option value="wuxi" data-base="8917" data-min="4952" data-max="24762" data-wage="8254" data-verified="0">无锡（江苏） — 8917 元/月</option>
+                    <option value="chengdu" data-base="8462" data-min="4588" data-max="22938" data-wage="7646" data-verified="0">成都（四川） — 8462 元/月</option>
+                    <option value="hangzhou" selected data-base="8433" data-min="4986" data-max="25299" data-wage="8433" data-verified="1">杭州（浙江） — 8433 元/月</option>
+                    <option value="ningbo" data-base="8433" data-min="4986" data-max="25299" data-wage="8433" data-verified="1">宁波（浙江） — 8433 元/月</option>
+                    <option value="chongqing" data-base="8240" data-min="4404" data-max="22017" data-wage="7339" data-verified="0">重庆（重庆） — 8240 元/月</option>
+                    <option value="hefei" data-base="7999" data-min="4311" data-max="21556" data-wage="7185" data-verified="1">合肥（安徽） — 7999 元/月</option>
+                    <option value="xian" data-base="7881" data-min="4650" data-max="23250" data-wage="7750" data-verified="0">西安（陕西） — 7881 元/月</option>
+                    <option value="jinan" data-base="7831" data-min="4573" data-max="22863" data-wage="7621" data-verified="1">济南（山东） — 7831 元/月</option>
+                    <option value="changsha" data-base="7694" data-min="4106" data-max="20529" data-wage="6843" data-verified="1">长沙（湖南） — 7694 元/月</option>
+                    <option value="zhengzhou" data-base="6738" data-min="3831" data-max="19155" data-wage="6385" data-verified="0">郑州（河南） — 6738 元/月</option></select>
+                    <span class="pp-field-note" id="ppCityNote">切换城市会自动更新计发基数。</span>
+                </div>
+                <div class="pp-field">
+                    <label for="ppBase">养老金计发基数（元/月）</label>
+                    <input type="number" id="ppBase" inputmode="numeric" min="1000" max="30000" step="1" value="8433">
+                    <span class="pp-field-note">选城市自动填充，可手动改成你所在地的实际值。</span>
+                </div>
+                <div class="pp-field">
+                    <label for="ppBirthY">出生年份</label>
+                    <input type="number" id="ppBirthY" inputmode="numeric" min="1940" max="2012" step="1" value="1990">
+                </div>
+                <div class="pp-field">
+                    <label for="ppBirthM">出生月份</label>
+                    <input type="number" id="ppBirthM" inputmode="numeric" min="1" max="12" step="1" value="6">
+                </div>
+                <div class="pp-field">
+                    <label for="ppCategory">参保身份</label>
+                    <select id="ppCategory">
+                        <option value="male">男职工（原法定退休年龄 60 周岁）</option>
+                        <option value="female55">女职工（原法定退休年龄 55 周岁）</option>
+                        <option value="female50">女职工（原法定退休年龄 50 周岁）</option>
+                    </select>
+                </div>
+                <div class="pp-field">
+                    <label for="ppMode">测算模式</label>
+                    <select id="ppMode">
+                        <option value="quick">快速试算（填月薪与已缴年限）</option>
+                        <option value="precise">精算模式（填社保卡真实数据）</option>
+                    </select>
+                </div>
+                <div class="pp-field pp-quick-only">
+                    <label for="ppWage">当前月工资（元）</label>
+                    <input type="number" id="ppWage" inputmode="decimal" min="0" step="100" value="10000">
+                    <span class="pp-field-note">用于推算本人平均缴费指数，超出当地缴费基数上下限的部分按上下限封顶。</span>
+                </div>
+                <div class="pp-field pp-quick-only">
+                    <label for="ppPaidYears">已缴费年限（年）</label>
+                    <input type="number" id="ppPaidYears" inputmode="decimal" min="0" max="45" step="0.5" value="10">
+                    <span class="pp-field-note">含视同缴费年限；不满整年可填小数，如 8.5。</span>
+                </div>
+                <div class="pp-field pp-precise-only" hidden>
+                    <label for="ppBalance">个人账户储存额（元）</label>
+                    <input type="number" id="ppBalance" inputmode="numeric" min="0" step="1000" value="150000">
+                    <span class="pp-field-note">电子社保卡「个人账户」栏可查。</span>
+                </div>
+                <div class="pp-field pp-precise-only" hidden>
+                    <label for="ppMonths">累计缴费月数（月）</label>
+                    <input type="number" id="ppMonths" inputmode="numeric" min="0" max="600" step="1" value="180">
+                    <span class="pp-field-note">电子社保卡可查，1 年 = 12 个月。</span>
+                </div>
+                <div class="pp-field pp-precise-only" hidden>
+                    <label for="ppAvgIndex">本人平均缴费指数</label>
+                    <input type="number" id="ppAvgIndex" inputmode="decimal" min="0.3" max="3" step="0.01" value="1">
+                    <span class="pp-field-note">多数人落在 0.6–1.0 之间；长期按下限缴费即为 0.6。</span>
+                </div>
+                <button type="button" class="pp-submit" id="ppBtn">试算退休金</button>
+            </div>
+            <div class="result pp-out" id="ppResult"><p class="pp-alert pp-alert-info">填写上方参数后点「试算退休金」，这里会显示法定退休时间与三档月养老金区间。</p></div>
+        </section>
+
+        <!-- 全国计发基数对照表 -->
+        <section class="card">
+            <h2>2025 年度全国各省市养老金计发基数对照表</h2>
+            <p class="hint">养老金计发基数是计算基础养老金的专属参数，<strong>与社保缴费基数上下限是两个不同的数</strong>，不能互相套用。多数省份已实现全省统一，广东、湖北、河南等省存在「一省多值」，需按参保地实取。</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>城市</th><th>2025 计发基数<br>（元/月）</th><th>数据状态</th><th>出处</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>上海</strong></td>
+                            <td class="pp-em">12,434</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>上海市人力资源和社会保障局</td>
+                        </tr>
+                        <tr>
+                            <td><strong>北京</strong></td>
+                            <td class="pp-em">12,049</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>北京市人力资源和社会保障局等《关于公布2025年北京市基本养老保险待遇计发基数的通知》<br><span class="pp-docno">京人社发〔2025〕13号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>深圳</strong></td>
+                            <td class="pp-em">11,293</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>深圳市人力资源和社会保障局（企业退休人员计发基数，另行公布）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>东莞</strong></td>
+                            <td class="pp-em">9,493</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>广东省人力资源和社会保障厅等《关于公布2025年基本养老金计发基数的通知》<br><span class="pp-docno">粤人社发〔2025〕32号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>广州</strong></td>
+                            <td class="pp-em">9,493</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>广东省人力资源和社会保障厅等《关于公布2025年基本养老金计发基数的通知》<br><span class="pp-docno">粤人社发〔2025〕32号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>天津</strong></td>
+                            <td class="pp-em">9,417</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>天津市人力资源和社会保障局</td>
+                        </tr>
+                        <tr>
+                            <td><strong>武汉</strong></td>
+                            <td class="pp-em">9,112</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>湖北省人力资源和社会保障厅（武汉市单列计发基数）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>南京</strong></td>
+                            <td class="pp-em">8,917</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>江苏省人力资源和社会保障厅（2025年基础养老金计发基数）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>苏州</strong></td>
+                            <td class="pp-em">8,917</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>江苏省人力资源和社会保障厅（2025年基础养老金计发基数）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>无锡</strong></td>
+                            <td class="pp-em">8,917</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>江苏省人力资源和社会保障厅（2025年基础养老金计发基数）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>成都</strong></td>
+                            <td class="pp-em">8,462</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>四川省人力资源和社会保障厅（截至数据更新日尚未正式发文公布，社保经办系统已按此标准执行）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>杭州</strong></td>
+                            <td class="pp-em">8,433</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>浙江省人社厅等5部门《关于公布2025年社会保险有关基数的通知》<br><span class="pp-docno">浙人社发〔2025〕52号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>宁波</strong></td>
+                            <td class="pp-em">8,433</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>浙江省人社厅等5部门《关于公布2025年社会保险有关基数的通知》<br><span class="pp-docno">浙人社发〔2025〕52号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>重庆</strong></td>
+                            <td class="pp-em">8,240</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>重庆市人力资源和社会保障局</td>
+                        </tr>
+                        <tr>
+                            <td><strong>合肥</strong></td>
+                            <td class="pp-em">7,999</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>安徽省人力资源和社会保障厅、安徽省财政厅《关于公布2025年退休人员基本养老金计发基数的通知》<br><span class="pp-docno">皖人社秘〔2025〕153号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>西安</strong></td>
+                            <td class="pp-em">7,881</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>陕西省人力资源和社会保障厅</td>
+                        </tr>
+                        <tr>
+                            <td><strong>济南</strong></td>
+                            <td class="pp-em">7,831</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>山东省人力资源和社会保障厅《关于公布2025年度职工基本养老保险待遇计发基数的通知》<br><span class="pp-docno">鲁人社字〔2025〕100号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>长沙</strong></td>
+                            <td class="pp-em">7,694</td>
+                            <td><span class="pp-src pp-src-ok">已核到文号</span></td>
+                            <td>湖南省人力资源和社会保障厅、湖南省财政厅、国家税务总局湖南省税务局《关于公布2025年社会保险缴费基准值和计发基数的通知》<br><span class="pp-docno">湘人社规〔2025〕30号</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>郑州</strong><br><span class="pp-dual">河南「双基数」：过渡性养老金另按 7,850 元/月计</span></td>
+                            <td class="pp-em">6,738</td>
+                            <td><span class="pp-src">待补文号</span></td>
+                            <td>河南省人力资源和社会保障厅（全省统一计发基数；另有地市过渡性养老金计发基数）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pp-disclaim">表中数值为 2025 年度口径。部分省份当年基数公布较晚，公布前新退休人员先按上年度基数预发、公布后补差，因此年中查询可能看到两个数。</p>
+        </section>
+
+        <!-- 延迟退休对照表 -->
+        <section class="card">
+            <h2>延迟退休法定退休年龄对照表（2025 年 1 月 1 日起施行）</h2>
+            <p class="hint">依据全国人大常委会《关于实施渐进式延迟法定退休年龄的决定》及国务院《渐进式延迟法定退休年龄的办法》：<strong>男职工 60→63 周岁、原 55 周岁女职工 55→58 周岁，每 4 个月延迟 1 个月；原 50 周岁女职工 50→55 周岁，每 2 个月延迟 1 个月</strong>。改革自 2025 年起用 15 年过渡到位。</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>出生年月（男职工）</th><th>改革后法定退休年龄</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1964 年 12 月及以前</td><td>60 周岁（不受影响）</td></tr>
+                        <tr><td>1965 年 1 月 – 12 月</td><td>60 周岁 1 个月 – 60 周岁 3 个月</td></tr>
+                        <tr><td>1966 年 1 月 – 12 月</td><td>60 周岁 4 个月 – 60 周岁 6 个月</td></tr>
+                        <tr><td>1967 年 1 月 – 12 月</td><td>60 周岁 7 个月 – 60 周岁 9 个月</td></tr>
+                        <tr><td>1968 年 1 月 – 12 月</td><td>60 周岁 10 个月 – 61 周岁</td></tr>
+                        <tr><td>1969 年 1 月 – 12 月</td><td>61 周岁 1 个月 – 61 周岁 3 个月</td></tr>
+                        <tr><td>1970 年 1 月 – 12 月</td><td>61 周岁 4 个月 – 61 周岁 6 个月</td></tr>
+                        <tr><td>1971 年 1 月 – 12 月</td><td>61 周岁 7 个月 – 61 周岁 9 个月</td></tr>
+                        <tr><td>1972 年 1 月 – 12 月</td><td>61 周岁 10 个月 – 62 周岁</td></tr>
+                        <tr><td>1973 年 1 月 – 12 月</td><td>62 周岁 1 个月 – 62 周岁 3 个月</td></tr>
+                        <tr><td>1974 年 1 月 – 12 月</td><td>62 周岁 4 个月 – 62 周岁 6 个月</td></tr>
+                        <tr><td>1975 年 1 月 – 12 月</td><td>62 周岁 7 个月 – 62 周岁 9 个月</td></tr>
+                        <tr><td>1976 年 1 月 – 8 月</td><td>62 周岁 10 个月 – 62 周岁 11 个月</td></tr>
+                        <tr><td>1976 年 9 月及以后</td><td>63 周岁（封顶）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>女职工（原法定退休年龄）</th><th>起始受影响出生年月</th><th>封顶年龄与对应出生年月</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>原 55 周岁</td><td>1970 年 1 月（55 周岁 1 个月）</td><td>58 周岁（1981 年 9 月及以后）</td></tr>
+                        <tr><td>原 50 周岁</td><td>1975 年 1 月（50 周岁 1 个月）</td><td>55 周岁（1984 年 11 月及以后）</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pp-disclaim">上表为规则推导值，与官方公布的《延迟退休年龄对照表》一致。你的具体退休时间请在计算器中按出生年月 + 参保身份查询，可精确到月。</p>
+        </section>
+
+        <!-- 最低缴费年限 -->
+        <section class="card">
+            <h2>最低缴费年限逐年提高对照表（2025 – 2039）</h2>
+            <p class="hint">依据国务院《渐进式延迟法定退休年龄的办法》第二条：2025 – 2029 年最低缴费年限仍为 15 年；<strong>自 2030 年起每年提高 6 个月，到 2039 年提高到 20 年</strong>。缴不满最低年限，无法按月领取职工基本养老金。</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>退休年份</th><th>最低缴费年限</th><th>退休年份</th><th>最低缴费年限</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2025 – 2029</td><td>15 年</td><td>2035</td><td>18 年</td></tr>
+                        <tr><td>2030</td><td>15 年 6 个月</td><td>2036</td><td>18 年 6 个月</td></tr>
+                        <tr><td>2031</td><td>16 年</td><td>2037</td><td>19 年</td></tr>
+                        <tr><td>2032</td><td>16 年 6 个月</td><td>2038</td><td>19 年 6 个月</td></tr>
+                        <tr><td>2033</td><td>17 年</td><td>2039 年及以后</td><td>20 年</td></tr>
+                        <tr><td>2034</td><td>17 年 6 个月</td><td>—</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 公式 -->
+        <section class="card">
+            <h2>退休金怎么算：三段构成与计算公式</h2>
+            <p class="hint">职工基本养老金由三部分构成。「新人」（建立个人账户后参加工作）只有前两段；「中人」（建立个人账户前参加工作）多一段过渡性养老金，实际待遇会高于两段之和。</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>组成部分</th><th>计算公式</th><th>关键影响因素</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>基础养老金</strong></td>
+                            <td>退休时当地计发基数 ×（1 + 本人平均缴费指数）÷ 2 × 累计缴费年限 × 1%</td>
+                            <td>参保地计发基数、缴费指数、缴费年限；每多缴 1 年，多 1% 的「（1+指数）÷2 × 基数」</td>
+                        </tr>
+                        <tr>
+                            <td><strong>个人账户养老金</strong></td>
+                            <td>退休时个人账户储存额 ÷ 计发月数</td>
+                            <td>账户余额（本人缴的 8% 及历年记账利息）、退休年龄对应的计发月数</td>
+                        </tr>
+                        <tr>
+                            <td><strong>过渡性养老金</strong><br>（中人专属）</td>
+                            <td>计发基数 × 视同缴费指数 × 视同缴费年限 × 过渡系数（各地 1.0% – 1.4%）</td>
+                            <td>各地建账时间（多数省 1996-01-01，浙江为 1998-01-01）与当地过渡系数</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="hint">个人账户养老金计发月数表（国发〔2005〕38 号），退休越晚计发月数越小、每月领得越多：</p>
+            <div class="table-wrap">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>退休年龄</th><th>50 岁</th><th>55 岁</th><th>58 岁</th><th>60 岁</th><th>61 岁</th><th>62 岁</th><th>63 岁</th><th>64 岁</th><th>65 岁</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>计发月数</td><td>195</td><td>170</td><td>152</td><td>139</td><td>132</td><td>125</td><td>117</td><td>109</td><td>101</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pp-disclaim">延迟退休后 63 周岁对应的计发月数 117，在国发〔2005〕38 号附表中是现成值，无需外推——这也是本计算器能做到精确的部分之一。</p>
+        </section>
+
+        <!-- 误差来源 -->
+        <section class="card">
+            <h2>为什么算出来的数只能参考：5 个误差来源</h2>
+            <p class="hint">养老金试算的「不准」，并不是一笔糊涂账。下面 5 个环节是全部不确定性所在，其中前 3 项只影响未来的缴费，第 4 项是政策变量，第 5 项与你个人参保经历有关。</p>
+            <ul class="timeline">
+                <li><strong>未来社平工资增长率</strong>：计发基数随社平工资逐年上调（近年各省多在 1% – 2%）。本计算器按保守 1.5%、中性 2.5%、乐观 4.0% 三档给出区间，而不是假装一个精确值。</li>
+                <li><strong>未来缴费基数变化</strong>：你的工资涨跌、跳槽、中断缴费都会改变后续缴费基数与缴费年限，快速模式按当前月薪恒定推算。</li>
+                <li><strong>个人账户记账利率波动</strong>：由人社部每年 6 月公布，近年持续下行——2023 年 3.97%、2024 年 2.62%、2025 年 1.5%（2016 年曾达 8.31%）。假设不同，个人账户余额差异会逐年放大。</li>
+                <li><strong>政策可能再调整</strong>：延迟退休采用 15 年过渡期，最低缴费年限 2030 年起仍在逐年提高；计发月数表自 2005 年沿用至今，未来存在修订可能。</li>
+                <li><strong>视同缴费年限与过渡性养老金</strong>：如果你是「中人」，实际待遇还含过渡性养老金，本计算器不含这一段，因此结果偏低。</li>
+            </ul>
+        </section>
+
+        <!-- 适用范围 -->
+        <section class="card">
+            <h2>哪些情况不适用于这个计算器</h2>
+            <ul class="timeline">
+                <li><strong>城乡居民养老保险参保人</strong>：这是完全不同的制度，待遇 = 当地基础养老金（各地约 100 – 1400 元/月）+ 个人账户储存额 ÷ 139，与职工养老保险的公式无关，不能套用本页结果。</li>
+                <li><strong>机关事业单位在编人员</strong>：2014 年 10 月养老保险制度改革后，除基本养老金外还有职业年金，实际到手高于本计算器结果。</li>
+                <li><strong>已办理退休手续的人员</strong>：本试算针对尚未达到法定退休年龄的参保人；已退休人员的待遇以社保经办机构核定为准，并随每年的养老金调整而变动。</li>
+                <li><strong>有视同缴费年限的「中人」</strong>：本计算器只含基础养老金 + 个人账户养老金两段，见上文过渡性养老金说明。</li>
+            </ul>
+            <p class="hint"><strong>灵活就业人员适用本计算器</strong>：以灵活就业身份参加的是职工基本养老保险，缴费比例 20%，其中 <strong>8% 计入个人账户</strong>（其余进入统筹基金），与单位职工的个人账户积累速度一致，因此计算逻辑相同。</p>
+        </section>
+
+        <!-- 官方入口 -->
+        <section class="card">
+            <h2>想算得更准？两个办法</h2>
+            <ul class="timeline">
+                <li><strong>用精算模式</strong>：把测算模式切到「精算模式」，填入电子社保卡能查到的三项真实数据——个人账户储存额、累计缴费月数、本人平均缴费指数。这三项填真值后，未知的只剩「未来」，误差会大幅缩小。</li>
+                <li><strong>用官方测算工具</strong>：国家社会保险公共服务平台（<a href="https://si.12333.gov.cn/" target="_blank" rel="noopener nofollow">si.12333.gov.cn</a>）提供养老金测算，用的是你本人参保地的真实参数。本页的价值是帮你理解口径、看清假设，官方平台给你权威数值，两者互补。</li>
+            </ul>
+        </section>
+
+        <!-- FAQ -->
+        <section class="card">
+            <h2>退休金计算常见问题</h2>
+            <div class="faq-list" id="faqList">                <div class="faq-item">
+                    <div class="faq-q">退休金（养老金）到底是怎么算出来的？</div>
+                    <div class="faq-a">职工基本养老金由三部分构成：基础养老金 = 退休时当地计发基数 ×（1 + 本人平均缴费指数）÷ 2 × 累计缴费年限 × 1%；个人账户养老金 = 个人账户储存额 ÷ 计发月数；有视同缴费年限的「中人」再加一段过渡性养老金。前两段是所有参保人都有的，第三段只对建立个人账户之前就参加工作的人生效。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">延迟退休后我到底多少岁能退休？</div>
+                    <div class="faq-a">按 2025 年 1 月 1 日起施行的渐进式延迟法定退休年龄政策：男职工从 60 周岁逐步延到 63 周岁、原 55 周岁女职工从 55 周岁延到 58 周岁，每 4 个月延迟 1 个月；原 50 周岁女职工从 50 周岁延到 55 周岁，每 2 个月延迟 1 个月。以男职工为例，1964 年 12 月及以前出生的不受影响，1965 年 1 月出生的延迟 1 个月，1976 年 9 月及以后出生的封顶 63 周岁。用本页计算器输入出生年月即可精确到月。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">最低缴费年限从 15 年提高到 20 年，我到底要缴几年？</div>
+                    <div class="faq-a">按退休年份算，不看参保年份。2025 至 2029 年退休仍按 15 年执行；自 2030 年起每年提高 6 个月，2030 年是 15 年 6 个月、2031 年是 16 年，依此类推，2039 年及以后统一为 20 年。所以 2035 年退休需要缴满 18 年，2040 年退休需要 20 年。缴不满最低年限无法按月领取职工基本养老金。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">灵活就业人员交的养老保险，退休金和单位职工一样吗？</div>
+                    <div class="faq-a">计算逻辑完全一样。灵活就业人员参加的就是职工基本养老保险，缴费比例 20%，其中 8% 计入个人账户（其余进入统筹基金），个人账户的积累速度与单位职工本人缴费的 8% 一致。区别只在于单位职工由单位承担 16% 的统筹部分、个人只出 8%，而灵活就业人员的 20% 全部自己承担。因此同样按 60% 档缴 20 年，两者的养老金基本相同。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">为什么不同城市的退休金差这么多？</div>
+                    <div class="faq-a">核心差在「养老金计发基数」这一个参数上。基础养老金直接与计发基数成正比，2025 年度上海为 12434 元/月、北京 12049 元、而长沙 7694 元、郑州 6738 元，最高与最低相差近一倍，同样缴费 30 年、指数 1.0 的情况下，基础养老金每月能相差 1500 元以上。这也是本页要求先选参保城市的原因。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">计发基数和社保缴费基数是一回事吗？</div>
+                    <div class="faq-a">不是。计发基数只用于计算退休时的基础养老金，由各省（部分城市单独公布）每年确定一次；社保缴费基数上下限是用于计算在职期间每月缴多少钱，通常是当地全口径城镇单位就业人员平均工资的 60% 至 300%。两者数值、用途、公布主体都不同，不能互相套用。例如杭州 2025 年计发基数 8433 元，而养老保险缴费基数下限为 4986 元、上限 25299 元。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q">我可以提前退休吗？提前退休退休金会少多少？</div>
+                    <div class="faq-a">可以，但有条件。政策允许弹性提前退休，最长提前 3 年，且不得低于改革前的原法定退休年龄（男 60 周岁、原 55 周岁女 55 周岁、原 50 周岁女 50 周岁），需本人自愿并提前 3 个月书面告知单位。提前退休会同时减少两处：一是缴费年限变短，基础养老金按年限线性减少；二是计发月数变大（60 岁 139、55 岁 170），个人账户养老金被摊薄。以本计算器试算，提前 3 年退休通常会使月养老金下降 10% 至 20%。</div>
+                </div></div>
+        </section>
+
+        <div class="tools-section">
+            <h2>🔗 相关计算工具</h2>
+            <div class="tool-cards">
+                <a href="../social-insurance-calculator/" class="tool-card">
+                    <div class="tool-card-icon">🏥</div>
+                    <div class="tool-card-body">
+                        <h3>社保计算器</h3>
+                        <p>按城市查询五险一金缴费基数上下限与月缴明细</p>
+                    </div>
+                    <div class="tool-card-arrow">→</div>
+                </a>
+                <a href="../tax-calculator/" class="tool-card">
+                    <div class="tool-card-icon">💰</div>
+                    <div class="tool-card-body">
+                        <h3>个人所得税计算器</h3>
+                        <p>工资薪金个税与税后到手收入测算</p>
+                    </div>
+                    <div class="tool-card-arrow">→</div>
+                </a>
+                <a href="../provident-fund-calculator/" class="tool-card">
+                    <div class="tool-card-icon">🏦</div>
+                    <div class="tool-card-body">
+                        <h3>公积金贷款计算器</h3>
+                        <p>公积金贷款额度、月供与总利息测算</p>
+                    </div>
+                    <div class="tool-card-arrow">→</div>
+                </a>
+                <a href="../deposit-calculator/" class="tool-card">
+                    <div class="tool-card-icon">💵</div>
+                    <div class="tool-card-body">
+                        <h3>存款利息计算器</h3>
+                        <p>定期存款到期利息与复利收益对比</p>
+                    </div>
+                    <div class="tool-card-arrow">→</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="related-articles">
+            <h2>📝 推荐阅读</h2>
+            <div class="related-article-list">
+                <a href="../blog/article30/" class="related-article-item">
+                    <span class="related-article-cat">社保知识</span>
+                    <span>个税累计预扣法怎么算？月薪1万全年税额这样推</span>
+                </a>
+                <a href="../blog/article31/" class="related-article-item">
+                    <span class="related-article-cat">政策解读</span>
+                    <span>2026首套房贷贴息政策详解：贷100万最多省5万怎么算</span>
+                </a>
+                <a href="../blog/article23/" class="related-article-item">
+                    <span class="related-article-cat">房贷攻略</span>
+                    <span>存量房贷利率怎么协商下调？30个基点门槛这样算</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">🧮 AI金融计算器</span>
+                    <p class="footer-tagline">个税计算 · 社保计算 · 退休金试算 · 房贷月供 · 房贷贴息 · 租售比 · 车贷计算 · 公积金贷款 · 存款利息 · 汇率换算 · 投资收益 — 免费在线金融工具</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h5>计算工具</h5>
+                        <a href="../tax-calculator/">💰 个人所得税计算器</a>
+                        <a href="../social-insurance-calculator/">🏥 社保计算器</a>
+                        <a href="../pension-calculator/">💼 退休金计算器</a>
+                        <a href="../mortgage-calculator/">🏡 房贷计算器</a>
+                        <a href="../car-loan-calculator/">🚗 车贷计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>更多工具</h5>
+                        <a href="../provident-fund-calculator/">🏦 公积金贷款计算器</a>
+                        <a href="../deposit-calculator/">💵 存款利息计算器</a>
+                        <a href="../exchange-rate-calculator/">💱 汇率换算器</a>
+                        <a href="../investment-calculator/">📈 投资收益计算器</a>
+                        <a href="../mortgage-subsidy-calculator/">📋 房贷贴息计算器</a>
+                        <a href="../rent-yield-calculator/">🏘️ 房屋租售比计算器</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>关于我们</h5>
+                        <a href="../about/">关于本站</a>
+                        <a href="../contact/">联系我们</a>
+                        <a href="../privacy/">隐私政策</a>
+                        <a href="../blog/">博客首页</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 AI金融计算器(aifincalc.com). 计算结果仅供参考，不构成任何决策建议。养老金政策以人社部门最新公告为准。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../shared/share.js?v=20261014.2"></script>
+    <script src="../shared/pension.js?v=20261014.1"></script>
+    <script src="script.js?v=20261014.2"></script>
+    <script src="../shared/analytics.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</body>
+</html>

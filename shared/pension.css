@@ -1,0 +1,468 @@
+/* ==========================================================================
+   退休金试算块（城市社保页 + 全国退休金计算器共用）
+   --------------------------------------------------------------------------
+   骨架仍由各页的 .card 提供（白底圆角卡），本文件只管退休金试算专属样式：
+   数据状态徽章 / 本地参数表 / 试算表单 / 三档结果 / 明细表 / 口径说明 / 官方入口。
+   配色沿用站点主色 #667eea → #764ba2，正文 #333、辅助文字 #6c757d。
+   自包含：不依赖 social-insurance-calculator/style.css，保证全国版页面同样生效。
+   ========================================================================== */
+
+/* ---- 数据状态徽章（本块最醒目的一处提示，勿删）---- */
+.pp-status {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 0.86rem;
+    line-height: 1.7;
+    margin: 0 0 16px;
+}
+
+.pp-status .pp-status-icon {
+    flex: 0 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.pp-status-ok {
+    background: #f0fbf4;
+    border: 1px solid #cdeed9;
+    color: #1f7a4d;
+}
+
+.pp-status-warn {
+    background: #fff9ec;
+    border: 1px solid #f5e2b8;
+    color: #8a6212;
+}
+
+.pp-status strong {
+    font-weight: 700;
+}
+
+.pp-status a {
+    color: inherit;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+/* ---- 试算表单 ---- */
+.pp-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+    align-items: end;
+    margin: 6px 0 4px;
+}
+
+.pp-form .pp-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.pp-form .pp-field[hidden] {
+    display: none;
+}
+
+.pp-form label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.pp-form input,
+.pp-form select {
+    width: 100%;
+    padding: 11px 13px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #333;
+    background: #fff;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.pp-form input:focus,
+.pp-form select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.18);
+}
+
+.pp-form .pp-field-note {
+    color: #8a95a5;
+    font-size: 0.78rem;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+.pp-form .pp-submit {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pp-form .pp-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+/* ---- 结果区 ---- */
+.pp-out {
+    margin-top: 18px;
+}
+
+.pp-out-head {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8efff 100%);
+    border: 1px solid #dbe4fb;
+    border-radius: 14px;
+    padding: 15px 17px;
+    margin-bottom: 16px;
+}
+
+.pp-out-head .pp-lead {
+    color: #3a4a5c;
+    font-size: 0.93rem;
+    line-height: 1.85;
+    margin: 0;
+}
+
+.pp-out-head .pp-lead strong {
+    color: #4a5bb5;
+}
+
+.pp-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.pp-tier {
+    background: #fff;
+    border: 1px solid #eef1f4;
+    border-radius: 14px;
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.pp-tier-mid {
+    border-color: #c9d2f7;
+    background: linear-gradient(135deg, #f7f9ff 0%, #eef2ff 100%);
+    box-shadow: 0 6px 18px rgba(102, 126, 234, 0.14);
+}
+
+.pp-tier-name {
+    display: block;
+    color: #6c757d;
+    font-size: 0.82rem;
+    margin-bottom: 6px;
+}
+
+.pp-tier-val {
+    display: block;
+    font-size: 1.32rem;
+    font-weight: 700;
+    color: #3b3f4a;
+    letter-spacing: -0.3px;
+}
+
+.pp-tier-mid .pp-tier-val {
+    color: #4a5bb5;
+}
+
+.pp-tier-note {
+    display: block;
+    color: #98a2b3;
+    font-size: 0.75rem;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+.pp-table-wrap {
+    overflow-x: auto;
+    margin: 0 0 14px;
+}
+
+.pp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    background: #fff;
+}
+
+.pp-table th,
+.pp-table td {
+    padding: 10px 12px;
+    text-align: right;
+    border-bottom: 1px solid #eef1f4;
+    white-space: nowrap;
+}
+
+.pp-table th {
+    background: #f8f9fc;
+    color: #4a5568;
+    font-weight: 600;
+}
+
+.pp-table th:first-child,
+.pp-table td:first-child {
+    text-align: left;
+    white-space: normal;
+    font-weight: 600;
+    color: #3b3f4a;
+}
+
+.pp-table tr:last-child td {
+    border-bottom: none;
+}
+
+.pp-table .pp-em {
+    color: #4a5bb5;
+    font-weight: 700;
+}
+
+.pp-alert {
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 0.86rem;
+    line-height: 1.75;
+    margin: 0 0 14px;
+}
+
+.pp-alert-ok {
+    background: #f0fbf4;
+    border: 1px solid #cdeed9;
+    color: #1f7a4d;
+}
+
+.pp-alert-warn {
+    background: #fff9ec;
+    border: 1px solid #f5e2b8;
+    color: #8a6212;
+}
+
+.pp-alert-info {
+    background: #f4f7ff;
+    border: 1px solid #dde5fb;
+    color: #4a5568;
+}
+
+/* ---- 口径说明 / 参考区（构建期服务端渲染，必须保留纯文本）---- */
+.pp-ref {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.pp-ref h3 {
+    color: #333;
+    font-size: 1.02rem;
+    line-height: 1.35;
+    margin: 0 0 10px;
+    padding-left: 9px;
+    border-left: 3px solid #667eea;
+}
+
+.pp-ref p,
+.pp-ref li {
+    color: #6c757d;
+    font-size: 0.88rem;
+    line-height: 1.85;
+}
+
+.pp-ref p {
+    margin: 0 0 10px;
+}
+
+.pp-ref ul {
+    padding-left: 20px;
+    margin: 6px 0 12px;
+}
+
+.pp-ref li {
+    margin-bottom: 6px;
+}
+
+.pp-params {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin: 0 0 16px;
+}
+
+.pp-params th,
+.pp-params td {
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eef1f4;
+    vertical-align: top;
+    line-height: 1.7;
+}
+
+.pp-params th {
+    background: #f8f9fc;
+    color: #4a5568;
+    font-weight: 600;
+    white-space: nowrap;
+    width: 34%;
+}
+
+.pp-params td {
+    color: #5a6673;
+}
+
+.pp-params td strong {
+    color: #333;
+}
+
+.pp-params .pp-src {
+    word-break: break-all;
+    font-size: 0.82rem;
+}
+
+.pp-formula {
+    display: block;
+    background: #f8f9fc;
+    border: 1px solid #eef1f4;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin: 10px 0 14px;
+    color: #3b3f4a;
+    font-size: 0.86rem;
+    line-height: 1.95;
+}
+
+.pp-official {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #f7f9ff 0%, #eef2ff 100%);
+    border: 1px solid #dbe4fb;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-top: 16px;
+}
+
+.pp-official .pp-official-icon {
+    flex: 0 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.pp-official p {
+    margin: 0;
+    color: #4a5568;
+    font-size: 0.86rem;
+    line-height: 1.8;
+}
+
+.pp-official a {
+    color: #4a5bb5;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(74, 91, 181, 0.35);
+    word-break: break-all;
+}
+
+.pp-official a:hover {
+    border-bottom-color: #4a5bb5;
+}
+
+.pp-disclaim {
+    margin: 14px 0 0;
+    color: #98a2b3;
+    font-size: 0.78rem;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .pp-form {
+        grid-template-columns: 1fr;
+    }
+
+    .pp-tiers {
+        grid-template-columns: 1fr;
+    }
+
+    .pp-tier {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        text-align: left;
+        padding: 12px 14px;
+    }
+
+    .pp-tier-name {
+        margin-bottom: 0;
+    }
+
+    .pp-tier-note {
+        display: none;
+    }
+
+    .pp-params {
+        font-size: 0.8rem;
+    }
+
+    .pp-params th,
+    .pp-params td {
+        padding: 8px 9px;
+    }
+
+    .pp-table th,
+    .pp-table td {
+        padding: 9px 8px;
+        font-size: 0.78rem;
+    }
+}
+
+/* ---- 全国版页：计发基数对照表徽章与附注（site/pension-calculator/）----
+   以 .data-table 为前缀，与城市社保页的 .pp-params .pp-src 互不影响。 */
+.data-table .pp-src {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    background: #fff9ec;
+    border: 1px solid #f5e2b8;
+    color: #8a6212;
+}
+
+.data-table .pp-src-ok {
+    background: #f0fbf4;
+    border-color: #cdeed9;
+    color: #1f7a4d;
+}
+
+.data-table .pp-docno {
+    display: block;
+    margin-top: 4px;
+    color: #6c757d;
+    font-size: 0.8rem;
+    word-break: break-all;
+    line-height: 1.6;
+}
+
+.data-table .pp-dual {
+    display: block;
+    margin-top: 4px;
+    color: #8a6212;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}

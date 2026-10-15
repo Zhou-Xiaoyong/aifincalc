@@ -27,6 +27,7 @@
     var CALC_TOOLS = [
         { slug: 'tax-calculator',              short: '个税',   full: '个人所得税计算器' },
         { slug: 'social-insurance-calculator', short: '社保',   full: '社保计算器' },
+        { slug: 'pension-calculator',          short: '退休金', full: '退休金计算器' },
         { slug: 'mortgage-calculator',         short: '房贷',   full: '房贷计算器' },
         { slug: 'mortgage-subsidy-calculator', short: '贴息',   full: '房贷贴息计算器' },
         { slug: 'rent-yield-calculator',       short: '租售比', full: '房屋租售比计算器' },
@@ -40,7 +41,7 @@
     // 文案兜底关键词，与 CALC_TOOLS 顺序一一对应。
     // 注意：仅当 href 不含任何 slug 时才走到这里（本站各页 href 均含 slug，
     // 因此正常流程不会使用本兜底，不存在「房贷贴息」被「房贷」抢先命中的问题）。
-    var CALC_TEXT_KEYS = ['个人所得税', '社保', '房贷', '房贷贴息', '租售比', '车贷', '公积金', '存款', '汇率', '投资'];
+    var CALC_TEXT_KEYS = ['个人所得税', '社保', '退休金', '房贷', '房贷贴息', '租售比', '车贷', '公积金', '存款', '汇率', '投资'];
 
     function matchToolIndex(href, text) {
         var h = (href || '').toLowerCase();

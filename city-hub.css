@@ -7,7 +7,10 @@
 /* ── 四工具入口卡 ── */
 .tool-card-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* auto-fit 而非固定 4 列：入口卡 2026-10-14 增至 5 张（新增退休金计算器），
+       repeat(4, 1fr) 会把第 5 张挤到第二行孤零零一格。
+       auto-fit + minmax 下宽屏一行 5 张、窄屏自动折列。 */
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
     gap: 16px;
     margin-top: 4px;
 }
