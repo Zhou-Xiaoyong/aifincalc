@@ -489,44 +489,13 @@ footer a {
     text-decoration: underline;
 }
 
-/* 相关推荐模块 */
-.related-section {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+/* ===== 相关计算工具 / 推荐阅读（与 mortgage-subsidy / rent-yield 同款组件） ===== */
+.tools-section,
+.related-articles {
+    padding: 26px 28px;
 }
 
-.related-block {
-    background: white;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-}
-
-.related-title {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-    position: relative;
-    padding-bottom: 12px;
-}
-
-.related-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    border-radius: 2px;
-}
-
-/* 相关工具网格 */
-.related-tools-grid {
+.tools-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -534,128 +503,108 @@ footer a {
 
 .tool-card {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 20px 16px;
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border-radius: 14px;
+    gap: 16px;
+    padding: 18px 20px;
+    background: #f7f8fb;
+    border-radius: 12px;
     text-decoration: none;
+    border-left: 4px solid transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
-}
-
-.tool-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
 }
 
 .tool-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(79, 172, 254, 0.25);
-    border-color: rgba(0, 242, 254, 0.2);
-    background: white;
+    background: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+    border-left-color: #667eea;
 }
 
-.tool-card:hover::before {
-    transform: scaleX(1);
-}
-
-.tool-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease;
-}
-
-.tool-card:hover .tool-icon {
-    transform: scale(1.15);
-}
-
-.tool-name {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 4px;
-}
-
-.tool-desc {
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* 推荐文章 */
-.related-articles {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.article-card {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 16px;
-    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-left: 4px solid transparent;
-}
-
-.article-card:hover {
-    transform: translateX(6px);
-    background: white;
-    box-shadow: 0 8px 24px rgba(79, 172, 254, 0.2);
-    border-left-color: #4facfe;
-}
-
-.article-icon {
+.tool-card-icon {
     width: 48px;
     height: 48px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     border-radius: 12px;
-    flex-shrink: 0;
-    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.article-card:hover .article-icon {
-    transform: scale(1.1) rotate(-5deg);
-}
-
-.article-info {
+.tool-card-content {
     flex: 1;
     min-width: 0;
 }
 
-.article-title {
+.tool-card-content h3 {
     font-size: 1rem;
     font-weight: 600;
     color: #333;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    margin-bottom: 6px;
 }
 
-.article-desc {
+.tool-card-content p {
     font-size: 0.85rem;
-    color: #888;
-    line-height: 1.4;
+    color: #6c757d;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.tool-card-arrow {
+    flex-shrink: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #667eea;
+    transition: transform 0.3s ease;
+}
+
+.tool-card:hover .tool-card-arrow {
+    transform: translateX(4px);
+}
+
+.related-article-list {
+    display: grid;
+    gap: 12px;
+}
+
+.related-article-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f7f8fb;
+    border-radius: 10px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.related-article-item:hover {
+    background: #fff;
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.12);
+    border-left-color: #667eea;
+}
+
+.related-article-cat {
+    flex-shrink: 0;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.related-article-item span:last-child {
+    color: #495057;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.related-article-item:hover span:last-child {
+    color: #667eea;
 }
 
 .tool-intro {
@@ -821,52 +770,25 @@ footer a {
         font-size: 14px;
     }
 
-    .related-block {
-        padding: 20px;
-    }
-
-    .related-title {
-        font-size: 1.1rem;
-    }
-
-    .related-tools-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .tools-grid {
+        grid-template-columns: 1fr;
         gap: 12px;
     }
 
     .tool-card {
-        padding: 16px 12px;
-    }
-
-    .tool-icon {
-        font-size: 1.6rem;
-    }
-
-    .tool-name {
-        font-size: 0.9rem;
-    }
-
-    .tool-desc {
-        font-size: 0.75rem;
-    }
-
-    .article-card {
-        padding: 12px;
+        padding: 14px 16px;
         gap: 12px;
     }
 
-    .article-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
+    .tool-card-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
     }
 
-    .article-title {
-        font-size: 0.9rem;
-    }
-
-    .article-desc {
-        font-size: 0.8rem;
+    .related-article-item {
+        padding: 12px 14px;
+        gap: 10px;
     }
 }
 
