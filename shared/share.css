@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 44px;
+    height: 50px;
 }
 
 .site-header .brand-link {
@@ -60,10 +60,10 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     color: #555;
     text-decoration: none;
-    font-size: 0.76rem;
+    font-size: 0.85rem;
     border-radius: 12px;
     transition: all 0.2s;
     flex-shrink: 0;
@@ -80,7 +80,7 @@
 }
 
 .site-header .nav-icon {
-    font-size: 0.78rem;
+    font-size: 0.87rem;
 }
 
 /* 第二行导航 - 计算器快捷入口
@@ -89,16 +89,18 @@
    旧方案靠隐藏图标/缩字号硬撑并让 769-894px 区间横向滚动，已到极限。
    现在：≥769px 一律折成 2 行居中（13 项内容约 1391px > 1168px，宽屏也必然 2 行），
    行数恒定、不存在横向滚动、不随视口跳变，可平稳扩展到 16+ 项。
-   头部总高：44(header-container) + 60(两行 calc-nav) = 104px，见 .page-top-space。 */
+   头部总高：2026-10-15 放大字号后实测 getBoundingClientRect = 132px（含 1px 分隔线），
+   见 .page-top-space（已同步提到 140px，余量 8px）。 */
 .site-header .calc-nav {
-    /* max-width 从 1200 收到 760：flex-wrap 是「贪心填充」，容器 1168px 时
-       11 项会折成 10+1（第二行只剩「投资收益计算器」一项，视觉失衡）。
-       收到 760px（内容区 728px）后，折行点稳定落在第 6 项之后 → 6+5；
-       将来加到 12 项是 6+6，仍是均衡的。不要改回 1200。 */
-    max-width: 760px;
+    /* max-width 是折行落点的唯一控制阀：flex-wrap 是「贪心填充」，容器太宽时
+       11 项会折成 10+1（末行只剩一项，视觉失衡）；太窄又会折成三行。
+       2026-10-15 随字号放大从 760 调到 880：字号 +14%、内距 +4px 后，
+       单行 6 项约需 838px，880（内容区 848px）刚好稳住 6+5，
+       且不足以塞下第 7 项（约 977px），将来加到 12 项是 6+6。不要改回 1200。 */
+    max-width: 880px;
     margin: 0 auto;
-    padding: 6px 16px;
-    min-height: 36px;
+    padding: 8px 16px;
+    min-height: 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -113,10 +115,10 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 8px;
+    padding: 6px 10px;
     color: #666;
     text-decoration: none;
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     border-radius: 10px;
     transition: all 0.2s;
     flex-shrink: 0;
@@ -135,11 +137,11 @@
     transform: scale(1.02);
     /* padding 必须与普通项一致：折行布局下多 1px 会让该行比其他行高 2px，
        而不同页面的 active 项不同，会造成头部高度跳变。强调交给 scale + 阴影。 */
-    padding: 4px 8px;
+    padding: 6px 10px;
 }
 
 .site-header .calc-nav-icon {
-    font-size: 0.75rem;
+    font-size: 0.84rem;
 }
 
 /* 2026-10-14 已删除旧的「769–1240px 隐藏图标 + 缩字号 + 压内边距」单行补丁。
@@ -159,7 +161,7 @@
     }
 
     .site-header .calc-nav-link {
-        padding: 4px 6px;
+        padding: 5px 8px;
     }
 }
 
@@ -178,11 +180,13 @@
 }
 
 /* 页面顶部占位
-   2026-10-14：第二行改为折行后，13 项计算器稳定占 2 行，头部总高 44+65=109px
-   （实测 getBoundingClientRect 为 110px，含 1px 分隔线）。此处由 88px 提到 118px，
-   余量 8px。≤768px 由下方媒体查询覆盖为 56px（calc-nav 已隐藏）。 */
+   2026-10-14：第二行改为折行后，13 项计算器稳定占 2 行，头部总高 110px
+   （实测 getBoundingClientRect，含 1px 分隔线）。此处由 88px 提到 118px，余量 8px。
+   2026-10-15：导航字号放大（calc 0.72→0.82rem、一行 0.76→0.85rem）后头部增至 132px，
+   此处同步提到 140px，余量仍为 8px。
+   ≤768px 由下方媒体查询覆盖为 56px（calc-nav 已隐藏）。 */
 .page-top-space {
-    padding-top: 118px;
+    padding-top: 140px;
 }
 
 /* 页面标题区域 */
