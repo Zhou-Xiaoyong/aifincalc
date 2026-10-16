@@ -84,37 +84,72 @@
             };
         });
 
-        // 第一行：清空后只放站点级导航
-        if (mainLinks.length) {
-            navLinks.innerHTML = '';
-            mainLinks.forEach(function(link) { navLinks.appendChild(link); });
-        }
-
-        // 第二行：按 CALC_TOOLS 的固定顺序渲染全部计算器，保证各页顺序一致
+        // 单一导航区：站点级（首页 / 博客）在前，其后按 CALC_TOOLS 顺序渲染全部计算器。
+        // 2026-10-16 起不再拆成「站点级独占一行 + 计算器两行」的三行结构；
+        // 导航整体移入 .header-container，logo 居左、导航居右，头部高度随之下降。
         var calcNav = document.createElement('nav');
         calcNav.className = 'calc-nav';
-        calcNav.setAttribute('aria-label', '计算器快捷入口');
+        calcNav.setAttribute('aria-label', '站点与计算器导航');
 
+        function appendNavLink(href, icon, label, title, active) {
+            var a = document.createElement('a');
+            a.href = href;
+            a.className = 'calc-nav-link' + (active ? ' active' : '');
+            a.title = title || label;
+            a.innerHTML = (icon ? '<span class="calc-nav-icon">' + icon + '</span>' : '') +
+                          '<span>' + label + '</span>';
+            calcNav.appendChild(a);
+        }
+
+        // 站点级链接的渲染函数。文案沿用各页 .nav-links 的原文（首页 / 博客）。
+        // ⚠️ 取文本前必须先剥掉 .nav-icon：textContent 会把 emoji 一并算进去，
+        // 配上单独渲染的图标就会变成「🏠🏠首页」这种重复。
+        function appendSiteLink(link) {
+            var iconEl = link.querySelector('.nav-icon');
+            var icon = iconEl ? iconEl.textContent.trim() : '';
+            var clone = link.cloneNode(true);
+            var cloneIcon = clone.querySelector('.nav-icon');
+            if (cloneIcon) cloneIcon.parentNode.removeChild(cloneIcon);
+            var label = (clone.textContent || '').replace(/\s+/g, '');
+            appendNavLink(
+                link.getAttribute('href') || '#',
+                icon,
+                label,
+                '',
+                link.classList.contains('active')
+            );
+        }
+
+        // 渲染顺序：站点级首项（首页） → 全部计算器 → 其余站点级（博客等）。
+        // 2026-10-16：博客刻意排到最末，使它在折行后落在第二行末尾；
+        // 首页留在首位，用户从任何页面都能在最左端一键回首页。
+        var siteHead = mainLinks.slice(0, 1);
+        var siteTail = mainLinks.slice(1);
+
+        siteHead.forEach(appendSiteLink);
+
+        // 计算器按 CALC_TOOLS 固定顺序渲染，保证各页顺序一致
         CALC_TOOLS.forEach(function(tool, i) {
             var info = tools[i];
             if (!info) return;
-
-            var a = document.createElement('a');
-            a.href = info.href;
-            a.className = 'calc-nav-link' + (info.active ? ' active' : '');
-            a.title = tool.full;
-            a.innerHTML = (info.icon ? '<span class="calc-nav-icon">' + info.icon + '</span>' : '') +
-                          '<span>' + tool.full + '</span>';
-            calcNav.appendChild(a);
+            appendNavLink(info.href, info.icon, tool.full, tool.full, info.active);
         });
 
-        var mobileMenu = header.querySelector('.mobile-menu');
-        if (mobileMenu) {
-            header.insertBefore(calcNav, mobileMenu);
+        siteTail.forEach(appendSiteLink);
+        // 末位标记：CSS/探针可据此确认「博客」确实是最后一项
+        if (siteTail.length) calcNav.lastElementChild.setAttribute('data-nav-last-site', '1');
+
+        // 放进 .header-container，与 logo 同一行（menu-toggle 之前）
+        var menuToggle = headerContainer.querySelector('.menu-toggle');
+        if (menuToggle) {
+            headerContainer.insertBefore(calcNav, menuToggle);
         } else {
-            header.appendChild(calcNav);
+            headerContainer.appendChild(calcNav);
         }
 
+        // 原 .nav-links 仅作数据源；渲染完成后隐藏。
+        // 用 JS 隐藏而非 CSS：JS 失效时 .nav-links 仍可见，导航不至于消失。
+        navLinks.style.display = 'none';
         navLinks.setAttribute('data-nav-split', '1');
     }
 

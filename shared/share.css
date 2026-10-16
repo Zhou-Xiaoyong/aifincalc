@@ -19,25 +19,31 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    gap: 16px;
+    /* 2026-10-16：导航整体移入本容器与 logo 并排后，高度由内容决定
+       （2 行导航 > 50px），固定 height 会把导航挤出可视区，故改 min-height。 */
+    min-height: 50px;
 }
 
 .site-header .brand-link {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 9px;
     color: #1a1a2e;
     text-decoration: none;
     flex-shrink: 0;
 }
 
+/* 2026-10-16：logo 与站名放大，提升宽屏下的识别度（用户在宽屏看不清）。 */
 .site-header .brand-logo {
-    font-size: 1.2rem;
+    font-size: 1.58rem;
+    line-height: 1;
 }
 
 .site-header .brand-name {
-    font-size: 0.88rem;
+    font-size: 1.05rem;
     font-weight: 700;
+    letter-spacing: 0.2px;
     color: #667eea;
     white-space: nowrap;
 }
@@ -92,23 +98,22 @@
    头部总高：2026-10-15 放大字号后实测 getBoundingClientRect = 132px（含 1px 分隔线），
    见 .page-top-space（已同步提到 140px，余量 8px）。 */
 .site-header .calc-nav {
-    /* max-width 是折行落点的唯一控制阀：flex-wrap 是「贪心填充」，容器太宽时
-       11 项会折成 10+1（末行只剩一项，视觉失衡）；太窄又会折成三行。
-       2026-10-15 随字号放大从 760 调到 880：字号 +14%、内距 +4px 后，
-       单行 6 项约需 838px，880（内容区 848px）刚好稳住 6+5，
-       且不足以塞下第 7 项（约 977px），将来加到 12 项是 6+6。不要改回 1200。 */
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 8px 16px;
+    /* 2026-10-16：导航移入 .header-container，logo 居左、导航居右。
+       折行落点由「可用宽度」决定：可用宽度 = min(容器剩余宽, max-width)。
+       max-width 是唯一控制阀 —— 13 项带图标单行需约 1574px，
+       890px 时一行稳定放 7 项（7×~121 + 间距 ≈ 871 ≤ 890，8 项 ≈ 996 > 890）
+       → 折行 7+6，两行长度接近，不再出现「第一行比第二行长很多」。 */
+    flex: 1 1 auto;
+    max-width: 890px;
+    margin: 0;
+    padding: 6px 0;
     min-height: 40px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     gap: 4px;
     white-space: nowrap;
-    border-top: 1px solid rgba(0, 0, 0, 0.04);
-    background: rgba(248, 249, 250, 0.5);
 }
 
 .site-header .calc-nav-link {
@@ -148,12 +153,16 @@
    折行方案下无需再用缩排换取单行；保留全称与图标，锚文本与视觉一致性更好。
    若未来需要单行模式，请勿恢复此补丁——其宽度预算按 8 项设计，10 项已吃满。 */
 
-/* 窄桌面（769–900px）：13 项在 737px 内容区里会折成 3 行（实测 6+6+1，头部涨到 138px）。
-   此处隐藏图标并把间距压到 2px，实测可回到稳定的 2 行、头部 110px 不变。
-   只影响这一档视口，≥901px 与 ≤768px 均不受影响。 */
-@media (max-width: 900px) and (min-width: 769px) {
+/* 窄桌面压缩：导航移入 .header-container 后，可用宽度 = 视口 - 32(padding)
+   - logo - 16(gap)，远小于整行条带时代，必须按档逐级压缩才能维持 2 行。
+   769–1100px：隐藏图标 + 压间距，13 项总宽 1574 → 1233px，半宽 617px 即够两行。
+   769–900px：logo 只留图标（再省约 93px），保证最窄的 769px 仍有约 697px 可用。
+   ≤768px 由移动端菜单接管，不受影响。 */
+@media (max-width: 1100px) and (min-width: 769px) {
     .site-header .calc-nav {
         gap: 2px;
+        /* 图标隐藏后项宽约 90px：7 项 ≈ 642、8 项 ≈ 734，730px 即锁定 7+6 */
+        max-width: 730px;
     }
 
     .site-header .calc-nav-icon {
@@ -162,6 +171,12 @@
 
     .site-header .calc-nav-link {
         padding: 5px 8px;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 769px) {
+    .site-header .brand-name {
+        display: none;
     }
 }
 
@@ -180,13 +195,13 @@
 }
 
 /* 页面顶部占位
-   2026-10-14：第二行改为折行后，13 项计算器稳定占 2 行，头部总高 110px
-   （实测 getBoundingClientRect，含 1px 分隔线）。此处由 88px 提到 118px，余量 8px。
-   2026-10-15：导航字号放大（calc 0.72→0.82rem、一行 0.76→0.85rem）后头部增至 132px，
-   此处同步提到 140px，余量仍为 8px。
-   ≤768px 由下方媒体查询覆盖为 56px（calc-nav 已隐藏）。 */
+   2026-10-16：导航并入 .header-container 与 logo 并排后，头部不再有独立的整行条带，
+   实测高度 77px（≥1200px，两行含图标）/ 71px（769–1100px，图标已隐藏），
+   此处由 140px 收紧到 85px（＝最大头部 77px + 余量 8px）。
+   收紧后所有页面内容整体上移 55px，不再被头部大量占用。
+   ≤768px 由下方媒体查询覆盖为 56px（calc-nav 已隐藏，头部 48px）。 */
 .page-top-space {
-    padding-top: 140px;
+    padding-top: 85px;
 }
 
 /* 页面标题区域 */
@@ -680,7 +695,7 @@
     }
     
     .site-header .header-container {
-        height: 48px;
+        min-height: 48px;
     }
     
     .page-top-space {
