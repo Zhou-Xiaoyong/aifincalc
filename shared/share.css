@@ -829,6 +829,19 @@
     margin-top: 40px;
 }
 
+/* 2026-10-16：极简页脚（40 页：data/ 2 + city/ 19 + 社保城市页 19）只有一个裸 <p>，
+   没有 .footer-inner 容器，文字会贴屏幕左缘。用子选择器统一居中并限宽，
+   .footer-inner 内的后代 p 不受影响（标准页脚 133 页零影响）。 */
+.site-footer > p {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 22px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    line-height: 1.7;
+}
+
 .site-footer .footer-inner {
     max-width: 1200px;
     margin: 0 auto;
