@@ -313,7 +313,7 @@
       <div class="cc-field"><label>单位缴存比例（%）</label><input type="number" id="ccCom" value="12" min="5" max="12" step="1"></div>
       <button class="cc-btn" id="ccJjBtn">计算月缴存额</button>
     </div>
-    <div class="cc-note">本城缴存基数上下限：2060 – 31564 元；缴存比例范围 5%–12%。</div>
+    <div class="cc-note">本城缴存基数上下限：2320 – 31564 元；缴存比例范围 5%–12%。</div>
     <div class="cc-result" id="ccJjResult" style="display:none;"></div>
   </div>
   <div class="cc-panel" id="cc-dk" style="display:none;">
@@ -646,7 +646,7 @@
 </script>
 
 <script>
-window.CC_DATA = {"type": "provident", "city": "合肥", "name": "合肥", "housingMin": 2060, "housingMax": 31564, "socialMin": 4354, "socialMax": 21772, "unempPersonal": 0.5, "singleQuota": 90, "doubleQuota": 120, "balanceMult": 20};
+window.CC_DATA = {"type": "provident", "city": "合肥", "name": "合肥", "housingMin": 2320, "housingMax": 31564, "socialMin": 4354, "socialMax": 21772, "unempPersonal": 0.5, "singleQuota": 90, "doubleQuota": 120, "balanceMult": 20};
 (function(){
   var D = window.CC_DATA;
   function fmt(n){ return (Math.round(n*100)/100).toLocaleString('zh-CN'); }
