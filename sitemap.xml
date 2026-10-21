@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-10-20</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-10-20</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -122,7 +122,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article14/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -902,7 +902,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/policy/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -944,7 +944,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article22/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1071,6 +1071,12 @@
     <url>
         <loc>https://aifincalc.com/data/provident-fund-base-2026/</loc>
         <lastmod>2026-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article38/</loc>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
