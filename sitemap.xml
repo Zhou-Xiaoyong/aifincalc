@@ -1016,7 +1016,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/data/</loc>
-        <lastmod>2026-10-20</lastmod>
+        <lastmod>2026-10-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -1076,6 +1076,12 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article38/</loc>
+        <lastmod>2026-10-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/data/lpr-history-2026/</loc>
         <lastmod>2026-10-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
