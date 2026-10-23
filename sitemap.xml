@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-10-22</lastmod>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-10-22</lastmod>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -896,7 +896,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/mortgage/</loc>
-        <lastmod>2026-10-22</lastmod>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -998,7 +998,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article31/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -1088,13 +1088,19 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article39/</loc>
-        <lastmod>2026-10-22</lastmod>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://aifincalc.com/data/minimum-wage-2026/</loc>
         <lastmod>2026-10-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article40/</loc>
+        <lastmod>2026-10-23</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
