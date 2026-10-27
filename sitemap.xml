@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-10-26</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -98,7 +98,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article10/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -932,7 +932,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/exchange/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -968,7 +968,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article26/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1028,7 +1028,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article34/</loc>
-        <lastmod>2026-10-15</lastmod>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1143,6 +1143,12 @@
     <url>
         <loc>https://aifincalc.com/data/deposit-rate-2026/</loc>
         <lastmod>2026-10-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article44/</loc>
+        <lastmod>2026-10-27</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
