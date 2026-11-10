@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-11-09</lastmod>
+        <lastmod>2026-11-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-11-09</lastmod>
+        <lastmod>2026-11-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -908,7 +908,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/provident-fund/</loc>
-        <lastmod>2026-10-30</lastmod>
+        <lastmod>2026-11-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1160,7 +1160,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/article46/</loc>
-        <lastmod>2026-10-30</lastmod>
+        <lastmod>2026-11-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1221,6 +1221,12 @@
     <url>
         <loc>https://aifincalc.com/data/rmb-central-parity-2026/</loc>
         <lastmod>2026-11-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article56/</loc>
+        <lastmod>2026-11-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
