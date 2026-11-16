@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://aifincalc.com/</loc>
-        <lastmod>2026-11-15</lastmod>
+        <lastmod>2026-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -14,7 +14,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/</loc>
-        <lastmod>2026-11-15</lastmod>
+        <lastmod>2026-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -920,7 +920,7 @@
     </url>
     <url>
         <loc>https://aifincalc.com/blog/category/wealth/</loc>
-        <lastmod>2026-11-15</lastmod>
+        <lastmod>2026-11-16</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -1257,6 +1257,12 @@
     <url>
         <loc>https://aifincalc.com/blog/article61/</loc>
         <lastmod>2026-11-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://aifincalc.com/blog/article62/</loc>
+        <lastmod>2026-11-16</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
